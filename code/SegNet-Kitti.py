@@ -22,19 +22,14 @@ np.random.seed(7) # 0bserver07 for reproducibility
 
 print(datetime.datetime.now())
 
-data_shape = 360*480
-
-class_weighting= [0.2595, 0.1826, 4.5640, 0.1417, 0.5051, 0.3826, 9.6446, 1.8418, 6.6823, 6.2478, 3.0, 7.3614]
+data_shape = 120*408
 
 # load the data
-train_data = np.load('./data/CamVid/train_data.npy')
-train_label = np.load('./data/CamVid/train_label.npy')
-
-val_data = np.load('./data/CamVid/val_data.npy')
-val_label = np.load('./data/CamVid/val_label.npy')
+train_data = np.load('./data/Kitti/train_data.npy')
+train_label = np.load('./data/Kitti/train_label.npy')
 
 # load the model:
-with open('segNet_basic_model.json') as model_file:
+with open('segNet_kitti_model.json') as model_file:
     segnet_basic = models.model_from_json(model_file.read())
 
 
@@ -50,7 +45,7 @@ batch_size = 2 #6
 
 # Fit the model
 history = segnet_basic.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-                    verbose=1, class_weight=class_weighting , validation_data=(val_data, val_label), shuffle=True) # validation_split=0.33
+                    verbose=1, shuffle=True, validation_split=0.33)
 
 # This save the trained model weights to this file with number of epochs
 segnet_basic.save_weights('weights/model_weight_{}.hdf5'.format(nb_epoch))
