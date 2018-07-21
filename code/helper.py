@@ -22,9 +22,18 @@ def normalized(rgb):
 
     return norm
 
-def one_hot_it(labels):
-    x = np.zeros([360,480,12])
-    for i in range(360):
-        for j in range(480):
+def one_hot_it(labels, height = 360, width = 480, classes = 12):
+    x = np.zeros([height,width,classes])
+    for i in range(height):
+        for j in range(width):
+            print(labels[i][j])
             x[i,j,labels[i][j]]=1
+    return x
+
+def one_hot_kitti(labels, height = 375, width = 1242, classes = 2):
+    x = np.zeros([height,width,classes])
+    for i in range(height):
+        for j in range(width):
+            if(labels[i,j,0] != 0 and labels[i,j,1] == 0):
+                x[i,j,1]=1
     return x

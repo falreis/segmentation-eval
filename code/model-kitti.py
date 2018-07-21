@@ -17,34 +17,11 @@ import numpy as np
 import json
 np.random.seed(7) # 0bserver07 for reproducibility
 
-data_shape = 360*480
+height = 120
+width = 408
+data_shape = height*width
 
 def create_encoding_layers():
-    '''
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(filter_size, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-    Activation('relu'),
-    MaxPooling2D(pool_size=(pool_size, pool_size)),
-
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(128, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-    Activation('relu'),
-    MaxPooling2D(pool_size=(pool_size, pool_size)),
-
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(256, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-    Activation('relu'),
-    MaxPooling2D(pool_size=(pool_size, pool_size)),
-
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(512, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-    Activation('relu'),
-    '''
-
     kernel = 3
     filter_size = 64
     pad = 1
@@ -75,27 +52,6 @@ def create_encoding_layers():
     ]
 
 def create_decoding_layers():
-    '''
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(512, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-
-    UpSampling2D(size=(pool_size,pool_size)),
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(256, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-
-    UpSampling2D(size=(pool_size,pool_size)),
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(128, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-
-    UpSampling2D(size=(pool_size,pool_size)),
-    ZeroPadding2D(padding=(pad,pad)),
-    Convolution2D(filter_size, kernel, kernel, border_mode='valid'),
-    BatchNormalization(),
-    '''
-
     kernel = 3
     filter_size = 64
     pad = 1
@@ -123,27 +79,25 @@ def create_decoding_layers():
 
 segnet_basic = models.Sequential()
 
-segnet_basic.add(Layer(input_shape=(3, 360, 480)))
+segnet_basic.add(Layer(input_shape=(3, height, width)))
 
 segnet_basic.encoding_layers = create_encoding_layers()
 for l in segnet_basic.encoding_layers:
     segnet_basic.add(l)
 
-# Note: it this looks weird, that is because of adding Each Layer using that for loop
-# instead of re-writting mode.add(somelayer+params) everytime.
-
 segnet_basic.decoding_layers = create_decoding_layers()
 for l in segnet_basic.decoding_layers:
     segnet_basic.add(l)
 
-#segnet_basic.add(Convolution2D(12, 1, 1, border_mode='valid',))
-segnet_basic.add(Convolution2D( 12 , (1, 1), padding='valid',))
+segnet_basic.add(Convolution2D(2 , (1, 1), padding='valid'))
 
-segnet_basic.add(Reshape((12,data_shape), input_shape=(12,360,480)))
+#print(segnet_basic.output_shape)
+
+segnet_basic.add(Reshape((2, data_shape), input_shape=(2,height,width)))
 segnet_basic.add(Permute((2, 1)))
 segnet_basic.add(Activation('softmax'))
 
 # Save model to JSON
 
-with open('segNet_basic_model.json', 'w') as outfile:
+with open('segNet_kitti_model.json', 'w') as outfile:
     outfile.write(json.dumps(json.loads(segnet_basic.to_json()), indent=2))

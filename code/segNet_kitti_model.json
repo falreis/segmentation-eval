@@ -9,8 +9,8 @@
         "batch_input_shape": [
           null,
           3,
-          360,
-          480
+          120,
+          408
         ],
         "dtype": "float32"
       }
@@ -875,7 +875,7 @@
       "config": {
         "name": "conv2d_9",
         "trainable": true,
-        "filters": 12,
+        "filters": 2,
         "kernel_size": [
           1,
           1
@@ -919,14 +919,14 @@
         "trainable": true,
         "batch_input_shape": [
           null,
-          12,
-          360,
-          480
+          2,
+          120,
+          408
         ],
         "dtype": "float32",
         "target_shape": [
-          12,
-          172800
+          2,
+          48960
         ]
       }
     },
