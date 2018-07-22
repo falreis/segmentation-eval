@@ -1,5 +1,6 @@
-### SegNet-Basic:
+### segmentation-eval Project
 ---
+`scp -i "deep_learning.pem" /segmentation-eval/code/data/BSDS500/val.tar.gz ec2-user@ec2-18-144-36-233.us-west-1.compute.amazonaws.com`
 
 What is Segnet?
 
