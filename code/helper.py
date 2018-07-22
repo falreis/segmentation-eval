@@ -26,7 +26,6 @@ def one_hot_it(labels, height = 360, width = 480, classes = 12):
     x = np.zeros([height,width,classes])
     for i in range(height):
         for j in range(width):
-            print(labels[i][j])
             x[i,j,labels[i][j]]=1
     return x
 
