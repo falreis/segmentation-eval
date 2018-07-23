@@ -4,8 +4,7 @@ import os
 import datetime
 
 os.environ['KERAS_BACKEND'] = 'theano'
-#os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=gpu0,floatX=float32,optimizer=None'
-os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
+#os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
 
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
@@ -22,7 +21,7 @@ np.random.seed(7) # 0bserver07 for reproducibility
 
 print(datetime.datetime.now())
 
-data_shape = 120*408
+data_shape = 184*616
 
 # load the data
 train_data = np.load('./data/Kitti/train_data.npy')

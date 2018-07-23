@@ -875,7 +875,7 @@
       "config": {
         "name": "conv2d_9",
         "trainable": true,
-        "filters": 3,
+        "filters": 2,
         "kernel_size": [
           1,
           1
@@ -919,13 +919,13 @@
         "trainable": true,
         "batch_input_shape": [
           null,
-          3,
+          2,
           184,
           616
         ],
         "dtype": "float32",
         "target_shape": [
-          3,
+          2,
           113344
         ]
       }

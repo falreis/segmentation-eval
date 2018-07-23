@@ -1,7 +1,6 @@
 ## usage (to train set)
 #python kitti_data_loader.py --set=train
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -16,7 +15,7 @@ import glob
 
 DataPath = './datasets/Kitti/'
 height = 184 #~375/2
-width = 613 #~1242/2
+width = 616 #~1242/2
 data_shape = height*width
 n_classes = 2
 
