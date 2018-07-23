@@ -5,7 +5,7 @@ def visualize(temp, label_colours, plot=True):
     r = temp.copy()
     g = temp.copy()
     b = temp.copy()
-    for l in range(0,11):
+    for l in range(0,len(label_colours)):
         r[temp==l]=label_colours[l,0]
         g[temp==l]=label_colours[l,1]
         b[temp==l]=label_colours[l,2]

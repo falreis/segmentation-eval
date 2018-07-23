@@ -18,7 +18,7 @@ DataPath = './datasets/Kitti/'
 height = 120 #~375/3
 width = 408 #~1242/3
 data_shape = height*width
-n_classes = 2
+n_classes = 3
 
 reduced_image_size = (width, height, 3)
 

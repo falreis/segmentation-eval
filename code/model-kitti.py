@@ -89,11 +89,11 @@ segnet_basic.decoding_layers = create_decoding_layers()
 for l in segnet_basic.decoding_layers:
     segnet_basic.add(l)
 
-segnet_basic.add(Convolution2D(2 , (1, 1), padding='valid'))
+segnet_basic.add(Convolution2D(3 , (1, 1), padding='valid'))
 
 #print(segnet_basic.output_shape)
 
-segnet_basic.add(Reshape((2, data_shape), input_shape=(2,height,width)))
+segnet_basic.add(Reshape((3, data_shape), input_shape=(3, height, width)))
 segnet_basic.add(Permute((2, 1)))
 segnet_basic.add(Activation('softmax'))
 

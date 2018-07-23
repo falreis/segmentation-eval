@@ -24,37 +24,35 @@ np.random.seed(7)
 
 # load the model:
 
-with open('segNet_bsds_model.json') as model_file:
+with open('segNet_basic_model.json') as model_file:
     segnet_basic = models.model_from_json(model_file.read())
 
 # load weights
-segnet_basic.load_weights("bsds_weights.best.hdf5")
+segnet_basic.load_weights("model_weight_1.hdf5")
 
 # Compile model (required to make predictions)
 segnet_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
 #load test data
-test_data = np.load('./data/BSDS500/val_data.npy')
-test_label = np.load('./data/BSDS500/val_label.npy')
-
+test_data = np.load('./data/CamVid/test_data.npy')
+#test_label = np.load('./data/CamVid/test_label.npy')
+'''
 batch_size = 1
 
 # estimate accuracy on whole dataset using loaded weights
-
-print('Eval')
-scores = segnet_basic.evaluate(test_data[0:1], test_label[0:1], verbose=0, batch_size=batch_size)
+scores = segnet_basic.evaluate(test_data, test_label, verbose=0, batch_size=batch_size)
 print("%s: %.2f%%" % (segnet_basic.metrics_names[1], scores[1]*100))
-
-label_colours = np.array([[0, 0, 0], [255, 255, 255]])
+'''
+#label_colours = np.array([[0, 0, 0], [255, 255, 255]])
 
 #export data
-data_path = './export/BSDS500/'
+data_path = '.export/CamVid/'
 
 index = 0
-for test_image in test_data[0:10]:
+for test_image in test_data[0:1]:
     index += 1
-    output = segnet_basic.predict_proba(test_image[np.newaxis, :])
-    pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((320,480)), label_colours, False)
+    output = segnet_basic.predict_proba(test_image)
+    pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((321,481)), label_colours, False)
 
     image_name = data_path + str(index) + '.png' 
     io.imsave(image_name, pred_image)

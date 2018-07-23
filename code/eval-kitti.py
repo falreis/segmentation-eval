@@ -3,7 +3,7 @@ from __future__ import print_function
 import os
 
 os.environ['KERAS_BACKEND'] = 'theano'
-#os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
+os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
 
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
@@ -24,37 +24,33 @@ np.random.seed(7)
 
 # load the model:
 
-with open('segNet_bsds_model.json') as model_file:
+with open('segNet_kitti_model.json') as model_file:
     segnet_basic = models.model_from_json(model_file.read())
 
 # load weights
-segnet_basic.load_weights("bsds_weights.best.hdf5")
+segnet_basic.load_weights("kitti_weights.best.hdf5")
 
 # Compile model (required to make predictions)
 segnet_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
 #load test data
-test_data = np.load('./data/BSDS500/val_data.npy')
-test_label = np.load('./data/BSDS500/val_label.npy')
+test_data = np.load('./data/Kitti/test_data.npy')
+test_label = np.load('./data/Kitti/test_label.npy')
 
 batch_size = 1
 
 # estimate accuracy on whole dataset using loaded weights
 
-print('Eval')
-scores = segnet_basic.evaluate(test_data[0:1], test_label[0:1], verbose=0, batch_size=batch_size)
-print("%s: %.2f%%" % (segnet_basic.metrics_names[1], scores[1]*100))
-
-label_colours = np.array([[0, 0, 0], [255, 255, 255]])
+label_colours = np.array([[255, 0, 0], [255, 0, 255], [0, 0, 0]])
 
 #export data
-data_path = './export/BSDS500/'
+data_path = './export/Kitti/'
 
 index = 0
-for test_image in test_data[0:10]:
+for test_image in test_data:
     index += 1
     output = segnet_basic.predict_proba(test_image[np.newaxis, :])
-    pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((320,480)), label_colours, False)
+    pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((120,408)), label_colours, False)
 
     image_name = data_path + str(index) + '.png' 
     io.imsave(image_name, pred_image)

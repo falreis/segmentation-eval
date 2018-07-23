@@ -29,14 +29,16 @@ def one_hot_it(labels, height = 360, width = 480, classes = 12):
             x[i,j,labels[i][j]]=1
     return x
 
-def one_hot_kitti(labels, height = 375, width = 1242, classes = 2):
+def one_hot_kitti(labels, height = 375, width = 1242, classes = 3):
     x = np.zeros([height,width,classes])
     for i in range(height):
         for j in range(width):
-            if(labels[i,j,0] != 0 and labels[i,j,1] == 0):
-                x[i,j,1]=1
-            else:
+            if (labels[i,j,0] == 0): #black
+                x[i,j,2]=1
+            elif (labels[i,j,2] == 0): #red
                 x[i,j,0]=1
+            else: #fushia
+                x[i,j,1]=1
     return x
 
 def one_hot_bsds(labels, height = 321, width = 481, classes = 2):
