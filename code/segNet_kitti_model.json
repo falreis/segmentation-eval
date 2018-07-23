@@ -9,8 +9,8 @@
         "batch_input_shape": [
           null,
           3,
-          120,
-          408
+          184,
+          616
         ],
         "dtype": "float32"
       }
@@ -920,13 +920,13 @@
         "batch_input_shape": [
           null,
           3,
-          120,
-          408
+          184,
+          616
         ],
         "dtype": "float32",
         "target_shape": [
           3,
-          48960
+          113344
         ]
       }
     },

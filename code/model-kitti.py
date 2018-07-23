@@ -17,9 +17,10 @@ import numpy as np
 import json
 np.random.seed(7) # 0bserver07 for reproducibility
 
-height = 120
-width = 408
+height = 184
+width = 616
 data_shape = height*width
+classes = 2
 
 def create_encoding_layers():
     kernel = 3
@@ -89,11 +90,11 @@ segnet_basic.decoding_layers = create_decoding_layers()
 for l in segnet_basic.decoding_layers:
     segnet_basic.add(l)
 
-segnet_basic.add(Convolution2D(3 , (1, 1), padding='valid'))
+segnet_basic.add(Convolution2D(classes , (1, 1), padding='valid'))
 
 #print(segnet_basic.output_shape)
 
-segnet_basic.add(Reshape((3, data_shape), input_shape=(3, height, width)))
+segnet_basic.add(Reshape((classes, data_shape), input_shape=(classes, height, width)))
 segnet_basic.add(Permute((2, 1)))
 segnet_basic.add(Activation('softmax'))
 

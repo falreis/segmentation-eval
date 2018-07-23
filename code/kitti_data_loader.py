@@ -15,10 +15,10 @@ import argparse
 import glob
 
 DataPath = './datasets/Kitti/'
-height = 120 #~375/3
-width = 408 #~1242/3
+height = 184 #~375/2
+width = 613 #~1242/2
 data_shape = height*width
-n_classes = 3
+n_classes = 2
 
 reduced_image_size = (width, height, 3)
 
