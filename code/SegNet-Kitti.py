@@ -39,7 +39,7 @@ filepath="kitti_weights.best.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
 
-nb_epoch = 25 #100
+nb_epoch = 50 #100
 batch_size = 2 #6
 
 # Fit the model
