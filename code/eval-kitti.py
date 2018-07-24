@@ -29,6 +29,9 @@ width = 616 #~1242/2
 data_shape = height*width
 classes = 2
 
+original_height = 375
+original_width = 1242
+
 # load the model:
 with open('segNet_kitti_model.json') as model_file:
     segnet_basic = models.model_from_json(model_file.read())
@@ -39,44 +42,46 @@ segnet_basic.load_weights("kitti_weights.best.hdf5")
 # Compile model (required to make predictions)
 segnet_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
-#load test data
-test_data = np.load('./data/Kitti/test_data.npy')
-
 batch_size = 1
 
 # estimate accuracy on whole dataset using loaded weights
 label_colours = np.array([[255, 0, 255], [0, 0, 0]])
 
-#export data
-data_path = './export/Kitti/'
-images_path = './datasets/Kitti/test/'
+#load test data
+datasets = ['test', 'train']
 
-images = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
-images.sort()
+for dataset in datasets:
 
-index = 0
-for test_image, image_file in zip(test_data, images):
+    data = np.load('./data/Kitti/' + dataset + '_data.npy')
 
-    #read original image
-    original_image = cv2.imread(image_file)
-    original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+    #export data
+    data_path = './export/Kitti/' + dataset + '/'
+    images_path = './datasets/Kitti/' + dataset + '/'
 
-    #predict
-    output = segnet_basic.predict_proba(test_image[np.newaxis, :])
-    pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
-    
-    #expand predict to the size of the original image
-    expanded_pred = cv2.resize(pred_image, dsize=(1242, 375, 3)[:2], interpolation=cv2.INTER_CUBIC)
+    images_paths = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
+    images_paths.sort()
 
-    #mark lane
-    for i in range(1, original_image.shape[0]):
-        for j in range(1,original_image.shape[1]):
-            if (expanded_pred[i, j, 0] > 0):
-                original_image[i,j,0] = 0
-                original_image[i,j,2] = 0
+    for test_image, image_path in zip(data[0:10], images_paths[0:10]):
 
-    #save data
-    image_name = data_path + str(index) + '.png' 
-    io.imsave(image_name, original_image)
+        #read original image
+        original_image = cv2.imread(image_path)
+        original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+
+        #predict
+        output = segnet_basic.predict_proba(test_image[np.newaxis, :])
+        pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
+        
+        #expand predict to the size of the original image
+        expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
+
+        #mark lane
+        for i in range(1, original_image.shape[0]):
+            for j in range(1,original_image.shape[1]):
+                if (expanded_pred[i, j, 0] > 0):
+                    original_image[i,j,0] = 0
+                    original_image[i,j,2] = 0
+
+        #save data
+        io.imsave(image_path, original_image)
 
 print('Done')

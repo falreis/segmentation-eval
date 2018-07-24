@@ -1,4 +1,22 @@
-\begin{thebibliography}{1}\itemsep=-1pt
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{TENSORFLOW}
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock Software available from tensorflow.org.
+
+\bibitem{SLIC}
+R.~Achanta, A.~Shaji, K.~Smith, A.~Lucchi, P.~Fua, and S.~Süsstrunk.
+\newblock Slic superpixels compared to state-of-the-art superpixel methods.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  34(11):2274--2282, Nov 2012.
 
 \bibitem{AHMED_SARMA}
 S.~A. Ahmed, S.~Dey, and K.~K. Sarma.
@@ -6,9 +24,110 @@ S.~A. Ahmed, S.~Dey, and K.~K. Sarma.
 \newblock In {\em 2011 2nd National Conference on Emerging Trends and
   Applications in Computer Science}, pages 1--4, March 2011.
 
+\bibitem{BSDS500}
+P.~Arbelaez, M.~Maire, C.~Fowlkes, and J.~Malik.
+\newblock Contour detection and hierarchical image segmentation.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 33(5):898--916, 5
+  2011.
+
+\bibitem{SEGNET}
+V.~Badrinarayanan, A.~Kendall, and R.~Cipolla.
+\newblock Segnet: {A} deep convolutional encoder-decoder architecture for image
+  segmentation.
+\newblock {\em CoRR}, abs/1511.00561, 2015.
+
+\bibitem{KERAS}
+F.~Chollet et~al.
+\newblock Keras.
+\newblock \url{https://keras.io}, 2015.
+
+\bibitem{IMAGENET}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei.
+\newblock {ImageNet: A Large-Scale Hierarchical Image Database}.
+\newblock In {\em CVPR09}, 2009.
+
 \bibitem{DOMINGUEZ}
 D.~Domínguez and R.~R. Morales.
 \newblock {\em Image Segmentation: Advances}, volume~1.
 \newblock 2016.
+
+\bibitem{AUGM_ADAPT}
+A.~Fawzi, H.~Samulowitz, D.~Turaga, and P.~Frossard.
+\newblock Adaptive data augmentation for image classification.
+\newblock In {\em 2016 IEEE International Conference on Image Processing
+  (ICIP)}, pages 3688--3692, Sept 2016.
+
+\bibitem{FELZENSZWALB}
+P.~F. Felzenszwalb and D.~P. Huttenlocher.
+\newblock Efficient graph-based image segmentation.
+\newblock {\em International Journal of Computer Vision}, 59(2):167--181, Sep
+  2004.
+
+\bibitem{VGG16_IMG}
+P.~Kochakarn.
+\newblock Machine learning with python: Image classifier using vgg16 model -
+  part 1: Theory.
+\newblock
+  \url{https://www.techkingdom.org/single-post/2017/11/07/Machine-Learning-with-Python-Image-Classifier-using-VGG16-Model---Coming-Soon},
+  2017.
+
+\bibitem{AUGM_DEEP}
+L.~Perez and J.~Wang.
+\newblock The effectiveness of data augmentation in image classification using
+  deep learning.
+\newblock {\em CoRR}, abs/1712.04621, 2017.
+
+\bibitem{PRATT}
+L.~Y. Pratt.
+\newblock Discriminability-based transfer between neural networks.
+\newblock In {\em Proceedings of the 5th International Conference on Neural
+  Information Processing Systems}, NIPS'92, pages 204--211, San Francisco, CA,
+  USA, 1992. Morgan Kaufmann Publishers Inc.
+
+\bibitem{UNET_WEBSITE}
+V.~P. Recognition and F.~o.~E. Image~Processing, Dept. of Computer~Science.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock \url{https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/ },
+  2018.
+
+\bibitem{UNET}
+O.~Ronneberger, P.Fischer, and T.~Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical Image Computing and Computer-Assisted Intervention
+  (MICCAI)}, volume 9351 of {\em LNCS}, pages 234--241. Springer, 2015.
+\newblock (available on arXiv:1505.04597 [cs.CV]).
+
+\bibitem{CNTK}
+F.~Seide and A.~Agarwal.
+\newblock Cntk: Microsoft's open-source deep-learning toolkit.
+\newblock In {\em Proceedings of the 22Nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '16, pages 2135--2135, New York,
+  NY, USA, 2016. ACM.
+
+\bibitem{VGGNET}
+K.~Simonyan and A.~Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em CoRR}, abs/1409.1556, 2014.
+
+\bibitem{THEANO}
+{Theano Development Team}.
+\newblock Theano: A {Python} framework for fast computation of mathematical
+  expressions.
+\newblock {\em arXiv e-prints}, abs/1605.02688, 5 2016.
+
+\bibitem{SEGNET_WEBSITE}
+C.~Vision and U.~Robotics Group at the University~of Cambridge.
+\newblock Segnet.
+\newblock \url{http://mi.eng.cam.ac.uk/projects/segnet/}, 2018.
+
+\bibitem{WEISS2016}
+K.~Weiss, T.~M. Khoshgoftaar, and D.~Wang.
+\newblock A survey of transfer learning.
+\newblock {\em Journal of Big Data}, 3(1):9, May 2016.
+
+\bibitem{DATA_AUGM}
+S.~C. Wong, A.~Gatt, V.~Stamatescu, and M.~D. McDonnell.
+\newblock Understanding data augmentation for classification: when to warp?
+\newblock {\em CoRR}, abs/1609.08764, 2016.
 
 \end{thebibliography}

@@ -31,7 +31,6 @@ train_label = np.load('./data/Kitti/train_label.npy')
 with open('segNet_kitti_model.json') as model_file:
     segnet_basic = models.model_from_json(model_file.read())
 
-
 segnet_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
 # checkpoint

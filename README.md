@@ -1,6 +1,6 @@
 ### segmentation-eval Project
 ---
-`scp -i "deep_learning.pem" segmentation-eval/code/data/Kitti/train.tar.gz ec2-user@ec2-52-53-178-186.us-west-1.compute.amazonaws.com:~/`
+`scp -i "deep_learning.pem" segmentation-eval/code/data/Kitti/train.tar.gz ec2-user@ec2-54-153-96-101.us-west-1.compute.amazonaws.com:~/segmentation-eval/code/data/Kitti/`
 
 ssh -i "deep_learning.pem" ec2-user@ec2-52-53-178-186.us-west-1.compute.amazonaws.com
 
