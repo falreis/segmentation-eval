@@ -33,6 +33,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--net", type = str)
 args = parser.parse_args()
 net_parse = args.net
+print(net_parse)
 
 #shape
 height = 184 #~375/2
@@ -68,7 +69,7 @@ batch_size = 1
 label_colours = np.array([[0, 0, 0],[255, 0, 255]])
 
 #load test data
-datasets = ['test', 'train']
+datasets = ['test'] #['test', 'train']
 
 for dataset in datasets:
 
@@ -76,7 +77,7 @@ for dataset in datasets:
 
     #export data
     save_path = './export/Kitti/' + net_parse + '/' + dataset + '/'
-    images_path = './datasets/data_road/falreis/' + dataset + '/'
+    images_path = './datasets/Kitti/' + dataset + '/'
 
     images_paths = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
     images_paths.sort()
@@ -97,9 +98,14 @@ for dataset in datasets:
         #expand predict to the size of the original image
         expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
 
+        #avoid different image sizes
+        if (original_image.shape[0] != original_height or original_image.shape[1] != original_width):
+             original_image = cv2.resize(original_image, dsize=(original_width, original_height, 3)[:2]
+                                    , interpolation=cv2.INTER_CUBIC)
+
         #mark lane
-        for i in range(1, original_image.shape[0]-1):
-            for j in range(1,original_image.shape[1]-1):
+        for i in range(1, original_image.shape[0]):
+            for j in range(1,original_image.shape[1]):
                 if (expanded_pred[i, j, 0] > 0):
                     original_image[i,j,0] = 0
                     original_image[i,j,2] = 0

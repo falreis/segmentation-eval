@@ -12,6 +12,7 @@ from helper import *
 import os
 import argparse
 import glob
+from skimage import io
 
 DataPath = './datasets/Kitti/'
 height = 184 #~375/2
@@ -26,20 +27,26 @@ def load_data(mode):
     label = []
 
     path = DataPath + mode + "/*."
-    pathg = DataPath + mode + "_ground/*."
-
     images = glob.glob(path + "jpg") + glob.glob(path + "png")
     images.sort()
 
-    grounds = glob.glob(pathg + "jpg") + glob.glob(pathg + "png")
-    grounds.sort()
+    if mode == "train":
+        pathg = DataPath + mode + "_ground/*."
+        grounds = glob.glob(pathg + "jpg") + glob.glob(pathg + "png")
+        grounds.sort()
 
-    for image, ground in zip(images, grounds):
-        reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
-        reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+        for image, ground in zip(images, grounds):
+            reduced_image = cv2.resize(io.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            reduced_ground = cv2.resize(io.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
-        data.append(np.rollaxis(normalized(reduced_image), 2))
-        label.append(one_hot_kitti(reduced_ground, height = height, width = width, classes = n_classes))
+            data.append(np.rollaxis(normalized(reduced_image), 2))
+            label.append(one_hot_kitti(reduced_ground, height = height, width = width, classes = n_classes))
+
+    elif mode == "test":
+        for image in images:
+            reduced_image = cv2.resize(io.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            data.append(np.rollaxis(normalized(reduced_image), 2))
+
     return np.array(data), np.array(label)
 
 
@@ -52,9 +59,11 @@ print(set_name)
 
 data, label = load_data(set_name)
 len_data = len(data)
-label = np.reshape(label,(len_data,data_shape, n_classes))
+
+if set_name == "train":
+    label = np.reshape(label,(len_data,data_shape, n_classes))
+    np.save(("data/Kitti/" + set_name + "_label"), label)
 
 np.save(("data/Kitti/" + set_name + "_data"), data)
-np.save(("data/Kitti/" + set_name + "_label"), label)
 
 print('Done')

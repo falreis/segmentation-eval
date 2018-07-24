@@ -27,6 +27,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--net", type = str)
 args = parser.parse_args()
 net_parse = args.net
+print(net_parse)
 
 #shape
 height = 184 #~375/2
