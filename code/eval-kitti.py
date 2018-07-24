@@ -44,10 +44,10 @@ original_width = 1242
 json_model, weights_file = "", ""
 if net_parse == "unet":
     json_model = 'uNet_kitti_model.json'
-    weights_file = "segnet_kitti_weights.best.hdf5"
+    weights_file = "unet_kitti_weights.best.hdf5"
 else:
     json_model = 'segNet_kitti_model.json'
-    weights_file = "unet_kitti_weights.best.hdf5"
+    weights_file = "segnet_kitti_weights.best.hdf5"
 
 # load the model:
 with open(json_model) as model_file:
@@ -72,8 +72,7 @@ for dataset in datasets:
     data = np.load('./data/Kitti/' + dataset + '_data.npy')
 
     #export data
-    data_path = './export/Kitti/' + dataset + '/'
-    images_path = './datasets/Kitti/' + dataset + '/'
+    images_path = './datasets/Kitti/' + net_parse + '/' + dataset + '/'
 
     images_paths = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
     images_paths.sort()

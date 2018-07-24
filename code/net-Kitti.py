@@ -4,7 +4,7 @@ import os
 import datetime
 
 os.environ['KERAS_BACKEND'] = 'theano'
-#os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
+os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
 
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
@@ -35,8 +35,8 @@ data_shape = height*width
 n_classes = 2
 
 #parameters
-nb_epoch = 50 #100
-batch_size = 2 #6
+nb_epoch = 20
+batch_size = 3
 
 # load the data
 train_data = np.load('./data/Kitti/train_data.npy')
@@ -63,7 +63,7 @@ callbacks_list = [checkpoint]
 
 # Fit the model
 history = net_basic.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-                    verbose=1, shuffle=True, validation_split=0.33)
+                    verbose=1, shuffle=True, validation_split=0.20)
 
 # This save the trained model weights to this file with number of epochs
 if net_parse == "unet":

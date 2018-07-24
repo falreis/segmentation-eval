@@ -24,7 +24,7 @@ width = 616
 data_shape = height*width
 classes = 2
 
-inputs = Input((classes, height, width))
+inputs = Input((3, height, width))
 
 conv1 = Convolution2D(32, (3, 3), activation='relu', padding='same')(inputs)
 conv1 = Dropout(0.2)(conv1)

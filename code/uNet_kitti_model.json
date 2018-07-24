@@ -9,7 +9,7 @@
         "config": {
           "batch_input_shape": [
             null,
-            2,
+            3,
             184,
             616
           ],
