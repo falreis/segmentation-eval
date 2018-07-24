@@ -42,12 +42,18 @@ R. Walter Ianni 255 - Bloco L - Belo Horizonte, MG, Brasil\\
 %\thispagestyle{empty}
 
 %%%%%%%%% ABSTRACT
+%Briefly describe your problem, approach, and key results. Should be no more than 300 words.
+
 \begin{abstract}
-    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. This paper will evaluate two Deep Neural Networks for semantic segmentation. The DNNs evaluated in this paper are Segnet and U-Net, both ``fully convolutional'' networks that outputs a result with the same size as the input. Also, the paper will evaluate the composition of classical methods with DNN approach, to speed up the training process and become more accurate. The models are trained and tested using Kitti Road Dataset. The results were also evaluated using Kitti Dataset Toolkit. 
+    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper will evaluate two Deep Neural Networks for semantic segmentation: Segnet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The models are trained and tested using Kitti Road Dataset. The results were also evaluated using Kitti Dataset Toolkit. The tests showed that Segnet had a better performance in image segmentation than U-Net. U-Net, however, was easier to train, smaller and provide faster results than Segnet.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
+
+
+%##################################################################################################
 \section{Introduction} \label{introduction}
+%Describe the problem you are working on, why it's important, and an overview of your results
 
 Image segmentation refers to the partition of an image into a set of regions to cover it, to represent meaningful areas \cite{DOMINGUEZ}. The goal is to simplify and/or change the representation of an image into something that is more meaningful and easier to analyze \cite{AHMED_SARMA}.
 
@@ -64,34 +70,16 @@ This paper will evaluate two different Deep Neural Networks for semantic segment
 
 The organization of this paper is as follows. In the next Section we discuss the problem statement. Section \ref{sec:tech_approach} explains how the will work and the results we expect.
 
-%-------------------------------------------------------------------------
-\section{Problem Statement} \label{sec:prob_statement}
 
-%Describe your problem precisely specifying the dataset to be used, expected results and evaluation
+%##################################################################################################
+\section{Related Work} \label{sec:related_work}
+%Discuss published work that relates to your project. How is your approach similar or different from others?
 
 Semantic pixel-wise segmentation is an active topic of research \cite{SEGNET}. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}.
 
 The success of deep convolutional neural networks for object classification led researchers to use these techniques to learn new capabilities, such as segmentation \cite{SEGNET}. 
 
-This paper will evaluate two Deep Neural Networks to segmentation: SEGNET \cite{SEGNET} and U-NET \cite{UNET}. The paper also tests if methods of oversegmentation, using SLIC (Simple Linear Iterative Clustering), can speed up the training process and give a more accurate result for predictions. For this, it will be used The KITTI Vision Benchmarking Suite, in the Road/Lane Dataset Evaluation \cite{KITTI}.
-
-\section{Other Datasets} \label{sec:other_datasets}
-
-Berkeley Segmentation Data Set contains 500 natural images and its respective ground-truths, annotated by humans \cite{BSDS500}. The images are explicitly separated into disjoint train, validation and test subsets \cite{BSDS500}.
-
-To evaluate the quality of the segmentation methods, the results will be evaluated with BSDS500 benchmarking tool, provided with the Dataset \cite{BSDS500}. BSDS500 dataset uses the Precision and Recall Method to evaluate the results \cite{BSDS500}.
-
-%-------------------------------------------------------------------------
-\section{Technical Approach} \label{sec:tech_approach}
-
-%Describe the methods you intend to apply to solve the given problem
-
-This section contains the technical approach to reach the goals explained in Section \ref{sec:prob_statement}.
-
-%-------------------------------------------------------------------------
-\subsection{Deep Neural Networks} \label{ssec:neura_nets}
-
-The project will use two different Neural Networks to provide segmentation, as it follows in the next subsections.
+This paper will evaluate two Deep Neural Networks to segmentation: SEGNET \cite{SEGNET} and U-NET \cite{UNET}.
 
 %-------------------------------------------------------------------------
 \subsubsection{SEGNET} \label{sssec:segnet}
@@ -104,7 +92,6 @@ SEGNET is a deep encoder-decoder architecture for multi-class pixelwise segmenta
   \caption{SEGNET architecture. \textit{Image adapted from SEGNET project website} \cite{SEGNET_WEBSITE} \cite{SEGNET}}
   \label{fig:segnet}
 \end{figure}
-
 
 %-------------------------------------------------------------------------
 \subsubsection{U-NET} \label{sssec:unet}
@@ -119,6 +106,35 @@ U-NET architecture consists of the repeated application of two $3 \times 3$ conv
   \caption{U-NET architecture. \textit{Image adapted from U-NET project website} \cite{UNET_WEBSITE} \cite{UNET}}
   \label{fig:unet}
 \end{figure}
+
+
+%##################################################################################################
+\section{Data} \label{sec:data}
+
+%Describe the data you are working with for your project. What type of data is it? Where did it come from? How much data are you working with? Did you have to do any preprocessing, filtering, or other special treatment to use this data in your project?
+
+For this, it will be used The KITTI Vision Benchmarking Suite, in the Road/Lane Dataset Evaluation \cite{KITTI}. The road and lane estimation benchmark consists of 289 training and 290 test images, in four different categories of road scenes \cite{KITTI}:
+
+\begin{itemize}
+ \item uu - urban unmarked (98/100);
+ \item um - urban marked (95/96);
+ \item umm - urban multiple marked lanes (96/94);
+ \item urban - combination of the three above.
+\end{itemize}
+
+Ground truth has been generated by manual annotation of the images and is available for two different road terrain types: road - the road area, i.e, the composition of all lanes, and lane - the ego-lane, i.e., the lane the vehicle is currently driving on (only available for category "um") \cite{KITTI}. Ground truth is provided for training images only \cite{KITTI}. In this work it will be evaluated only the road area and the evaluation of the test set will be provided using KITTI road and lane estimation performance in the bird's-eye-view space \cite{KITTI}.
+
+\section{Other Datasets} \label{sec:other_datasets}
+
+Berkeley Segmentation Data Set contains 500 natural images and its respective ground-truths, annotated by humans \cite{BSDS500}. The images are explicitly separated into disjoint train, validation and test subsets \cite{BSDS500}.
+
+To evaluate the quality of the segmentation methods, the results will be evaluated with BSDS500 benchmarking tool, provided with the Dataset \cite{BSDS500}. BSDS500 dataset uses the Precision and Recall Method to evaluate the results \cite{BSDS500}.
+
+
+%##################################################################################################
+\section{Methods} \label{sec:methods}
+
+%Discuss your approach for solving the problems that you set up in the introduction. Why is your approach the right thing to do? Did you consider alternative approaches? You should demonstrate that you have applied ideas and skills built up during the quarter to tackling your problem of choice. It may be helpful to include figures, diagrams, or tables to describe your method or compare it with other methods.
 
 %-------------------------------------------------------------------------
 \subsection{Transfer Learning} \label{ssec:transfer_learning}
@@ -148,6 +164,19 @@ Data augmentation also can act as a regularizer in preventing overfitting in neu
 Once BSDS500 contains only 200 images for training and 100 images for validation, the Neural Network may not generalize well and learn enough information from the dataset. Then, it's necessary to provide a range of transformation to add some generated images for training and validation.
 
 To provide data augmentation, the images and the ground-truth will be rotated 12 times, 30 degrees each. Also, the images will be flipped and rotated 12 times each. Then, each image will transform into 24 possible images. Then, 200 images for the training set will become 4800 training images and the validation set will contains 2400 images. The number of images is not too big but can help the DNN predict with more accuracy.
+
+
+
+%##################################################################################################
+\section{Experiments} \label{sec:methods}
+
+%Discuss the experiments that you performed to demonstrate that your approach solves the problem. The exact experiments will vary depending on the project, but you might compare with previously published methods, perform an ablation study to determine the impact of various components of your system, experiment with different hyperparameters or architectural choices, use visualization techniques to gain insight into how your model works, discuss common failure modes of your model, etc. You should include graphs, tables, or other figures to illustrate your experimental results.
+
+
+%##################################################################################################
+\section{Conclusion} \label{sec:methods}
+
+%Summarize your key results - what have you learned? Suggest ideas for future extensions or new applications of your ideas.
 
 %-------------------------------------------------------------------------
 

@@ -3,47 +3,51 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: egpaper_final.aux
 The style file: ieee.bst
 Database file #1: egbib.bib
+Repeated entry---line 337 of file egbib.bib
+ : @article{WANG201728
+ :                    ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in DOMINGUEZ
 Warning--empty publisher in DOMINGUEZ
-You've used 20 entries,
+You've used 25 entries,
             2120 wiz_defined-function locations,
-            631 strings with 7963 characters,
-and the built_in function-call counts, 7730 in all, are:
-= -- 710
-> -- 507
+            667 strings with 8921 characters,
+and the built_in function-call counts, 9492 in all, are:
+= -- 873
+> -- 612
 < -- 7
-+ -- 203
-- -- 180
-* -- 560
-:= -- 1301
-add.period$ -- 64
-call.type$ -- 20
-change.case$ -- 148
++ -- 245
+- -- 216
+* -- 697
+:= -- 1600
+add.period$ -- 79
+call.type$ -- 25
+change.case$ -- 181
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 263
-empty$ -- 524
-format.name$ -- 180
-if$ -- 1598
+cite$ -- 27
+duplicate$ -- 317
+empty$ -- 656
+format.name$ -- 216
+if$ -- 1957
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 16
-newline$ -- 104
-num.names$ -- 40
-pop$ -- 173
+int.to.str$ -- 25
+missing$ -- 20
+newline$ -- 129
+num.names$ -- 50
+pop$ -- 208
 preamble$ -- 1
-purify$ -- 129
+purify$ -- 157
 quote$ -- 0
-skip$ -- 214
+skip$ -- 251
 stack$ -- 0
-substring$ -- 283
-swap$ -- 74
+substring$ -- 382
+swap$ -- 80
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
+type$ -- 98
 warning$ -- 2
-while$ -- 56
-width$ -- 22
-write$ -- 224
-(There were 2 warnings)
+while$ -- 70
+width$ -- 27
+write$ -- 277
+(There was 1 error message)
