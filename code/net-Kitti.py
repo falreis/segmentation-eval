@@ -46,10 +46,10 @@ train_label = np.load('./data/Kitti/train_label.npy')
 json_model, weights_file = "", ""
 if net_parse == "unet":
     json_model = 'uNet_kitti_model.json'
-    weights_file = "segnet_kitti_weights.best.hdf5"
+    weights_file = "unet_kitti_weights.best.hdf5"
 else:
     json_model = 'segNet_kitti_model.json'
-    weights_file = "unet_kitti_weights.best.hdf5"
+    weights_file = "segnet_kitti_weights.best.hdf5"
 
 #load model
 with open(json_model) as model_file:

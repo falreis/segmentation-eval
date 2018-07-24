@@ -1,3 +1,6 @@
+#usage 
+#python eval-kitti.py --net=segnet
+
 from __future__ import absolute_import
 from __future__ import print_function
 import os
@@ -62,7 +65,7 @@ net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics
 batch_size = 1
 
 # estimate accuracy on whole dataset using loaded weights
-label_colours = np.array([[255, 0, 255], [0, 0, 0]])
+label_colours = np.array([[0, 0, 0],[255, 0, 255]])
 
 #load test data
 datasets = ['test', 'train']
@@ -72,12 +75,16 @@ for dataset in datasets:
     data = np.load('./data/Kitti/' + dataset + '_data.npy')
 
     #export data
-    images_path = './datasets/Kitti/' + net_parse + '/' + dataset + '/'
+    save_path = './export/Kitti/' + net_parse + '/' + dataset + '/'
+    images_path = './datasets/data_road/falreis/' + dataset + '/'
 
     images_paths = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
     images_paths.sort()
 
-    for test_image, image_path in zip(data[0:10], images_paths[0:10]):
+    print(save_path)
+    print(images_path)
+
+    for test_image, image_path in zip(data, images_paths):
 
         #read original image
         original_image = cv2.imread(image_path)
@@ -91,13 +98,15 @@ for dataset in datasets:
         expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
 
         #mark lane
-        for i in range(1, original_image.shape[0]):
-            for j in range(1,original_image.shape[1]):
+        for i in range(1, original_image.shape[0]-1):
+            for j in range(1,original_image.shape[1]-1):
                 if (expanded_pred[i, j, 0] > 0):
                     original_image[i,j,0] = 0
                     original_image[i,j,2] = 0
 
         #save data
-        io.imsave(image_path, original_image)
+        pos = image_path.rfind('/')
+        name_file = image_path[pos+1:]
+        io.imsave((save_path + name_file), original_image)
 
 print('Done')

@@ -12,12 +12,6 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   2015.
 \newblock Software available from tensorflow.org.
 
-\bibitem{SLIC}
-R.~Achanta, A.~Shaji, K.~Smith, A.~Lucchi, P.~Fua, and S.~Süsstrunk.
-\newblock Slic superpixels compared to state-of-the-art superpixel methods.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  34(11):2274--2282, Nov 2012.
-
 \bibitem{AHMED_SARMA}
 S.~A. Ahmed, S.~Dey, and K.~K. Sarma.
 \newblock Image texture classification using artificial neural network (ann).
@@ -57,11 +51,12 @@ A.~Fawzi, H.~Samulowitz, D.~Turaga, and P.~Frossard.
 \newblock In {\em 2016 IEEE International Conference on Image Processing
   (ICIP)}, pages 3688--3692, Sept 2016.
 
-\bibitem{FELZENSZWALB}
-P.~F. Felzenszwalb and D.~P. Huttenlocher.
-\newblock Efficient graph-based image segmentation.
-\newblock {\em International Journal of Computer Vision}, 59(2):167--181, Sep
-  2004.
+\bibitem{KITTI}
+J.~Fritsch, T.~Kuehnl, and A.~Geiger.
+\newblock A new performance measure and evaluation benchmark for road detection
+  algorithms.
+\newblock In {\em International Conference on Intelligent Transportation
+  Systems (ITSC)}, 2013.
 
 \bibitem{VGG16_IMG}
 P.~Kochakarn.
