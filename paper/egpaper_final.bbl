@@ -41,11 +41,6 @@ F.~Chollet et~al.
 \newblock Keras.
 \newblock \url{https://keras.io}, 2015.
 
-\bibitem{IMAGENET}
-J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei.
-\newblock {ImageNet: A Large-Scale Hierarchical Image Database}.
-\newblock In {\em CVPR09}, 2009.
-
 \bibitem{DOMINGUEZ}
 D.~Domínguez and R.~R. Morales.
 \newblock {\em Image Segmentation: Advances}, volume~1.
@@ -76,14 +71,6 @@ A.~Geiger, P.~Lenz, and R.~Urtasun.
   suite.
 \newblock In {\em Conference on Computer Vision and Pattern Recognition
   (CVPR)}, 2012.
-
-\bibitem{VGG16_IMG}
-P.~Kochakarn.
-\newblock Machine learning with python: Image classifier using vgg16 model -
-  part 1: Theory.
-\newblock
-  \url{https://www.techkingdom.org/single-post/2017/11/07/Machine-Learning-with-Python-Image-Classifier-using-VGG16-Model---Coming-Soon},
-  2017.
 
 \bibitem{KITTI_WEBSITE}
 K.~I. of~Technology and T.~T.~I. at~Chicago.
