@@ -36,8 +36,8 @@ data_shape = height*width
 n_classes = 2
 
 #parameters
-nb_epoch = 20
-batch_size = 3
+nb_epoch = 10
+batch_size = 4
 
 # load the data
 train_data = np.load('./data/Kitti/train_data.npy')
@@ -68,9 +68,9 @@ history = net_basic.fit(train_data, train_label, callbacks=callbacks_list, batch
 
 # This save the trained model weights to this file with number of epochs
 if net_parse == "unet":
-    net_basic.save_weights('weights/segnet_model_kitti_{}.hdf5'.format(nb_epoch))
-else:
     net_basic.save_weights('weights/unet_model_kitti_{}.hdf5'.format(nb_epoch))
+else:
+    net_basic.save_weights('weights/segnet_model_kitti_{}.hdf5'.format(nb_epoch))
 
 print(datetime.datetime.now())
 
