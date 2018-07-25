@@ -88,6 +88,15 @@ A.~Geiger, P.~Lenz, and R.~Urtasun.
 \newblock In {\em Conference on Computer Vision and Pattern Recognition
   (CVPR)}, 2012.
 
+\bibitem{pmlr-v37-ioffe15}
+S.~Ioffe and C.~Szegedy.
+\newblock Batch normalization: Accelerating deep network training by reducing
+  internal covariate shift.
+\newblock In F.~Bach and D.~Blei, editors, {\em Proceedings of the 32nd
+  International Conference on Machine Learning}, volume~37 of {\em Proceedings
+  of Machine Learning Research}, pages 448--456, Lille, France, 07--09 Jul
+  2015. PMLR.
+
 \bibitem{LATTICES}
 A.~P. Moore, S.~J.~D. Prince, J.~Warrell, U.~Mohammed, and G.~Jones.
 \newblock Superpixel lattices.
@@ -147,6 +156,11 @@ E.~Shelhamer, J.~Long, and T.~Darrell.
 K.~Simonyan and A.~Zisserman.
 \newblock Very deep convolutional networks for large-scale image recognition.
 \newblock {\em CoRR}, abs/1409.1556, 2014.
+
+\bibitem{DROPOUT}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock 15:1929--1958, 06 2014.
 
 \bibitem{THEANO}
 {Theano Development Team}.

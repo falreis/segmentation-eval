@@ -201,7 +201,7 @@ KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \t
 %-------------------------------------------------------------------------
 \subsection{SegNet Model} \label{ssec:segnet_model}
 
-\ref{table:segnet_parameters}
+The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
 
 \begin{table}
   \scriptsize
@@ -213,38 +213,38 @@ KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \t
     1	& Layer 1 		& (None, 3, 184, 616)	& 0	\\
     2	& Zero Padding 2D 	& (None, 3, 186, 618)	& 0 	\\
     3	& Convolution 2D 	& (None, 64, 184, 616)	& 1792	\\
-    4	& Batch Normalization & (None, 64, 184, 616)	& 2464	\\
+    4	& Batch Normalization 	& (None, 64, 184, 616)	& 2464	\\
     5	& Activation		& (None, 64, 184, 616)	& 0 	\\
     6	& Max Pooling 2D	& (None, 64, 92, 308)	& 0     \\
     7	& Zero Padding 2D 	& (None, 64, 94, 310)	& 0 	\\
     8	& Convolution 2D 	& (None, 128, 92, 308)	& 73856	\\
-    9	& Batch Normalization & (None, 128, 92, 308)	& 1232	\\
+    9	& Batch Normalization 	& (None, 128, 92, 308)	& 1232	\\
     10	& Activation		& (None, 128, 92, 308)	& 0 	\\
     11	& Max Pooling 2D	& (None, 128, 46, 154)	& 0 	\\
     12	& Zero Padding 2D 	& (None, 128, 48, 156)	& 0 	\\
     13	& Convolution 2D 	& (None, 256, 46, 154)	& 295168\\
-    14	& Batch Normalization & (None, 256, 46, 154)	& 616	\\
+    14	& Batch Normalization 	& (None, 256, 46, 154)	& 616	\\
     15	& Activation		& (None, 256, 46, 154)	& 0 	\\
     16	& Max Pooling 2D	& (None, 256, 23, 77)	& 0     \\
     17	& Zero Padding 2D 	& (None, 256, 25, 79)	& 0 	\\
     18	& Convolution 2D 	& (None, 512, 23, 77)	& 1180160\\
-    19	& Batch Normalization & (None, 512, 23, 77)	& 308	\\
+    19	& Batch Normalization 	& (None, 512, 23, 77)	& 308	\\
     20	& Activation		& (None, 512, 23, 77)	& 0 	\\
     21	& Zero Padding 2D 	& (None, 512, 25, 79)	& 0 	\\
     22	& Convolution 2D 	& (None, 512, 23, 77)	& 2359808\\
-    23	& Batch Normalization & (None, 512, 23, 77)	& 308	\\
+    23	& Batch Normalization 	& (None, 512, 23, 77)	& 308	\\
     24	& Up Sampling 2D	& (None, 512, 46, 154)	& 0	\\
     25	& Zero Padding 2D 	& (None, 512, 46, 154)	& 0 	\\
     26	& Convolution 2D 	& (None, 256, 46, 154)	& 1179904\\
-    27	& Batch Normalization & (None, 256, 46, 154)	& 616	\\
+    27	& Batch Normalization 	& (None, 256, 46, 154)	& 616	\\
     28	& Up Sampling 2D	& (None, 256, 92, 308)	& 0	\\
     29	& Zero Padding 2D 	& (None, 256, 94, 310)	& 0 	\\
     30	& Convolution 2D 	& (None, 128, 92, 308)	& 295040\\
-    31	& Batch Normalization & (None, 128, 92, 308)	& 1232	\\
+    31	& Batch Normalization 	& (None, 128, 92, 308)	& 1232	\\
     32	& Up Sampling 2D	& (None, 128, 184, 616)	& 0	\\
     33	& Zero Padding 2D 	& (None, 128, 186, 618)	& 0 	\\
     34	& Convolution 2D 	& (None, 64, 184, 616)	& 73792	\\
-    35	& Batch Normalization & (None, 64, 184, 616)	& 2464	\\
+    35	& Batch Normalization 	& (None, 64, 184, 616)	& 2464	\\
     36	& Convolution 2D 	& (None, 2, 184, 616)	& 130	\\
     37	& Reshape		& (None, 2, 113344)	& 0	\\
     38	& Permute		& (None, 113344, 2)	& 0	\\
@@ -255,15 +255,17 @@ KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \t
     \multicolumn{4}{l}{Non-trainable params: 4,620}	\\
   \hline
   \end{tabular}
-  \caption{SegNet Layers}
+  \caption{SegNet layers and its number of parameters}
   \label{table:segnet_parameters}
   \end{center}
 \end{table}
 
+As seen in Table \ref{table:segnet_parameters}, SegNet uses some techniques to improve stability and performance of it network. One of the techniques is Batch Normalization, used to simplify models saturating nonlinearities, also called as internal covariate shift \cite{pmlr-v37-ioffe15}. Batch normalization consists in normalizing layer inputs for each training mini-batch \cite{pmlr-v37-ioffe15}. It allows the increase of learning rates and less careful parameter initialization \cite{pmlr-v37-ioffe15}. Batch normalization also acts as a regularizer, in some cases eliminating the need for Dropout \cite{pmlr-v37-ioffe15}, as SegNet Model.
+
 %-------------------------------------------------------------------------
 \subsection{U-Net Model} \label{ssec:unet_model}
 
-\ref{table:unet_parameters}
+The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 471,586 parameters (all trainable). Table \ref{table:unet_parameters} shows the number of parameters in each layer of SegNet architecture.
 
 \begin{table}
   \scriptsize
@@ -285,12 +287,12 @@ KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \t
     11	& Dropout		& (None, 128, 46, 154)	& 0	\\
     12	& Convolution 2D 	& (None, 128, 46, 154)	& 147584\\
     13	& Up Sampling 2D 	& (None, 128, 92, 308)	& 0	\\
-    14	& Concatenate (		& (None, 192, 92, 308)	& 0	\\
+    14	& Concatenate (8+13)	& (None, 192, 92, 308)	& 0	\\
     15	& Convolution 2D 	& (None, 64, 92, 308)	& 110656\\
     16	& Dropout		& (None, 64, 92, 308)	& 0	\\
     17	& Convolution 2D 	& (None, 64, 92, 308)	& 36928	\\
     18	& Up Sampling 2D 	& (None, 64, 184, 616)	& 0	\\
-    19	& Concatenate (		& (None, 96, 184, 616)	& 0	\\
+    19	& Concatenate (4+18)	& (None, 96, 184, 616)	& 0	\\
     20	& Convolution 2D 	& (None, 32, 184, 616)	& 27680	\\
     21	& Dropout		& (None, 32, 184, 616)	& 0	\\
     22	& Convolution 2D 	& (None, 32, 184, 616)	& 9248	\\
@@ -304,16 +306,21 @@ KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \t
     \multicolumn{4}{l}{Non-trainable params: 0}	\\
   \hline
   \end{tabular}
-  \caption{U-Net Layers}
+  \caption{U-Net layers and its number of parameters}
   \label{table:unet_parameters}
   \end{center}
 \end{table}
+
+As seen in Table \ref{table:unet_parameters}, U-Net does not contains Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mecanism to avoid overfitting \cite{DROPOUT}. Also, dropout parameter don't need to be trained, reducing the number of operations.
+
+One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers.
 
 %##################################################################################################
 \section{Experiments} \label{sec:experiments}
 
 %Discuss the experiments that you performed to demonstrate that your approach solves the problem. The exact experiments will vary depending on the project, but you might compare with previously published methods, perform an ablation study to determine the impact of various components of your system, experiment with different hyperparameters or architectural choices, use visualization techniques to gain insight into how your model works, discuss common failure modes of your model, etc. You should include graphs, tables, or other figures to illustrate your experimental results.
 
+%-------------------------------------------------------------------------
 \subsection{Environment} \label{ssec:environment}
 
 The tests described in this section were performed in a Amazon AWS \cite{AMAZON_WEBSITE} \textit{g2.2xlarge} Instance. The instance contains 8 vCPUs of Intel Corporation 440FX CPU and 15GB RAM memory. Also, contains a NVIDIA Corporation GK104GL [GRID K520] GPU, with 4096 MB x2 GDDR5 memory. The custom configuration were a 100GB SSD storage capacity with a pre-configured Amazon Linux OS (Deep Learning AMI Version 12.0 - \textit{ami-f6a94495}).
@@ -321,6 +328,15 @@ The tests described in this section were performed in a Amazon AWS \cite{AMAZON_
 The software environment used Python 3.5 \cite{PYTHON_WEBSITE} language, with Keras 2.2 \cite{KERAS}, a Python Deep Learning Library. Keras is a high-level neural networks API of running on top of TensorFlow \cite{TENSORFLOW}, CNTK \cite{CNTK}, or Theano \cite{THEANO} \cite{KERAS}. In this work, Keras run over Theano \cite{THEANO} backend. The virtual environment was provided by Anaconda \cite{ANACONDA_WEBSITE}. All environment requirements are available in a single file in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/code/i2dl.yml}.
 
 For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV liberaries. The conda environment requirement are available also in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/eval/kitti.yml}.
+
+%-------------------------------------------------------------------------
+\subsection{KITTI Road/Lane Experiments} \label{ssec:kitti_experiments}
+
+
+%-------------------------------------------------------------------------
+\subsection{Other Dataset Experiments} \label{ssec:other_experiments}
+
+
 
 %##################################################################################################
 \section{Conclusion} \label{sec:conclusion}

@@ -41,9 +41,6 @@ width = 616 #~1242/2
 data_shape = height*width
 classes = 2
 
-original_height = 375
-original_width = 1242
-
 # define parameters
 json_model, weights_file = "", ""
 if net_parse == "unet":
@@ -85,27 +82,36 @@ for dataset in datasets:
     print(save_path)
     print(images_path)
 
+    index = 0
+    len_data = len(data)
     for test_image, image_path in zip(data, images_paths):
 
         #read original image
         original_image = cv2.imread(image_path)
         original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
 
+        original_width = original_image.shape[1]
+        original_height = original_image.shape[0]
+
         #predict
-        output = net_basic.predict_proba(test_image[np.newaxis, :])
+        #output = net_basic.predict_proba(test_image[np.newaxis, :])
+        output = net_basic.predict(test_image[np.newaxis, :])
         pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
         
         #expand predict to the size of the original image
         expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
 
         #avoid different image sizes
+        '''
         if (original_image.shape[0] != original_height or original_image.shape[1] != original_width):
-             original_image = cv2.resize(original_image, dsize=(original_width, original_height, 3)[:2]
+            print(original_image.shape)
+            original_image = cv2.resize(original_image, dsize=(original_width, original_height, 3)[:2]
                                     , interpolation=cv2.INTER_CUBIC)
+        '''
 
         #mark lane
-        for i in range(1, original_image.shape[0]):
-            for j in range(1,original_image.shape[1]):
+        for i in range(1, original_height):
+            for j in range(1, original_width):
                 if (expanded_pred[i, j, 0] > 0):
                     original_image[i,j,0] = 0
                     original_image[i,j,2] = 0
@@ -114,5 +120,10 @@ for dataset in datasets:
         pos = image_path.rfind('/')
         name_file = image_path[pos+1:]
         io.imsave((save_path + name_file), original_image)
+
+        #verbose
+        index += 1
+        print(index, '/', len_data, end='')
+        print('\r', end='')
 
 print('Done')
