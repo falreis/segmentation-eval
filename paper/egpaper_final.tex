@@ -182,36 +182,132 @@ Data augmentation consists of a range of transformations that can be applied to 
 
 Data augmentation also can act as a regularizer in preventing overfitting in neural networks and improve performance in imbalanced class problems \cite{DATA_AUGM}. According to Wong et al. \cite{DATA_AUGM}, data augmentation is better to perform in data-space instead of feature-space, as long as label preserving transforms are known \cite{DATA_AUGM}.
 
-To provide data augmentation, the images and the ground-truth will be rotated 12 times, 30 degrees each. Also, the images will be flipped and rotated 12 times each. Then, each image will transform into 24 possible images. Then, 200 images for the training set will become 4800 training images and the validation set will contains 2400 images. The number of images is not too big but can help the DNN predict with more accuracy.
+To provide data augmentation, the training images and the respective ground-truth were fliped in the left-right direction, creating a ``mirror'' image. This procedure created 2 times more images to the training set, as shown in Image \ref{fig:data_augmentation}. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{data_augmentation.png}
+  \caption{Data Augmentation with flip in left-right direction.}
+  \label{fig:data_augmentation}
+\end{figure}
+
+One previous procedure applied to the data was a flip in up-down direction, creating 3 more images than original dataset. The results, however, were worse than with only left-right flip, more difficult to train and slower. Up-down data-augmentation, then, was removed.
 
 %-------------------------------------------------------------------------
-\subsection{Other Data Augmentation} \label{ssec:data_augmentation}
+\subsection{Image Reduction} \label{ssec:image_reduction}
 
-Mostrar informações e imagens sobre o problema de virar a imagem de cabeça para baixo.
+KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \times 1242 \times 3$ (images size information for DNN was explained in Section \ref{ssec:fully_conv}). As images were too big and to speedup the training process the images were reduced to the size of $ 184 \times 616 \times 3$. This size is almost half of the \textit{height} and \textit{width}. The size is not exactly half of the measures to keep SegNet and U-Net models with few changes, e.g. don't need to change padding, kernel sizes and other metrics, that can influence the tests.
 
 %-------------------------------------------------------------------------
 \subsection{SegNet Model} \label{ssec:segnet_model}
 
-\ref{fig:segnet_model}
+\ref{table:segnet_parameters}
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.19\textwidth]{kitti_segnet_plot.png}
-  \caption{SegNet architecture for KITTI Road/Lane Dataset.}
-  \label{fig:segnet_model}
-\end{figure}
+\begin{table}
+  \scriptsize
+  \begin{center}
+  \begin{tabular}{{l}{l}{l}{l}}
+  \hline 
+    Num. & Layer (type) & Output Shape & Parameters \\
+  \hline
+    1	& Layer 1 		& (None, 3, 184, 616)	& 0	\\
+    2	& Zero Padding 2D 	& (None, 3, 186, 618)	& 0 	\\
+    3	& Convolution 2D 	& (None, 64, 184, 616)	& 1792	\\
+    4	& Batch Normalization & (None, 64, 184, 616)	& 2464	\\
+    5	& Activation		& (None, 64, 184, 616)	& 0 	\\
+    6	& Max Pooling 2D	& (None, 64, 92, 308)	& 0     \\
+    7	& Zero Padding 2D 	& (None, 64, 94, 310)	& 0 	\\
+    8	& Convolution 2D 	& (None, 128, 92, 308)	& 73856	\\
+    9	& Batch Normalization & (None, 128, 92, 308)	& 1232	\\
+    10	& Activation		& (None, 128, 92, 308)	& 0 	\\
+    11	& Max Pooling 2D	& (None, 128, 46, 154)	& 0 	\\
+    12	& Zero Padding 2D 	& (None, 128, 48, 156)	& 0 	\\
+    13	& Convolution 2D 	& (None, 256, 46, 154)	& 295168\\
+    14	& Batch Normalization & (None, 256, 46, 154)	& 616	\\
+    15	& Activation		& (None, 256, 46, 154)	& 0 	\\
+    16	& Max Pooling 2D	& (None, 256, 23, 77)	& 0     \\
+    17	& Zero Padding 2D 	& (None, 256, 25, 79)	& 0 	\\
+    18	& Convolution 2D 	& (None, 512, 23, 77)	& 1180160\\
+    19	& Batch Normalization & (None, 512, 23, 77)	& 308	\\
+    20	& Activation		& (None, 512, 23, 77)	& 0 	\\
+    21	& Zero Padding 2D 	& (None, 512, 25, 79)	& 0 	\\
+    22	& Convolution 2D 	& (None, 512, 23, 77)	& 2359808\\
+    23	& Batch Normalization & (None, 512, 23, 77)	& 308	\\
+    24	& Up Sampling 2D	& (None, 512, 46, 154)	& 0	\\
+    25	& Zero Padding 2D 	& (None, 512, 46, 154)	& 0 	\\
+    26	& Convolution 2D 	& (None, 256, 46, 154)	& 1179904\\
+    27	& Batch Normalization & (None, 256, 46, 154)	& 616	\\
+    28	& Up Sampling 2D	& (None, 256, 92, 308)	& 0	\\
+    29	& Zero Padding 2D 	& (None, 256, 94, 310)	& 0 	\\
+    30	& Convolution 2D 	& (None, 128, 92, 308)	& 295040\\
+    31	& Batch Normalization & (None, 128, 92, 308)	& 1232	\\
+    32	& Up Sampling 2D	& (None, 128, 184, 616)	& 0	\\
+    33	& Zero Padding 2D 	& (None, 128, 186, 618)	& 0 	\\
+    34	& Convolution 2D 	& (None, 64, 184, 616)	& 73792	\\
+    35	& Batch Normalization & (None, 64, 184, 616)	& 2464	\\
+    36	& Convolution 2D 	& (None, 2, 184, 616)	& 130	\\
+    37	& Reshape		& (None, 2, 113344)	& 0	\\
+    38	& Permute		& (None, 113344, 2)	& 0	\\
+    39	& Activation		& (None, 113344, 2)	& 0	\\
+  \hline
+    \multicolumn{4}{l}{Total params: 5,468,890} 	\\
+    \multicolumn{4}{l}{Trainable params: 5,464,270}	\\
+    \multicolumn{4}{l}{Non-trainable params: 4,620}	\\
+  \hline
+  \end{tabular}
+  \caption{SegNet Layers}
+  \label{table:segnet_parameters}
+  \end{center}
+\end{table}
 
 %-------------------------------------------------------------------------
 \subsection{U-Net Model} \label{ssec:unet_model}
 
-\ref{fig:unet_model}
+\ref{table:unet_parameters}
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{kitti_unet_plot.png}
-  \caption{U-Net architecture for KITTI Road/Lane Dataset.}
-  \label{fig:unet_model}
-\end{figure}
+\begin{table}
+  \scriptsize
+  \begin{center}
+  \begin{tabular}{{l}{l}{l}{l}}
+  \hline 
+    Num. & Layer (type) & Output Shape & Parameters \\
+  \hline
+    1	& Layer 1 		& (None, 3, 184, 616)	& 0	\\
+    2	& Convolution 2D 	& (None, 32, 184, 616)	& 896	\\
+    3	& Dropout		& (None, 32, 184, 616)	& 0	\\
+    4	& Convolution 2D 	& (None, 32, 184, 616)	& 9248	\\
+    5	& Max Pooling 2D	& (None, 32, 92, 308)	& 0     \\
+    6	& Convolution 2D 	& (None, 64, 92, 308)	& 18496	\\
+    7	& Dropout		& (None, 64, 92, 308)	& 0	\\
+    8	& Convolution 2D 	& (None, 64, 92, 308)	& 36928	\\
+    9	& Max Pooling 2D	& (None, 64, 46, 154)	& 0     \\
+    10	& Convolution 2D 	& (None, 128, 46, 154)	& 73856	\\
+    11	& Dropout		& (None, 128, 46, 154)	& 0	\\
+    12	& Convolution 2D 	& (None, 128, 46, 154)	& 147584\\
+    13	& Up Sampling 2D 	& (None, 128, 92, 308)	& 0	\\
+    14	& Concatenate (		& (None, 192, 92, 308)	& 0	\\
+    15	& Convolution 2D 	& (None, 64, 92, 308)	& 110656\\
+    16	& Dropout		& (None, 64, 92, 308)	& 0	\\
+    17	& Convolution 2D 	& (None, 64, 92, 308)	& 36928	\\
+    18	& Up Sampling 2D 	& (None, 64, 184, 616)	& 0	\\
+    19	& Concatenate (		& (None, 96, 184, 616)	& 0	\\
+    20	& Convolution 2D 	& (None, 32, 184, 616)	& 27680	\\
+    21	& Dropout		& (None, 32, 184, 616)	& 0	\\
+    22	& Convolution 2D 	& (None, 32, 184, 616)	& 9248	\\
+    23	& Convolution 2D 	& (None, 2, 184, 616)	& 9248	\\
+    24	& Reshape		& (None, 2, 113344)	& 0	\\
+    25	& Permute		& (None, 113344, 2)	& 0	\\
+    26	& Activation		& (None, 113344, 2)	& 0	\\
+  \hline
+    \multicolumn{4}{l}{Total params: 471,586} 	\\
+    \multicolumn{4}{l}{Trainable params: 471,586}\\
+    \multicolumn{4}{l}{Non-trainable params: 0}	\\
+  \hline
+  \end{tabular}
+  \caption{U-Net Layers}
+  \label{table:unet_parameters}
+  \end{center}
+\end{table}
 
 %##################################################################################################
 \section{Experiments} \label{sec:experiments}
@@ -224,7 +320,7 @@ The tests described in this section were performed in a Amazon AWS \cite{AMAZON_
 
 The software environment used Python 3.5 \cite{PYTHON_WEBSITE} language, with Keras 2.2 \cite{KERAS}, a Python Deep Learning Library. Keras is a high-level neural networks API of running on top of TensorFlow \cite{TENSORFLOW}, CNTK \cite{CNTK}, or Theano \cite{THEANO} \cite{KERAS}. In this work, Keras run over Theano \cite{THEANO} backend. The virtual environment was provided by Anaconda \cite{ANACONDA_WEBSITE}. All environment requirements are available in a single file in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/code/i2dl.yml}.
 
-For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV liberaries. The conda environment requirement are available also in the author's page project in Github \footnote{}.
+For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV liberaries. The conda environment requirement are available also in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/eval/kitti.yml}.
 
 %##################################################################################################
 \section{Conclusion} \label{sec:conclusion}
