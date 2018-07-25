@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  25 JUL 2018 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  25 JUL 2018 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,7 +441,12 @@ Package pdftex.def Info: ./images/kitti_unet_plot.png used on input line 211.
 
 LaTeX Warning: Float too large for page by 59.50644pt on input line 214.
 
-[3] (./egpaper_final.bbl
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+[][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
+ []
+
+(./egpaper_final.bbl
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 
@@ -458,52 +463,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ­ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 []\OT1/ptm/m/n/9 V. P. Recog-ni-tion and F. o. E. Im-age Pro-cess-
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 111--115
+Underfull \hbox (badness 2726) in paragraph at lines 121--125
 \OT1/ptm/m/n/9 ing, Dept. of Com-puter Sci-ence.  U-net: Con-vo-lu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 \OT1/ptm/m/n/9 tional net-works for biomed-i-cal im-age seg-men-ta-tion.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 []$\OT1/pcr/m/n/9 https : / / lmb . informatik . uni-[]freiburg . de /
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 137--140
+Underfull \hbox (badness 1189) in paragraph at lines 147--150
 []\OT1/ptm/m/n/9 K. Si-monyan and A. Zis-ser-man.  Very deep con-vo-lu-
  []
 
 [4])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
  [5 <./images/kitti_segnet_plot.png>] [6
 
  <./images/kitti_unet_plot.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
 
 (./egpaper_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 240.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 239.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 6423 strings out of 493029
- 92120 string characters out of 6136234
- 188644 words of memory out of 5000000
- 9797 multiletter control sequences out of 15000+600000
- 28073 words of font info for 69 fonts, out of 8000000 for 9000
+ 6434 strings out of 493029
+ 92262 string characters out of 6136234
+ 188720 words of memory out of 5000000
+ 9802 multiletter control sequences out of 15000+600000
+ 32828 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,9n,26p,790b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -513,10 +518,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (6 pages, 735897 bytes).
+Output written on egpaper_final.pdf (6 pages, 736720 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

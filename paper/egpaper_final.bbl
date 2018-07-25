@@ -29,6 +29,11 @@ I.~Amazon Web~Services.
 \newblock Amazon ec2 instance types.
 \newblock \url{https://aws.amazon.com/ec2/instance-types/}, 2018.
 
+\bibitem{ANACONDA_WEBSITE}
+I.~Anaconda.
+\newblock Anaconda.
+\newblock \url{https://www.anaconda.com/}, 2018.
+
 \bibitem{BSDS500}
 P.~Arbelaez, M.~Maire, C.~Fowlkes, and J.~Malik.
 \newblock Contour detection and hierarchical image segmentation.
@@ -106,6 +111,11 @@ L.~Y. Pratt.
 \newblock In {\em Proceedings of the 5th International Conference on Neural
   Information Processing Systems}, NIPS'92, pages 204--211, San Francisco, CA,
   USA, 1992. Morgan Kaufmann Publishers Inc.
+
+\bibitem{PYTHON_WEBSITE}
+Python.org.
+\newblock Python.
+\newblock \url{https://www.python.org/}, 2018.
 
 \bibitem{UNET_WEBSITE}
 V.~P. Recognition and F.~o.~E. Image~Processing, Dept. of Computer~Science.

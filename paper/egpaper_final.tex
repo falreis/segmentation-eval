@@ -222,8 +222,9 @@ Mostrar informações e imagens sobre o problema de virar a imagem de cabeça pa
 
 The tests described in this section were performed in a Amazon AWS \cite{AMAZON_WEBSITE} \textit{g2.2xlarge} Instance. The instance contains 8 vCPUs of Intel Corporation 440FX CPU and 15GB RAM memory. Also, contains a NVIDIA Corporation GK104GL [GRID K520] GPU, with 4096 MB x2 GDDR5 memory. The custom configuration were a 100GB SSD storage capacity with a pre-configured Amazon Linux OS (Deep Learning AMI Version 12.0 - \textit{ami-f6a94495}).
 
+The software environment used Python 3.5 \cite{PYTHON_WEBSITE} language, with Keras 2.2 \cite{KERAS}, a Python Deep Learning Library. Keras is a high-level neural networks API of running on top of TensorFlow \cite{TENSORFLOW}, CNTK \cite{CNTK}, or Theano \cite{THEANO} \cite{KERAS}. In this work, Keras run over Theano \cite{THEANO} backend. The virtual environment was provided by Anaconda \cite{ANACONDA_WEBSITE}. All environment requirements are available in a single file in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/code/i2dl.yml}.
 
-The pre-trained VGG-16 will be provided by Keras, a Python Deep Learning Library \cite{KERAS}. Keras is a high-level neural networks API of running on top of TensorFlow \cite{TENSORFLOW}, CNTK \cite{CNTK}, or Theano \cite{THEANO} \cite{KERAS}.
+For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV liberaries. The conda environment requirement are available also in the author's page project in Github \footnote{}.
 
 %##################################################################################################
 \section{Conclusion} \label{sec:conclusion}
