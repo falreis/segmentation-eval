@@ -36,15 +36,15 @@ def load_data(mode):
         grounds.sort()
 
         for image, ground in zip(images, grounds):
-            reduced_image = cv2.resize(io.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
-            reduced_ground = cv2.resize(io.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
             data.append(np.rollaxis(normalized(reduced_image), 2))
             label.append(one_hot_kitti(reduced_ground, height = height, width = width, classes = n_classes))
 
     elif mode == "test":
         for image in images:
-            reduced_image = cv2.resize(io.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
             data.append(np.rollaxis(normalized(reduced_image), 2))
 
     return np.array(data), np.array(label)
