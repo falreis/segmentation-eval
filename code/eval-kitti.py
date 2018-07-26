@@ -1,6 +1,9 @@
 #usage 
 #python eval-kitti.py --net=segnet
 
+#rename result files with commands below:
+#rename 's/umm_/umm_road_/' 
+
 from __future__ import absolute_import
 from __future__ import print_function
 import os
@@ -23,8 +26,9 @@ import json
 import visualize as vis
 from skimage import io
 import glob
-from skimage import data
+from skimage import data, transform
 import argparse
+from helper import *
 
 np.random.seed(7)
 
@@ -63,19 +67,20 @@ net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics
 batch_size = 1
 
 # estimate accuracy on whole dataset using loaded weights
-label_colours = np.array([[0, 0, 0],[255, 0, 255]])
+label_colours = np.array([[255, 0, 0],[255, 0, 255]])
 
 #load test data
-datasets = ['test'] #['test', 'train']
+datasets = ['train'] #['test', 'train']
 
 for dataset in datasets:
 
-    data = np.load('./data/Kitti/' + dataset + '_data.npy')
+    #data = np.load('./data/Kitti/' + dataset + '_data.npy')
 
     #export data
     save_path = './export/Kitti/' + net_parse + '/' + dataset + '/'
-    images_path = './datasets/Kitti/' + dataset + '/'
-
+    #images_path = './datasets/Kitti/' + dataset + '/'
+    images_path = './datasets/data_road/falreis/' + dataset + '/'
+    
     images_paths = glob.glob(images_path + "*.jpg") + glob.glob(images_path + "*.png")
     images_paths.sort()
 
@@ -83,47 +88,50 @@ for dataset in datasets:
     print(images_path)
 
     index = 0
-    len_data = len(data)
-    for test_image, image_path in zip(data[0:10], images_paths[0:10]):
+    len_data = len(images_paths)
+    #for test_image, image_path in zip(data, images_paths):
+    for image_path in images_paths:
 
         #read original image
         original_image = cv2.imread(image_path)
         original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
-
         original_width = original_image.shape[1]
         original_height = original_image.shape[0]
 
+        reduced_image = cv2.resize(cv2.imread(image_path), dsize=(width, height, 3)[:2], interpolation=cv2.INTER_CUBIC)
+        test_image = np.rollaxis(normalized(reduced_image), 2) 
+
         #predict
-        output = net_basic.predict_proba(test_image[np.newaxis, :])
-        #output = net_basic.predict(test_image[np.newaxis, :])
+        #output = net_basic.predict_proba(test_image[np.newaxis, :])
+        output = net_basic.predict(test_image[np.newaxis, :])
         pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
         
         #expand predict to the size of the original image
-        expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
-
-        #avoid different image sizes
-        '''
-        if (original_image.shape[0] != original_height or original_image.shape[1] != original_width):
-            print(original_image.shape)
-            original_image = cv2.resize(original_image, dsize=(original_width, original_height, 3)[:2]
-                                    , interpolation=cv2.INTER_CUBIC)
-        '''
+        expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
+        #expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
 
         #mark lane
+        '''
         for i in range(1, original_height):
-            for j in range(1, original_width):
+            for j in range(1, original_width):                
                 if (expanded_pred[i, j, 0] > 0):
+                    expanded_pred[i,j,:] = [255, 255, 255]
                     original_image[i,j,0] = 0
                     original_image[i,j,2] = 0
-
+        '''
         #save data
         pos = image_path.rfind('/')
         name_file = image_path[pos+1:]
-        io.imsave((save_path + name_file), original_image)
-
+        io.imsave((save_path + name_file), expanded_pred)
+        
         #verbose
         index += 1
         print(index, '/', len_data, end='')
         print('\r', end='')
 
-print('Done')
+print("Done")
+print("Just remember rename files to use KITTI eval tool.")
+print("Instructions in the beggining of the file - comment section!")
+print(">> rename 's/umm_/umm_road_/' * ")
+print(">> rename 's/um_/um_lane_/' * ")
+print(">> rename 's/uu_/uu_road_/' * ")
