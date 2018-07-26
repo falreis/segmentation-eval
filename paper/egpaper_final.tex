@@ -342,7 +342,7 @@ For KITTI evaluation compatibility a new environment was created. KITTI needs Py
 %-------------------------------------------------------------------------
 \subsection{KITTI Road/Lane Experiments} \label{ssec:kitti_experiments}
 
-To test SegNet and U-Net for KITTI dataset, firstly was data augmentation and image reduction, as explained in Sections \label{ssec:data_augmentation} and \label{ssec:image_reduction}. After this preprocessing step, the images was trained in Keras Environment and the training information was saved. In Image \ref{fig:training_time} its possible to see the medium training time for each neural network. As predicted due the size of the neural net, U-Net had a smaller training time than SegNet.
+To train SegNet and U-Net for KITTI dataset, firstly was made preprocessing steps, e.g. data augmentation and image reduction, as explained in Sections \label{ssec:data_augmentation} and \label{ssec:image_reduction}. After these steps, the images was trained in Keras+Theano Environment and the best training weights was saved. Image \ref{fig:training_time} shows the average training time for each neural network. As predicted due the size of the neural net and the number of parameters to be trained, U-Net had a smaller training time than SegNet.
 
 \begin{figure}[ht]
   \centering
@@ -351,7 +351,7 @@ To test SegNet and U-Net for KITTI dataset, firstly was data augmentation and im
   \label{fig:training_time}
 \end{figure}
 
-The accuracy of validation step for each neural network is visually represented in Image \ref{fig:val_acc}. The loss on validation step is available in Image \ref{fig:val_loss}. The results shows that SegNet have better results than U-Net in every epoch.
+The accuracy of the validation set (see \ref{ssec:data_validation}) for each neural network is visually represented in Image \ref{fig:val_acc}. The loss on validation step is available in Image \ref{fig:val_loss}. The results shows that SegNet have better results than U-Net in every epoch. Also, the results shows that U-Net easily achieve its optimal value. SegNet improves its results in the early epochs and then floating near the best value.
 
 \begin{figure}[ht]
   \centering
@@ -367,6 +367,35 @@ The accuracy of validation step for each neural network is visually represented 
   \label{fig:val_loss}
 \end{figure}
 
+After training and validation steps, the best neural networks was used to predict the lane/road in the test images. The results of SegNet and U-Net for a test image is available in Image 
+\ref{fig:neural_net_predict}. As seen in Image \ref{fig:neural_net_predict}, both of the networks finds the position of the road, but misses the complete shape of them.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{data_augmentation.png}
+  \caption{SegNet (left) and U-Net (right) prediction for a image of the test set.}
+  \label{fig:neural_net_predict}
+\end{figure} 
+
+To evaluate the efficience of the DNN's, it was used the KITTI evaluation benchmarking, as explained in Section \ref{sec:data}. The results are available in Table \ref{table:kitti_eval}. The results shows that SegNet, as expected, had better results than U-Net for the KITTI Dataset, over test conditions.
+
+\begin{table}
+  \scriptsize
+  \begin{center}
+  \begin{tabular}{{l}{l}{l}{l}}
+  \hline 
+    Num. & Bla & Bla & Bla \\
+  \hline
+    1	& Bla	& Bla	& 0	\\
+  \hline
+    \multicolumn{4}{l}{Total params: 471,586} 	\\
+  \hline
+  \end{tabular}
+  \caption{U-Net layers and its number of parameters}
+  \label{table:kitti_eval}
+  \end{center}
+\end{table}
+
 %-------------------------------------------------------------------------
 \subsection{Other Dataset Experiments} \label{ssec:other_experiments}
 
@@ -379,6 +408,13 @@ BSDS500 dataset was tested over SegNet but the results does not provided good re
 
 %Summarize your key results - what have you learned? Suggest ideas for future extensions or new applications of your ideas.
 
+Semantic pixel-wise segmentation is an important and active topic of research \cite{SEGNET}, and the usage of neural network is a trend in this area. The project compares the use of two famous Deep Neural Networks for semantic segmentation in a dataset different from that originally proposed for networks. This project, then, can view the robustness of both neural nets to a different problem. 
+
+Also the results showed that SegNet can be used to solve problems of semantic segmentation in self-driving cars context with a good accuracy without any post-processing step. However, U-Net couldn't predict the results as good as SegNet and many times didn't identify the road/lane properly. The usage of U-Net must be tested with different parameters and techniques to achieve the semantic segmentation results as expected.
+
+The tests performed in this works also shows that the number of parameters are very large, even with image size reduction. U-Net, despite having fewer parameters, failed to reach the network goal. Also, this paper shows that the number of layers, and the types of layers, can contribute in the learning process of semantic segmentation. One possible topic to study is the evaluation of the minimum size of network for semantic segmentation and the corresponding capacity to identify group of pixels.
+
+As future work, its possible to compare other networks, like FCN-8, FCN-16, FCN-32 \cite{FULLY_CONVOLU} and some adapted VGG Nets \cite{VGGNET} to semantic segmentation. Also, it's possible to test different datasets in order to verify the adaptability of neural networks to different scenarios that its projected for. Also as future work, its possible to adapt different networks for boundaries segmentation, as briefly explained in Section \ref{ssec:other_experiments}.
 
 %##################################################################################################
 \section{Acknowledgements} \label{sec:acknowledgements}
