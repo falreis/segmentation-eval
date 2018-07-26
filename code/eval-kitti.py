@@ -84,7 +84,7 @@ for dataset in datasets:
 
     index = 0
     len_data = len(data)
-    for test_image, image_path in zip(data, images_paths):
+    for test_image, image_path in zip(data[0:10], images_paths[0:10]):
 
         #read original image
         original_image = cv2.imread(image_path)
@@ -94,8 +94,8 @@ for dataset in datasets:
         original_height = original_image.shape[0]
 
         #predict
-        #output = net_basic.predict_proba(test_image[np.newaxis, :])
-        output = net_basic.predict(test_image[np.newaxis, :])
+        output = net_basic.predict_proba(test_image[np.newaxis, :])
+        #output = net_basic.predict(test_image[np.newaxis, :])
         pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
         
         #expand predict to the size of the original image

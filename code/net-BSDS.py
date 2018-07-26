@@ -45,9 +45,12 @@ callbacks_list = [checkpoint]
 nb_epoch = 25 #100
 batch_size = 2 #6
 
+
+class_weighting= [0.01, 10.0]
+
 # Fit the model
 history = segnet_basic.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-                    verbose=1, validation_data=(val_data, val_label), shuffle=True)
+                    verbose=1, class_weight=class_weighting, validation_data=(val_data, val_label), shuffle=True)
 
 # This save the trained model weights to this file with number of epochs
 segnet_basic.save_weights('weights/model_bsds_{}.hdf5'.format(nb_epoch))

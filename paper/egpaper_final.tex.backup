@@ -199,6 +199,16 @@ One previous procedure applied to the data was a flip in up-down direction, crea
 KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \times 1242 \times 3$ (images size information for DNN was explained in Section \ref{ssec:fully_conv}). As images were too big and to speedup the training process the images were reduced to the size of $ 184 \times 616 \times 3$. This size is almost half of the \textit{height} and \textit{width}. The size is not exactly half of the measures to keep SegNet and U-Net models with few changes, e.g. don't need to change padding, kernel sizes and other metrics, that can influence the tests.
 
 %-------------------------------------------------------------------------
+\subsection{Data Validation} \label{ssec:data_validation}
+
+Once KITTI does not contains any validation data, a solution is use part of the training data to validate the training procedure. To create that, the used procedure was split 20\% of the training set into a validation dataset. The training set was split using Keras Framework during training period with shuffle mode.
+
+%-------------------------------------------------------------------------
+\subsection{Post Processing} \label{ssec:post_processing}
+
+In this paper was not used any method of post processing to increse the results.
+
+%-------------------------------------------------------------------------
 \subsection{SegNet Model} \label{ssec:segnet_model}
 
 The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
@@ -332,16 +342,47 @@ For KITTI evaluation compatibility a new environment was created. KITTI needs Py
 %-------------------------------------------------------------------------
 \subsection{KITTI Road/Lane Experiments} \label{ssec:kitti_experiments}
 
+To test SegNet and U-Net for KITTI dataset, firstly was data augmentation and image reduction, as explained in Sections \label{ssec:data_augmentation} and \label{ssec:image_reduction}. After this preprocessing step, the images was trained in Keras Environment and the training information was saved. In Image \ref{fig:training_time} its possible to see the medium training time for each neural network. As predicted due the size of the neural net, U-Net had a smaller training time than SegNet.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{graph_training_time.png}
+  \caption{Time needed for training and validation step}
+  \label{fig:training_time}
+\end{figure}
+
+The accuracy of validation step for each neural network is visually represented in Image \ref{fig:val_acc}. The loss on validation step is available in Image \ref{fig:val_loss}. The results shows that SegNet have better results than U-Net in every epoch.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{graph_val_acc.png}
+  \caption{Validation accuracy per epoch}
+  \label{fig:val_acc}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{graph_val_loss.png}
+  \caption{Validation loss per epoch}
+  \label{fig:val_loss}
+\end{figure}
 
 %-------------------------------------------------------------------------
 \subsection{Other Dataset Experiments} \label{ssec:other_experiments}
+
+CamVid and BSDS500 datasets was only tested over SegNet neural network. The testes using CamVid dataset resulted in good values for data segmentation in 9 classes tested in this paper. The overall result for validation set was XYZ\%.
+
+BSDS500 dataset was tested over SegNet but the results does not provided good results. As BSDS500 dataset has only border images, the training set could not generalize and produce a correct prediction. The validation set had over 95\% of accuracy in every step but just produces black images. As most of the pixels are black in BSDS500 dataset, the neural network just predicted black pixels for every step, with high accuracy. One solution for this situation in a future work is to give weights for pixels. Black pixels should receive small values while border pixels (white) should receive big weights. This step could let the neural net to increase rate of border pixels, instead of generalize only the background of the image.
 
 %##################################################################################################
 \section{Conclusion} \label{sec:conclusion}
 
 %Summarize your key results - what have you learned? Suggest ideas for future extensions or new applications of your ideas.
 
-%-------------------------------------------------------------------------
+
+%##################################################################################################
+\section{Acknowledgements} \label{sec:acknowledgements}
+
 
 {\small
 \bibliographystyle{ieee}

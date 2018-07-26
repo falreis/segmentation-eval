@@ -3,9 +3,9 @@
 `scp -i "deep_learning.pem" ec2-user@ec2-18-144-15-248.us-west-1.compute.amazonaws.com:~/segmentation-eval/code/segnet_kitti_weights.best.hdf5 segnet_kitti_weights.best.hdf5`
 `scp -i "deep_learning.pem" ec2-user@ec2-18-144-15-248.us-west-1.compute.amazonaws.com:~/segmentation-eval/code/unet_kitti_weights.best.hdf5 unet_kitti_weights.best.hdf5`
 
-`scp -i "deep_learning.pem" segmentation-eval/code/data/train.tar.gz ec2-user@ec2-13-56-197-184.us-west-1.compute.amazonaws.com:~/segmentation-eval/ `
+`scp -i "deep_learning.pem" segmentation-eval/code/data/Kitti/train.tar.gz ec2-user@ec2-13-56-155-217.us-west-1.compute.amazonaws.com:~/segmentation-eval/code/data/Kitti/`
 
-ssh -i "deep_learning.pem" ec2-user@ec2-18-144-15-248.us-west-1.compute.amazonaws.com
+ssh -i "deep_learning.pem" ec2-user@ec2-13-56-155-217.us-west-1.compute.amazonaws.com
 
 What is Segnet?
 

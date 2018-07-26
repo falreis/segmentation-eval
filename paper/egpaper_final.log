@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  25 JUL 2018 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  26 JUL 2018 07:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -273,7 +273,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
-(./egpaper_final.aux)
+(./egpaper_final.aux
+
+LaTeX Warning: Label `ssec:data_augmentation' multiply defined.
+
+
+LaTeX Warning: Label `ssec:image_reduction' multiply defined.
+
+)
 \openout1 = `egpaper_final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -293,7 +300,8 @@ LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) ABD: EveryShipout initializing macros
+)
+ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
@@ -418,16 +426,54 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 189--190
  []
 
 [3 <./images/data_augmentation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 327--327
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 329--329
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
-(./egpaper_final.bbl
+[4] <./images/graph_training_time.png, id=222, 602.25pt x 372.39125pt>
+File: ./images/graph_training_time.png Graphic file (type png)
+
+<use ./images/graph_training_time.png>
+Package pdftex.def Info: ./images/graph_training_time.png used on input line 34
+9.
+(pdftex.def)             Requested size: 238.48886pt x 147.4651pt.
+
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 349--350
+ [][] 
+ []
+
+<./images/graph_val_acc.png, id=225, 530.98375pt x 328.22626pt>
+File: ./images/graph_val_acc.png Graphic file (type png)
+
+<use ./images/graph_val_acc.png>
+Package pdftex.def Info: ./images/graph_val_acc.png used on input line 358.
+(pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
+
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 358--359
+ [][] 
+ []
+
+<./images/graph_val_loss.png, id=226, 530.98375pt x 328.22626pt>
+File: ./images/graph_val_loss.png Graphic file (type png)
+
+<use ./images/graph_val_loss.png>
+Package pdftex.def Info: ./images/graph_val_loss.png used on input line 365.
+(pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
+
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 365--366
+ [][] 
+ []
+
+[5 <./images/graph_training_time.png (PNG copy)> <./images/graph_val_acc.png (P
+NG copy)> <./images/graph_val_loss.png (PNG copy)>] (./egpaper_final.bbl
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 
@@ -468,22 +514,26 @@ Underfull \hbox (badness 1189) in paragraph at lines 156--159
 []\OT1/ptm/m/n/9 K. Si-monyan and A. Zis-ser-man.  Very deep con-vo-lu-
  []
 
-[5])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
- [6
+[6])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
+ [7
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
  (./egpaper_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 343.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 393.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 393.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 393.
  ) 
 Here is how much of TeX's memory you used:
- 6438 strings out of 493029
- 92254 string characters out of 6136234
- 196857 words of memory out of 5000000
- 9803 multiletter control sequences out of 15000+600000
+ 6473 strings out of 493029
+ 92997 string characters out of 6136234
+ 199358 words of memory out of 5000000
+ 9823 multiletter control sequences out of 15000+600000
  32828 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,9n,26p,790b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -494,10 +544,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (6 pages, 496322 bytes).
+Output written on egpaper_final.pdf (7 pages, 533383 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 309 PDF objects out of 1000 (max. 8388607)
+ 279 compressed objects within 3 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
