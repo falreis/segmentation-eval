@@ -323,9 +323,11 @@ U-Net model, as described in Section \ref{sssec:unet}, uses the KITTI Lane/Road 
   \end{center}
 \end{table}
 
-As seen in Table \ref{table:unet_parameters}, U-Net does not contains Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mecanism to avoid overfitting \cite{DROPOUT}. Also, dropout parameter don't need to be trained, reducing the number of operations.
+As seen in Table \ref{table:unet_parameters}, U-Net does not contain Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mechanism to avoid overfitting \cite{DROPOUT}. Also, Dropout does not contain parameters, reducing the total number of training parameters.
 
-One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers.
+As SegNet, U-Net's Convolution 2D layers contain the highest number of parameters to be trained, especially in the middle layers, as seen in Table \ref{table:unet_parameters}.
+
+One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers. %TODO: EXPLAIN MERGE LAYERS
 
 %##################################################################################################
 \section{Experiments} \label{sec:experiments}

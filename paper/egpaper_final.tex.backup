@@ -45,7 +45,7 @@ R. Walter Ianni 255 - Bloco L - Belo Horizonte, MG, Brasil\\
 %Briefly describe your problem, approach, and key results. Should be no more than 300 words.
 
 \begin{abstract}
-    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper evaluates two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The models are trained and tested using KITTI Road Dataset. The results were evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. Segnet could learn dataset and ground truth information and predict ground truth with good accuracy in some cases. U-Net, however, couldn't learn the data information and provide semantic segmentation as expected, with unsatisfactory results.
+    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper evaluates two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The goal of this paper is to compare the learning process of both networks with no pre or post processing to fit the dataset type of data. The models were trained and tested using KITTI Road Dataset. The results were evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. Segnet was able to learn the dataset and ground truth information and predict with good accuracy. U-Net, however, was unable to learn the data information and pedict as expected, with unsatisfactory results.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
@@ -211,7 +211,7 @@ In this paper, no post-processing method was used to increase the results.
 %-------------------------------------------------------------------------
 \subsection{SegNet Model} \label{ssec:segnet_model}
 
-The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
+SegNet model, as described in Section \ref{sssec:segnet}, uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had the total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
 
 \begin{table}
   \scriptsize
@@ -270,12 +270,14 @@ The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184
   \end{center}
 \end{table}
 
-As seen in Table \ref{table:segnet_parameters}, SegNet uses some techniques to improve stability and performance of it network. One of the techniques is Batch Normalization, used to simplify models saturating nonlinearities, also called as internal covariate shift \cite{pmlr-v37-ioffe15}. Batch normalization consists in normalizing layer inputs for each training mini-batch \cite{pmlr-v37-ioffe15}. It allows the increase of learning rates and less careful parameter initialization \cite{pmlr-v37-ioffe15}. Batch normalization also acts as a regularizer, in some cases eliminating the need for Dropout \cite{pmlr-v37-ioffe15}, as SegNet Model.
+As seen in Table \ref{table:segnet_parameters}, SegNet uses some techniques to improve the stability and performance of its network. One of the techniques is Batch Normalization, used to simplify models saturating nonlinearities, also called as internal covariate shift \cite{pmlr-v37-ioffe15}. Batch normalization consists in normalizing layer inputs for each training mini-batch \cite{pmlr-v37-ioffe15}. It allows the increase of learning rates and less careful parameter initialization \cite{pmlr-v37-ioffe15}. Batch normalization also acts as a regularizer, in some cases eliminating the need for Dropout \cite{pmlr-v37-ioffe15}. In the SegNet model, Batch Normalization was used 8 times with no usage of Dropout. 
+
+One important feature that can be seen in Table \ref{table:segnet_parameters} is the distribution of the parameters across the network. Table \ref{table:segnet_parameters} shows that Convolution 2D layers contain the highest number of parameters to be trained, especially in the middle layers.
 
 %-------------------------------------------------------------------------
 \subsection{U-Net Model} \label{ssec:unet_model}
 
-The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 471,586 parameters (all trainable). Table \ref{table:unet_parameters} shows the number of parameters in each layer of SegNet architecture.
+U-Net model, as described in Section \ref{sssec:unet}, uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The U-Net model used in this project had the total of 471,586 parameters (all trainable). Table \ref{table:unet_parameters} shows the number of parameters in each layer of U-Net architecture.
 
 \begin{table}
   \scriptsize
@@ -321,7 +323,7 @@ The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184
   \end{center}
 \end{table}
 
-As seen in Table \ref{table:unet_parameters}, U-Net does not contains Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mecanism to avoid overfitting \cite{DROPOUT}. Also, dropout parameter don't need to be trained, reducing the number of operations.
+As seen in Table \ref{table:unet_parameters}, U-Net does not contain Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mechanism to avoid overfitting \cite{DROPOUT}. Also, Dropout does not contain parameters, reducing the total number of training parameters.
 
 One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers.
 
