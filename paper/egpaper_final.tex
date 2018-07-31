@@ -45,7 +45,7 @@ R. Walter Ianni 255 - Bloco L - Belo Horizonte, MG, Brasil\\
 %Briefly describe your problem, approach, and key results. Should be no more than 300 words.
 
 \begin{abstract}
-    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper will evaluate two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The models are trained and tested using KITTI Road Dataset. The results were also evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. U-Net, however, was easier to train, smaller and provide faster results than SegNet.
+    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper evaluates two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The goal of this paper is to compare the learning process of both networks with no pre or post processing to fit the dataset type of data. The models were trained and tested using KITTI Road Dataset. The results were evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. Segnet was able to learn the dataset and ground truth information and predict with good accuracy. U-Net, however, was unable to learn the data information and pedict as expected, with unsatisfactory results.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
@@ -68,40 +68,40 @@ Segmentation has two main objectives: the first one is to decompose the image in
 
 Semantic pixel-wise segmentation is an active topic of research \cite{SEGNET}. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. The success of deep convolutional neural networks for object classification led researchers to use these techniques to learn new capabilities, such as segmentation \cite{SEGNET}.
 
-This paper will evaluate two different Deep Neural Networks for semantic segmentation and compare the results over Kitti Road Dataset \cite{KITTI}. The chosen neural networks are SegNet \cite{SEGNET} and U-Net \cite{UNET}.
+This paper will evaluate two different Deep Neural Networks for semantic segmentation and compare the results over KITTI Road Dataset \cite{KITTI}. The chosen neural networks are SegNet \cite{SEGNET} and U-Net \cite{UNET}. The main goal of this work is to evaluate the networks with little training and without a post or a pre-processing transformation to increase the results to the dataset. Then, this paper did not apply any pre-processing or post-processing methods (except normalization) to increase the results over the dataset. Some transformations that can be pertinent to the dataset as bird-eye-view transformation, color-spacing changings, crop and some other transformation were not made to not influence the results.
 
-The organization of this paper is as follows. In the next Section we show related works to this paper. Section \ref{sec:data} contains information about the dataset used in this work as other datasets used previously to start the project. Section \ref{sec:methods} explains the methods used to develop this project, Section \ref{sec:experiments} describe the experiments and shows the results and Section \ref{sec:conclusion} concludes this paper and gives some final considerations and ideas for future works.
+The organization of this paper is as follows. In the next Section, we show related works to this paper. Section \ref{sec:data} contains information about the dataset used in this work as other datasets used previously to start the project. Section \ref{sec:methods} explains the methods used to develop this project, Section \ref{sec:experiments} describes the experiments and shows the results and Section \ref{sec:conclusion} concludes this paper and gives some final considerations and ideas for future works.
 
 
 %##################################################################################################
 \section{Related Work} \label{sec:related_work}
 %Discuss published work that relates to your project. How is your approach similar or different from others?
 
-Our approach follows the recent successes of deep neural networks for image classification \cite{VGGNET} \cite{AHMED_SARMA}, transfer learning \cite{PRATT} \cite{WEISS2016} and semantic segmentation \cite{SEGNET} \cite{UNET} \cite{FULLY_CONVOLU}. Also, the paper follow classical methods for segmentation \cite{WATERSHEDS} \cite{SLIC} \cite{LATTICES} \cite{FELZENSZWALB}, developed before the usage of neural nets.
+Our approach follows the recent successes of deep neural networks for image classification \cite{VGGNET} \cite{AHMED_SARMA}, transfer learning \cite{PRATT} \cite{WEISS2016} and semantic segmentation \cite{SEGNET} \cite{UNET} \cite{FULLY_CONVOLU}. Also, the paper follows classical methods for segmentation \cite{WATERSHEDS} \cite{SLIC} \cite{LATTICES} \cite{FELZENSZWALB}, developed before the usage of neural nets.
 
 \subsection{Superpixels} \label{ssec:superpixels}
 
-Before the use of deep neural networks, the best-performing methods to segmentation mostly was made using hand engineered features \cite{SEGNET}. Some common features used pixels as basic units of processing \cite{WANG201728}. Superpixels are the result of perceptual grouping of pixels \cite{WANG201728}. Superpixels produces segmentation of coarse granulation, that can be call oversegmentation \cite{WANG201728}. Superpixel segmentation showed to be a useful pre-processing step in many computer vision applications \cite{WANG201728}.
+Before the use of deep neural networks, the best-performing methods of segmentation mostly was made using hand engineered features \cite{SEGNET}. Some common features used pixels as basic units of processing \cite{WANG201728}. Superpixels are the result of perceptual grouping of pixels \cite{WANG201728}. Superpixels produces a segmentation of coarse granulation, that can be call over-segmentation \cite{WANG201728}. Superpixel segmentation showed to be a useful pre-processing step in many computer vision applications \cite{WANG201728}.
 
 There has been a lot of research on superpixels since the term has been established \cite{WANG201728}. In particular, various algorithms for superpixel segmentations have been proposed. Algorithms for generating superpixels can be broadly categorized as either graph-based or gradient ascent methods \cite{SLIC}, as described below:
 
 \begin{itemize}
- \item \textit{Graph-based algorithms}: Graph-based approaches to superpixel generation treat each pixel as a node in a graph. Edge weights between two nodes are proportional to the similarity between neighboring pixels. Superpixels are created by minimizing a cost function defined over the graph \cite{SLIC}. Example of this category are the \textit{Efficient Graph-Based Image Segmentation} (EGB) algorithm \cite{FELZENSZWALB} and the \textit{Superpixels Lattices} \cite{LATTICES};
- \item \textit{Gradient-ascent-based algorithms}: Starting from a rough initial clustering of pixels, gradient ascent methods iteratively refine the clusters until some convergence criterion is met to form superpixels \cite{SLIC}. In this set, its possible to cite \textit{watersheds} algorithms \cite{WATERSHEDS} and the \textit{SLIC} algorithm \cite{SLIC};
+ \item \textit{Graph-based algorithms}: Graph-based approaches to superpixel generation treat each pixel as a node in a graph. Edge weights between two nodes are proportional to the similarity between neighboring pixels. Superpixels are created by minimizing a cost function defined over the graph \cite{SLIC}. Example of this category is the \textit{Efficient Graph-Based Image Segmentation} (EGB) algorithm \cite{FELZENSZWALB} and the \textit{Superpixels Lattices} \cite{LATTICES};
+ \item \textit{Gradient-ascent-based algorithms}: Starting from a rough initial clustering of pixels, gradient ascent methods iteratively refine the clusters until some convergence criterion is met to form superpixels \cite{SLIC}. In this set, it is possible to cite \textit{watersheds} algorithms \cite{WATERSHEDS} and the \textit{SLIC} algorithm \cite{SLIC};
 \end{itemize}
 
 %-------------------------------------------------------------------------
 \subsection{Fully Convolutional Networks} \label{ssec:fully_conv}
 
-Each layer of data in a convnet is a three-dimensional array of size $h \times w \times d$, where $h$ and $w$ are spatial dimensions, and $d$ is the feature or channel dimension \cite{FULLY_CONVOLU}. The first layer is the image, with pixel size $h \times w$, and $d$ color channels \cite{FULLY_CONVOLU}. Locations in higher layers correspond to the locations in the image they are path-connected to, which are called their receptive fields \cite{FULLY_CONVOLU}.
+Each layer of data in a Fully Convolutional Network (ConvNet) is a three-dimensional array of size $h \times w \times d$, where $h$ and $w$ are spatial dimensions, and $d$ is the feature or channel dimension \cite{FULLY_CONVOLU}. The first layer is the image, with pixel size $h \times w$, and $d$ color channels \cite{FULLY_CONVOLU}. Locations in higher layers correspond to the locations in the image they are path-connected to, which are called their receptive fields \cite{FULLY_CONVOLU}.
 
-Convnets are built on translation invariance. Their basic components (convolution, pooling, and activation functions) operate on local input regions, and depend only on relative spatial coordinates \cite{FULLY_CONVOLU}. While a general deep net computes a general nonlinear function, a net with only layers of this form computes a
-nonlinear filter, which we call a deep filter or fully convolutional network. An FCN naturally operates on an input of any size, and produces an output of corresponding (possibly resampled) spatial dimensions \cite{FULLY_CONVOLU}.
+ConvNets are built on translation invariance. Their basic components (convolution, pooling, and activation functions) operate on local input regions and depend only on relative spatial coordinates \cite{FULLY_CONVOLU}. While a general deep net computes a general nonlinear function, a net with only layers of this form computes a
+nonlinear filter, which we call a deep filter or fully convolutional network. An FCN naturally operates on an input of any size and produces an output of corresponding (possibly resampled) spatial dimensions \cite{FULLY_CONVOLU}.
 
 %-------------------------------------------------------------------------
 \subsubsection{SegNet} \label{sssec:segnet}
 
-SegNet is a deep encoder-decoder architecture for multi-class pixelwise segmentation \cite{SEGNET}. The SegNet architecture consists of a sequence of non-linear processing layers (encoders) and a corresponding set of decoders followed by a pixel-wise classifier \cite{SEGNET} \cite{SEGNET_WEBSITE}. Typically, each encoder consists of one or more convolutional layers with batch normalization and a ReLU non-linearity, followed by non-overlapping max-pooling and sub-sampling \cite{SEGNET} \cite{SEGNET_WEBSITE}. The sparse encoding due to the pooling process is upsampled in the decoder using the max-pooling indices in the encoding sequence \cite{SEGNET} \cite{SEGNET_WEBSITE}. Figure \ref{fig:segnet} presents the architecture of SegNet.
+SegNet is a deep encoder-decoder architecture for multi-class pixel-wise segmentation \cite{SEGNET}. The SegNet architecture consists of a sequence of non-linear processing layers (encoders) and a corresponding set of decoders followed by a pixel-wise classifier \cite{SEGNET} \cite{SEGNET_WEBSITE}. In general, each encoder consists of one or more convolutional layers with batch normalization and a ReLU non-linearity, followed by non-overlapping max-pooling and sub-sampling \cite{SEGNET} \cite{SEGNET_WEBSITE}. The sparse encoding due to the pooling process is upsampled in the decoder using the max-pooling indices in the encoding sequence \cite{SEGNET} \cite{SEGNET_WEBSITE}. Figure \ref{fig:segnet} presents the architecture of SegNet.
 
 \begin{figure}[ht]
   \centering
@@ -115,7 +115,7 @@ SegNet is a deep encoder-decoder architecture for multi-class pixelwise segmenta
 
 U-Net is a Convolutional Networks for Biomedical Image Segmentation \cite{UNET} \cite{UNET_WEBSITE}. Although U-Net was developed for biomedical image segmentation, its architecture can be trained to segment other types of image.
 
-U-Net architecture consists of the repeated application of two $3 \times 3$ convolutions, each followed by a rectified linear unit (ReLU) and a $2 \times 2$ max pooling operation with stride 2 for downsampling \cite{UNET}. Every step in the expansive path consists of an upsampling of the feature map followed by a $2 \times 2$ convolution, a concatenation with the correspondingly cropped feature map from the contracting path, and two $3 \times 3$ convolutions, each followed by a ReLU \cite{UNET}. At the final layer a $1 \times 1$ convolution is used. In total the network has 23 convolutional layers \cite{UNET}. Figure \ref{fig:unet} presents the  architecture of U-Net.
+The U-Net architecture consists of the repeated application of two $3 \times 3$ convolutions, each followed by a rectified linear unit (ReLU) and a $2 \times 2$ max-pooling operation with stride 2 for downsampling \cite{UNET}. Every step in the expansive path consists of an up-sampling of the feature map followed by a $2 \times 2$ convolution, a concatenation with the correspondingly cropped feature map from the contracting path, and two $3 \times 3$ convolutions, each followed by a ReLU \cite{UNET}. At the final layer, a $1 \times 1$ convolution is used. In total the network has 23 convolutional layers \cite{UNET}. Figure \ref{fig:unet} presents the architecture of U-Net.
 
 \begin{figure}[ht]
   \centering
@@ -130,9 +130,9 @@ U-Net architecture consists of the repeated application of two $3 \times 3$ conv
 
 %Describe the data you are working with for your project. What type of data is it? Where did it come from? How much data are you working with? Did you have to do any preprocessing, filtering, or other special treatment to use this data in your project?
 
-KITTI Vision Benchmarking Suite is an project of Karlsruhe Institute of Technology and Toyota Technological Institute at Chicago to provide an real-world computer vision benchmark for autonomous driving platform Annieway \cite{KITTI_FULL} \cite{KITTI_WEBSITE}. KITTI contains benchmarks and datasets for the following area of interests: stereo, optical flow, visual odometry, 3D object detection and 3D tracking \cite{KITTI_WEBSITE}.
+KITTI Vision Benchmarking Suite is a project of Karlsruhe Institute of Technology and Toyota Technological Institute at Chicago to provide a real-world computer vision benchmark for autonomous driving platform Annieway \cite{KITTI_FULL} \cite{KITTI_WEBSITE}. KITTI contains benchmarks and datasets for the following area of interests: stereo, optical flow, visual odometry, 3D object detection and 3D tracking \cite{KITTI_WEBSITE}.
 
-One of the benchmark in KITTI suite is the Road/Lane Dataset Evaluation \cite{KITTI}. The road and lane estimation benchmark consists of 289 training and 290 test images, in four different categories of road scenes \cite{KITTI}:
+One of the benchmarks in the KITTI suite is the Road/Lane Dataset Evaluation \cite{KITTI}. The road and lane estimation benchmark consists of 289 training and 290 test images, in four different categories of road scenes \cite{KITTI}:
 
 \begin{itemize}
  \item uu - urban unmarked (98 training images and 100 test images) \cite{KITTI};
@@ -143,12 +143,12 @@ One of the benchmark in KITTI suite is the Road/Lane Dataset Evaluation \cite{KI
 
 Ground truth has been generated by manual annotation of the images and is available for two different road terrain types: road - the road area (the composition of all lanes), and lane (the ego-lane, the lane the vehicle is currently driving on) \cite{KITTI} \cite{KITTI_WEBSITE}. Ground truth is provided for training images only \cite{KITTI}. 
 
-As the dataset do not provide test groundtruth, the results must be evaluated using a benchmarking tool provided with the dataset \cite{KITTI_WEBSITE}. This tool  performs road and lane estimation in the bird's-eye-view space \cite{KITTI} \cite{KITTI_WEBSITE}. The metrics used are Maximum F1-measure, Average precision as used in PASCAL VOC challenges, Precision, Recall, False Positive Rate, False Negative Rate, F1 score and Hit Rate \cite{KITTI} \cite{KITTI_WEBSITE}.
+As the dataset does not provide test ground truth, the results must be evaluated using a benchmarking tool provided with the dataset \cite{KITTI_WEBSITE}. This tool  performs road and lane estimation in the birds-eye-view space \cite{KITTI} \cite{KITTI_WEBSITE}. The metrics used are Maximum F1-measure, Average precision as used in PASCAL VOC challenges, Precision, Recall, False Positive Rate, False Negative Rate, F1 score and Hit Rate \cite{KITTI} \cite{KITTI_WEBSITE}.
 
 %-------------------------------------------------------------------------
 \subsection{Other Evaluated Datasets} \label{ssec:other_datasets}
 
-The two datasets presented in this section were evaluted also for this paper, but, the final results does not contains both. The reasons to prefer KITTI over CamVid and BSDS500 datasets are available in Sections \ref{sec:experiments} and \ref{sec:conclusion}.
+The two datasets presented in this section were also evaluated for this paper, but, the final results do not contain both. The reasons to prefer KITTI over CamVid and BSDS500 datasets are available in Sections \ref{sec:experiments} and \ref{sec:conclusion}.
 
 %-------------------------------------------------------------------------
 \subsubsection{CamVid Dataset} \label{sssec:camvid_datasets}
@@ -169,20 +169,13 @@ To evaluate the quality of the segmentation methods, BSDS500 provides a benchmar
 %Discuss your approach for solving the problems that you set up in the introduction. Why is your approach the right thing to do? Did you consider alternative approaches? You should demonstrate that you have applied ideas and skills built up during the quarter to tackling your problem of choice. It may be helpful to include figures, diagrams, or tables to describe your method or compare it with other methods.
 
 %-------------------------------------------------------------------------
-\subsection{Transfer Learning} \label{ssec:transfer_learning}
-
-Transfer learning is a technique in machine learning that stores knowledge gained while solving one problem, adapt and apply it to a different but related problem. As the growing of neural networks usage, it becomes reasonable to seek out methods that avoid ``reinventing the wheel'', and instead are able to build on previously trained networks' results \cite{PRATT} \cite{WEISS2016}.
-
-As the images of KITTI Dataset are really different from any other tested images, the usage of transfer learning needs to shrink some parts of the image and grow other, defforming a lot the original image. Then, this work started trying to use transfer learning, but decided set aside the results.
-
-%-------------------------------------------------------------------------
 \subsection{Data Augmentation} \label{ssec:data_augmentation}
 
 Data augmentation consists of a range of transformations that can be applied to the dataset to increase the number of data with the target of improving the accuracy and robustness of classifiers \cite{AUGM_ADAPT}. The problem with small datasets is that models trained with them do not generalize well \cite{AUGM_DEEP}.
 
 Data augmentation also can act as a regularizer in preventing overfitting in neural networks and improve performance in imbalanced class problems \cite{DATA_AUGM}. According to Wong et al. \cite{DATA_AUGM}, data augmentation is better to perform in data-space instead of feature-space, as long as label preserving transforms are known \cite{DATA_AUGM}.
 
-To provide data augmentation, the training images and the respective ground-truth were fliped in the left-right direction, creating a ``mirror'' image. This procedure created 2 times more images to the training set, as shown in Image \ref{fig:data_augmentation}. 
+To provide data augmentation, the training images and the respective ground-truth were flipped in the left-right direction, creating a ``mirror'' image. This procedure created 2 times more images to the training set, as shown in Image \ref{fig:data_augmentation}. 
 
 \begin{figure}[ht]
   \centering
@@ -191,27 +184,34 @@ To provide data augmentation, the training images and the respective ground-trut
   \label{fig:data_augmentation}
 \end{figure}
 
-One previous procedure applied to the data was a flip in up-down direction, creating 3 more images than original dataset. The results, however, were worse than with only left-right flip, more difficult to train and slower. Up-down data-augmentation, then, was removed.
+One previous procedure applied to the data was a flip in an up-down direction, creating 3 more images than the original dataset. The results, however, were worse than with only left-right flip, more difficult to train and slower. The up-down data-augmentation, then, was removed.
+
+%-------------------------------------------------------------------------
+\subsection{Transfer Learning} \label{ssec:transfer_learning}
+
+Transfer learning is a technique in machine learning that stores knowledge gained while solving one problem, adapt and apply it to a different but related problem. As the growth of neural networks usage, it becomes reasonable to seek out methods that avoid ``reinventing the wheel'', and instead are able to build on previously trained networks' results \cite{PRATT} \cite{WEISS2016}.
+
+As the images of KITTI Dataset are really different from any other tested images, the use of transfer learning needs to shrink some parts of the image and grow other, deforming a lot the original image. Then, this work started trying to use transfer learning but decided to set aside the results.
 
 %-------------------------------------------------------------------------
 \subsection{Image Reduction} \label{ssec:image_reduction}
 
-KITTI Road/Lane Dataset contains a three-dimensional images with size of $375 \times 1242 \times 3$ (images size information for DNN was explained in Section \ref{ssec:fully_conv}). As images were too big and to speedup the training process the images were reduced to the size of $ 184 \times 616 \times 3$. This size is almost half of the \textit{height} and \textit{width}. The size is not exactly half of the measures to keep SegNet and U-Net models with few changes, e.g. don't need to change padding, kernel sizes and other metrics, that can influence the tests.
+KITTI Road/Lane Dataset contains a three-dimensional image with the size of $375 \times 1242 \times 3$ (images size information for DNN was explained in Section \ref{ssec:fully_conv}). As the images were too big and to speed up the training process the images were reduced to the size of $ 184 \times 616 \times 3$. This size is almost half of the \textit{height} and \textit{width}. The size is not exactly half of the measures to keep SegNet and U-Net models with few changes, e.g. don't need to change the padding, kernel sizes, and other metrics, that can influence the tests.
 
 %-------------------------------------------------------------------------
 \subsection{Data Validation} \label{ssec:data_validation}
 
-Once KITTI does not contains any validation data, a solution is use part of the training data to validate the training procedure. To create that, the used procedure was split 20\% of the training set into a validation dataset. The training set was split using Keras Framework during training period with shuffle mode.
+Once KITTI does not contain any validation data, a solution is to use part of the training data to validate the training procedure. To create that, the used procedure was split 20\% of the training set into a validation dataset. The training set was split using Keras Framework during the training period with shuffle mode ON.
 
 %-------------------------------------------------------------------------
 \subsection{Post Processing} \label{ssec:post_processing}
 
-In this paper was not used any method of post processing to increse the results.
+In this paper, no post-processing method was used to increase the results.
 
 %-------------------------------------------------------------------------
 \subsection{SegNet Model} \label{ssec:segnet_model}
 
-The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
+SegNet model, as described in Section \ref{sssec:segnet}, uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had the total of 5,468,890 parameters (5,464,270 trainable and 4,620 non-trainable). Table \ref{table:segnet_parameters} shows the number of parameters in each layer of SegNet architecture.
 
 \begin{table}
   \scriptsize
@@ -270,12 +270,14 @@ The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184
   \end{center}
 \end{table}
 
-As seen in Table \ref{table:segnet_parameters}, SegNet uses some techniques to improve stability and performance of it network. One of the techniques is Batch Normalization, used to simplify models saturating nonlinearities, also called as internal covariate shift \cite{pmlr-v37-ioffe15}. Batch normalization consists in normalizing layer inputs for each training mini-batch \cite{pmlr-v37-ioffe15}. It allows the increase of learning rates and less careful parameter initialization \cite{pmlr-v37-ioffe15}. Batch normalization also acts as a regularizer, in some cases eliminating the need for Dropout \cite{pmlr-v37-ioffe15}, as SegNet Model.
+As seen in Table \ref{table:segnet_parameters}, SegNet uses some techniques to improve the stability and performance of its network. One of the techniques is Batch Normalization, used to simplify models saturating nonlinearities, also called as internal covariate shift \cite{pmlr-v37-ioffe15}. Batch normalization consists in normalizing layer inputs for each training mini-batch \cite{pmlr-v37-ioffe15}. It allows the increase of learning rates and less careful parameter initialization \cite{pmlr-v37-ioffe15}. Batch normalization also acts as a regularizer, in some cases eliminating the need for Dropout \cite{pmlr-v37-ioffe15}. In the SegNet model, Batch Normalization was used 8 times with no usage of Dropout. 
+
+One important feature that can be seen in Table \ref{table:segnet_parameters} is the distribution of the parameters across the network. Table \ref{table:segnet_parameters} shows that Convolution 2D layers contain the highest number of parameters to be trained, especially in the middle layers.
 
 %-------------------------------------------------------------------------
 \subsection{U-Net Model} \label{ssec:unet_model}
 
-The project uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The SegNet model used in this project had total of 471,586 parameters (all trainable). Table \ref{table:unet_parameters} shows the number of parameters in each layer of SegNet architecture.
+U-Net model, as described in Section \ref{sssec:unet}, uses the KITTI Lane/Road dataset images reduced to the size of $ 184 \times 616 \times 3$, as explained in Section \ref{ssec:image_reduction}. The U-Net model used in this project had the total of 471,586 parameters (all trainable). Table \ref{table:unet_parameters} shows the number of parameters in each layer of U-Net architecture.
 
 \begin{table}
   \scriptsize

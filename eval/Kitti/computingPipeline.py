@@ -50,7 +50,7 @@ def main(test_dir, outputDir):
     
 #     print "Computing category specific location potential as a simple baseline for classifying the data..."
 #     print "Using ground truth data from: %s" % trainData_path_gt
-    print "All categories = %s" %dataStructure.cats
+    print("All categories = %s" %dataStructure.cats)
     
     if not os.path.isdir(outputDir):
         os.makedirs(outputDir)
@@ -74,7 +74,7 @@ def main(test_dir, outputDir):
         testData_fileList_im2 = glob(os.path.join(test_dir, dataStructure.testData_subdir_im2, cat + '*'+ dataStructure.im_end))
         testData_fileList_im2.sort()
         
-        print "Writing probability map into %s." %outputDir
+        print("Writing probability map into %s." %outputDir)
         
         for testData_file_im2 in testData_fileList_im2:
             # Write output data (same format as images!)
@@ -96,18 +96,18 @@ def main(test_dir, outputDir):
             # Write output (BEV)
             fn_out = os.path.join(outputDir, outputfileName %ts_str)
             cv2.imwrite(fn_out, (cur_conf*255).astype('u1'))
-            print "done saving %s..." %fn_out
+            print("done saving %s..." %fn_out)
                         
-        print "Done: Creating results."
+        print("Done: Creating results.")
 
 
 if __name__ == "__main__":
     
     # check for correct number of arguments.
     if len(sys.argv)!=3:
-        print "Usage: python computingPipeline.py <TestDir> <OutputDir> "      
-        print "<TestDir> = directory with testing data (has to contain images: image_2), e.g., /home/elvis/kitti_road/testing"
-        print "<OutputDir>  = directory where the baseline results will be saved, e.g., /home/elvis/kitti_road/test_baseline_perspective"
+        print("Usage: python computingPipeline.py <TestDir> <OutputDir> ")
+        print("<TestDir> = directory with testing data (has to contain images: image_2), e.g., /home/elvis/kitti_road/testing")
+        print("<OutputDir>  = directory where the baseline results will be saved, e.g., /home/elvis/kitti_road/test_baseline_perspective")
         sys.exit(1)
     
     # parse parameters
