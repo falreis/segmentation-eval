@@ -330,9 +330,7 @@ As seen in Table \ref{table:unet_parameters}, U-Net does not contain Batch Norma
 
 As SegNet, U-Net's Convolution 2D layers contain the highest number of parameters to be trained, especially in the middle layers, as seen in Table \ref{table:unet_parameters}.
 
-One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers. The merge layer allows to create branches in the network. The input is passed to each sub layer and then the output of each layer is concatenated to form the output of the merged layers \cite{MERGE_WEBSITE}.
-
-%TODO: EXPLAIN MERGE LAYERS
+One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers. The merge layer allows to create branches in the network. The input is passed to each sub layer and then the output of each layer is concatenated to form the output of the merged layers \cite{MERGE_WEBSITE}. Concatenate layers in U-NET merge two different branches in two different levels of the architecture.
 
 %##################################################################################################
 \section{Experiments} \label{sec:experiments}
@@ -383,8 +381,8 @@ After the training step, the best neural network achieved was used to predict th
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.48\textwidth]{data_augmentation.png}
-  \caption{SegNet (left) and U-Net (right) prediction for a image of the test set.}
+  \includegraphics[width=0.48\textwidth]{comparison_nets.png}
+  \caption{Comparison of SegNet and U-Net predictions for an image of the training set \textit{(uu\_000094.png)}.}
   \label{fig:neural_net_predict}
 \end{figure} 
 
@@ -398,7 +396,7 @@ To evaluate the efficiency of the SegNet, it was used the KITTI evaluation bench
 \begin{table*}
   \captionsetup{justification=centering}
   \begin{center}
-  \begin{tabular*}{0.65\linewidth}{{c}{c}{c}{c}{c}{c}{c}}
+  \begin{tabular*}{0.62\linewidth}{{c}{c}{c}{c}{c}{c}{c}}
   \hline 	
     Category & MaxF & AP & PRE & REC & FPR & FNR \\
   \hline
@@ -411,6 +409,8 @@ To evaluate the efficiency of the SegNet, it was used the KITTI evaluation bench
   \label{table:kitti_eval}
   \end{center}
 \end{table*}
+
+Table \ref{table:kitti_eval} shows the best result for F-measure is 75.83\%. This results is good to identify the road but have a lot of noise. The result is well below the best algorithm available listed in the KITTI Road Dataset (96.60\%) \cite{KITTI_WEBSITE}.
 
 %-------------------------------------------------------------------------
 \subsection{Other Dataset Experiments} \label{ssec:other_experiments}
@@ -429,7 +429,7 @@ In this paper, it was also performed some SLIC superpixels pre-processing experi
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.48\textwidth]{kitti_superpixels.png}
-  \caption{SLIC algorithm for superpixels applied in a training image from KITTI dataset}
+  \caption{A training image \textit{(left)} and the result of SLIC algorithm with average pixel color recoloring \textit{(right)}}
   \label{fig:kitt_superpixels}
 \end{figure} 
 
@@ -451,7 +451,7 @@ As future work, its possible to compare other networks, like FCN-8, FCN-16, FCN-
 %##################################################################################################
 \section{Acknowledgements} \label{sec:acknowledgements}
 
-This paper acknowledges some Github repositories that were helpful to provide some basic codes used in this work. This work started as a fork of divamgupta's ``image-segmentation-keras'' repository\footnote{https://github.com/divamgupta/image-segmentation-keras}. After a while, it used some code of Observer07's ``Keras-SegNet-Basic'' repository\footnote{https://github.com/0bserver07/Keras-SegNet-Basic}. Finally, the code changed a lot from both repositories and a new repository was created, ``segmentation-eval''\footnote{https://github.com/falreis/segmentation-eval}, with the code used to create this paper.
+This paper acknowledges some Github repositories that were helpful to provide some basic codes used in this work. This work started as a fork of \textit{divamgupta's} \textit{``image-segmentation-keras''} repository\footnote{https://github.com/divamgupta/image-segmentation-keras}. After a while, it used some code of \textit{Observer07's} \textit{``Keras-SegNet-Basic''} repository\footnote{https://github.com/0bserver07/Keras-SegNet-Basic}. Finally, the code changed a lot from both repositories and a new repository was created, \textit{``segmentation-eval''}\footnote{https://github.com/falreis/segmentation-eval}, with the code used to create this paper.
 
 {\small
 \bibliographystyle{ieee}

@@ -90,7 +90,7 @@ for dataset in datasets:
     index = 0
     len_data = len(images_paths)
     #for test_image, image_path in zip(data, images_paths):
-    for image_path in images_paths:
+    for image_path in images_paths[285:]:
 
         #read original image
         original_image = cv2.imread(image_path)
@@ -111,18 +111,19 @@ for dataset in datasets:
         #expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
 
         #mark lane
-        '''
+        
         for i in range(1, original_height):
             for j in range(1, original_width):                
-                if (expanded_pred[i, j, 0] > 0):
-                    expanded_pred[i,j,:] = [255, 255, 255]
+                if (expanded_pred[i, j, 2] > 0):
+                    #expanded_pred[i,j,:] = [255, 255, 255]
                     original_image[i,j,0] = 0
                     original_image[i,j,2] = 0
-        '''
+        
         #save data
         pos = image_path.rfind('/')
         name_file = image_path[pos+1:]
-        io.imsave((save_path + name_file), expanded_pred)
+        #io.imsave((save_path + name_file), expanded_pred)
+        io.imsave((save_path + name_file), original_image)
         
         #verbose
         index += 1
@@ -130,8 +131,8 @@ for dataset in datasets:
         print('\r', end='')
 
 print("Done")
-print("Just remember rename files to use KITTI eval tool.")
-print("Instructions in the beggining of the file - comment section!")
-print(">> rename 's/umm_/umm_road_/' * ")
-print(">> rename 's/um_/um_lane_/' * ")
-print(">> rename 's/uu_/uu_road_/' * ")
+#print("Just remember rename files to use KITTI eval tool.")
+#print("Instructions in the beggining of the file - comment section!")
+#print(">> rename 's/umm_/umm_road_/' * ")
+#print(">> rename 's/um_/um_lane_/' * ")
+#print(">> rename 's/uu_/uu_road_/' * ")

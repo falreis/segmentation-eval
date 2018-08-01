@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  31 JUL 2018 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  31 JUL 2018 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,12 +450,12 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 185--186
  []
 
 [3 <./images/unet.png> <./images/data_augmentation.png>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 345--345
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
@@ -464,10 +464,10 @@ File: ./images/graph_training_time.png Graphic file (type png)
 
 <use ./images/graph_training_time.png>
 Package pdftex.def Info: ./images/graph_training_time.png used on input line 35
-8.
+6.
 (pdftex.def)             Requested size: 238.48886pt x 147.4651pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 358--359
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 356--357
  [][] 
  []
 
@@ -475,10 +475,10 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 358--359
 File: ./images/graph_val_acc.png Graphic file (type png)
 
 <use ./images/graph_val_acc.png>
-Package pdftex.def Info: ./images/graph_val_acc.png used on input line 367.
+Package pdftex.def Info: ./images/graph_val_acc.png used on input line 365.
 (pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 367--368
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 365--366
  [][] 
  []
 
@@ -486,46 +486,43 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 367--368
 File: ./images/graph_val_loss.png Graphic file (type png)
 
 <use ./images/graph_val_loss.png>
-Package pdftex.def Info: ./images/graph_val_loss.png used on input line 374.
+Package pdftex.def Info: ./images/graph_val_loss.png used on input line 372.
 (pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 374--375
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 372--373
  [][] 
  []
 
 [5 <./images/graph_training_time.png (PNG copy)>]
-File: ./images/data_augmentation.png Graphic file (type png)
+<./images/comparison_nets.png, id=249, 943.525pt x 481.8pt>
+File: ./images/comparison_nets.png Graphic file (type png)
 
-<use ./images/data_augmentation.png>
-Package pdftex.def Info: ./images/data_augmentation.png used on input line 386.
+<use ./images/comparison_nets.png>
+Package pdftex.def Info: ./images/comparison_nets.png used on input line 384.
+(pdftex.def)             Requested size: 238.48886pt x 121.78035pt.
 
-(pdftex.def)             Requested size: 238.48886pt x 75.67253pt.
-
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 386--387
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 384--385
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 401--409
+Underfull \hbox (badness 10000) in alignment at lines 399--407
 [][][][][][][]
  []
 
-<./images/kitti_superpixels.png, id=257, 1163.34625pt x 200.75pt>
+[6 <./images/graph_val_acc.png (PNG copy)> <./images/graph_val_loss.png (PNG co
+py)> <./images/comparison_nets.png>]
+<./images/kitti_superpixels.png, id=271, 1048.91875pt x 165.61874pt>
 File: ./images/kitti_superpixels.png Graphic file (type png)
 
 <use ./images/kitti_superpixels.png>
 Package pdftex.def Info: ./images/kitti_superpixels.png used on input line 431.
 
-(pdftex.def)             Requested size: 238.48886pt x 41.154pt.
+(pdftex.def)             Requested size: 238.48886pt x 37.65431pt.
 
 Overfull \hbox (1.35292pt too wide) in paragraph at lines 431--432
  [][] 
  []
-
-[6 <./images/graph_val_acc.png (PNG copy)> <./images/graph_val_loss.png (PNG co
-py)> <./images/kitti_superpixels.png>]
-Underfull \vbox (badness 2617) has occurred while \output is active []
-
 
 (./egpaper_final.bbl
 Missing character: There is no Ã in font ptmr7t!
@@ -541,7 +538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 
  []
 
-[7]
+[7 <./images/kitti_superpixels.png>]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ­ in font ptmr7t!
 
@@ -599,10 +596,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 461.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
- 7518 strings out of 493029
- 112218 string characters out of 6136234
- 212812 words of memory out of 5000000
- 10854 multiletter control sequences out of 15000+600000
+ 7523 strings out of 493029
+ 112368 string characters out of 6136234
+ 212865 words of memory out of 5000000
+ 10858 multiletter control sequences out of 15000+600000
  32828 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,9n,43p,1044b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -613,10 +610,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (8 pages, 766271 bytes).
+Output written on egpaper_final.pdf (8 pages, 1140538 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 318 compressed objects within 4 object streams
+ 357 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
  85 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
