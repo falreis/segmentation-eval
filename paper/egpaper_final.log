@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  31 JUL 2018 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.19)  31 JUL 2018 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,7 +156,34 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen119
+\captionmargin@=\dimen120
+\captionwidth=\dimen121
+\caption@tempdima=\dimen122
+\caption@indent=\dimen123
+\caption@parindent=\dimen124
+\caption@hangindent=\dimen125
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \setbox \@tempboxa \hb
+ox {\small \noindent #1.~#2} \setlength {\@ctmp }{\hsize } \addtolength {\@ctmp
+ }{-\@figindent }\addtolength {\@ctmp }{-\@figindent } \ifdim \wd \@tempboxa >\
+@ctmp {\small #1.~#2\par } \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } 
+\fi .
+\c@ContinuedFloat=\count105
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -213,14 +240,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen119
-\Hy@linkcounter=\count105
-\Hy@pagecounter=\count106
+\@linkdim=\dimen126
+\Hy@linkcounter=\count106
+\Hy@pagecounter=\count107
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count107
+\Hy@SavedSpaceFactor=\count108
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -234,17 +261,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks OFF on input line 4694.
-\c@Hy@tempcnt=\count108
+\c@Hy@tempcnt=\count109
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen120
-\Fld@menulength=\count109
-\Field@Width=\dimen121
-\Fld@charsize=\dimen122
+\XeTeXLinkMargin=\dimen127
+\Fld@menulength=\count110
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -254,17 +281,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
+\Hy@abspage=\count111
+\c@Item=\count112
+\c@Hfootnote=\count113
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
+\Fld@listcount=\count114
+\c@bookmark@seq@number=\count115
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -273,35 +300,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
-(./egpaper_final.aux
-
-LaTeX Warning: Label `ssec:data_augmentation' multiply defined.
-
-
-LaTeX Warning: Label `ssec:image_reduction' multiply defined.
-
-)
+(./egpaper_final.aux)
 \openout1 = `egpaper_final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-ABD: EveryShipout initializing macros
+) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
@@ -312,16 +331,16 @@ Package color Info: Driver file: pdftex.def on input line 143.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen123
+\scratchcounter=\count116
+\scratchdimen=\dimen130
 \scratchbox=\box30
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen124
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen131
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -338,9 +357,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box31
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -348,142 +370,164 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count121
+\c@section@level=\count122
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1342) in paragraph at lines 84--85
+Underfull \hbox (badness 1342) in paragraph at lines 87--88
 []\OT1/ptm/m/n/10 Before the use of deep neu-ral net-works, the best-
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 105.
 <./images/segnet.png, id=84, 878.28125pt x 250.9375pt>
 File: ./images/segnet.png Graphic file (type png)
 
 <use ./images/segnet.png>
-Package pdftex.def Info: ./images/segnet.png used on input line 108.
+Package pdftex.def Info: ./images/segnet.png used on input line 111.
 (pdftex.def)             Requested size: 238.48886pt x 68.13692pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 108--109
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 111--112
  [][] 
  []
 
 <./images/unet.png, id=95, 1560.83125pt x 1039.885pt>
 File: ./images/unet.png Graphic file (type png)
  <use ./images/unet.png>
-Package pdftex.def Info: ./images/unet.png used on input line 122.
+Package pdftex.def Info: ./images/unet.png used on input line 125.
 (pdftex.def)             Requested size: 238.48886pt x 158.87975pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 122--123
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 125--126
  [][] 
  []
 
-
-Underfull \hbox (badness 1490) in paragraph at lines 135--136
+[2 <./images/segnet.png>]
+Underfull \hbox (badness 1490) in paragraph at lines 138--139
 []\OT1/ptm/m/n/10 One of the bench-marks in the KITTI suite is the
  []
 
-[2 <./images/segnet.png>]
-<./images/data_augmentation.png, id=153, 835.12pt x 264.99pt>
+<./images/data_augmentation.png, id=152, 835.12pt x 264.99pt>
 File: ./images/data_augmentation.png Graphic file (type png)
 
 <use ./images/data_augmentation.png>
-Package pdftex.def Info: ./images/data_augmentation.png used on input line 182.
+Package pdftex.def Info: ./images/data_augmentation.png used on input line 185.
 
 (pdftex.def)             Requested size: 238.48886pt x 75.67253pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 182--183
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 185--186
  [][] 
  []
 
 [3 <./images/unet.png> <./images/data_augmentation.png>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 349--349
 [][][]\OT1/ptm/m/n/8 https://github.com/falreis/segmentation-
  []
 
-<./images/graph_training_time.png, id=217, 602.25pt x 372.39125pt>
+<./images/graph_training_time.png, id=218, 602.25pt x 372.39125pt>
 File: ./images/graph_training_time.png Graphic file (type png)
 
 <use ./images/graph_training_time.png>
 Package pdftex.def Info: ./images/graph_training_time.png used on input line 35
-3.
+8.
 (pdftex.def)             Requested size: 238.48886pt x 147.4651pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 353--354
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 358--359
  [][] 
  []
 
-<./images/graph_val_acc.png, id=221, 530.98375pt x 328.22626pt>
+<./images/graph_val_acc.png, id=222, 530.98375pt x 328.22626pt>
 File: ./images/graph_val_acc.png Graphic file (type png)
 
 <use ./images/graph_val_acc.png>
-Package pdftex.def Info: ./images/graph_val_acc.png used on input line 362.
+Package pdftex.def Info: ./images/graph_val_acc.png used on input line 367.
 (pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 362--363
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 367--368
  [][] 
  []
 
-<./images/graph_val_loss.png, id=222, 530.98375pt x 328.22626pt>
+<./images/graph_val_loss.png, id=223, 530.98375pt x 328.22626pt>
 File: ./images/graph_val_loss.png Graphic file (type png)
 
 <use ./images/graph_val_loss.png>
-Package pdftex.def Info: ./images/graph_val_loss.png used on input line 369.
+Package pdftex.def Info: ./images/graph_val_loss.png used on input line 374.
 (pdftex.def)             Requested size: 238.48886pt x 147.42499pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 369--370
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 374--375
  [][] 
  []
 
+[5 <./images/graph_training_time.png (PNG copy)>]
 File: ./images/data_augmentation.png Graphic file (type png)
+
 <use ./images/data_augmentation.png>
-Package pdftex.def Info: ./images/data_augmentation.png used on input line 379.
+Package pdftex.def Info: ./images/data_augmentation.png used on input line 386.
 
 (pdftex.def)             Requested size: 238.48886pt x 75.67253pt.
 
-Overfull \hbox (1.35292pt too wide) in paragraph at lines 379--380
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 386--387
  [][] 
  []
 
-[5 <./images/graph_training_time.png (PNG copy)>] [6 <./images/graph_val_acc.pn
-g (PNG copy)> <./images/graph_val_loss.png (PNG copy)>] (./egpaper_final.bbl
+
+Underfull \hbox (badness 10000) in alignment at lines 401--409
+[][][][][][][]
+ []
+
+<./images/kitti_superpixels.png, id=257, 1163.34625pt x 200.75pt>
+File: ./images/kitti_superpixels.png Graphic file (type png)
+
+<use ./images/kitti_superpixels.png>
+Package pdftex.def Info: ./images/kitti_superpixels.png used on input line 431.
+
+(pdftex.def)             Requested size: 238.48886pt x 41.154pt.
+
+Overfull \hbox (1.35292pt too wide) in paragraph at lines 431--432
+ [][] 
+ []
+
+[6 <./images/graph_val_acc.png (PNG copy)> <./images/graph_val_loss.png (PNG co
+py)> <./images/kitti_superpixels.png>]
+Underfull \vbox (badness 2617) has occurred while \output is active []
+
+
+(./egpaper_final.bbl
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 
@@ -497,6 +541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 
  []
 
+[7]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ­ in font ptmr7t!
 
@@ -524,29 +569,43 @@ Underfull \hbox (badness 1189) in paragraph at lines 156--159
 []\OT1/ptm/m/n/9 K. Si-monyan and A. Zis-ser-man.  Very deep con-vo-lu-
  []
 
-[7])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
- [8
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
+Underfull \hbox (badness 10000) in paragraph at lines 194--199
+[]\OT1/ptm/m/n/9 B. Wicht.  Dll new fea-tures: Em-bed-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--199
+\OT1/ptm/m/n/9 dings and merge lay-ers.  []$\OT1/pcr/m/n/9 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--199
+\OT1/pcr/m/n/9 baptiste-[]wicht . com / posts / 2017 / 10 /
+ []
+
+
+Overfull \hbox (28.85771pt too wide) in paragraph at lines 194--199
+\OT1/pcr/m/n/9 dll-[]new-[]features-[]embeddings-[]and-[]merge-[]layers .
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
  (./egpaper_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 433.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 461.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 461.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
- 6478 strings out of 493029
- 93060 string characters out of 6136234
- 197512 words of memory out of 5000000
- 9825 multiletter control sequences out of 15000+600000
+ 7518 strings out of 493029
+ 112218 string characters out of 6136234
+ 212812 words of memory out of 5000000
+ 10854 multiletter control sequences out of 15000+600000
  32828 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,9n,26p,1044b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,9n,43p,1044b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -554,10 +613,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (8 pages, 540189 bytes).
+Output written on egpaper_final.pdf (8 pages, 766271 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

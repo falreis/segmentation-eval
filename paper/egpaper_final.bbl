@@ -190,6 +190,13 @@ K.~Weiss, T.~M. Khoshgoftaar, and D.~Wang.
 \newblock A survey of transfer learning.
 \newblock {\em Journal of Big Data}, 3(1):9, May 2016.
 
+\bibitem{MERGE_WEBSITE}
+B.~Wicht.
+\newblock Dll new features: Embeddings and merge layers.
+\newblock
+  \url{https://baptiste-wicht.com/posts/2017/10/dll-new-features-embeddings-and-merge-layers.html},
+  2017.
+
 \bibitem{DATA_AUGM}
 S.~C. Wong, A.~Gatt, V.~Stamatescu, and M.~D. McDonnell.
 \newblock Understanding data augmentation for classification: when to warp?

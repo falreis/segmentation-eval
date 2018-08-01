@@ -7,6 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\usepackage{caption} 
+\captionsetup[table]{skip=6pt}
+
 \def\cvprPaperID{1} % *** Enter the CVPR Paper ID here
 
 \usepackage[breaklinks=true,bookmarks=false]{hyperref}
@@ -45,7 +48,7 @@ R. Walter Ianni 255 - Bloco L - Belo Horizonte, MG, Brasil\\
 %Briefly describe your problem, approach, and key results. Should be no more than 300 words.
 
 \begin{abstract}
-    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper evaluates two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The goal of this paper is to compare the learning process of both networks with no pre or post processing to fit the dataset type of data. The models were trained and tested using KITTI Road Dataset. The results were evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. Segnet was able to learn the dataset and ground truth information and predict with good accuracy. U-Net, however, was unable to learn the data information and pedict as expected, with unsatisfactory results.
+    Image segmentation refers to the partition of an image into a set of regions to cover it, to represent a meaningful area. Before the use of deep neural networks, the best-performing methods mostly was made using hand engineered features \cite{SEGNET}. This paper evaluates two Deep Neural Networks for semantic segmentation: SegNet and U-Net. These DNNs are both ``fully convolutional'' networks that output a result with the same size as the input. The goal of this paper is to compare the learning process of both networks with no pre or post processing to fit the dataset type of data. The models were trained and tested using KITTI Road Dataset. The results were evaluated using KITTI Dataset Toolkit. The tests showed that SegNet had a better performance in image segmentation than U-Net. SegNet was able to learn the dataset and ground truth information and predict with good accuracy. U-Net, however, was unable to learn the data information and pedict as expected, with unsatisfactory results.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
@@ -325,7 +328,9 @@ U-Net model, as described in Section \ref{sssec:unet}, uses the KITTI Lane/Road 
 
 As seen in Table \ref{table:unet_parameters}, U-Net does not contain Batch Normalization layers as SegNet. To improve stability and performance, U-Net uses Dropout Layers, a simple mechanism to avoid overfitting \cite{DROPOUT}. Also, Dropout does not contain parameters, reducing the total number of training parameters.
 
-One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers.
+As SegNet, U-Net's Convolution 2D layers contain the highest number of parameters to be trained, especially in the middle layers, as seen in Table \ref{table:unet_parameters}.
+
+One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, is the Merge/Concatenate Layers. %TODO: EXPLAIN MERGE LAYERS
 
 %##################################################################################################
 \section{Experiments} \label{sec:experiments}
@@ -335,16 +340,16 @@ One of important layer of U-Net, as seen in Table \ref{table:unet_parameters}, i
 %-------------------------------------------------------------------------
 \subsection{Environment} \label{ssec:environment}
 
-The tests described in this section were performed in a Amazon AWS \cite{AMAZON_WEBSITE} \textit{g2.2xlarge} Instance. The instance contains 8 vCPUs of Intel Corporation 440FX CPU and 15GB RAM memory. Also, contains a NVIDIA Corporation GK104GL [GRID K520] GPU, with 4096 MB x2 GDDR5 memory. The custom configuration were a 100GB SSD storage capacity with a pre-configured Amazon Linux OS (Deep Learning AMI Version 12.0 - \textit{ami-f6a94495}).
+The tests described in this section were performed in Amazon AWS \cite{AMAZON_WEBSITE} \textit{g2.2xlarge} instance running in North California data center. The instance contains 8 vCPUs of Intel Xeon E5-2670 CPU and 15GB RAM memory. Also, contains an NVIDIA Corporation GK104GL [GRID K520] GPU, with 4096 MB x2 GDDR5 memory. The custom configuration were a 100GB SSD storage capacity with a pre-configured Amazon Linux OS (Deep Learning AMI Version 12.0 - \textit{ami-f6a94495}).
 
 The software environment used Python 3.5 \cite{PYTHON_WEBSITE} language, with Keras 2.2 \cite{KERAS}, a Python Deep Learning Library. Keras is a high-level neural networks API of running on top of TensorFlow \cite{TENSORFLOW}, CNTK \cite{CNTK}, or Theano \cite{THEANO} \cite{KERAS}. In this work, Keras run over Theano \cite{THEANO} backend. The virtual environment was provided by Anaconda \cite{ANACONDA_WEBSITE}. All environment requirements are available in a single file in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/code/i2dl.yml}.
 
-For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV liberaries. The conda environment requirement are available also in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/eval/kitti.yml}.
+For KITTI evaluation compatibility a new environment was created. KITTI needs Python 2.7, and older versions of NumPy and OpenCV libraries. The Anaconda environment requirement is available also in the author's page project in Github \footnote{https://github.com/falreis/segmentation-eval/blob/master/eval/kitti.yml}.
 
 %-------------------------------------------------------------------------
 \subsection{KITTI Road/Lane Experiments} \label{ssec:kitti_experiments}
 
-To train SegNet and U-Net for KITTI dataset, firstly was made preprocessing steps, e.g. data augmentation and image reduction, as explained in Sections \label{ssec:data_augmentation} and \label{ssec:image_reduction}. After these steps, the images was trained in Keras+Theano Environment and the best training weights was saved. Image \ref{fig:training_time} shows the average training time for each neural network. As predicted due the size of the neural net and the number of parameters to be trained, U-Net had a smaller training time than SegNet.
+To train SegNet and U-Net for KITTI dataset firstly was made preprocessing steps, e.g. data augmentation and image reduction, as explained in Sections \ref{ssec:data_augmentation} and \ref{ssec:image_reduction}. After these steps, the images were trained in Keras+Theano Environment and the best training weights were saved. Image \ref{fig:training_time} shows the average training time for each neural network. As predicted due the size of the neural net and the number of parameters to be trained, U-Net had a smaller training time than SegNet.
 
 \begin{figure}[ht]
   \centering
@@ -353,7 +358,7 @@ To train SegNet and U-Net for KITTI dataset, firstly was made preprocessing step
   \label{fig:training_time}
 \end{figure}
 
-The accuracy of the validation set (see \ref{ssec:data_validation}) for each neural network is visually represented in Image \ref{fig:val_acc}. The loss on validation step is available in Image \ref{fig:val_loss}. The results shows that SegNet have better results than U-Net in every epoch. Also, the results shows that U-Net easily achieve its optimal value. SegNet improves its results in the early epochs and then floating near the best value.
+The accuracy of the validation set (see \ref{ssec:data_validation}) for each neural network is visually represented in Image \ref{fig:val_acc}. The best value for SegNet was 86.87\% and for U-Net was 76.62\%. The loss on validation step is available in Image \ref{fig:val_loss}. The results show that SegNet performs better than U-Net at all times. In addition, the results show that U-Net easily reaches its best value. SegNet improves its results in the first few epochs and then the result floats near the best value.
 
 \begin{figure}[ht]
   \centering
@@ -369,8 +374,10 @@ The accuracy of the validation set (see \ref{ssec:data_validation}) for each neu
   \label{fig:val_loss}
 \end{figure}
 
-After training and validation steps, the best neural networks was used to predict the lane/road in the test images. The results of SegNet and U-Net for a test image is available in Image 
-\ref{fig:neural_net_predict}. As seen in Image \ref{fig:neural_net_predict}, both of the networks finds the position of the road, but misses the complete shape of them.
+As seen in Figures \ref{fig:val_acc} and \ref{fig:val_loss}, U-Net reaches its best value and no longer improves. In the tests, many changes were made to increase the results such as the number of epochs, optimizer method and its values, and learning rate. In addition, the results were almost the same for the two data augmentation tested in this work (as explained in Section \ref{ssec:data_augmentation}).
+
+After the training step, the best neural network achieved was used to predict the lane/road in the test images. The results of SegNet and U-Net for a test image is available in Image 
+\ref{fig:neural_net_predict}.
 
 \begin{figure}[ht]
   \centering
@@ -379,40 +386,61 @@ After training and validation steps, the best neural networks was used to predic
   \label{fig:neural_net_predict}
 \end{figure} 
 
-To evaluate the efficience of the DNN's, it was used the KITTI evaluation benchmarking, as explained in Section \ref{sec:data}. The results are available in Table \ref{table:kitti_eval}. The results shows that SegNet, as expected, had better results than U-Net for the KITTI Dataset, over test conditions.
+As seen in image \ref{fig:neural_net_predict}, the results predicted by SegNet were not very accurate. The results could be improved with other transformations to help the network to generalize, but it doesn't achieve the goal of this work.
 
-\begin{table}
-  \scriptsize
+As seen in Image \ref{fig:neural_net_predict}, the road was only predicted by SegNet neural network. U-Net just predicts a blank image, without marking the road. In an empirical test, it was observed that SegNet only starts to predict the road with poor precision when the validation accuracy was over 80\%. In the first epoch, SegNet didn't predict any road, as U-Net, which the best value was 76.62\%.
+
+To evaluate the efficiency of the SegNet, it was used the KITTI evaluation benchmarking, as explained in Section \ref{sec:data}. The results were performed only in training set for 3 data categories and are available in Table \ref{table:kitti_eval}.
+
+\renewcommand{\arraystretch}{1.3}%
+\begin{table*}
+  \captionsetup{justification=centering}
   \begin{center}
-  \begin{tabular}{{l}{l}{l}{l}}
-  \hline 
-    Num. & Bla & Bla & Bla \\
+  \begin{tabular*}{0.65\linewidth}{{c}{c}{c}{c}{c}{c}{c}}
+  \hline 	
+    Category & MaxF & AP & PRE & REC & FPR & FNR \\
   \hline
-    1	& Bla	& Bla	& 0	\\
+    \textit{um\_lane} & 64.90\% & 44.84\% & 48.51\% & 98.02\% & 9.26\% & 1.98\% \\
+    \textit{umm\_road} & 71.79\% & 62.91\% & 83.93\% & 62.72\% & 3.76\% & 37.28\% \\
+    \textit{uu\_road} & 75.83\% & 62.14\% & 73.05\% & 78.84\% & 4.59\% & 21.16\% \\
   \hline
-    \multicolumn{4}{l}{Total params: 471,586} 	\\
-  \hline
-  \end{tabular}
-  \caption{U-Net layers and its number of parameters}
+  \end{tabular*}
+  \caption{KITTI benchmark evaluation results for SegNet in each category. \textit{MaxF: Maximum F1-measure, AP: Average precision, PRE: Precision, REC: Recall, FPR: False Positive Rate, FNR: False Negative Rate}}
   \label{table:kitti_eval}
   \end{center}
-\end{table}
+\end{table*}
 
 %-------------------------------------------------------------------------
 \subsection{Other Dataset Experiments} \label{ssec:other_experiments}
 
-CamVid and BSDS500 datasets was only tested over SegNet neural network. The testes using CamVid dataset resulted in good values for data segmentation in 9 classes tested in this paper. The overall result for validation set was XYZ\%.
+CamVid and BSDS500 datasets was briefly tested with SegNet neural network. 
 
-BSDS500 dataset was tested over SegNet but the results does not provided good results. As BSDS500 dataset has only border images, the training set could not generalize and produce a correct prediction. The validation set had over 95\% of accuracy in every step but just produces black images. As most of the pixels are black in BSDS500 dataset, the neural network just predicted black pixels for every step, with high accuracy. One solution for this situation in a future work is to give weights for pixels. Black pixels should receive small values while border pixels (white) should receive big weights. This step could let the neural net to increase rate of border pixels, instead of generalize only the background of the image.
+The tests using CamVid dataset were performed just to test the code and compare the results with Observer07's Github repository\footnote{https://github.com/0bserver07/Keras-SegNet-Basic}, that contains the same test with CamVid set. CamVid tests was just performed few epochs and the results was not stored.
+
+The BSDS500 data set was tested by SegNet, but the network did not provide good results. Because the BSDS500 dataset has only border images, the training set failed to generalize and produce a correct prediction. The validation set had more than 95\% accuracy at all steps, but only produced black images. Because most pixels are black in the BSDS500 data set, the neural network only predicted black pixels for each step with high accuracy. A possible solution to avoid this situation in a future work is to give weights to pixels. Black pixels should receive small values, while edge pixels (white) should receive large weights. This step could allow the neural network to increase the border pixel rate, instead of generalizing only the background of the image
+
+%-------------------------------------------------------------------------
+\subsection{Superpixel pre-processing Experiments} \label{ssec:superpixel_experiments}
+
+In this paper, it was also performed some SLIC superpixels pre-processing experiments using KITTI dataset to verify the possible increase of performance of this method in U-Net and SegNet networks. The training images were divided into ~2048 superpixels (the exact number of superpixel can change due to SLIC algorithm behavior) and were recolored with the average pixel color, as seen in \ref{fig:kitt_superpixels}. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.48\textwidth]{kitti_superpixels.png}
+  \caption{SLIC algorithm for superpixels applied in a training image from KITTI dataset}
+  \label{fig:kitt_superpixels}
+\end{figure} 
+
+The superpixel preprocessing test had the main objective of trying to increase U-Net's performance, but superpixel recoloration did not result in any performance enhancements
 
 %##################################################################################################
 \section{Conclusion} \label{sec:conclusion}
 
 %Summarize your key results - what have you learned? Suggest ideas for future extensions or new applications of your ideas.
 
-Semantic pixel-wise segmentation is an important and active topic of research \cite{SEGNET}, and the usage of neural network is a trend in this area. The project compares the use of two famous Deep Neural Networks for semantic segmentation in a dataset different from that originally proposed for networks. This project, then, can view the robustness of both neural nets to a different problem. 
+Semantic pixel-wise segmentation is an important and active topic of research \cite{SEGNET}, and the usage of neural network is a trend in this area. The project compares the use of two famous Deep Neural Networks for semantic segmentation in a dataset different from that originally proposed for networks. Moreover, since the data were almost not preprocessed, this project could evaluate the robustness of the neural networks and the application in a different problem.
 
-Also the results showed that SegNet can be used to solve problems of semantic segmentation in self-driving cars context with a good accuracy without any post-processing step. However, U-Net couldn't predict the results as good as SegNet and many times didn't identify the road/lane properly. The usage of U-Net must be tested with different parameters and techniques to achieve the semantic segmentation results as expected.
+The results showed that SegNet can be used to solve problems of semantic segmentation in self-driving cars context with a relative accuracy with little pre and post-processing steps. In future works, it could be tested in different datasets to evaluate its capacity. U-Net, however, couldn't predict the results and didn't identify the road/lane properly. The usage of U-Net must be tested with transfer learning to and different parameters and techniques to verify if it can produce semantic segmentation results in this problem. The results 
 
 The tests performed in this works also shows that the number of parameters are very large, even with image size reduction. U-Net, despite having fewer parameters, failed to reach the network goal. Also, this paper shows that the number of layers, and the types of layers, can contribute in the learning process of semantic segmentation. One possible topic to study is the evaluation of the minimum size of network for semantic segmentation and the corresponding capacity to identify group of pixels.
 
@@ -421,7 +449,7 @@ As future work, its possible to compare other networks, like FCN-8, FCN-16, FCN-
 %##################################################################################################
 \section{Acknowledgements} \label{sec:acknowledgements}
 
-This paper acknowledges some Github repositories that was helpful to provide some basic codes used in this work. This work started as a fork of divamgupta's ``image-segmentation-keras'' repository \footnote{https://github.com/divamgupta/image-segmentation-keras}. After a while, it used some code of Observer07's ``Keras-SegNet-Basic'' repository \footnote{https://github.com/0bserver07/Keras-SegNet-Basic}. In the end, the code changes from both repository and a new repository was created, ``segmentation-eval'', \footnote{https://github.com/falreis/segmentation-eval} with the code used to create this paper, but with some code for both repositories.
+This paper acknowledges some Github repositories that were helpful to provide some basic codes used in this work. This work started as a fork of divamgupta's ``image-segmentation-keras'' repository\footnote{https://github.com/divamgupta/image-segmentation-keras}. After a while, it used some code of Observer07's ``Keras-SegNet-Basic'' repository\footnote{https://github.com/0bserver07/Keras-SegNet-Basic}. In the end, the code changes from both repository and a new repository was created, ``segmentation-eval''\footnote{https://github.com/falreis/segmentation-eval}, with the code used to create this paper, but with some code for both repositories.
 
 {\small
 \bibliographystyle{ieee}
@@ -429,40 +457,3 @@ This paper acknowledges some Github repositories that was helpful to provide som
 }
 
 \end{document}
-
-\begin{comment}
-Starting evaluation ...
-Available categories are: ['um_lane', 'umm_road', 'uu_road']
-Execute evaluation for category um_lane ...
-Searching for submitted files with prefix: um_lane_
-Computing evaluation scores...
-MaxF: 64.90
-AvgPrec: 44.84
-PRE_wp: 48.51
-REC_wp: 98.02
-FPR_wp: 9.26
-FNR_wp: 1.98
-('Finished evaluating category: um_lane ',)
-Execute evaluation for category umm_road ...
-Searching for submitted files with prefix: umm_road_
-Computing evaluation scores...
-MaxF: 71.79
-AvgPrec: 62.91
-PRE_wp: 83.93
-REC_wp: 62.72
-FPR_wp: 3.76
-FNR_wp: 37.28
-('Finished evaluating category: umm_road ',)
-Execute evaluation for category uu_road ...
-Searching for submitted files with prefix: uu_road_
-Computing evaluation scores...
-MaxF: 75.83
-AvgPrec: 62.14
-PRE_wp: 73.05
-REC_wp: 78.84
-FPR_wp: 4.59
-FNR_wp: 21.16
-('Finished evaluating category: uu_road ',)
-Successfully finished evaluation for 3 categories: ['um_lane', 'umm_road', 'uu_road']
-\end{comment}
-

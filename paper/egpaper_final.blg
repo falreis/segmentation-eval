@@ -6,45 +6,45 @@ Database file #1: egbib.bib
 Warning--can't use both volume and number fields in DOMINGUEZ
 Warning--empty publisher in DOMINGUEZ
 Warning--empty journal in DROPOUT
-You've used 32 entries,
+You've used 33 entries,
             2120 wiz_defined-function locations,
-            719 strings with 9976 characters,
-and the built_in function-call counts, 12074 in all, are:
-= -- 1125
-> -- 724
+            724 strings with 10157 characters,
+and the built_in function-call counts, 12282 in all, are:
+= -- 1145
+> -- 731
 < -- 11
-+ -- 288
-- -- 252
-* -- 881
-:= -- 2005
-add.period$ -- 101
-call.type$ -- 32
-change.case$ -- 219
++ -- 291
+- -- 254
+* -- 887
+:= -- 2040
+add.period$ -- 104
+call.type$ -- 33
+change.case$ -- 223
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 414
-empty$ -- 868
-format.name$ -- 252
-if$ -- 2523
+cite$ -- 36
+duplicate$ -- 421
+empty$ -- 890
+format.name$ -- 254
+if$ -- 2569
 int.to.chr$ -- 0
-int.to.str$ -- 32
+int.to.str$ -- 33
 missing$ -- 25
-newline$ -- 164
-num.names$ -- 66
-pop$ -- 253
+newline$ -- 169
+num.names$ -- 68
+pop$ -- 261
 preamble$ -- 1
-purify$ -- 188
+purify$ -- 191
 quote$ -- 0
-skip$ -- 331
+skip$ -- 338
 stack$ -- 0
-substring$ -- 550
-swap$ -- 110
+substring$ -- 555
+swap$ -- 111
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 126
+type$ -- 130
 warning$ -- 3
-while$ -- 95
-width$ -- 34
-write$ -- 355
+while$ -- 97
+width$ -- 35
+write$ -- 365
 (There were 3 warnings)
