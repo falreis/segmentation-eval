@@ -99,5 +99,8 @@ segnet_basic.add(Activation('softmax'))
 
 # Save model to JSON
 
+print(segnet_basic.summary())
+
+
 with open('segNet_bsds_model.json', 'w') as outfile:
     outfile.write(json.dumps(json.loads(segnet_basic.to_json()), indent=2))
