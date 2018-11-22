@@ -28,7 +28,7 @@ def load_data(mode):
     data = []
     label = []
 
-    path = DataPath + mode + "_hed/image_2/*.*"
+    path = DataPath + mode + "_hed/image_2/*."
     print(path)
     images = glob.glob(path + "jpg") + glob.glob(path + "png")
     images.sort()

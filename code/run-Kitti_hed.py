@@ -32,14 +32,23 @@ n_classes = hc.n_classes
 #parser
 parser = argparse.ArgumentParser()
 parser.add_argument("--net", type = str)
+parser.add_argument("--merge", type = str)
 args = parser.parse_args()
 net_parse = args.net
-print(net_parse)
+merge_name = args.merge
+
+print('Neural net: ', net_parse)
+print('Merge method: ', merge_name)
+
+#se merge não for definido
+if(merge_name == None):
+    print('Usage >> "python run-kitti_hed.py --net={hed,rcf} --merge={sum,avg,max}"')
+    quit()
 
 if(net_parse != None):
     #parameters
-    nb_epoch = 10
-    batch_size = 4
+    nb_epoch = 100
+    batch_size = 10
 
     # load the data
     train_data = np.load('./data/Kitti/train_data.npy')
@@ -48,11 +57,11 @@ if(net_parse != None):
     # define parameters
     json_model, weights_file = "", ""
     if net_parse == "hed":
-        json_model = 'model-json/hed_kitti_model.json'
+        json_model = 'model-json/hed_kitti_model_{}.json'.format(merge_name)
         weights_file = "hed_kitti_weights.best.hdf5"
 
     elif net_parse == "rcf":
-        json_model = 'model-json/rcf_kitti_model.json'
+        json_model = 'model-json/rcf_kitti_model_{}.json'.format(merge_name)
         weights_file = "rcf_kitti_weights.best.hdf5"
     #endif
 
@@ -63,11 +72,11 @@ if(net_parse != None):
     net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
     # checkpoint
-    #checkpoint = ModelCheckpoint(weights_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-    #callbacks_list = [checkpoint]
+    checkpoint = ModelCheckpoint(weights_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+    callbacks_list = [checkpoint]
 
     # Fit the model
-    history = net_basic.fit(train_data, train_label, batch_size=batch_size, epochs=nb_epoch,
+    history = net_basic.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
                         verbose=1, shuffle=True, validation_split=0.20)
 
     # This save the trained model weights to this file with number of epochs
@@ -79,4 +88,4 @@ if(net_parse != None):
     print(datetime.datetime.now())
 
 else:
-    print('Escolha a rede para execução >> "python run-kitti.py --net=hed"')
+    print('Usage >> "python run-kitti_hed.py --net=hed --merge={sum,avg,max}"')
