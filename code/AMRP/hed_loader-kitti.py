@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 import itertools
 
-from helper import *
+from .. import helper
 import os
 import argparse
 import glob
@@ -28,15 +28,15 @@ def load_data(mode):
     data = []
     label = []
 
-    path = DataPath + mode + "_hed/image_2/*."
+    path = DataPath + mode + "_hed/image_2/"
     print(path)
-    images = glob.glob(path + "jpg") + glob.glob(path + "png")
+    images = glob.glob(path + "*.jpg") + glob.glob(path + "*.png")
     images.sort()
 
     if mode == "train":
-        pathg = DataPath + mode + "_hed/gt_image_2/*.*"
+        pathg = DataPath + mode + "_hed/gt_image_2/"
         print(pathg)
-        grounds = glob.glob(pathg + "jpg") + glob.glob(pathg + "png")
+        grounds = glob.glob(pathg + "*.jpg") + glob.glob(pathg + "*.png")
         grounds.sort()
 
         for image, ground in zip(images, grounds):
