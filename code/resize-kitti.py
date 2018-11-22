@@ -52,7 +52,8 @@ def load_data(mode):
     elif mode == "test":
         for image in images:
             reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
-            data.append(np.rollaxis(normalized(reduced_image), 2))
+            path_image = "./datasets/Kitti/data_road/" + set_name + "_hed/image_2" + image[image.rfind('/'):]
+            cv2.imwrite(path_image,reduced_image)
 
     return np.array(data), np.array(label)
 
