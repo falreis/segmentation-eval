@@ -42,7 +42,7 @@ print('Merge method: ', merge_name)
 
 #se merge não for definido
 if(merge_name == None):
-    print('Usage >> "python run-kitti_hed.py --net={hed,rcf} --merge={sum,avg,max}"')
+    print('Usage >> "python run-kitti.py --net={hed,rcf} --merge={sum,avg,max,maj}"')
     quit()
 
 if(net_parse != None):
@@ -51,17 +51,17 @@ if(net_parse != None):
     batch_size = 10
 
     # load the data
-    train_data = np.load('./data/Kitti/train_data.npy')
-    train_label = np.load('./data/Kitti/train_label.npy')
+    train_data = np.load('../data/Kitti/train_data.npy')
+    train_label = np.load('../data/Kitti/train_label.npy')
 
     # define parameters
     json_model, weights_file = "", ""
     if net_parse == "hed":
-        json_model = 'model-json/hed_kitti_model_{}.json'.format(merge_name)
+        json_model = '../model-json/hed_kitti_model_{}.json'.format(merge_name)
         weights_file = "hed_kitti_weights.best.hdf5"
 
     elif net_parse == "rcf":
-        json_model = 'model-json/rcf_kitti_model_{}.json'.format(merge_name)
+        json_model = '../model-json/rcf_kitti_model_{}.json'.format(merge_name)
         weights_file = "rcf_kitti_weights.best.hdf5"
     #endif
 
@@ -81,11 +81,11 @@ if(net_parse != None):
 
     # This save the trained model weights to this file with number of epochs
     if net_parse == "hed":
-        net_basic.save_weights('weights/hed_model_kitti_{}.hdf5'.format(nb_epoch))
+        net_basic.save_weights('../weights/hed_model_kitti_{}.hdf5'.format(nb_epoch))
     elif net_parse == "rcf":
-        net_basic.save_weights('weights/rcf_model_kitti_{}.hdf5'.format(nb_epoch))
+        net_basic.save_weights('../weights/rcf_model_kitti_{}.hdf5'.format(nb_epoch))
 
     print(datetime.datetime.now())
 
 else:
-    print('Usage >> "python run-kitti_hed.py --net=hed --merge={sum,avg,max}"')
+    print('Usage >> "python run-kitti.py --net=hed --merge={sum,avg,max,maj}"')

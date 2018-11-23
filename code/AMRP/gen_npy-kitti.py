@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 import itertools
 
-from .. import helper
+import sys
 import os
 import argparse
 import glob
@@ -21,30 +21,40 @@ width = hc.width
 data_shape =  hc.data_shape
 n_classes = hc.n_classes
 
-DataPath = './datasets/Kitti/data_road/'
+sys.path.append("..")
+from helper import *
+
+DataPath = '../datasets/Kitti/data_road_augmented/'
+OutputPath = '../data/Kitti/'
 reduced_image_size = (width, height, 3)
 
 def load_data(mode):
     data = []
     label = []
 
-    path = DataPath + mode + "_hed/image_2/"
+    path = DataPath + mode + "ing/image_2/"
     print(path)
     images = glob.glob(path + "*.jpg") + glob.glob(path + "*.png")
     images.sort()
 
     if mode == "train":
-        pathg = DataPath + mode + "_hed/gt_image_2/"
+        pathg = DataPath + mode + "ing/gt_image_2/"
         print(pathg)
         grounds = glob.glob(pathg + "*.jpg") + glob.glob(pathg + "*.png")
         grounds.sort()
+        print(len(images))
 
-        for image, ground in zip(images, grounds):
+        index = 0
+        for image, ground in zip(images[:100], grounds[:100]):
             reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
             reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
             data.append(np.rollaxis(normalized(reduced_image), 2))
             label.append(one_hot_kitti(reduced_ground, height = height, width = width, classes = n_classes))
+
+            index += 1
+            if(index % 10 == 0):
+                print(index)
 
     elif mode == "test":
         for image in images:
@@ -66,8 +76,8 @@ len_data = len(data)
 
 if set_name == "train":
     label = np.reshape(label,(len_data,data_shape, n_classes))
-    np.save(("data/Kitti/" + set_name + "_label"), label)
+    np.save((OutputPath + set_name + "_label"), label)
 
-np.save(("data/Kitti/" + set_name + "_data"), data)
+np.save((OutputPath + set_name + "_data"), data)
 
 print('Done')

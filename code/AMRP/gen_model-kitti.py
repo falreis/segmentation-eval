@@ -19,7 +19,40 @@ K.set_image_data_format('channels_first')
 import numpy as np
 import json
 import argparse
+import random
 np.random.seed(7) # 0bserver07 for reproducibility
+
+def Majority(A_list):
+    A = np.asarray(A_list)
+    n = 5 #A.length
+
+    maj_index = 0
+    count = 1
+
+    for i in range (1, len(A-1)):
+        # If the current element is equal to the index of the majority element, increment count
+        if(A[maj_index] == A[i]):
+            count += 1
+        # Otherwise decrement count
+        else:
+            count -= 1
+        
+        # If the count is zero, it's not the max element, so set the majority index to the
+        # current index and increment the count
+        if(count == 0):
+            maj_index = i
+            count = 1
+            
+    # Check that the number of times the element occurs is actually a majority 
+    if(count > n/2):
+        return (A[maj_index],count)
+    # If <= 1 all different, return random
+    elif(count<=1):
+        return (random.choice(A),count)
+    # If = 2 not a majority, but...
+    elif(count==2):
+        return (A[maj_index],count)
+
 
 #import contants
 import hed_constants as hc
@@ -87,6 +120,8 @@ b5= side_branch(n_classes, x, 16) # 480 480 1
 
 # fuse
 #fuse = Concatenate(axis=-1)([b1, b2, b3, b4, b5])
+majority_count = 0
+
 if(merge_name == 'avg'):
     fuse = Average()([b1, b2, b3, b4, b5])
 elif(merge_name == 'add' or merge_name == 'sum'):
@@ -94,6 +129,8 @@ elif(merge_name == 'add' or merge_name == 'sum'):
     fuse = Add()([b1, b2, b3, b4, b5])
 elif(merge_name == 'max'):
     fuse = Maximum()([b1, b2, b3, b4, b5])
+elif(merge_name == 'maj'):
+    fuse, majority_count = Majority([b1, b2, b3, b4, b5])
 #endif
 
 fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
@@ -117,7 +154,7 @@ model = Model(inputs=inputs, outputs=ofuse)
 #print(model.summary())
 
 # Save model to JSON
-json_name = 'model-json/hed_kitti_model_{}.json'.format(merge_name)
+json_name = '../model-json/hed_kitti_model_{}.json'.format(merge_name)
 print(json_name)
 with open(json_name, 'w') as outfile:
     outfile.write(json.dumps(json.loads(model.to_json()), indent=2))
