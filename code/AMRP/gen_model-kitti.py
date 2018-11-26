@@ -27,7 +27,7 @@ def VoteOutput(input_shape):
     return (input_shape[0], input_shape[1], input_shape[2], input_shape[3])
 
 def Vote(x):
-    return K.clip(x, 2, 5)
+    return K.clip(x, 1, 5)
 
 #import contants
 import hed_constants as hc

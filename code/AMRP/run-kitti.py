@@ -78,6 +78,11 @@ if(net_parse != None):
     net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
 
     # checkpoint
+    if(args.vote):
+        weights_file = '../weights/' + net_parse + 'kitti_weight_{}_{}.best.hdf5'.format(merge_name, vote_value)
+    else:
+        weights_file = '../weights/' + net_parse + '_kitti_weight_{}.best.hdf5'.format(merge_name)
+
     checkpoint = ModelCheckpoint(weights_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
     callbacks_list = [checkpoint]
 
@@ -87,9 +92,11 @@ if(net_parse != None):
 
     # This save the trained model weights to this file with number of epochs
     if(args.vote):
-        hdf5_save = '../weights/' + net_parse + 'model_kitti_{}_{}_{}.hdf5'.format(merge_name, vote_value, nb_epoch)
+        hdf5_save = '../weights/' + net_parse + '_kitti_weight_{}_{}_{}.hdf5'.format(merge_name, vote_value, nb_epoch)
     else:
-        hdf5_save = '../weights/' + net_parse + 'model_kitti_{}_{}.hdf5'.format(merge_name, nb_epoch)
+        hdf5_save = '../weights/' + net_parse + '_kitti_weight_{}_{}.hdf5'.format(merge_name, nb_epoch)
+
+    net_basic.save_weights(hdf5_save)
 
     print(datetime.datetime.now())
 
