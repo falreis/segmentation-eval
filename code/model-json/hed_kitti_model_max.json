@@ -826,7 +826,7 @@
         "config": {
           "name": "conv2d_1",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -879,7 +879,7 @@
         "config": {
           "name": "conv2d_2",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -932,7 +932,7 @@
         "config": {
           "name": "conv2d_3",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -985,7 +985,7 @@
         "config": {
           "name": "conv2d_4",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -1038,7 +1038,7 @@
         "config": {
           "name": "conv2d_5",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -1091,7 +1091,7 @@
         "config": {
           "name": "conv2d_transpose_1",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             2,
             2
@@ -1140,7 +1140,7 @@
         "config": {
           "name": "conv2d_transpose_2",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             4,
             4
@@ -1189,7 +1189,7 @@
         "config": {
           "name": "conv2d_transpose_3",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             8,
             8
@@ -1238,7 +1238,7 @@
         "config": {
           "name": "conv2d_transpose_4",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             16,
             16
@@ -1287,7 +1287,7 @@
         "config": {
           "name": "conv2d_transpose_5",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             32,
             32
@@ -1378,7 +1378,7 @@
         "config": {
           "name": "conv2d_6",
           "trainable": true,
-          "filters": 3,
+          "filters": 2,
           "kernel_size": [
             1,
             1
@@ -1433,13 +1433,13 @@
           "trainable": true,
           "batch_input_shape": [
             null,
-            3,
+            2,
             192,
             624
           ],
           "dtype": "float32",
           "target_shape": [
-            3,
+            2,
             119808
           ]
         },

@@ -33,16 +33,25 @@ n_classes = hc.n_classes
 parser = argparse.ArgumentParser()
 parser.add_argument("--net", type = str)
 parser.add_argument("--merge", type = str)
+parser.add_argument("--vote", nargs='?', type= int)
 args = parser.parse_args()
 net_parse = args.net
 merge_name = args.merge
+
+if(args.vote):
+    vote_value = args.vote
+    print('Vote value: ', vote_value)
+else:
+    if(merge_name == "maj"):
+        print('Maj operation must contain "--vote" parameter!')
+        quit()
 
 print('Neural net: ', net_parse)
 print('Merge method: ', merge_name)
 
 #se merge não for definido
 if(merge_name == None):
-    print('Usage >> "python run-kitti.py --net={hed,rcf} --merge={sum,avg,max,maj}"')
+    print('Usage >> "python run-kitti.py --net={hed,rcf} --merge={sum,avg,max,maj} --vote{0-5}"')
     quit()
 
 if(net_parse != None):
@@ -56,13 +65,10 @@ if(net_parse != None):
 
     # define parameters
     json_model, weights_file = "", ""
-    if net_parse == "hed":
-        json_model = '../model-json/hed_kitti_model_{}.json'.format(merge_name)
-        weights_file = "hed_kitti_weights.best.hdf5"
-
-    elif net_parse == "rcf":
-        json_model = '../model-json/rcf_kitti_model_{}.json'.format(merge_name)
-        weights_file = "rcf_kitti_weights.best.hdf5"
+    if(args.vote):
+        json_model = '../model-json/' + net_parse + '_kitti_model_{}_{}.json'.format(merge_name, vote_value)
+    else:
+        json_model = '../model-json/' + net_parse + '_kitti_model_{}.json'.format(merge_name)
     #endif
 
     #load model
@@ -80,10 +86,10 @@ if(net_parse != None):
                         verbose=1, shuffle=True, validation_split=0.20)
 
     # This save the trained model weights to this file with number of epochs
-    if net_parse == "hed":
-        net_basic.save_weights('../weights/hed_model_kitti_{}.hdf5'.format(nb_epoch))
-    elif net_parse == "rcf":
-        net_basic.save_weights('../weights/rcf_model_kitti_{}.hdf5'.format(nb_epoch))
+    if(args.vote):
+        hdf5_save = '../weights/' + net_parse + 'model_kitti_{}_{}_{}.hdf5'.format(merge_name, vote_value, nb_epoch)
+    else:
+        hdf5_save = '../weights/' + net_parse + 'model_kitti_{}_{}.hdf5'.format(merge_name, nb_epoch)
 
     print(datetime.datetime.now())
 
