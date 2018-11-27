@@ -17,17 +17,11 @@ K.set_image_data_format('channels_first')
 
 import numpy as np
 import json
-import argparse
 import random
-np.random.seed(7) # 0bserver07 for reproducibility
 
-
-def VoteOutput(input_shape):
-    print(input_shape)
-    return (input_shape[0], input_shape[1], input_shape[2], input_shape[3])
-
-def Vote(x):
-    return K.clip(x, 1, 5)
+def Vote(x, vote_value):
+    thresh = vote_value/5
+    return K.sigmoid(x-thresh)
 
 #import contants
 import hed_constants as hc
@@ -36,26 +30,8 @@ width = hc.width
 data_shape =  hc.data_shape
 n_classes = hc.n_classes
 
-#parser
-parser = argparse.ArgumentParser()
-parser.add_argument("--merge", type = str)
-parser.add_argument("--vote", nargs='?', type= int)
-args = parser.parse_args()
-merge_name = args.merge
-print('Merge method: ', merge_name)
-
-if(args.vote):
-    vote_value = args.vote
-    print('Vote value: ', vote_value)
-else:
-    if(merge_name == "maj"):
-        print('Maj operation must contain "--vote" parameter!')
-        quit()
-
-#se merge não for definido
-if(merge_name == None):
-    print('Usage >> "python model-kitti_hed.py --merge={sum,avg,max,maj} --vote=0"')
-    quit()
+#import parser
+import hed_args_model as ha
 
 def side_branch(classes, x, factor):
     x = Convolution2D(classes, (1, 1), activation=None, padding='same')(x)
@@ -102,47 +78,58 @@ x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_c
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv3')(x) # 30 30 512
 b5= side_branch(n_classes, x, 16) # 480 480 1
 
-# fuse
-#fuse = Concatenate(axis=-1)([b1, b2, b3, b4, b5])
-majority_count = 0
+if(ha.out_value == 0):
+    if(ha.merge_name == 'avg'):
+        print('avg')
+        fuse = Average()([b1, b2, b3, b4, b5])
 
-if(merge_name == 'avg'):
-    fuse = Average()([b1, b2, b3, b4, b5])
-elif(merge_name == 'add' or merge_name == 'sum'):
-    merge_name = 'add'
-    fuse = Add()([b1, b2, b3, b4, b5])
-elif(merge_name == 'max'):
-    fuse = Maximum()([b1, b2, b3, b4, b5])
-elif(merge_name == 'maj'):
-    fuse = Add()([b1, b2, b3, b4, b5])
-    fuse = Lambda(Vote, output_shape=VoteOutput)(fuse)
+    elif(ha.merge_name == 'add' or ha.merge_name == 'sum'):
+        print('add')
+        merge_name = 'add'
+        fuse = Add()([b1, b2, b3, b4, b5])
+
+    elif(ha.merge_name == 'max'):
+        print('max')
+        fuse = Maximum()([b1, b2, b3, b4, b5])
+
+    elif(ha.merge_name == 'maj'):
+        print('maj')
+        fuse = Average()([b1, b2, b3, b4, b5])
+        fuse = Lambda(Vote, arguments={'vote_value': ha.vote_value})(fuse)
+    #endif
+
+elif(ha.out_value == 1):
+    fuse = b1
+elif(ha.out_value == 2):
+    fuse = b2
+elif(ha.out_value == 3):
+    fuse = b3
+elif(ha.out_value == 4):
+    fuse = b4
+elif(ha.out_value == 5):
+    fuse = b5
+else:
+    print('Output not found!!')
+    quit()
 #endif
 
 fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
 
-# outputs
-'''
-o1    = Activation('sigmoid', name='o1')(b1)
-o2    = Activation('sigmoid', name='o2')(b2)
-o3    = Activation('sigmoid', name='o3')(b3)
-o4    = Activation('sigmoid', name='o4')(b4)
-o5    = Activation('sigmoid', name='o5')(b5)
-ofuse = Activation('sigmoid', name='ofuse')(fuse)
-'''
-
 #reshape
 ofuse = Reshape((n_classes, data_shape), input_shape=(n_classes, height, width))(fuse)
 ofuse = Permute((2, 1))(ofuse)
-out = Activation('softmax')(ofuse)
 
 model = Model(inputs=inputs, outputs=ofuse)
 #print(model.summary())
 
 # Save model to JSON
-if(args.vote):
-    json_name = '../model-json/hed_kitti_model_{}_{}.json'.format(merge_name, vote_value)
+if(ha.vote_value):
+    if(ha.out_value == 0):
+        json_name = '../model-json/hed_kitti_model_{}_{}.json'.format(ha.merge_name, ha.vote_value)
+    else:
+        json_name = '../model-json/hed_kitti_model_{}_{}_{}.json'.format(ha.merge_name, ha.vote_value, ha.out_value)
 else:
-    json_name = '../model-json/hed_kitti_model_{}.json'.format(merge_name)
+    json_name = '../model-json/hed_kitti_model_{}.json'.format(ha.merge_name)
 
 print(json_name)
 with open(json_name, 'w') as outfile:
