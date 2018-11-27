@@ -43,22 +43,23 @@ if(ha.net_parse != None):
     train_data = np.load('../data/Kitti/train_data.npy')
     train_label = np.load('../data/Kitti/train_label.npy')
 
-    # define parameters
-    json_model, weights_file = "", ""
-    if(ha.vote_value):
-        if(ha.out_value == 0):
-            json_model = '../model-json/{}_kitti_model_{}_{}.json'.format(ha.net_parse, ha.merge_name, ha.vote_value)
-        else:
-            json_model = '../model-json/{}_kitti_model_{}_{}_{}.json'.format(ha.net_parse, ha.merge_name, ha.vote_value, ha.out_value)
-
-        hdf5_file = '../weights/{}_kitti_weight_{}_{}_{}.hdf5'.format(ha.net_parse, ha.merge_name, ha.vote_value, nb_epoch)
+    # define files
+    print('Vote value: ', ha.vote_value)
+    if(ha.vote_value > 0):
+        json_model = '../model-json/hed_kitti_model_{}_{}.json'.format(ha.merge_name, ha.vote_value)
+        #hdf5_file = '../weights/{}_kitti_weight_{}_{}.hdf5'.format(ha.net_parse, ha.merge_name, ha.vote_value)
         checkpoint_file = '../weights/{}_kitti_weight_{}_{}.best.hdf5'.format(ha.net_parse, ha.merge_name, ha.vote_value)
+
+    elif(ha.out_value > 0):
+        json_model = '../model-json/hed_kitti_model_{}_{}.json'.format(ha.merge_name, ha.out_value)
+        #hdf5_file = '../weights/{}_kitti_weight_{}_{}.hdf5'.format(ha.net_parse, ha.merge_name, ha.out_value)
+        checkpoint_file = '../weights/{}_kitti_weight_{}_{}.best.hdf5'.format(ha.net_parse, ha.merge_name, ha.out_value)
+
     else:
         json_model = '../model-json/{}_kitti_model_{}.json'.format(ha.net_parse, ha.merge_name)
-        hdf5_file = '../weights/{}_kitti_weight_{}_{}.hdf5'.format(ha.net_parse, ha.merge_name, nb_epoch)
+        #hdf5_file = '../weights/{}_kitti_weight_{}.hdf5'.format(ha.net_parse, ha.merge_name)
         checkpoint_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(ha.net_parse, ha.merge_name)
     #endif
-
 
     #load model
     with open(json_model) as model_file:
@@ -79,7 +80,7 @@ if(ha.net_parse != None):
 
 
     #save model
-    net_basic.save_weights(hdf5_file)
+    #net_basic.save_weights(hdf5_file)
     print(datetime.datetime.now())
 
 else:

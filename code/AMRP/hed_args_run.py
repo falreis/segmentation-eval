@@ -19,6 +19,7 @@ net_parse = args.net
 merge_name = args.merge
 check_value = args.check
 
+vote_value = 0
 if(args.vote):
     vote_value = args.vote
     print('Vote value: ', vote_value)
@@ -26,7 +27,8 @@ else:
     if(merge_name == "maj"):
         print('Maj operation must contain "--vote" parameter!')
         quit()
-#parameters
+
+out_value = 0
 if(args.out):
     out_value = args.out
     print('Out value: ', out_value)

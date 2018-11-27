@@ -9,12 +9,14 @@ merge_name = args.merge
 print('Merge method: ', merge_name)
 
 #parameters
+out_value = 0
 if(args.out):
     out_value = args.out
     print('Out value: ', out_value)
 else:
     out_value = 0
 
+vote_value = 0
 if(args.vote):
     vote_value = args.vote
     print('Vote value: ', vote_value)

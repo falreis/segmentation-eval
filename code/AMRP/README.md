@@ -11,13 +11,13 @@ python gen_model-kitti.py --merge=maj --vote=2 --out=2
 ```
 
 ### Params
-* merge = { avg || max || add || maj }
+* merge = { avg || max || add || maj || out }
 * vote? = {1-5} (*OPTIONAL: only for merge==maj*)
-* out? = {0-5} (*OPTIONAL: only for merge==maj*)
+* out? = {1-5} (*OPTIONAL: only for merge==out*)
 
 ## Run Kitti
 ```
-python run-kitti.py --net=hed --merge=maj --vote=2 --check=false --out=2
+python run-kitti.py --net=hed --merge=out --vote=2 --check=false --out=2
 ```
 
 ### Params
