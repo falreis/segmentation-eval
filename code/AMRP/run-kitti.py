@@ -17,6 +17,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.callbacks import ModelCheckpoint
 
 from keras import backend as K
+from keras.losses import categorical_crossentropy
 #K.set_image_data_format('channels_first')
 
 import numpy as np
@@ -46,9 +47,10 @@ def ofuse_pixel_error(y_true, y_pred):
     error = tf.cast(tf.not_equal(pred, tf.cast(y_true, tf.int32)), tf.float32)
     return tf.reduce_mean(error, name='pixel_error')
 
-def Vote(x, vote_value):
-    vote_value -=0.5
-    return K.hard_sigmoid((x-vote_value)*5)
+def Vote(y_true, y_pred):
+    vote_value = ha.vote_value - 0.5
+    sig_pred = K.hard_sigmoid((y_pred-vote_value)*5)
+    return categorical_crossentropy(y_true, sig_pred)
 
 if(ha.net_parse != None):
     # load the data
@@ -84,9 +86,9 @@ if(ha.net_parse != None):
 
     #net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
     if(ha.merge_name == 'maj'):
-        net_basic.compile(loss=Vote, optimizer='adadelta', metrics={'ofuse': ofuse_pixel_error})
+        net_basic.compile(loss=Vote, optimizer='adadelta', metrics=["accuracy"]) #metrics={'ofuse': ofuse_pixel_error})
     else:
-        net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics={'ofuse': ofuse_pixel_error})
+        net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"]) #metrics={'ofuse': ofuse_pixel_error})
         #net_basic.compile(loss="categorical_hinge", optimizer='adadelta', metrics=ofuse_pixel_error)
 
     # Fit the model

@@ -19,10 +19,6 @@ import numpy as np
 import json
 import random
 
-def Vote(x, vote_value):
-    vote_value -=0.5
-    return K.hard_sigmoid((x-vote_value)*5)
-
 #import contants
 import hed_constants as hc
 height = hc.height
@@ -47,69 +43,52 @@ inputs = Input((3, height, width))
 
 # Block 1
 x = Convolution2D(64, (3, 3), activation='relu', padding='same', name='block1_conv1')(inputs)
+b11 = side_branch(n_classes, x, 1) # 480 480 1
 x = Convolution2D(64, (3, 3), activation='relu', padding='same', name='block1_conv2')(x)
-b1= side_branch(n_classes, x, 1) # 480 480 1
+b12= side_branch(n_classes, x, 1) # 480 480 1
 x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block1_pool')(x) # 240 240 64
 
 # Block 2
 x = Convolution2D(128, (3, 3), activation='relu', padding='same', name='block2_conv1')(x)
+b21 = side_branch(n_classes, x, 2) # 480 480 1
 x = Convolution2D(128, (3, 3), activation='relu', padding='same', name='block2_conv2')(x)
-b2= side_branch(n_classes, x, 2) # 480 480 1
+b22 = side_branch(n_classes, x, 2) # 480 480 1
 x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block2_pool')(x) # 120 120 128
 
 # Block 3
 x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv1')(x)
+b31 = side_branch(n_classes, x, 4) # 480 480 1
 x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv2')(x)
+b32 = side_branch(n_classes, x, 4) # 480 480 1
 x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv3')(x)
-b3= side_branch(n_classes, x, 4) # 480 480 1
+b33 = side_branch(n_classes, x, 4) # 480 480 1
 x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block3_pool')(x) # 60 60 256
 
 # Block 4
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv1')(x)
+b41= side_branch(n_classes, x, 8) # 480 480 1
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv2')(x)
+b42= side_branch(n_classes, x, 8) # 480 480 1
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv3')(x)
-b4= side_branch(n_classes, x, 8) # 480 480 1
+b43= side_branch(n_classes, x, 8) # 480 480 1
 x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block4_pool')(x) # 30 30 512
 
 # Block 5
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv1')(x)
+b51= side_branch(n_classes, x, 16) # 480 480 1
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv2')(x)
+b52= side_branch(n_classes, x, 16) # 480 480 1
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv3')(x) # 30 30 512
-b5= side_branch(n_classes, x, 16) # 480 480 1
+b53= side_branch(n_classes, x, 16) # 480 480 1
 
-if(ha.merge_name == 'avg'):
-    print('avg')
-    fuse = Average()([b1, b2, b3, b4, b5])
-
-elif(ha.merge_name == 'add' or ha.merge_name == 'sum'):
-    print('add')
-    merge_name = 'add'
-    fuse = Add()([b1, b2, b3, b4, b5])
-
-elif(ha.merge_name == 'max'):
+if(ha.merge_name == 'max'):
     print('max')
-    fuse = Maximum()([b1, b2, b3, b4, b5])
+    fuse = Maximum()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53])
 
 elif(ha.merge_name == 'maj'):
     print('maj')
-    fuse = Add()([b1, b2, b3, b4, b5]) #vote procedure is defined at loss function
+    fuse = Add()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53]) #vote procedure is defined at loss function
     #fuse = Lambda(Vote, arguments={'vote_value': ha.vote_value})(fuse)
-
-elif(ha.merge_name == 'out'):
-    if(ha.out_value == 1):
-        fuse = b1
-    elif(ha.out_value == 2):
-        fuse = b2
-    elif(ha.out_value == 3):
-        fuse = b3
-    elif(ha.out_value == 4):
-        fuse = b4
-    elif(ha.out_value == 5):
-        fuse = b5
-    else:
-        print('Output not found!!')
-        quit()
-#endif
 
 fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
 
