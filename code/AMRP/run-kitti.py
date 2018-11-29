@@ -6,8 +6,8 @@ import datetime
 #os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
+#os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+#os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
@@ -16,11 +16,12 @@ from keras.layers.normalization import BatchNormalization
 from keras.callbacks import ModelCheckpoint
 
 from keras import backend as K
-K.set_image_data_format('channels_first')
+#K.set_image_data_format('channels_first')
 
 import numpy as np
 import json
 import argparse
+import h5py
 
 print(datetime.datetime.now())
 
@@ -36,7 +37,7 @@ import hed_args_run as ha
 
 #parameters
 nb_epoch = 100
-batch_size = 5
+batch_size = 2
 
 if(ha.net_parse != None):
     # load the data
@@ -62,15 +63,31 @@ if(ha.net_parse != None):
     #endif
 
     #load model
+    print(json_model)
     with open(json_model) as model_file:
         net_basic = models.model_from_json(model_file.read())
-
-    net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])       
-
+        
+    #net_basic.load_weights('vgg16_weights.h5')
+    net_basic.load_weights(checkpoint_file)
+    net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])   
+    
+    #load weights
+    '''
+    weights_path = 'vgg16.h5'
+    f = h5py.File(weights_path)
+    print(f.attrs)
+    for k in range(f.attrs['nb_layers']):
+        if k >= len(net_basic.layers):
+            # we don't look at the last (fully-connected) layers in the savefile
+            break
+        g = f['layer_{}'.format(k)]
+        weights = [g['param_{}'.format(p)] for p in range(g.attrs['nb_params'])]
+        net_basic.layers[k].set_weights(weights)
+    '''
 
     # Fit the model
     if(ha.check_value):
-        checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+        checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=False, mode='auto', period=10)
         callbacks_list = [checkpoint]
         history = net_basic.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
                         verbose=1, shuffle=True, validation_split=0.20)

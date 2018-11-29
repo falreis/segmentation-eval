@@ -57,6 +57,7 @@ x = Convolution2D(128, (3, 3), activation='relu', padding='same', name='block2_c
 b2= side_branch(n_classes, x, 2) # 480 480 1
 x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block2_pool')(x) # 120 120 128
 
+'''
 # Block 3
 x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv1')(x)
 x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv2')(x)
@@ -76,23 +77,23 @@ x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_c
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv2')(x)
 x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv3')(x) # 30 30 512
 b5= side_branch(n_classes, x, 16) # 480 480 1
-
+'''
 if(ha.merge_name == 'avg'):
     print('avg')
-    fuse = Average()([b1, b2, b3, b4, b5])
+    fuse = Average()([b1, b2])
 
 elif(ha.merge_name == 'add' or ha.merge_name == 'sum'):
     print('add')
     merge_name = 'add'
-    fuse = Add()([b1, b2, b3, b4, b5])
+    fuse = Add()([b1, b2])
 
 elif(ha.merge_name == 'max'):
     print('max')
-    fuse = Maximum()([b1, b2, b3, b4, b5])
+    fuse = Maximum()([b1, b2])
 
 elif(ha.merge_name == 'maj'):
     print('maj')
-    fuse = Add()([b1, b2, b3, b4, b5])
+    fuse = Add()([b1, b2])
     fuse = Lambda(Vote, arguments={'vote_value': ha.vote_value})(fuse)
 
 elif(ha.merge_name == 'out'):
@@ -100,15 +101,18 @@ elif(ha.merge_name == 'out'):
         fuse = b1
     elif(ha.out_value == 2):
         fuse = b2
+    else:
+        print('Output not found!!')
+        quit()
+    '''
     elif(ha.out_value == 3):
         fuse = b3
     elif(ha.out_value == 4):
         fuse = b4
     elif(ha.out_value == 5):
         fuse = b5
-    else:
-        print('Output not found!!')
-        quit()
+    '''
+    
 #endif
 
 fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1

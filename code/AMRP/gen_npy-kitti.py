@@ -45,7 +45,7 @@ def load_data(mode):
         print(len(images))
 
         index = 0
-        for image, ground in zip(images[:10], grounds[:10]):
+        for image, ground in zip(images, grounds):
             reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
             reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
