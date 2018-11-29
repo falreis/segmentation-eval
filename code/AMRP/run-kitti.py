@@ -81,7 +81,7 @@ if(ha.net_parse != None):
         net_basic = models.model_from_json(model_file.read())
         
     #load weights
-    #lw.load_weights_from_hdf5_group_by_name(net_basic, 'vgg16_weights.h5')
+    lw.load_weights_from_hdf5_group_by_name(net_basic, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
     #net_basic.load_weights(checkpoint_file)
 
     #net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])

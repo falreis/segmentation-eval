@@ -103,16 +103,7 @@ elif(ha.merge_name == 'out'):
         fuse = b2
     else:
         print('Output not found!!')
-        quit()
-    '''
-    elif(ha.out_value == 3):
-        fuse = b3
-    elif(ha.out_value == 4):
-        fuse = b4
-    elif(ha.out_value == 5):
-        fuse = b5
-    '''
-    
+        quit()    
 #endif
 
 fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
