@@ -9,6 +9,7 @@ import datetime
 #os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 #os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
+import tensorflow as tf
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, UpSampling2D, ZeroPadding2D
@@ -22,6 +23,7 @@ import numpy as np
 import json
 import argparse
 import h5py
+import load_weights as lw
 
 print(datetime.datetime.now())
 
@@ -38,6 +40,15 @@ import hed_args_run as ha
 #parameters
 nb_epoch = 100
 batch_size = 2
+
+def ofuse_pixel_error(y_true, y_pred):
+    pred = tf.cast(tf.greater(y_pred, 0.5), tf.int32, name='predictions')
+    error = tf.cast(tf.not_equal(pred, tf.cast(y_true, tf.int32)), tf.float32)
+    return tf.reduce_mean(error, name='pixel_error')
+
+def Vote(x, vote_value):
+    vote_value -=0.5
+    return K.hard_sigmoid((x-vote_value)*5)
 
 if(ha.net_parse != None):
     # load the data
@@ -67,23 +78,16 @@ if(ha.net_parse != None):
     with open(json_model) as model_file:
         net_basic = models.model_from_json(model_file.read())
         
-    #net_basic.load_weights('vgg16_weights.h5')
-    net_basic.load_weights(checkpoint_file)
-    net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])   
-    
     #load weights
-    '''
-    weights_path = 'vgg16.h5'
-    f = h5py.File(weights_path)
-    print(f.attrs)
-    for k in range(f.attrs['nb_layers']):
-        if k >= len(net_basic.layers):
-            # we don't look at the last (fully-connected) layers in the savefile
-            break
-        g = f['layer_{}'.format(k)]
-        weights = [g['param_{}'.format(p)] for p in range(g.attrs['nb_params'])]
-        net_basic.layers[k].set_weights(weights)
-    '''
+    #lw.load_weights_from_hdf5_group_by_name(net_basic, 'vgg16_weights.h5')
+    #net_basic.load_weights(checkpoint_file)
+
+    #net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics=["accuracy"])
+    if(ha.merge_name == 'maj'):
+        net_basic.compile(loss=Vote, optimizer='adadelta', metrics={'ofuse': ofuse_pixel_error})
+    else:
+        net_basic.compile(loss="categorical_crossentropy", optimizer='adadelta', metrics={'ofuse': ofuse_pixel_error})
+        #net_basic.compile(loss="categorical_hinge", optimizer='adadelta', metrics=ofuse_pixel_error)
 
     # Fit the model
     if(ha.check_value):

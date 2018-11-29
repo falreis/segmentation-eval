@@ -115,7 +115,7 @@ fuse = Convolution2D(n_classes, (1,1), padding='same', use_bias=False, activatio
 
 #reshape
 ofuse = Reshape((n_classes, data_shape), input_shape=(n_classes, height, width))(fuse)
-ofuse = Permute((2, 1), name='ofuse')(ofuse)
+ofuse = Permute((2, 1))(ofuse)
 
 model = Model(inputs=inputs, outputs=ofuse)
 #print(model.summary())

@@ -24,7 +24,7 @@ n_classes = hc.n_classes
 sys.path.append("..")
 from helper import *
 
-DataPath = '../datasets/Kitti/data_road/'
+DataPath = '../datasets/Kitti/data_road_augmented/'
 OutputPath = '../data/Kitti/'
 reduced_image_size = (width, height, 3)
 
@@ -45,7 +45,7 @@ def load_data(mode):
         print(len(images))
 
         index = 0
-        for image, ground in zip(images, grounds):
+        for image, ground in zip(images[:10], grounds[:10]):
             reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
             reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
