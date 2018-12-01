@@ -18,10 +18,11 @@ K.set_image_data_format('channels_first')
 import numpy as np
 import json
 import random
+np.random.seed(7) # 0bserver07 for reproducibility
 
-def Vote(x, vote_value):
-    vote_value -=0.5
-    return K.hard_sigmoid((x-vote_value)*5)
+#def Vote(x, vote_value):
+#    vote_value -=0.5
+#    return K.hard_sigmoid((x-vote_value)*5)
 
 #import contants
 import hed_constants as hc
