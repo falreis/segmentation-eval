@@ -56,8 +56,12 @@ def Vote(y_true, y_pred):
 
 if(ha.net_parse != None):
     # load the data
-    train_data = np.load('../data/Kitti/train_data_augm.npy')
-    train_label = np.load('../data/Kitti/train_label_augm.npy')
+    augm_str = ''
+    if(ha.augm_value):
+        augm_str = '_augm'
+
+    train_data = np.load('../data/Kitti/train_data{}.npy'.format(augm_str))
+    train_label = np.load('../data/Kitti/train_label{}.npy'.format(augm_str))
 
     # define files
     print('Vote value: ', ha.vote_value)

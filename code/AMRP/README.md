@@ -30,11 +30,11 @@ python gen_model-kitti.py --merge=out --out=2
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python run-kitti.py --net=hed --merge=add --check=true --load=false
-python run-kitti.py --net=hed --merge=avg --check=true --load=false
-python run-kitti.py --net=hed --merge=max --check=true --load=false
-python run-kitti.py --net=hed --merge=maj --vote=3 --check=true --load=false
-python run-kitti.py --net=hed --merge=out --out=2 --check=true --load=false
+python run-kitti.py --net=hed --merge=add --check=true --augm=true --load=false
+python run-kitti.py --net=hed --merge=avg --check=true --augm=true --load=false
+python run-kitti.py --net=hed --merge=max --check=true --augm=true --load=false
+python run-kitti.py --net=hed --merge=maj --vote=3 --check=true --augm=true --load=false
+python run-kitti.py --net=hed --merge=out --out=2 --check=true --augm=true --load=false
 ```
 
 ### Params
@@ -47,11 +47,14 @@ python run-kitti.py --net=hed --merge=out --out=2 --check=true --load=false
 * check = {false || true}
   * Parâmetro para armazenamento de pontos de controle.
 
-* vote? = {1-5} (*OPTIONAL: only for merge==maj*)
+* vote? = {1-5} (*OPCIONAL: somente para merge==maj*)
   * Parâmetro correspondente ao número de votos necessários para que sejam consideradas as maiorias.
 
-* out? = {0-5} (*OPTIONAL: only for merge==maj*)
+* out? = {0-5} (*OPCIONAL: somente para merge==out*)
   * Parâmetro correspondente a saída lateral da rede que será tomada como saída final.
+
+* augm? = {false || true}  (*OPCIONAL*)
+  * Parâmetro para uso de dataset com data augmentation.
 
 * load? = {false || true} (*INDISPONÍVEL*)
   * *INDISPONÍVEL* - Parâmetro para uso de pesos da rede vggnet16.

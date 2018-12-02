@@ -14,10 +14,12 @@ parser.add_argument("--merge", type = str)
 parser.add_argument("--vote", nargs='?', type= int)
 parser.add_argument("--check", nargs='?', type= str2bool)
 parser.add_argument("--out", nargs='?', type=int)
+parser.add_argument("--augm", nargs='?', type=str2bool)
 args = parser.parse_args()
 net_parse = args.net
 merge_name = args.merge
 check_value = args.check
+augm_value = args.augm
 
 vote_value = 0
 if(args.vote):
