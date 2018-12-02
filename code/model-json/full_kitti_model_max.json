@@ -865,7 +865,7 @@
         "inbound_nodes": [
           [
             [
-              "block1_conv2",
+              "block1_conv1",
               0,
               0,
               {}
@@ -918,7 +918,7 @@
         "inbound_nodes": [
           [
             [
-              "block2_conv2",
+              "block1_conv2",
               0,
               0,
               {}
@@ -971,7 +971,7 @@
         "inbound_nodes": [
           [
             [
-              "block3_conv3",
+              "block2_conv1",
               0,
               0,
               {}
@@ -1024,7 +1024,7 @@
         "inbound_nodes": [
           [
             [
-              "block4_conv3",
+              "block2_conv2",
               0,
               0,
               {}
@@ -1037,6 +1037,430 @@
         "class_name": "Conv2D",
         "config": {
           "name": "conv2d_5",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block3_conv1",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_6",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_6",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block3_conv2",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_7",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_7",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block3_conv3",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_8",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_8",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block4_conv1",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_9",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_9",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block4_conv2",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_10",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_10",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block4_conv3",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_11",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_11",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block5_conv1",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_12",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_12",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            1,
+            1
+          ],
+          "strides": [
+            1,
+            1
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "dilation_rate": [
+            1,
+            1
+          ],
+          "activation": "linear",
+          "use_bias": true,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "block5_conv2",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_13",
+        "class_name": "Conv2D",
+        "config": {
+          "name": "conv2d_13",
           "trainable": true,
           "filters": 2,
           "kernel_size": [
@@ -1142,12 +1566,12 @@
           "trainable": true,
           "filters": 2,
           "kernel_size": [
-            4,
-            4
-          ],
-          "strides": [
             2,
             2
+          ],
+          "strides": [
+            1,
+            1
           ],
           "padding": "same",
           "data_format": "channels_first",
@@ -1191,12 +1615,12 @@
           "trainable": true,
           "filters": 2,
           "kernel_size": [
-            8,
-            8
-          ],
-          "strides": [
             4,
             4
+          ],
+          "strides": [
+            2,
+            2
           ],
           "padding": "same",
           "data_format": "channels_first",
@@ -1240,12 +1664,12 @@
           "trainable": true,
           "filters": 2,
           "kernel_size": [
-            16,
-            16
+            4,
+            4
           ],
           "strides": [
-            8,
-            8
+            2,
+            2
           ],
           "padding": "same",
           "data_format": "channels_first",
@@ -1289,6 +1713,300 @@
           "trainable": true,
           "filters": 2,
           "kernel_size": [
+            8,
+            8
+          ],
+          "strides": [
+            4,
+            4
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_5",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_6",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_6",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            8,
+            8
+          ],
+          "strides": [
+            4,
+            4
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_6",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_7",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_7",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            8,
+            8
+          ],
+          "strides": [
+            4,
+            4
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_7",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_8",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_8",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            16,
+            16
+          ],
+          "strides": [
+            8,
+            8
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_8",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_9",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_9",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            16,
+            16
+          ],
+          "strides": [
+            8,
+            8
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_9",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_10",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_10",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            16,
+            16
+          ],
+          "strides": [
+            8,
+            8
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_10",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_11",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_11",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
             32,
             32
           ],
@@ -1322,7 +2040,105 @@
         "inbound_nodes": [
           [
             [
-              "conv2d_5",
+              "conv2d_11",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_12",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_12",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            32,
+            32
+          ],
+          "strides": [
+            16,
+            16
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_12",
+              0,
+              0,
+              {}
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "conv2d_transpose_13",
+        "class_name": "Conv2DTranspose",
+        "config": {
+          "name": "conv2d_transpose_13",
+          "trainable": true,
+          "filters": 2,
+          "kernel_size": [
+            32,
+            32
+          ],
+          "strides": [
+            16,
+            16
+          ],
+          "padding": "same",
+          "data_format": "channels_first",
+          "activation": "linear",
+          "use_bias": false,
+          "kernel_initializer": {
+            "class_name": "VarianceScaling",
+            "config": {
+              "scale": 1.0,
+              "mode": "fan_avg",
+              "distribution": "uniform",
+              "seed": null
+            }
+          },
+          "bias_initializer": {
+            "class_name": "Zeros",
+            "config": {}
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "inbound_nodes": [
+          [
+            [
+              "conv2d_13",
               0,
               0,
               {}
@@ -1368,15 +2184,63 @@
               0,
               0,
               {}
+            ],
+            [
+              "conv2d_transpose_6",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_7",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_8",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_9",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_10",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_11",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_12",
+              0,
+              0,
+              {}
+            ],
+            [
+              "conv2d_transpose_13",
+              0,
+              0,
+              {}
             ]
           ]
         ]
       },
       {
-        "name": "conv2d_6",
+        "name": "conv2d_14",
         "class_name": "Conv2D",
         "config": {
-          "name": "conv2d_6",
+          "name": "conv2d_14",
           "trainable": true,
           "filters": 2,
           "kernel_size": [
@@ -1446,7 +2310,7 @@
         "inbound_nodes": [
           [
             [
-              "conv2d_6",
+              "conv2d_14",
               0,
               0,
               {}
@@ -1455,10 +2319,10 @@
         ]
       },
       {
-        "name": "ofuse",
+        "name": "permute_1",
         "class_name": "Permute",
         "config": {
-          "name": "ofuse",
+          "name": "permute_1",
           "trainable": true,
           "dims": [
             2,
@@ -1486,7 +2350,7 @@
     ],
     "output_layers": [
       [
-        "ofuse",
+        "permute_1",
         0,
         0
       ]

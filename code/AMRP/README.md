@@ -59,6 +59,24 @@ python run-kitti.py --net=hed --merge=out --out=2 --check=true --augm=true --loa
 * load? = {false || true} (*INDISPONÍVEL*)
   * *INDISPONÍVEL* - Parâmetro para uso de pesos da rede vggnet16.
 
+## Eval Kitti
+As opções para execução das redes neurais estão descritas abaixo.
+
+```
+python eval-kitti_hed.py --net=hed --merge=max --set=train
+python eval-kitti_hed.py --net=full --merge=max --set=train
+```
+
+### Params
+* net = { hed | full }
+  * Parâmetro correspondente ao nome da rede neural a ser utilizada
+
+* merge = { max }
+  * Parâmetro correspondente ao nome da operação a ser executada.
+
+* set = {train || test}
+  * Parâmetro para conjunto de teste a ser utilizado.
+
 ---
 ---
 ## Help (SCP)
