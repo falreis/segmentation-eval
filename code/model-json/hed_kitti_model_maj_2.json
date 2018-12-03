@@ -1331,10 +1331,10 @@
         ]
       },
       {
-        "name": "average_1",
-        "class_name": "Average",
+        "name": "add_1",
+        "class_name": "Add",
         "config": {
-          "name": "average_1",
+          "name": "add_1",
           "trainable": true
         },
         "inbound_nodes": [
@@ -1365,35 +1365,6 @@
             ],
             [
               "conv2d_transpose_5",
-              0,
-              0,
-              {}
-            ]
-          ]
-        ]
-      },
-      {
-        "name": "lambda_1",
-        "class_name": "Lambda",
-        "config": {
-          "name": "lambda_1",
-          "trainable": true,
-          "function": [
-            "4wIAAAAAAAAAAwAAAAMAAABDAAAAcxYAAAB8AWQBGwB9AnQAagF8AHwCGACDAVMAKQJO6QUAAAAp\nAtoBS9oHc2lnbW9pZCkD2gF42gp2b3RlX3ZhbHVl2gZ0aHJlc2ipAHIHAAAA+hJnZW5fbW9kZWwt\na2l0dGkucHnaBFZvdGUWAAAAcwQAAAAAAQgB\n",
-            null,
-            null
-          ],
-          "function_type": "lambda",
-          "output_shape": null,
-          "output_shape_type": "raw",
-          "arguments": {
-            "vote_value": 2
-          }
-        },
-        "inbound_nodes": [
-          [
-            [
-              "average_1",
               0,
               0,
               {}
@@ -1446,7 +1417,7 @@
         "inbound_nodes": [
           [
             [
-              "lambda_1",
+              "add_1",
               0,
               0,
               {}
@@ -1484,10 +1455,10 @@
         ]
       },
       {
-        "name": "permute_1",
+        "name": "ofuse",
         "class_name": "Permute",
         "config": {
-          "name": "permute_1",
+          "name": "ofuse",
           "trainable": true,
           "dims": [
             2,
@@ -1515,7 +1486,7 @@
     ],
     "output_layers": [
       [
-        "permute_1",
+        "ofuse",
         0,
         0
       ]
