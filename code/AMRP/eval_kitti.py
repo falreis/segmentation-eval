@@ -43,19 +43,7 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-#parser
-'''
-parser = argparse.ArgumentParser()
-parser.add_argument("--net", type = str)
-parser.add_argument("--merge", type = str)
-parser.add_argument("--set", type = str)
-args = parser.parse_args()
-net_parse = args.net
-merge_name = args.merge
-set_name = args.set
-'''
-
-def eval(net, merge_name=None, set_name='test'):
+def eval(net, merge_name=None, set_name='test', mark=True):
     if(net != None):
         # define parameters
         json_model, weights_file = "", ""
@@ -119,23 +107,30 @@ def eval(net, merge_name=None, set_name='test'):
             pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
             
             #expand predict to the size of the original image
-            expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
-            #expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
+            if(mark):
+                expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
+            else:
+                expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
 
             #mark lane
             
             for i in range(1, original_height):
                 for j in range(1, original_width):                
                     if (expanded_pred[i, j, 2] > 0):
-                        #expanded_pred[i,j,:] = [255, 255, 255]
-                        original_image[i,j,0] = 0
-                        original_image[i,j,2] = 0
+                        if(mark):
+                            original_image[i,j,0] = 0
+                            original_image[i,j,2] = 0
+                        else:
+                            expanded_pred[i,j,:] = [1., -1., 1.]
             
             #save data
             pos = image_path.rfind('/')
             name_file = image_path[pos+1:]
-            #io.imsave((save_path + name_file), expanded_pred)
-            io.imsave((save_path + name_file), original_image)
+
+            if(mark):
+                io.imsave((save_path + name_file), original_image)
+            else:
+                io.imsave((save_path + name_file), expanded_pred)
             
             #verbose
             index += 1

@@ -35,7 +35,7 @@ def load_data(mode, data_path):
 
     if mode == "train":
         print(pathg)
-        grounds = glob.glob(pathg + "*.jpg") + glob.glob(pathg + "*.png")
+        grounds = glob.glob(pathg + "*road*.jpg") + glob.glob(pathg + "*road*.png")
         grounds.sort()
         len_data = len(images)
 

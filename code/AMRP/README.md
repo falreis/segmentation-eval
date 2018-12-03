@@ -21,7 +21,7 @@ python kitti.py --func=run --net=hed --merge=maj --check=true --augm=true --load
   * Opção para execução da rede neural.
 
 * net = { hed || full }
-  * Parâmetro correspondente ao nome da rede neural a ser utilizada (hed ou full)
+  * Parâmetro correspondente ao nome da rede neural a ser utilizada (hed ou full).
 
 * merge = { avg || max || add || maj }
   * Parâmetro correspondente ao nome da operação a ser executada.
@@ -43,19 +43,22 @@ python kitti.py --func=run --net=hed --merge=maj --check=true --augm=true --load
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=eval --net=hed --merge=max --set=train
-python kitti.py --func=eval --net=full --set=train
+python kitti.py --func=eval --net=hed --merge=max --set=train --mark=false
+python kitti.py --func=eval --net=full --set=train --mark=false
 ```
 
 ### Params
 * net = { hed || full }
-  * Parâmetro correspondente ao nome da rede neural a ser utilizada
+  * Parâmetro correspondente ao nome da rede neural a ser utilizada.
 
 * merge = { avg || max || add || maj }
   * Parâmetro correspondente ao nome da operação a ser executada.
 
 * set = {train || test}
   * Parâmetro para conjunto de treino ou teste a ser utilizado.
+
+* mark = {false || true}
+  * Parâmetro para marcar rodovia sobre a imagem original ou gerar grond-truth.
 
 
 ## Npy Kitti
