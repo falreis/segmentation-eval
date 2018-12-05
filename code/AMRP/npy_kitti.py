@@ -40,16 +40,20 @@ def load_data(mode, data_path):
         len_data = len(images)
 
         index = 0
-        for image, ground in zip(images[:10], grounds[:10]):
-            reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
-            reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+        if(len(grounds) == len(images)):
+            for image, ground in zip(images, grounds):
+                reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+                reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
-            data.append(np.rollaxis(normalized(reduced_image), 2))
-            label.append(one_hot_kitti(reduced_ground, height = hc.height, width = hc.width, classes = hc.n_classes))
+                data.append(np.rollaxis(normalized(reduced_image), 2))
+                label.append(one_hot_kitti(reduced_ground, height = hc.height, width = hc.width, classes = hc.n_classes))
 
-            index += 1
-            print(index, '/', len_data, end='')
-            print('\r', end='')
+                index += 1
+                print(index, '/', len_data, end='')
+                print('\r', end='')
+        else:
+            print('Alguma coisa errada: número de ground-truths não é igual ao de imagens.')
+            quit()
 
     elif mode == "test":
         for image in images:

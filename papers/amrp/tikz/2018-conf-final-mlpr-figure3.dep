@@ -1,0 +1,5 @@
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/data/aug-add-val-loss.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/data/aug-avg-val-loss.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/data/aug-maj2-val-loss.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/data/aug-maj3-val-loss.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/data/aug-max-val-loss.dat

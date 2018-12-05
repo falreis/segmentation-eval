@@ -1,0 +1,13 @@
+\section{Introduction}
+\label{sec:intro}
+
+Image segmentation refers to the partition of an image into a set of regions representing  meaningful areas. It is considered a challenging semantic task aiming to determine and group uniform regions for analysis. {\color{green}verificar se eh plagio}According to~\cite{DOMINGUEZ}, to create an adequate segmented image it is necessary that the output presents some fundamental characteristics, such as: (i) regions of an image segmentation should be uniform and homogeneous with respect to some features, such as gray level, color, or texture; (ii) region interiors should be simple and without many small holes; (iii) adjacent regions of a segmentation should have significantly different values with respect to the features on which they are uniform; and (iv) boundaries of each segment should be smooth, not ragged, and should be spatially accurate. Segmentation is an active topic of research and in a traditional approach the task is performed using hand-engineered features.  
+
+\textbf{Insert scale-set theory reference to characterize hand-eng. Talvez retirar o paragrafo do deep para introduzir o related}
+
+Recently, deep learning architectures drastically changed the computational paradigm for visual tasks. The main advantage of deep learning algorithms is that it does not require an engineered model to operate, meaning that they are capable of learning not only the features to represent the data but also the models to describe it~\cite{goodfellow16}. The success of these approaches relies on a hierarchy of concepts learned through the network, in which more complex concepts are build from simpler ones. In the deep learning approach applied in images, the raw pixel on the input layer is learned as segments and parts until the composition of multiple object concepts later in the network.
+
+Unsurprisingly, many approaches have been proposed to explore these hierarchies, creating maps from the outputs of different layers of a deep learning network. One challenge in this strategy is how to combine these maps, considering that they are presented with different sizes and could represent different concepts. In this work it is presented strategies to combine hierarchical maps to create region proposition for the task of binary image segmentation.   
+
+The remainder of this work is organized as bla bla bla....
+

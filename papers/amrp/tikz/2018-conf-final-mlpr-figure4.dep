@@ -1,0 +1,5 @@
+tikz/2018-conf-final-mlpr-figure4.pdf: figures/data/noaug-add-train-acc.dat
+tikz/2018-conf-final-mlpr-figure4.pdf: figures/data/noaug-avg-train-acc.dat
+tikz/2018-conf-final-mlpr-figure4.pdf: figures/data/noaug-maj2-train-acc.dat
+tikz/2018-conf-final-mlpr-figure4.pdf: figures/data/noaug-maj3-train-acc.dat
+tikz/2018-conf-final-mlpr-figure4.pdf: figures/data/noaug-max-train-acc.dat

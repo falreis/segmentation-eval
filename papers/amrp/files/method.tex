@@ -1,0 +1,13 @@
+\section{Hierarchical maps in convolutional neural networks}
+
+This work present strategies to merge hierarchical maps created from  outputs of different layers of a convolutional network.{\color{green}verificar se eh plagio}. In a convolutional network each layer is a three-dimensional array of size $h \times w \times d$, where $h$ and $w$ are spatial dimensions  and $d$ is the feature, channel or stride dimension. The first layer is the input image, with pixel size $h \times w$ and $d$ color channels. Locations in higher layers correspond to the locations in the image they are path-connected to, which are called their receptive fields. Convolutional networks are built on translation invariance and their basic components (convolution, pooling, and activation functions) operate on local input regions and depend only on relative spatial coordinates. 
+
+The convolutional network model used in this work is the VGG network~\cite{simonyan2014},proposed in 2014 as one of the first attempts to create deeper models for the task of object recognition. The architecture is a composition of multiple stacked convolutional layers, in which the receptive fields and stride have a fixed $3\times3\times1$ size. Following each two or three layers of convolution is placed a max-pooling layer. Also, all hidden layers are supplied with a ReLU non-linear rectification.
+
+As demonstrated in bla bla layers bla bla hierarchies bla bla for binary segmentation bla bla bla
+
+Formally, let $\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
+$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
+\begin{equation}
+\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
+\end{equation}
