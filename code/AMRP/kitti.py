@@ -22,6 +22,7 @@ parser.add_argument("--check", nargs='?', type= str2bool)
 parser.add_argument("--augm", nargs='?', type=str2bool)
 parser.add_argument("--load", nargs='?', type=str2bool)
 parser.add_argument("--mark", nargs='?', type=str2bool)
+parser.add_argument("--epochs", nargs='?', type=int)
 args = parser.parse_args()
 
 #func and net parameters
@@ -45,6 +46,11 @@ else:
         print('Maj operation must contain "--vote" parameter!')
         quit()
 
+#epochs parameter
+nb_epochs = 100
+if(args.epochs != None and args.epochs > 0):
+    nb_epochs = args.epochs
+
 #print parameters
 print('-----BEGIN PARAMETERS-----')
 print('Functionality: ', args.func)
@@ -56,6 +62,7 @@ print('Use checkpoint: ', args.check)
 print('Use data augm: ', args.augm)
 print('Load vgg weights: ', args.load)
 print('Mark road: ', args.mark)
+print('Epochs: ', nb_epochs)
 print('-----END PARAMETERS-----')
 
 ##
@@ -64,14 +71,16 @@ if(args.func == 'train'):
     import model_kitti as mk
     import train_kitti as trk
 
+    model = None
+
     if(args.net == 'hed'):
-        trk.model_hed(merge_name=args.merge, vote_value=args.vote)
+        model = mk.model_hed(merge_name=args.merge, vote_value=args.vote)
     elif(args.net == 'full'):
-        trk.model_full()
+        model = mk.model_full()
     else:
         printWrongUsageAndQuit()
 
-    rk.run(net=args.net, merge=args.merge, vote=vote_value, check=args.check, augm=args.augm, load=args.load)
+    trk.train(model=model, net=args.net, merge=args.merge, vote=vote_value, check=args.check, augm=args.augm, load=args.load, nb_epoch=nb_epochs)
 
 elif(args.func == 'npy'):
     import npy_kitti as nk
@@ -79,7 +88,7 @@ elif(args.func == 'npy'):
 
 elif(args.func == 'test'):
     import test_kitti as tek
-    tek.eval(net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark)
+    tek.test(net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark)
 
 else:
     printWrongUsageAndQuit()

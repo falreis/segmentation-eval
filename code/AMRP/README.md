@@ -24,11 +24,11 @@ python kitti.py --func=npy --set=train --augm=true
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=train --net=full --check=true --augm=true --load=true
-python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true
-python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true
-python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true
-python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --vote=3
+python kitti.py --func=train --net=full --check=true --augm=true --load=true --epochs=100
+python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true --epochs=100
+python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true --epochs=100
+python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true --epochs=100
+python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --epochs=100 --vote=3
 ```
 
 ### Params
@@ -52,6 +52,9 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 
 * load? = {false || true} (*OPCIONAL*)
   * Parâmetro para uso de pesos da rede vggnet16.
+
+* epochs? = {1-*} (*OPCIONAL*)
+  * Parâmetro para definição do número de épocas para treinamento
 
 
 ## Test Kitti

@@ -103,6 +103,7 @@ def model_hed(merge_name, vote_value=0):
     model = Model(inputs=inputs, outputs=ofuse)
     #print(model.summary())
 
+    '''
     # Save model to JSON
     if(vote_value != None and vote_value > 0):
         json_name = '../model-json/hed_kitti_model_{}_{}.json'.format(merge_name, vote_value)
@@ -112,7 +113,8 @@ def model_hed(merge_name, vote_value=0):
     print(json_name)
     with open(json_name, 'w') as outfile:
         outfile.write(json.dumps(json.loads(model.to_json()), indent=2))
-
+    '''
+    return model
 
 
 ############
@@ -171,9 +173,12 @@ def model_full():
     model = Model(inputs=inputs, outputs=ofuse)
     #print(model.summary())
 
+    '''
     # Save model to JSON
     json_name = '../model-json/full_kitti_model.json'
 
     print(json_name)
     with open(json_name, 'w') as outfile:
         outfile.write(json.dumps(json.loads(model.to_json()), indent=2))
+    '''
+    return model
