@@ -44,7 +44,7 @@ def Vote(y_true, y_pred):
     sig_pred = K.hard_sigmoid((y_pred-vote_value)*5)
     return categorical_crossentropy(y_true, sig_pred)
 
-def run(net, merge='max', vote=0, check=True, augm=True, load=True):
+def train(net, merge='max', vote=0, check=True, augm=True, load=True):
     if(net != None):
         print(datetime.datetime.now())
 

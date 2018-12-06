@@ -43,7 +43,7 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-def eval(net, merge_name=None, set_name='test', mark=True):
+def test(net, merge_name=None, set_name='test', mark=True):
     if(net != None):
         # define parameters
         json_model, weights_file = "", ""
