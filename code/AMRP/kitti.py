@@ -24,6 +24,7 @@ parser.add_argument("--load", nargs='?', type=str2bool)
 parser.add_argument("--mark", nargs='?', type=str2bool)
 parser.add_argument("--epochs", nargs='?', type=int)
 parser.add_argument("--morf", nargs='?', type=str2bool)
+parser.add_argument("--balanced", nargs='?', type=str2bool)
 args = parser.parse_args()
 
 #func and net parameters
@@ -65,6 +66,7 @@ print('Load vgg weights: ', args.load)
 print('Mark road: ', args.mark)
 print('Epochs: ', nb_epochs)
 print('Math morfology: ', args.morf)
+print('Balanced: ', args.balanced)
 print('-----END PARAMETERS-----')
 
 ##
@@ -82,7 +84,7 @@ if(args.func == 'train'):
     else:
         printWrongUsageAndQuit()
 
-    trk.train(model=model, net=args.net, merge=args.merge, vote=vote_value, check=args.check, augm=args.augm, load=args.load, nb_epoch=nb_epochs)
+    trk.train(model=model, net=args.net, merge=args.merge, vote=vote_value, check=args.check, augm=args.augm, load=args.load, nb_epoch=nb_epochs, balanced=args.balanced)
 
 elif(args.func == 'npy'):
     import npy_kitti as nk
