@@ -61,8 +61,8 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=test --net=hed --merge=max --set=train --mark=false
-python kitti.py --func=test --net=full --set=train --mark=false
+python kitti.py --func=test --net=hed --merge=max --set=train --mark=false --morf=true
+python kitti.py --func=test --net=full --set=train --mark=false --morf=true
 ```
 
 ### Params
@@ -78,8 +78,35 @@ python kitti.py --func=test --net=full --set=train --mark=false
 * mark = {false || true}
   * Parâmetro para marcar rodovia sobre a imagem original ou gerar grond-truth.
 
+* morf? = {false || true} (*OPCIONAL*)
+  * Parâmetro para aplicação de morfologia matemática a predição da rede neural.
+
 ---
+## Eval Kitti
+
+### Change File Names
+
+To eval the results, change the name of the files create by the test procedure. Following this tutorial, it is necessary to install *rename* program, as the code below.
+
+```
+sudo apt install rename
+cd ../export/Kitti/hed/train
+rename 's/umm_/umm_road_/' * 
+rename 's/um_/um_road_/' * 
+rename 's/uu_/uu_road_/' *
+```
+
+### Eval Procedure
+
+The commands should have the same structure as the code below.
+
+```
+cd ../../eval/Kitti/
+python evaluateRoad.py ../../code/export/Kitti/hed/train ../../code/export
+```
+
 ---
+
 ## Help (SCP)
 Home > Server
 ```

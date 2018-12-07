@@ -43,32 +43,29 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-def test(net, merge_name=None, set_name='test', mark=True):
+def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
     if(net != None):
         # define parameters
-        json_model, weights_file = "", ""
+        weights_file = "", ""
         if net == "hed":
-            json_model = '../model-json/hed_kitti_model_{}.json'.format(merge_name)
             weights_file = '../weights/hed_augm/{}_400_augm.hdf5'.format(merge_name)
 
         elif net == "full":
-            json_model = '../model-json/full_kitti_model_max.json'
             weights_file = '../weights/full_augm/full_400_augm.hdf5'
         #endif
 
-        print(json_model)
+        #verify mathematical morfology
+        if(mark and morf):
+            print('Mathematical morfology can be only applied with option --mark=False')
+
         print(weights_file)
 
-        # load the model:
-        with open(json_model) as model_file:
-            net_basic = models.model_from_json(model_file.read())
-
         # load weights
-        net_basic.load_weights(weights_file)
+        model.load_weights(weights_file)
 
         # Compile model (required to make predictions)
         sgd = SGD(lr=0.0001, decay=1e-6, momentum=0.95, nesterov=False)
-        net_basic.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
+        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
 
         batch_size = 1
 
@@ -103,7 +100,7 @@ def test(net, merge_name=None, set_name='test', mark=True):
             test_image = np.rollaxis(normalized(reduced_image), 2) 
 
             #predict
-            output = net_basic.predict(test_image[np.newaxis, :])
+            output = model.predict(test_image[np.newaxis, :])
             pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
             
             #expand predict to the size of the original image
@@ -112,8 +109,7 @@ def test(net, merge_name=None, set_name='test', mark=True):
             else:
                 expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
 
-            #mark lane
-            
+            #mark lane or create "ground-truth"
             for i in range(1, original_height):
                 for j in range(1, original_width):                
                     if (expanded_pred[i, j, 2] > 0):
@@ -121,8 +117,20 @@ def test(net, merge_name=None, set_name='test', mark=True):
                             original_image[i,j,0] = 0
                             original_image[i,j,2] = 0
                         else:
-                            expanded_pred[i,j,:] = [1., -1., 1.]
+                            #expanded_pred[i,j,:] = [1., -1., 1.]
+                            expanded_pred[i,j,:] = [1., 0., 1.]
             
+            #apply mathematical morphology
+            if((not mark) and morf):
+                for i in range(3, 7, 1):
+                    kernel = np.ones((2*i-1,2*i-1),np.uint8)
+                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)
+                '''
+                for i in range(2, 4, 1):
+                    kernel = np.ones((2*i-1,2*i-1),np.uint8)
+                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_CLOSE, kernel)
+                '''
+
             #save data
             pos = image_path.rfind('/')
             name_file = image_path[pos+1:]
@@ -138,10 +146,5 @@ def test(net, merge_name=None, set_name='test', mark=True):
             print('\r', end='')
 
         print("Done")
-        #print("Just remember rename files to use KITTI eval tool.")
-        #print("Instructions in the beggining of the file - comment section!")
-        #print(">> rename 's/umm_/umm_road_/' * ")
-        #print(">> rename 's/um_/um_lane_/' * ")
-        #print(">> rename 's/uu_/uu_road_/' * ")
     else:
         print('Usage >> "python eval-kitti_hed.py --net=hed --merge={sum,avg,max}"')

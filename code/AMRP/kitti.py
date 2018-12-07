@@ -23,6 +23,7 @@ parser.add_argument("--augm", nargs='?', type=str2bool)
 parser.add_argument("--load", nargs='?', type=str2bool)
 parser.add_argument("--mark", nargs='?', type=str2bool)
 parser.add_argument("--epochs", nargs='?', type=int)
+parser.add_argument("--morf", nargs='?', type=str2bool)
 args = parser.parse_args()
 
 #func and net parameters
@@ -63,6 +64,7 @@ print('Use data augm: ', args.augm)
 print('Load vgg weights: ', args.load)
 print('Mark road: ', args.mark)
 print('Epochs: ', nb_epochs)
+print('Math morfology: ', args.morf)
 print('-----END PARAMETERS-----')
 
 ##
@@ -87,8 +89,11 @@ elif(args.func == 'npy'):
     nk.npy(set_name=args.set, augm=args.augm)
 
 elif(args.func == 'test'):
+    import model_kitti as mk
     import test_kitti as tek
-    tek.test(net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark)
+
+    model = mk.model_hed(merge_name=args.merge, vote_value=args.vote)
+    tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark, morf=args.morf)
 
 else:
     printWrongUsageAndQuit()
