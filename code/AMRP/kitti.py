@@ -69,14 +69,10 @@ print('Math morfology: ', args.morf)
 print('Balanced: ', args.balanced)
 print('-----END PARAMETERS-----')
 
-##
-#code
-if(args.func == 'train'):
+#############
+#net = {full, hed}
+if(args.net != None):
     import model_kitti as mk
-    import train_kitti as trk
-
-    model = None
-
     if(args.net == 'hed'):
         model = mk.model_hed(merge_name=args.merge, vote_value=args.vote)
     elif(args.net == 'full'):
@@ -84,6 +80,9 @@ if(args.func == 'train'):
     else:
         printWrongUsageAndQuit()
 
+#func = {train, test, npy}
+if(args.func == 'train'):
+    import train_kitti as trk
     trk.train(model=model, net=args.net, merge=args.merge, vote=vote_value, check=args.check, augm=args.augm, load=args.load, nb_epoch=nb_epochs, balanced=args.balanced)
 
 elif(args.func == 'npy'):
@@ -91,10 +90,7 @@ elif(args.func == 'npy'):
     nk.npy(set_name=args.set, augm=args.augm)
 
 elif(args.func == 'test'):
-    import model_kitti as mk
     import test_kitti as tek
-
-    model = mk.model_hed(merge_name=args.merge, vote_value=args.vote)
     tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark, morf=args.morf)
 
 else:
