@@ -1,6 +1,7 @@
 \section{Related work}
 \label{sec:related}
 
+\textbf{Acho q a idéia de multiescala não está diretamente relacionada a pegar partes da rede neural. Tanto q o RCF pega saídas laterais e ainda usa multiescala do lado de fora da rede para completar a tarefa. Se for falar de redes neurais multiescala, é necessário falar do MCG.}
 
 In the earlier years of the deep learning resurgence, an strategy in~\cite{farabet2012}~(extended version in~\cite{farabet2013}), tackles the task of scene parsing---segmentation task applied for each pixel of the image, aiming to group pixels composing all the identifiable objects in the scene---using hierarchical trees and deep features alongside. Images are used as input for a convolutional network to extract deep features from multiple scales of the images, and in parallel to construct a segmentation tree, to represent in its nodes dissimilarities of neighboring pixels. The tree nodes are used to pool the correspondent deep features to be processed by a classifier. The classifier scores are used to create histogram of object classes for each node of the segmentation tree, and the final parsing proposal is built using the class entropy distribution for selecting the nodes that cover the entire image.   
 
