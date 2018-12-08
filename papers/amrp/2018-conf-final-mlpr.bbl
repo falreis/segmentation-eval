@@ -56,6 +56,12 @@ D.~R. Martin, C.~C. Fowlkes, and J.~Malik, ``Learning to detect natural image
   Transactions on Pattern Analysis and Machine Intelligence}, vol.~26, no.~5,
   pp. 530--549, May 2004.
 
+\bibitem{LIM:6619250}
+J.~J. Lim, C.~L. Zitnick, and P.~Dollár, ``Sketch tokens: A learned mid-level
+  representation for contour and object detection,'' in \emph{2013 IEEE
+  Conference on Computer Vision and Pattern Recognition}, June 2013, pp.
+  3158--3165.
+
 \bibitem{StructuredEdges:2015}
 P.~Dollár and C.~L. Zitnick, ``Fast edge detection using structured forests,''
   \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
