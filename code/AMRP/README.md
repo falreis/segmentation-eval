@@ -24,11 +24,11 @@ python kitti.py --func=npy --set=train --augm=true
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=train --net=full --check=true --augm=true --load=true --epochs=100 --balanced=False
-python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true --epochs=100 --balanced=False
-python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true --epochs=100 --balanced=False
-python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true --epochs=100 --balanced=False
-python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --epochs=100 --vote=3 --balanced=False
+python kitti.py --func=train --net=full --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
+python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
+python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
+python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
+python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --epochs=100 --vote=3 --balanced=false --morf=false
 ```
 
 ### Params
@@ -58,6 +58,9 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 
 * balanced? = {false || true}} (*OPCIONAL*)
   * Parâmetro para definição de utilização de função *categorical_crossentropy* ou *balanced_categorical_crossentropy* (própria)
+
+* morf? = {false || true} (*OPCIONAL*)
+  * Parâmetro para aplicação de morfologia matemática a predição da rede neural.
 
 
 ## Test Kitti

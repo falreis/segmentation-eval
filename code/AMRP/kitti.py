@@ -74,7 +74,7 @@ print('-----END PARAMETERS-----')
 if(args.net != None):
     import model_kitti as mk
     if(args.net == 'hed'):
-        model = mk.model_hed(merge_name=args.merge, vote_value=args.vote)
+        model = mk.model_hed(merge_name=args.merge, vote_value=args.vote, morf=False) #, morf=args.morf)
     elif(args.net == 'full'):
         model = mk.model_full()
     else:

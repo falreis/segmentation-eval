@@ -28,7 +28,7 @@ import json
 import argparse
 import h5py
 import load_weights as lw
-np.random.seed(7) 
+np.random.seed(7) # for reproducibility
 
 import hed_constants as hc
 

@@ -11,6 +11,7 @@ import os
 #os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
 
+import tensorflow as tf
 import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, UpSampling2D, ZeroPadding2D
@@ -48,10 +49,10 @@ def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
         # define parameters
         weights_file = "", ""
         if net == "hed":
-            weights_file = '../weights/hed_augm/{}_400_augm.hdf5'.format(merge_name)
+            weights_file = '../weights/5k/hed_kitti_weight_{}.best.hdf5'.format(merge_name)
 
         elif net == "full":
-            weights_file = '../weights/full_augm/full_400_augm.hdf5'
+            weights_file = '../weights/5k/full_kitti_weight.best.hdf5'
         #endif
 
         #verify mathematical morfology
@@ -122,14 +123,16 @@ def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
             
             #apply mathematical morphology
             if((not mark) and morf):
-                for i in range(3, 7, 1):
+                for i in range(3, 8, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
                     expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)
+                
                 '''
-                for i in range(2, 4, 1):
+                for i in range(3, 5, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
                     expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_CLOSE, kernel)
                 '''
+                
 
             #save data
             pos = image_path.rfind('/')

@@ -34,38 +34,9 @@ V.~Badrinarayanan, A.~Kendall, and R.~Cipolla, ``Segnet: A deep convolutional
   \url{http://arxiv.org/abs/1511.00561}
 \BIBentrySTDinterwordspacing
 
-\bibitem{RCF:8100105}
-Y.~Liu, M.~Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional features
-  for edge detection,'' in \emph{2017 IEEE Conference on Computer Vision and
-  Pattern Recognition (CVPR)}, July 2017, pp. 5872--5881.
-
-\bibitem{arbelaez2011}
-P.~Arbelaez, M.~Maire, C.~Fowlkes, and J.~Malik, ``{Contour Detection and
-  Hierarchical Image Segmentation},'' \emph{{IEEE Transactions on Pattern
-  Analysis and Machine Intelligence}}, vol.~33, no.~5, pp. 898--916, May 2011.
-
-\bibitem{KONISHI:1159946}
-S.~Konishi, A.~L. Yuille, J.~M. Coughlan, and S.~C. Zhu, ``Statistical edge
-  detection: learning and evaluating edge cues,'' \emph{IEEE Transactions on
-  Pattern Analysis and Machine Intelligence}, vol.~25, no.~1, pp. 57--74, Jan
-  2003.
-
-\bibitem{MARTIN:1273918}
-D.~R. Martin, C.~C. Fowlkes, and J.~Malik, ``Learning to detect natural image
-  boundaries using local brightness, color, and texture cues,'' \emph{IEEE
-  Transactions on Pattern Analysis and Machine Intelligence}, vol.~26, no.~5,
-  pp. 530--549, May 2004.
-
-\bibitem{LIM:6619250}
-J.~J. Lim, C.~L. Zitnick, and P.~Dollár, ``Sketch tokens: A learned mid-level
-  representation for contour and object detection,'' in \emph{2013 IEEE
-  Conference on Computer Vision and Pattern Recognition}, June 2013, pp.
-  3158--3165.
-
-\bibitem{StructuredEdges:2015}
-P.~Dollár and C.~L. Zitnick, ``Fast edge detection using structured forests,''
-  \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  vol.~37, no.~8, pp. 1558--1570, Aug 2015.
+\bibitem{goodfellow16}
+I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}, vol.~1,
+  2016.
 
 \bibitem{Xie:2017:HED:3158436.3158453}
 \BIBentryALTinterwordspacing
@@ -74,15 +45,16 @@ S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{Int. J. Comput.
   \url{https://doi.org/10.1007/s11263-017-1004-z}
 \BIBentrySTDinterwordspacing
 
+\bibitem{RCF:8100105}
+Y.~Liu, M.~Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional features
+  for edge detection,'' in \emph{2017 IEEE Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, July 2017, pp. 5872--5881.
+
 \bibitem{COB:7917294}
 K.~Maninis, J.~Pont-Tuset, P.~Arbeláez, and L.~V. Gool, ``Convolutional
   oriented boundaries: From image segmentation to high-level tasks,''
   \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
   vol.~40, no.~4, pp. 819--833, April 2018.
-
-\bibitem{goodfellow16}
-I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}, vol.~1,
-  2016.
 
 \bibitem{farabet2012}
 C.~Farabet, C.~Couprie, L.~Najman, and Y.~Lecun, ``{Scene Parsing with
@@ -160,9 +132,47 @@ J.~Fan, T.~Zhao, Z.~Kuang, Y.~Zheng, J.~Zhang, J.~Yu, and J.~Peng, ``{HD-MTL:
   \emph{IEEE Transactions on Image Processing}, vol.~26, no.~4, pp. 1923--1938,
   Apr 2017.
 
+\bibitem{Adadelta:2012}
+\BIBentryALTinterwordspacing
+M.~D. Zeiler, ``{ADADELTA:} an adaptive learning rate method,'' \emph{CoRR},
+  vol. abs/1212.5701, 2012. [Online]. Available:
+  \url{http://arxiv.org/abs/1212.5701}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Adam:2014}
+\BIBentryALTinterwordspacing
+D.~P. Kingma and J.~Ba, ``Adam: {A} method for stochastic optimization,''
+  \emph{CoRR}, vol. abs/1412.6980, 2014. [Online]. Available:
+  \url{http://arxiv.org/abs/1412.6980}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Nesterov:1983wy}
+\BIBentryALTinterwordspacing
+Y.~Nesterov, ``{A method of solving a convex programming problem with
+  convergence rate O(1/sqr(k))},'' \emph{Soviet Mathematics Doklady}, vol.~27,
+  pp. 372--376, 1983. [Online]. Available:
+  \url{http://www.core.ucl.ac.be/\~{}nesterov/Research/Papers/DAN83.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{KITTI}
 J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
   evaluation benchmark for road detection algorithms,'' in \emph{International
   Conference on Intelligent Transportation Systems (ITSC)}, 2013.
+
+\bibitem{chollet2015keras}
+F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
+
+\bibitem{tensorflow2015-whitepaper}
+\BIBentryALTinterwordspacing
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
+  systems,'' 2015, software available from tensorflow.org. [Online]. Available:
+  \url{https://www.tensorflow.org/}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

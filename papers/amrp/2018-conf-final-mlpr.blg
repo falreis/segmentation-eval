@@ -18,43 +18,43 @@ Warning--empty title in goodfellow16
 Done.
 You've used 25 entries,
             4087 wiz_defined-function locations,
-            997 strings with 12312 characters,
-and the built_in function-call counts, 21008 in all, are:
-= -- 1648
-> -- 547
-< -- 178
-+ -- 302
-- -- 97
-* -- 1057
-:= -- 3056
+            994 strings with 12936 characters,
+and the built_in function-call counts, 20276 in all, are:
+= -- 1534
+> -- 635
+< -- 140
++ -- 336
+- -- 127
+* -- 1024
+:= -- 2983
 add.period$ -- 54
 call.type$ -- 25
-change.case$ -- 29
-chr.to.int$ -- 399
+change.case$ -- 30
+chr.to.int$ -- 312
 cite$ -- 27
-duplicate$ -- 1507
-empty$ -- 1695
-format.name$ -- 123
-if$ -- 4935
+duplicate$ -- 1460
+empty$ -- 1638
+format.name$ -- 151
+if$ -- 4720
 int.to.chr$ -- 0
 int.to.str$ -- 25
-missing$ -- 273
-newline$ -- 102
+missing$ -- 296
+newline$ -- 110
 num.names$ -- 31
-pop$ -- 614
+pop$ -- 713
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1589
+skip$ -- 1515
 stack$ -- 0
-substring$ -- 953
-swap$ -- 1274
-text.length$ -- 45
+substring$ -- 752
+swap$ -- 1187
+text.length$ -- 36
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 25
 warning$ -- 2
-while$ -- 86
+while$ -- 75
 width$ -- 27
-write$ -- 275
+write$ -- 278
 (There were 2 warnings)
