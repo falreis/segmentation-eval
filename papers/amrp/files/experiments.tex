@@ -1,48 +1,23 @@
 \section{Experiments}
 \label{sec:experiments}
 
-This proposed architecture is based in HED \cite{Xie:2017:HED:3158436.3158453}, RCF \cite{RCF:8100105} and VGG \cite{simonyan2014}. To study the composition of outputs, firstly we used HED approach with side outputs in each stage. Once our problem is not as unbalanced as HED, we decided to use strongly known \textit{categorical\_crossentropy} loss function instead of the custom loss function created in HED and RCF papers.
+In training evaluation, it was noticed that the network was more stable, and we can set bigger learning rates parameters ($1 \times 10^3$). Also, we can use different optimizers and Nesterov Optimization \cite{Nesterov:1983wy}.
 
-Also, to merge the side outputs, we used 4 different functions:
-
-\begin{itemize}
- \item \textit{Add} - Sums all predictions provided in each layer to produces only one output;
- 
- \item \textit{Average} - Makes the average value of all side outputs;
- 
- \item \textit{Maximum} - Takes the result of the most confident output;
- 
- \item \textit{Majority} - Takes the prediction values by all outputs and decided for the class that contains the more votes.
-\end{itemize}
-
-The fuction \textit{Add} was looking for combine low and high confidence neurons into one single output. \textit{Average} functions aims to combine low confidence neurons with high confidence ones. Also evaluates if all the network is learning the information instead of only part of it. \textit{Max}, for other way, trust only in the most confident value, ignoring low values. This operation does not impply that all network is learning a task, but means that at least one neuron learned. Finally, the \textit{Majority} prediction expecting a kind of consensus of the side outputs.
-
-Since the first tests we clearly saw that \textit{Max} operation was the far best. It was easier to train and produces better results, even without data augmentation. Other operations were difficult to train and requests a carefully set of parameters. The results often are trapped in saddle points and overfitting. This behavior can be seen in Figure \ref{fig:val_accuracy_all}, with the same small learning rate ($1 \times 10^4$) and SGD optimizer. \textit{Max} adapted with less carefully parameters, but also overfits with other optimizers as Adadelta \cite{Adadelta:2012} and Adam \cite{Adam:2014}.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/val_acc_all.png}
-  \caption{Validation accuracy}
-  \label{fig:val_accuracy_all}
-\end{figure}
-
-Once the results were good for \textit{Max} operation, a simple question emerged: ``What happens if we put output all layers of the network?''. Then we put output in all layers and proceeded with \textit{Max} operation. In training evaluation, it was noticed that the network was more stable, and we can set bigger learning rates parameters ($1 \times 10^3$). Also, we can use different optimizers and Nesterov Optimization \cite{Nesterov:1983wy}.
-
-\begin{figure}[ht]
+\begin{figure}
   \centering
   \includegraphics[width=0.48\textwidth]{figures/val_acc.png}
   \caption{Validation accuracy}
   \label{fig:val_accuracy}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \centering
   \includegraphics[width=0.48\textwidth]{figures/val_loss.png}
   \caption{Validation loss}
   \label{fig:val_loss}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \centering
   \includegraphics[width=0.48\textwidth]{figures/train_time.png}
   \caption{Average training time}
