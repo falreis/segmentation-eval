@@ -59,7 +59,7 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 * balanced? = {false || true}} (*OPCIONAL*)
   * Parâmetro para definição de utilização de função *categorical_crossentropy* ou *balanced_categorical_crossentropy* (própria)
 
-* morf? = {false || true} (*OPCIONAL*)
+* morf? = {false || true} (*UNAVAILABLE*)
   * Parâmetro para aplicação de morfologia matemática a predição da rede neural.
 
 
