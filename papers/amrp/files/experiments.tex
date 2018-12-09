@@ -1,6 +1,22 @@
 \section{Experiments}
 \label{sec:experiments}
 
+\subsection{Experimental setup}
+
+Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-4, decay of 1e-6 and momentum of 0.95. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU.
+
+To increase the number of images in the training set, we made some data augmentation procedures. The techniques we used was pepper noise, horizontal flipping (mirror), changes in contrast and brightness. These procedures resulted in 1445 images, splited in 1228 samples for training and 217 validate samples (about 15\%).
+
+\subsection{The Kitti Road/Lane dataset}
+
+KITTI Road/Lane Dataset, part of KITTI Vision Benchmarking Suite, contains  images for road and lane estimation. Consists of 289 training and 290 test images . Ground truth is manually annotated for two different road types: road - road area (the composition of all lanes), and lane (the ego-lane; lane the vehicle is currently driving on) \cite{KITTI}. 
+
+In this paper, we use only the road ground-truths and ignore lane annotations. Some images contains two different ground-truths, one for lane and other for road. Then, we prefer to use road estimation and build only one classifier. Also, it is important to say that ground truth is only available for training set. The test evaluation should be performed using KITTI Server \cite{KITTI}. 
+
+The results in this paper were performed using KITTI Road Evaluation Benchmark, provided with KITTI Road Dataset. %The results in test set were performed by KITTI Server.
+
+\subsection{Results}
+
 In training evaluation, it was noticed that the network was more stable, and we can set bigger learning rates parameters ($1 \times 10^3$). Also, we can use different optimizers and Nesterov Optimization \cite{Nesterov:1983wy}.
 
 \begin{figure}
@@ -23,26 +39,6 @@ In training evaluation, it was noticed that the network was more stable, and we 
   \caption{Average training time}
   \label{fig:train_time}
 \end{figure}
-
-\subsection{The Kitti Road/Lane dataset}
-
-KITTI Road/Lane Dataset, part of KITTI Vision Benchmarking Suite, contains  images for road and lane estimation. Consists of 289 training and 290 test images . Ground truth is manually annotated for two different road types: road - road area (the composition of all lanes), and lane (the ego-lane; lane the vehicle is currently driving on) \cite{KITTI}. 
-
-In this paper, we use only the road ground-truths and ignore lane annotations. Some images contains two different ground-truths, one for lane and other for road. Then, we prefer to use road estimation and build only one classifier. Also, it is important to say that ground truth is only available for training set. The test evaluation should be performed using KITTI Server \cite{KITTI}. 
-
-\subsection{Experimental setup}
-
-\subsubsection{Data augmentation and Validation Set}
-
-To increase the number of images in the training set, we made some data augmentation procedures. The techniques we used was pepper noise, horizontal flipping (mirror), contrast and brightness.
-
-These procedures resulted in 1445 images, splited in 1228 samples for training and 217 validate samples (about 15\%).
-
-\subsubsection{Development machine}
-
-The tests were performed in a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz with 32 GB RAM and a GeForce GTX 1080 8GB GPU. The tests were developed using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper} in a Ubuntu 16.04 OS. The setup under Anaconda environment is public available in \url{https://github.com/falreis/segmentation-eval}.
-
-\subsection{Results}
 
 \begin{table}
   \begin{tabular}{{c}{c}{c}{c}{c}{c}{c}}
