@@ -16,45 +16,45 @@ Warning--missing publisher in DOMINGUEZ
 Warning--empty title in goodfellow16
 
 Done.
-You've used 25 entries,
+You've used 23 entries,
             4087 wiz_defined-function locations,
-            994 strings with 12936 characters,
-and the built_in function-call counts, 20276 in all, are:
-= -- 1534
-> -- 635
-< -- 140
-+ -- 336
-- -- 127
-* -- 1024
-:= -- 2983
-add.period$ -- 54
-call.type$ -- 25
-change.case$ -- 30
-chr.to.int$ -- 312
-cite$ -- 27
-duplicate$ -- 1460
-empty$ -- 1638
-format.name$ -- 151
-if$ -- 4720
+            982 strings with 12622 characters,
+and the built_in function-call counts, 19268 in all, are:
+= -- 1440
+> -- 621
+< -- 137
++ -- 328
+- -- 124
+* -- 970
+:= -- 2779
+add.period$ -- 50
+call.type$ -- 23
+change.case$ -- 28
+chr.to.int$ -- 309
+cite$ -- 25
+duplicate$ -- 1381
+empty$ -- 1559
+format.name$ -- 147
+if$ -- 4500
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 296
-newline$ -- 110
-num.names$ -- 31
-pop$ -- 713
+int.to.str$ -- 23
+missing$ -- 283
+newline$ -- 98
+num.names$ -- 29
+pop$ -- 689
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1515
+skip$ -- 1433
 stack$ -- 0
-substring$ -- 752
-swap$ -- 1187
-text.length$ -- 36
+substring$ -- 743
+swap$ -- 1132
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 25
+type$ -- 23
 warning$ -- 2
-while$ -- 75
-width$ -- 27
-write$ -- 278
+while$ -- 74
+width$ -- 25
+write$ -- 251
 (There were 2 warnings)

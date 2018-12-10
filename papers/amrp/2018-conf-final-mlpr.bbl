@@ -25,36 +25,14 @@
 D.~Domínguez and R.~R. Morales, \emph{Image Segmentation: Advances}, 2016,
   vol.~1, no.~1.
 
-\bibitem{Segnet:2017:7803544}
-\BIBentryALTinterwordspacing
-V.~Badrinarayanan, A.~Kendall, and R.~Cipolla, ``Segnet: A deep convolutional
-  encoder-decoder architecture for image segmentation,'' \emph{IEEE
-  Transactions on Pattern Analysis and Machine Intelligence}, vol.~39, no.~12,
-  pp. 2481--2495, Dec 2017. [Online]. Available:
-  \url{http://arxiv.org/abs/1511.00561}
-\BIBentrySTDinterwordspacing
+\bibitem{guigues06}
+L.~Guigues, J.~P. Cocquerez, and H.~Le~Men, ``Scale-sets image analysis,''
+  \emph{{International Journal of Computer Vision}}, vol.~68, no.~3, pp.
+  289--317, 2006.
 
 \bibitem{goodfellow16}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}, vol.~1,
   2016.
-
-\bibitem{Xie:2017:HED:3158436.3158453}
-\BIBentryALTinterwordspacing
-S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{Int. J. Comput.
-  Vision}, vol. 125, no. 1-3, pp. 3--18, 12 2017. [Online]. Available:
-  \url{https://doi.org/10.1007/s11263-017-1004-z}
-\BIBentrySTDinterwordspacing
-
-\bibitem{RCF:8100105}
-Y.~Liu, M.~Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional features
-  for edge detection,'' in \emph{2017 IEEE Conference on Computer Vision and
-  Pattern Recognition (CVPR)}, July 2017, pp. 5872--5881.
-
-\bibitem{COB:7917294}
-K.~Maninis, J.~Pont-Tuset, P.~Arbeláez, and L.~V. Gool, ``Convolutional
-  oriented boundaries: From image segmentation to high-level tasks,''
-  \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  vol.~40, no.~4, pp. 819--833, April 2018.
 
 \bibitem{farabet2012}
 C.~Farabet, C.~Couprie, L.~Najman, and Y.~Lecun, ``{Scene Parsing with
@@ -66,6 +44,43 @@ C.~Farabet, C.~Couprie, L.~Najman, and Y.~Lecun, ``{Scene Parsing with
 C.~Farabet, C.~Couprie, L.~Najman, and Y.~LeCun, ``{Learning Hierarchical
   Features for Scene Labeling},'' \emph{{IEEE Transactions on Pattern Analysis
   and Machine Intelligence}}, vol.~35, no.~8, pp. 1915--1929, Aug 2013.
+
+\bibitem{simonyan2014}
+K.~Simonyan and A.~Zisserman, ``Very deep convolutional networks for
+  large-scale image recognition,'' \emph{CoRR}, vol. abs/1409.1556, 2014.
+
+\bibitem{lee2015}
+C.-Y. Lee, S.~Xie, P.~Gallagher, Z.~Zhang, and Z.~Tu, ``{Deeply-Supervised
+  Nets},'' in \emph{Proceedings of the Eighteenth International Conference on
+  Artificial Intelligence and Statistics}, ser. Proceedings of Machine Learning
+  Research, G.~Lebanon and S.~V.~N. Vishwanathan, Eds., vol.~38.\hskip 1em plus
+  0.5em minus 0.4em\relax San Diego, California, USA: PMLR, 09--12 May 2015,
+  pp. 562--570.
+
+\bibitem{Xie:2017:HED:3158436.3158453}
+\BIBentryALTinterwordspacing
+S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{Int. J. Comput.
+  Vision}, vol. 125, no. 1-3, pp. 3--18, 12 2017. [Online]. Available:
+  \url{https://doi.org/10.1007/s11263-017-1004-z}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cheng2016}
+M.-M. Cheng, Y.~Liu, Q.~Hou, J.~Bian, P.~Torr, S.-M. Hu, and Z.~Tu, ``{HFS:
+  Hierarchical Feature Selection for Efficient Image Segmentation},'' in
+  \emph{Computer Vision -- ECCV 2016}, B.~Leibe, J.~Matas, N.~Sebe, and
+  M.~Welling, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Cham: Springer
+  International Publishing, 2016, pp. 867--882.
+
+\bibitem{COB:7917294}
+K.~Maninis, J.~Pont-Tuset, P.~Arbeláez, and L.~V. Gool, ``Convolutional
+  oriented boundaries: From image segmentation to high-level tasks,''
+  \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  vol.~40, no.~4, pp. 819--833, April 2018.
+
+\bibitem{RCF:8100105}
+Y.~Liu, M.~Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional features
+  for edge detection,'' in \emph{2017 IEEE Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, July 2017, pp. 5872--5881.
 
 \bibitem{ilin17}
 R.~Ilin, T.~Watson, and R.~Kozma, ``Abstraction hierarchy in deep learning
@@ -107,57 +122,11 @@ B.~Alsallakh, A.~Jourabloo, M.~Ye, X.~Liu, and L.~Ren, ``Do convolutional
   neural networks learn class hierarchy?'' \emph{{IEEE Transactions on
   Visualization and Computer Graphics}}, vol.~24, no.~1, pp. 152--165, 2018.
 
-\bibitem{simonyan2014}
-K.~Simonyan and A.~Zisserman, ``Very deep convolutional networks for
-  large-scale image recognition,'' \emph{CoRR}, vol. abs/1409.1556, 2014.
-
-\bibitem{lee2015}
-C.-Y. Lee, S.~Xie, P.~Gallagher, Z.~Zhang, and Z.~Tu, ``{Deeply-Supervised
-  Nets},'' in \emph{Proceedings of the Eighteenth International Conference on
-  Artificial Intelligence and Statistics}, ser. Proceedings of Machine Learning
-  Research, G.~Lebanon and S.~V.~N. Vishwanathan, Eds., vol.~38.\hskip 1em plus
-  0.5em minus 0.4em\relax San Diego, California, USA: PMLR, 09--12 May 2015,
-  pp. 562--570.
-
-\bibitem{cheng2016}
-M.-M. Cheng, Y.~Liu, Q.~Hou, J.~Bian, P.~Torr, S.-M. Hu, and Z.~Tu, ``{HFS:
-  Hierarchical Feature Selection for Efficient Image Segmentation},'' in
-  \emph{Computer Vision -- ECCV 2016}, B.~Leibe, J.~Matas, N.~Sebe, and
-  M.~Welling, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Cham: Springer
-  International Publishing, 2016, pp. 867--882.
-
 \bibitem{fan2017}
 J.~Fan, T.~Zhao, Z.~Kuang, Y.~Zheng, J.~Zhang, J.~Yu, and J.~Peng, ``{HD-MTL:
   Hierarchical Deep Multi-Task Learning for Large-Scale Visual Recognition},''
   \emph{IEEE Transactions on Image Processing}, vol.~26, no.~4, pp. 1923--1938,
   Apr 2017.
-
-\bibitem{Adadelta:2012}
-\BIBentryALTinterwordspacing
-M.~D. Zeiler, ``{ADADELTA:} an adaptive learning rate method,'' \emph{CoRR},
-  vol. abs/1212.5701, 2012. [Online]. Available:
-  \url{http://arxiv.org/abs/1212.5701}
-\BIBentrySTDinterwordspacing
-
-\bibitem{Adam:2014}
-\BIBentryALTinterwordspacing
-D.~P. Kingma and J.~Ba, ``Adam: {A} method for stochastic optimization,''
-  \emph{CoRR}, vol. abs/1412.6980, 2014. [Online]. Available:
-  \url{http://arxiv.org/abs/1412.6980}
-\BIBentrySTDinterwordspacing
-
-\bibitem{Nesterov:1983wy}
-\BIBentryALTinterwordspacing
-Y.~Nesterov, ``{A method of solving a convex programming problem with
-  convergence rate O(1/sqr(k))},'' \emph{Soviet Mathematics Doklady}, vol.~27,
-  pp. 372--376, 1983. [Online]. Available:
-  \url{http://www.core.ucl.ac.be/\~{}nesterov/Research/Papers/DAN83.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{KITTI}
-J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
-  evaluation benchmark for road detection algorithms,'' in \emph{International
-  Conference on Intelligent Transportation Systems (ITSC)}, 2013.
 
 \bibitem{chollet2015keras}
 F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
@@ -173,6 +142,19 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
   systems,'' 2015, software available from tensorflow.org. [Online]. Available:
   \url{https://www.tensorflow.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{KITTI}
+J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
+  evaluation benchmark for road detection algorithms,'' in \emph{International
+  Conference on Intelligent Transportation Systems (ITSC)}, 2013.
+
+\bibitem{Nesterov:1983wy}
+\BIBentryALTinterwordspacing
+Y.~Nesterov, ``{A method of solving a convex programming problem with
+  convergence rate O(1/sqr(k))},'' \emph{Soviet Mathematics Doklady}, vol.~27,
+  pp. 372--376, 1983. [Online]. Available:
+  \url{http://www.core.ucl.ac.be/\~{}nesterov/Research/Papers/DAN83.pdf}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
