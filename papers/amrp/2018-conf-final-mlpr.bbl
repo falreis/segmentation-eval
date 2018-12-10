@@ -149,12 +149,4 @@ J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
   evaluation benchmark for road detection algorithms,'' in \emph{International
   Conference on Intelligent Transportation Systems (ITSC)}, 2013.
 
-\bibitem{Nesterov:1983wy}
-\BIBentryALTinterwordspacing
-Y.~Nesterov, ``{A method of solving a convex programming problem with
-  convergence rate O(1/sqr(k))},'' \emph{Soviet Mathematics Doklady}, vol.~27,
-  pp. 372--376, 1983. [Online]. Available:
-  \url{http://www.core.ucl.ac.be/\~{}nesterov/Research/Papers/DAN83.pdf}
-\BIBentrySTDinterwordspacing
-
 \end{thebibliography}

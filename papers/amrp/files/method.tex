@@ -1,54 +1,25 @@
-\section{Hierarchical maps in convolutional neural networks}
+\section{Hierarchies in deep models}
 \label{sec:method}
 
-This work present strategies to merge hierarchical maps created from  outputs of different layers of a convolutional network.{\color{green}verificar se eh plagio}. In a convolutional network each layer is a three-dimensional array of size $h \times w \times d$, where $h$ and $w$ are spatial dimensions  and $d$ is the feature, channel or stride dimension. The first layer is the input image, with pixel size $h \times w$ and $d$ color channels. Locations in higher layers correspond to the locations in the image they are path-connected to, which are called their receptive fields. Convolutional networks are built on translation invariance and their basic components (convolution, pooling, and activation functions) operate on local input regions and depend only on relative spatial coordinates. 
 
-The convolutional network model used in this work is the VGG network~\cite{simonyan2014},proposed in 2014 as one of the first attempts to create deeper models for the task of object recognition. The architecture is a composition of multiple stacked convolutional layers, in which the receptive fields and stride have a fixed $3\times3\times1$ size. Following each two or three layers of convolution is placed a max-pooling layer. Also, all hidden layers are supplied with a ReLU non-linear rectification.
+Deep learning approaches were initially described as black-box methods, meaning that not much were known about the reasoning and decisions of the created models. Much exertion have been applied to investigate the networks operation, whether by methodical experimentation~\cite{ilin17,kuo16,eigen14,zhang17} or visualization methods~\cite{simonyan13,zeiler14,alsallakh18}. Those efforts provided more clarity of the hierarchical aspects of the deep features, which allowed researches to explore these aspects in their endeavors. The  hierarchies learned in deep models are categorized as complex concepts build from simpler ones. When applied for object recognition task for instance, the raw pixel on the input layer is learned as segments and parts until the composition of an object concept at the final layer.  
 
-HED network \cite{Xie:2017:HED:3158436.3158453} and, later, RCF \cite{RCF:8100105} were based in VGG to provide edge detection. Both projects removed the final output of the network and create side outputs, that were combined in new fused output. Inspired by both works, we used changed VGG to provide image segmentation, where each pixel is binary classified into 2 categories available in the dataset.
+These hierarchies could be particularly observed in convolutional networks, which are a stacked composition of three main layers, namely: (i) convolution; (ii) pooling; and (iii) non-linear activation. In \cite{ilin17} the authors directly assessed the hierarchy of concepts in convolutional networks, analyzing the knowledge representation and the network abstraction at each type of layer.  The authors are capable to demonstrate the generic aspect at earlier stages and the specialization at later layers. The findings are conformed with the expected behavior of convolutional networks, but it is possible to observe that most of the learned abstraction is due the convolutional layers and that the pooling and non-linear layers rarely contribute for increasing  the abstraction level.
 
-Formally, let $\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
-$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
 
-\begin{equation}
-\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
-\end{equation}
+\subsection{Merging strategy}
 
-Inspired by HED project, we created side outputs in each VGG stage, as Figure \ref{fig:stage_outputs}. HED and RCF projects provided custom functions to balance the number of pixels of edges from the non-edges pixels. Once our problem is not as unbalanced as edge detection, we decided to use strongly known \textit{{categorical} {crossentropy}} loss function. To merge the side outputs, we evaluated 4 different techniques:
+Hierarchies are long associated with the image segmentation task, to a degree that it improves a coherent organization of nested regions. In this work, instead of hand-engineering the hierarchical structures of a typical approach, it is proposed a strategy to merge hierarchical maps created from the outputs at different layers in a convolutional network. 
 
-\begin{itemize}
- \item \textit{Add} - Sums all predictions provided in each layer to produces only one output;
- 
- \item \textit{Average} - Makes the average value of all side outputs;
- 
- \item \textit{Maximum} - Takes the result of the most confident output;
- 
- \item \textit{Majority} - Takes the prediction values by all outputs and decided for the class that contains the more votes.
-\end{itemize}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/no_image.jpeg}
-  \caption{Side outputs in each VGG stage}
-  \label{fig:stage_outputs}
-\end{figure}
-
-The fuction \textit{Add} was looking for combine low and high confidence neurons into one single output. \textit{Average} functions aims to combine low confidence neurons with high confidence ones. Also evaluates if all the network is learning the information instead of only part of it. \textit{Max}, for other way, trust only in the most confident value, ignoring low values. This operation does not impply that all network is learning a task, but means that at least one neuron learned. Finally, the \textit{Majority} prediction expecting a kind of consensus of the side outputs.
-
-Since the first tests we clearly saw that \textit{Max} operation was the far best. It was easier to train and produces better results, even without data augmentation. Other operations were difficult to train and requests a carefully set of parameters. The results often are trapped in saddle points and overfitting. 
-
-Formally max operation for side outputs can be defined as it follows. Let a set of side outputs $\mathit{so} = \mathit{so_1, so_2, so_3, ..., so_n}$. \textit{Max} operation can be defined as the Equation \ref{eq:max_operation}
+To merge the side outputs it is taken the result of the most confident side-output by using a $max()$ function on the side output maps. This is equivalent to trust only the most confident value, ignoring low values. This operation does not imply that all network is learning a task, but means that at least one has learned. Formally, the max operation for side outputs can be defined as follows: Let a set of side outputs $\mathcal{H} = \{\mathcal{H}_1,\mathcal{H}_2,..., \mathcal{H}_n\}$. The fused map $m$ could be defined as the Equation \ref{eq:max_operation}
 
 \begin{equation}
-m = \max_{1 \leq j \leq n} (so_j)
+m = \max_{1 \leq j \leq n} (\mathcal{H}_j)
 \label{eq:max_operation}
 \end{equation}
 
-Once the results were good for \textit{Max} operation using stage outputs a simple question emerged: ``What happens if we output all layers of the network and combined them?''. Then we use output layers and simple combine them with \textit{Max} operation. A similiar approach was adopted by \citeonline{RCF:8100105} with side outputs in all layers but combined with a convolution of $1 \times 1$ in every stage of the network. Our paper, otherwise, uses the side output without other combination in each stage. The \textit{Max} operation is proceeded with the raw data from each layer, as Figure \ref{fig:all_layers_outputs}.
+The convolutional network model used in this work is the VGG network~\cite{simonyan2014}, proposed in 2014 as one of the first attempts to create deeper models for the task of object recognition. The architecture is a composition of multiple stacked convolutional layers. Following each two or three layers of convolution is placed a max-pooling layer. Also, all hidden layers are supplied with a ReLU non-linear rectification. Both HED network \cite{Xie:2017:HED:3158436.3158453} and, later, RCF \cite{RCF:8100105} were based in VGG for the task of edge detection by removing the final output of the network and create side outputs combined in a new fused output. 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/no_image.jpeg}
-  \caption{Side outputs in each VGG layer}
-  \label{fig:all_layers_outputs}
-\end{figure}
+Inspired by the HED model, we created side outputs for each VGG stage, as illustrated in Figure~1a, which amounts to the number of pooling layers on the network. Also, inspired by the RCF model, it is proposed to create one side output for each convolutional layer of the network, as illustrated in Figure~1b. The RCF also adopted a convolution of $1\times1$ in every stage of the network. In this work, otherwise, it is used the side output without any other combination, applying the $max()$ operation with the raw data from each layer.    
+
+\include{figures/methods}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  9 DEC 2018 23:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  10 DEC 2018 00:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,7 +1013,7 @@ yexternal.code.tex
 zexternalshared.code.tex))
 \openout4 = `2018-conf-final-mlpr.auxlock'.
 
- (./2018-conf-final-mlpr.aux)
+ (./2018-conf-final-mlpr.aux (./figures/methods.aux))
 \openout1 = `2018-conf-final-mlpr.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -1030,7 +1030,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
-
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1127,67 +1126,288 @@ Underfull \hbox (badness 3260) in paragraph at lines 10--11
 
 
 ]) (./files/method.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+Underfull \vbox (badness 3701) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \vbox (badness 3701) has occurred while \output is active []
+) [2] [3
 
-<figures/no_image.jpeg, id=93, 451.6875pt x 314.17375pt>
-File: figures/no_image.jpeg Graphic file (type jpg)
-<use figures/no_image.jpeg>
-Package pdftex.def Info: figures/no_image.jpeg  used on input line 31.
-(pdftex.def)             Requested size: 247.6778pt x 172.27835pt.
- [2]
-File: figures/no_image.jpeg Graphic file (type jpg)
-<use figures/no_image.jpeg>
-Package pdftex.def Info: figures/no_image.jpeg  used on input line 51.
-(pdftex.def)             Requested size: 247.6778pt x 172.27835pt.
-)
-(./files/experiments.tex
-<figures/val_acc.png, id=121, 709.65125pt x 438.63875pt>
+]
+\openout2 = `figures/methods.aux'.
+
+
+No file figures/methods.tex.
+) (./files/experiments.tex
+<figures/val_acc.png, id=125, 709.65125pt x 438.63875pt>
 File: figures/val_acc.png Graphic file (type png)
 <use figures/val_acc.png>
 Package pdftex.def Info: figures/val_acc.png  used on input line 27.
 (pdftex.def)             Requested size: 247.6778pt x 153.0908pt.
- [3 <./figures/no_image.jpeg>]
-<figures/val_loss.png, id=134, 709.65125pt x 438.63875pt>
+<figures/val_loss.png, id=128, 709.65125pt x 438.63875pt>
 File: figures/val_loss.png Graphic file (type png)
 <use figures/val_loss.png>
 Package pdftex.def Info: figures/val_loss.png  used on input line 36.
 (pdftex.def)             Requested size: 247.6778pt x 153.0908pt.
-<figures/train_time.png, id=139, 602.25pt x 372.39125pt>
+<figures/train_time.png, id=133, 602.25pt x 372.39125pt>
 File: figures/train_time.png Graphic file (type png)
 <use figures/train_time.png>
 Package pdftex.def Info: figures/train_time.png  used on input line 45.
 (pdftex.def)             Requested size: 247.6778pt x 153.14734pt.
-<figures/fps.png, id=140, 602.25pt x 372.39125pt>
+<figures/fps.png, id=134, 602.25pt x 372.39125pt>
 File: figures/fps.png Graphic file (type png)
 <use figures/fps.png>
 Package pdftex.def Info: figures/fps.png  used on input line 52.
 (pdftex.def)             Requested size: 247.6778pt x 153.14734pt.
+ [4
 
+
+ <./figures/val_acc.png (PNG copy)> <./figures/val_loss.png (PNG copy)> <./figu
+res/train_time.png (PNG copy)>]
 Overfull \hbox (6.50363pt too wide) in paragraph at lines 66--108
 [][] 
  []
 
-Excluding 'comment' comment.) (./files/conclusion.tex)
+(./files/image.tex
+<figures/export/original_train/um_000067.png, id=151, 1246.6575pt x 376.40625pt
+>
+File: figures/export/original_train/um_000067.png Graphic file (type png)
+<use figures/export/original_train/um_000067.png>
+Package pdftex.def Info: figures/export/original_train/um_000067.png  used on i
+nput line 13.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/original_train/umm_000025.png, id=152, 1246.6575pt x 376.40625p
+t>
+File: figures/export/original_train/umm_000025.png Graphic file (type png)
+<use figures/export/original_train/umm_000025.png>
+Package pdftex.def Info: figures/export/original_train/umm_000025.png  used on 
+input line 17.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/original_train/uu_000009.png, id=153, 1246.6575pt x 376.40625pt
+>
+File: figures/export/original_train/uu_000009.png Graphic file (type png)
+<use figures/export/original_train/uu_000009.png>
+Package pdftex.def Info: figures/export/original_train/uu_000009.png  used on i
+nput line 21.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_mark/um_000067.png, id=154, 1246.6575pt x 376.40625pt
+>
+File: figures/export/train_alo_mark/um_000067.png Graphic file (type png)
+<use figures/export/train_alo_mark/um_000067.png>
+Package pdftex.def Info: figures/export/train_alo_mark/um_000067.png  used on i
+nput line 28.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_mark/umm_000025.png, id=155, 1246.6575pt x 376.40625p
+t>
+File: figures/export/train_alo_mark/umm_000025.png Graphic file (type png)
+<use figures/export/train_alo_mark/umm_000025.png>
+Package pdftex.def Info: figures/export/train_alo_mark/umm_000025.png  used on 
+input line 32.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_mark/uu_000009.png, id=156, 1246.6575pt x 376.40625pt
+>
+File: figures/export/train_alo_mark/uu_000009.png Graphic file (type png)
+<use figures/export/train_alo_mark/uu_000009.png>
+Package pdftex.def Info: figures/export/train_alo_mark/uu_000009.png  used on i
+nput line 36.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_gt/um_000067.png, id=157, 1246.6575pt x 376.40625pt>
+File: figures/export/train_alo_gt/um_000067.png Graphic file (type png)
+<use figures/export/train_alo_gt/um_000067.png>
+Package pdftex.def Info: figures/export/train_alo_gt/um_000067.png  used on inp
+ut line 43.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_gt/umm_000025.png, id=158, 1246.6575pt x 376.40625pt>
+
+File: figures/export/train_alo_gt/umm_000025.png Graphic file (type png)
+<use figures/export/train_alo_gt/umm_000025.png>
+Package pdftex.def Info: figures/export/train_alo_gt/umm_000025.png  used on in
+put line 47.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_alo_gt/uu_000009.png, id=159, 1246.6575pt x 376.40625pt>
+File: figures/export/train_alo_gt/uu_000009.png Graphic file (type png)
+<use figures/export/train_alo_gt/uu_000009.png>
+Package pdftex.def Info: figures/export/train_alo_gt/uu_000009.png  used on inp
+ut line 51.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_mark/um_000067.png, id=160, 1246.6575pt x 376.40625pt
+>
+File: figures/export/train_slo_mark/um_000067.png Graphic file (type png)
+<use figures/export/train_slo_mark/um_000067.png>
+Package pdftex.def Info: figures/export/train_slo_mark/um_000067.png  used on i
+nput line 58.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_mark/umm_000025.png, id=161, 1246.6575pt x 376.40625p
+t>
+File: figures/export/train_slo_mark/umm_000025.png Graphic file (type png)
+<use figures/export/train_slo_mark/umm_000025.png>
+Package pdftex.def Info: figures/export/train_slo_mark/umm_000025.png  used on 
+input line 62.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_mark/uu_000009.png, id=162, 1246.6575pt x 376.40625pt
+>
+File: figures/export/train_slo_mark/uu_000009.png Graphic file (type png)
+<use figures/export/train_slo_mark/uu_000009.png>
+Package pdftex.def Info: figures/export/train_slo_mark/uu_000009.png  used on i
+nput line 66.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_gt/um_000067.png, id=163, 1246.6575pt x 376.40625pt>
+File: figures/export/train_slo_gt/um_000067.png Graphic file (type png)
+<use figures/export/train_slo_gt/um_000067.png>
+Package pdftex.def Info: figures/export/train_slo_gt/um_000067.png  used on inp
+ut line 73.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_gt/umm_000025.png, id=164, 1246.6575pt x 376.40625pt>
+
+File: figures/export/train_slo_gt/umm_000025.png Graphic file (type png)
+<use figures/export/train_slo_gt/umm_000025.png>
+Package pdftex.def Info: figures/export/train_slo_gt/umm_000025.png  used on in
+put line 77.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/train_slo_gt/uu_000009.png, id=165, 1246.6575pt x 376.40625pt>
+File: figures/export/train_slo_gt/uu_000009.png Graphic file (type png)
+<use figures/export/train_slo_gt/uu_000009.png>
+Package pdftex.def Info: figures/export/train_slo_gt/uu_000009.png  used on inp
+ut line 81.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/original_test/um_000022.png, id=166, 1246.6575pt x 376.40625pt>
+
+File: figures/export/original_test/um_000022.png Graphic file (type png)
+<use figures/export/original_test/um_000022.png>
+Package pdftex.def Info: figures/export/original_test/um_000022.png  used on in
+put line 95.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/original_test/umm_000078.png, id=167, 1245.65375pt x 377.41pt>
+File: figures/export/original_test/umm_000078.png Graphic file (type png)
+<use figures/export/original_test/umm_000078.png>
+Package pdftex.def Info: figures/export/original_test/umm_000078.png  used on i
+nput line 99.
+(pdftex.def)             Requested size: 139.3222pt x 42.21204pt.
+<figures/export/original_test/uu_000041.png, id=168, 1246.6575pt x 376.40625pt>
+
+File: figures/export/original_test/uu_000041.png Graphic file (type png)
+<use figures/export/original_test/uu_000041.png>
+Package pdftex.def Info: figures/export/original_test/uu_000041.png  used on in
+put line 103.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_alo_mark/um_000022.png, id=169, 1246.6575pt x 376.40625pt>
+
+File: figures/export/test_alo_mark/um_000022.png Graphic file (type png)
+<use figures/export/test_alo_mark/um_000022.png>
+Package pdftex.def Info: figures/export/test_alo_mark/um_000022.png  used on in
+put line 110.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_alo_mark/umm_000078.png, id=170, 1245.65375pt x 377.41pt>
+File: figures/export/test_alo_mark/umm_000078.png Graphic file (type png)
+<use figures/export/test_alo_mark/umm_000078.png>
+Package pdftex.def Info: figures/export/test_alo_mark/umm_000078.png  used on i
+nput line 114.
+(pdftex.def)             Requested size: 139.3222pt x 42.21204pt.
+<figures/export/test_alo_mark/uu_000041.png, id=171, 1246.6575pt x 376.40625pt>
+
+File: figures/export/test_alo_mark/uu_000041.png Graphic file (type png)
+<use figures/export/test_alo_mark/uu_000041.png>
+Package pdftex.def Info: figures/export/test_alo_mark/uu_000041.png  used on in
+put line 118.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_alo_gt/um_000022.png, id=172, 1246.6575pt x 376.40625pt>
+File: figures/export/test_alo_gt/um_000022.png Graphic file (type png)
+<use figures/export/test_alo_gt/um_000022.png>
+Package pdftex.def Info: figures/export/test_alo_gt/um_000022.png  used on inpu
+t line 125.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_alo_gt/umm_000078.png, id=173, 1245.65375pt x 377.41pt>
+File: figures/export/test_alo_gt/umm_000078.png Graphic file (type png)
+<use figures/export/test_alo_gt/umm_000078.png>
+Package pdftex.def Info: figures/export/test_alo_gt/umm_000078.png  used on inp
+ut line 129.
+(pdftex.def)             Requested size: 139.3222pt x 42.21204pt.
+<figures/export/test_alo_gt/uu_000041.png, id=174, 1246.6575pt x 376.40625pt>
+File: figures/export/test_alo_gt/uu_000041.png Graphic file (type png)
+<use figures/export/test_alo_gt/uu_000041.png>
+Package pdftex.def Info: figures/export/test_alo_gt/uu_000041.png  used on inpu
+t line 133.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_slo_mark/um_000022.png, id=175, 1246.6575pt x 376.40625pt>
+
+File: figures/export/test_slo_mark/um_000022.png Graphic file (type png)
+<use figures/export/test_slo_mark/um_000022.png>
+Package pdftex.def Info: figures/export/test_slo_mark/um_000022.png  used on in
+put line 140.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_slo_mark/umm_000078.png, id=176, 1245.65375pt x 377.41pt>
+File: figures/export/test_slo_mark/umm_000078.png Graphic file (type png)
+<use figures/export/test_slo_mark/umm_000078.png>
+Package pdftex.def Info: figures/export/test_slo_mark/umm_000078.png  used on i
+nput line 144.
+(pdftex.def)             Requested size: 139.3222pt x 42.21204pt.
+<figures/export/test_slo_mark/uu_000041.png, id=177, 1246.6575pt x 376.40625pt>
+
+File: figures/export/test_slo_mark/uu_000041.png Graphic file (type png)
+<use figures/export/test_slo_mark/uu_000041.png>
+Package pdftex.def Info: figures/export/test_slo_mark/uu_000041.png  used on in
+put line 148.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_slo_gt/um_000022.png, id=178, 1246.6575pt x 376.40625pt>
+File: figures/export/test_slo_gt/um_000022.png Graphic file (type png)
+<use figures/export/test_slo_gt/um_000022.png>
+Package pdftex.def Info: figures/export/test_slo_gt/um_000022.png  used on inpu
+t line 155.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+<figures/export/test_slo_gt/umm_000078.png, id=179, 1245.65375pt x 377.41pt>
+File: figures/export/test_slo_gt/umm_000078.png Graphic file (type png)
+<use figures/export/test_slo_gt/umm_000078.png>
+Package pdftex.def Info: figures/export/test_slo_gt/umm_000078.png  used on inp
+ut line 159.
+(pdftex.def)             Requested size: 139.3222pt x 42.21204pt.
+<figures/export/test_slo_gt/uu_000041.png, id=180, 1246.6575pt x 376.40625pt>
+File: figures/export/test_slo_gt/uu_000041.png Graphic file (type png)
+<use figures/export/test_slo_gt/uu_000041.png>
+Package pdftex.def Info: figures/export/test_slo_gt/uu_000041.png  used on inpu
+t line 163.
+(pdftex.def)             Requested size: 139.3222pt x 42.0653pt.
+
+Overfull \hbox (13.69435pt too wide) in alignment at lines 3--165
+[][][][] 
+ []
+
+) Excluding 'comment' comment.) (./files/conclusion.tex)
 (./2018-conf-final-mlpr.bbl
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ­ in font ptmr7t!
- [4 <./figures/val_acc.png (PNG copy)> <./figures/val_loss.png (PNG copy)> <./f
-igures/train_time.png (PNG copy)> <./figures/fps.png (PNG copy)>]
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no   in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
-)
+ [5 <./figures/fps.png (PNG copy)>] [6 <./figures/export/original_train/um_0000
+67.png (PNG copy)> <./figures/export/original_train/umm_000025.png (PNG copy)> 
+<./figures/export/original_train/uu_000009.png (PNG copy)> <./figures/export/tr
+ain_alo_mark/um_000067.png (PNG copy)> <./figures/export/train_alo_mark/umm_000
+025.png (PNG copy)> <./figures/export/train_alo_mark/uu_000009.png (PNG copy)> 
+<./figures/export/train_alo_gt/um_000067.png (PNG copy)> <./figures/export/trai
+n_alo_gt/umm_000025.png (PNG copy)> <./figures/export/train_alo_gt/uu_000009.pn
+g (PNG copy)> <./figures/export/train_slo_mark/um_000067.png (PNG copy)> <./fig
+ures/export/train_slo_mark/umm_000025.png (PNG copy)> <./figures/export/train_s
+lo_mark/uu_000009.png (PNG copy)> <./figures/export/train_slo_gt/um_000067.png 
+(PNG copy)> <./figures/export/train_slo_gt/umm_000025.png (PNG copy)> <./figure
+s/export/train_slo_gt/uu_000009.png (PNG copy)> <./figures/export/original_test
+/um_000022.png (PNG copy)> <./figures/export/original_test/umm_000078.png (PNG 
+copy)> <./figures/export/original_test/uu_000041.png (PNG copy)> <./figures/exp
+ort/test_alo_mark/um_000022.png (PNG copy)> <./figures/export/test_alo_mark/umm
+_000078.png (PNG copy)> <./figures/export/test_alo_mark/uu_000041.png (PNG copy
+)> <./figures/export/test_alo_gt/um_000022.png (PNG copy)> <./figures/export/te
+st_alo_gt/umm_000078.png (PNG copy)> <./figures/export/test_alo_gt/uu_000041.pn
+g (PNG copy)> <./figures/export/test_slo_mark/um_000022.png (PNG copy)> <./figu
+res/export/test_slo_mark/umm_000078.png (PNG copy)> <./figures/export/test_slo_
+mark/uu_000041.png (PNG copy)> <./figures/export/test_slo_gt/um_000022.png (PNG
+ copy)> <./figures/export/test_slo_gt/umm_000078.png (PNG copy)> <./figures/exp
+ort/test_slo_gt/uu_000041.png (PNG copy)>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1199,44 +1419,40 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
+[7
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
- (./2018-conf-final-mlpr.aux)
+ (./2018-conf-final-mlpr.aux (./figures/methods.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
 Package rerunfilecheck Info: File `2018-conf-final-mlpr.out' has not changed.
-(rerunfilecheck)             Checksum: 9F3D090B78B8A3883ADEC9487B7DFAB7;515.
+(rerunfilecheck)             Checksum: 169498852C0B3557C922719810928BA0;557.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
  ) 
 Here is how much of TeX's memory you used:
- 32075 strings out of 492982
- 792325 string characters out of 6134895
- 991894 words of memory out of 5000000
- 35020 multiletter control sequences out of 15000+600000
- 46005 words of font info for 97 fonts, out of 8000000 for 9000
+ 32195 strings out of 492982
+ 798200 string characters out of 6134895
+ 993166 words of memory out of 5000000
+ 35126 multiletter control sequences out of 15000+600000
+ 43819 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,9n,96p,1300b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,14n,96p,1300b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on 2018-conf-final-mlpr.pdf (5 pages, 257423 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 2018-conf-final-mlpr.pdf (7 pages, 12534203 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
+ 254 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
  48 named destinations out of 1000 (max. 500000)
- 110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
