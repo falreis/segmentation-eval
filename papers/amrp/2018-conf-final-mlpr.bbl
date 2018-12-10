@@ -34,12 +34,6 @@ L.~Guigues, J.~P. Cocquerez, and H.~Le~Men, ``Scale-sets image analysis,''
 I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}, vol.~1,
   2016.
 
-\bibitem{farabet2012}
-C.~Farabet, C.~Couprie, L.~Najman, and Y.~Lecun, ``{Scene Parsing with
-  Multiscale Feature Learning, Purity Trees, and Optimal Covers},'' in
-  \emph{{29th International Conference on Machine Learning (ICML 2012)}},
-  A.~McCallum, Ed., Edinburgh, United Kingdom, Jun 2012, pp. 1--8.
-
 \bibitem{farabet2013}
 C.~Farabet, C.~Couprie, L.~Najman, and Y.~LeCun, ``{Learning Hierarchical
   Features for Scene Labeling},'' \emph{{IEEE Transactions on Pattern Analysis
@@ -57,12 +51,9 @@ C.-Y. Lee, S.~Xie, P.~Gallagher, Z.~Zhang, and Z.~Tu, ``{Deeply-Supervised
   0.5em minus 0.4em\relax San Diego, California, USA: PMLR, 09--12 May 2015,
   pp. 562--570.
 
-\bibitem{Xie:2017:HED:3158436.3158453}
-\BIBentryALTinterwordspacing
-S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{Int. J. Comput.
-  Vision}, vol. 125, no. 1-3, pp. 3--18, 12 2017. [Online]. Available:
-  \url{https://doi.org/10.1007/s11263-017-1004-z}
-\BIBentrySTDinterwordspacing
+\bibitem{xie2017}
+S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{International
+  Journal of Computer Vision}, vol. 125, no.~1, pp. 3--18, Dec 2017.
 
 \bibitem{cheng2016}
 M.-M. Cheng, Y.~Liu, Q.~Hou, J.~Bian, P.~Torr, S.-M. Hu, and Z.~Tu, ``{HFS:
@@ -71,16 +62,30 @@ M.-M. Cheng, Y.~Liu, Q.~Hou, J.~Bian, P.~Torr, S.-M. Hu, and Z.~Tu, ``{HFS:
   M.~Welling, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Cham: Springer
   International Publishing, 2016, pp. 867--882.
 
-\bibitem{COB:7917294}
-K.~Maninis, J.~Pont-Tuset, P.~Arbeláez, and L.~V. Gool, ``Convolutional
-  oriented boundaries: From image segmentation to high-level tasks,''
-  \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  vol.~40, no.~4, pp. 819--833, April 2018.
+\bibitem{maninis2017}
+K.-K. Maninis, J.~Pont-Tuset, P.~Arbel{\'a}ez, and L.~Van~Gool, ``Convolutional
+  oriented boundaries,'' in \emph{Computer Vision -- ECCV 2016}, B.~Leibe,
+  J.~Matas, N.~Sebe, and M.~Welling, Eds.\hskip 1em plus 0.5em minus
+  0.4em\relax Cham: Springer International Publishing, 2016, pp. 580--596.
 
-\bibitem{RCF:8100105}
-Y.~Liu, M.~Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional features
-  for edge detection,'' in \emph{2017 IEEE Conference on Computer Vision and
-  Pattern Recognition (CVPR)}, July 2017, pp. 5872--5881.
+\bibitem{liu2017}
+Y.~Liu, M.-M. Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional
+  features for edge detection,'' in \emph{2017 IEEE Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, vol.~00, Jul 2017, pp. 5872--5881.
+
+\bibitem{najman13}
+L.~Najman and H.~Talbot, \emph{{Mathematical morphology: from theory to
+  applications}}, 2013.
+
+\bibitem{xie2015}
+S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' in \emph{The IEEE
+  International Conference on Computer Vision (ICCV)}, December 2015.
+
+\bibitem{farabet2012}
+C.~Farabet, C.~Couprie, L.~Najman, and Y.~Lecun, ``{Scene Parsing with
+  Multiscale Feature Learning, Purity Trees, and Optimal Covers},'' in
+  \emph{{29th International Conference on Machine Learning (ICML 2012)}},
+  A.~McCallum, Ed., Edinburgh, United Kingdom, Jun 2012, pp. 1--8.
 
 \bibitem{ilin17}
 R.~Ilin, T.~Watson, and R.~Kozma, ``Abstraction hierarchy in deep learning
@@ -117,16 +122,10 @@ M.~D. Zeiler and R.~Fergus, ``{Visualizing and understanding convolutional
   8689.\hskip 1em plus 0.5em minus 0.4em\relax ZURICH, Switzerland: Springer
   International Publishing, 2014, pp. 818--833.
 
-\bibitem{alsallakh18}
-B.~Alsallakh, A.~Jourabloo, M.~Ye, X.~Liu, and L.~Ren, ``Do convolutional
-  neural networks learn class hierarchy?'' \emph{{IEEE Transactions on
-  Visualization and Computer Graphics}}, vol.~24, no.~1, pp. 152--165, 2018.
-
-\bibitem{fan2017}
-J.~Fan, T.~Zhao, Z.~Kuang, Y.~Zheng, J.~Zhang, J.~Yu, and J.~Peng, ``{HD-MTL:
-  Hierarchical Deep Multi-Task Learning for Large-Scale Visual Recognition},''
-  \emph{IEEE Transactions on Image Processing}, vol.~26, no.~4, pp. 1923--1938,
-  Apr 2017.
+\bibitem{KITTI}
+J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
+  evaluation benchmark for road detection algorithms,'' in \emph{International
+  Conference on Intelligent Transportation Systems (ITSC)}, 2013.
 
 \bibitem{chollet2015keras}
 F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
@@ -143,10 +142,5 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   systems,'' 2015, software available from tensorflow.org. [Online]. Available:
   \url{https://www.tensorflow.org/}
 \BIBentrySTDinterwordspacing
-
-\bibitem{KITTI}
-J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
-  evaluation benchmark for road detection algorithms,'' in \emph{International
-  Conference on Intelligent Transportation Systems (ITSC)}, 2013.
 
 \end{thebibliography}

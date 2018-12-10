@@ -47,7 +47,7 @@ from helper import *
 def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
     if(net != None):
         # define parameters
-        weights_file = "", ""
+        weights_file = ""
         if net == "hed":
             weights_file = '../weights/5k/hed_kitti_weight_{}.best.hdf5'.format(merge_name)
 

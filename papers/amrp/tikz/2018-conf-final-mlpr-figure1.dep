@@ -1,6 +1,4 @@
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/aug-add-train-loss.dat
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/aug-avg-train-loss.dat
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/aug-maj2-train-loss.dat
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/aug-maj3-train-loss.dat
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/aug-max-train-loss.dat
-tikz/2018-conf-final-mlpr-figure1.pdf: figures/data/lr-t-loss.dat
+tikz/2018-conf-final-mlpr-figure1.pdf: figures/valid/aug-max-train-acc-full.dat
+tikz/2018-conf-final-mlpr-figure1.pdf: figures/valid/aug-max-val-acc-full.dat
+tikz/2018-conf-final-mlpr-figure1.pdf: figures/valid/aug-max-train-acc.dat
+tikz/2018-conf-final-mlpr-figure1.pdf: figures/valid/aug-max-val-acc.dat

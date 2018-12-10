@@ -1,0 +1,26 @@
+\resizebox{.45\textwidth}{!}{
+	\begin{tikzpicture} 
+		\begin{axis}[
+			ylabel= Average time per epoch~(s),
+			ymin = 1,
+			ymax = 80,
+			xmin = 0,
+			xmax = 5,
+			width= 100mm,
+			height = 70mm,
+			bar width=15mm,
+			%legend columns=-1,
+			axis x line = bottom,
+			axis y line = left,
+			tickwidth = 0pt,
+			xtick=data,
+            enlarge x limits={abs=2cm},
+			axis line style = { black!30 },
+			legend style = {draw = none,at={(.9,.9)}, cells={anchor=west}}
+			]
+			\addplot[ybar,mark=none, fill=lila_10b, draw=lila_10b] coordinates {(1,49)};
+			\addplot[ybar,mark=none, fill=gruen_4b, gruen_4b] coordinates {(3,43)};
+			\legend{ALO,SLO}
+		\end{axis} 
+	\end{tikzpicture}%
+}

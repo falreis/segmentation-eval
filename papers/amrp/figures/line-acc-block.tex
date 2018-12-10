@@ -1,0 +1,27 @@
+\resizebox{.49\textwidth}{!}{
+	\begin{tikzpicture} 
+		\begin{axis}[
+			xlabel= Epochs,
+			ylabel= Accuracy rate,
+			xmin = 0,
+			xmax = 400,
+			ymin = 0.7,
+			ymax = 1,
+			width= 100mm,
+			height = 70mm,
+			%legend columns=-1,
+			axis x line = bottom,
+			axis y line = left,
+			tickwidth = 0pt,
+			axis line style = { black!30 },
+			legend style = {draw = none, at={(.8,0.5)},anchor=north, cells={anchor=west}}
+			]
+			\addplot+[mark=none, blau_2b, very thick,smooth] file {figures/valid/aug-max-train-acc.dat};
+			\addplot+[mark=none, rot_8b, very thick,smooth,dotted] file {figures/valid/aug-max-val-acc.dat};
+%			\addplot+[mark=none, rot_8b, very thick,smooth] file {figures/valid/noaug-max-train-acc.dat};
+%			\addplot+[mark=none, rot_8b, very thick,smooth,dotted] file {figures/valid/noaug-max-val-acc.dat};
+			\legend{stage train, stage val}
+		\end{axis} 
+	\end{tikzpicture}
+	
+	}

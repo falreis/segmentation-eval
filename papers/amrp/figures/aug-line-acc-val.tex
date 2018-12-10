@@ -1,0 +1,32 @@
+\resizebox{.49\textwidth}{!}{
+	\begin{tikzpicture} 
+		\begin{axis}[
+			xlabel= Epochs,
+			ylabel= Accuracy rate,
+			xmin = 0,
+			xmax = 400,
+			ymin = 0,
+			ymax = 1,
+			width= 100mm,
+			height = 70mm,
+			%legend columns=-1,
+			axis x line = bottom,
+			axis y line = left,
+			tickwidth = 0pt,
+			axis line style = { black!30 },
+			legend style = {draw = none, at={(.35,1)},anchor=north, cells={anchor=west}}
+			]
+			\addplot+[mark=none, rot_9b, very thick,smooth] file {figures/data/aug-maj3-train-acc.dat};
+            \addplot+[mark=none, blau_2b, very thick,smooth] file {figures/data/aug-avg-train-acc.dat};			
+            \addplot+[mark=none, lila_10b, very thick,smooth] file {figures/data/aug-max-train-acc.dat};
+            \addplot+[mark=none, blau_1b, very thick,smooth] file {figures/data/aug-add-train-acc.dat};
+            \addplot+[mark=none, rot_8b, very thick,smooth] file {figures/data/aug-maj2-train-acc.dat};
+			\addplot+[mark=none, rot_9b, very thick,dotted,smooth] file {figures/data/aug-maj3-val-acc.dat};
+			\addplot+[mark=none, blau_2b, very thick,dotted,smooth] file {figures/data/aug-avg-val-acc.dat};
+			\addplot+[mark=none, lila_10b, very thick,dotted,smooth] file {figures/data/aug-max-val-acc.dat};
+			\addplot+[mark=none, blau_1b, very thick,dotted,smooth] file {figures/data/aug-add-val-acc.dat};
+			\addplot+[mark=none, rot_8b, very thick,dotted,smooth] file {figures/data/aug-maj2-val-acc.dat};
+		\end{axis} 
+	\end{tikzpicture}
+	
+	}

@@ -8,14 +8,14 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{hyperref} %url
-\usepackage{caption} 
-\usepackage{multirow}
-\usepackage{comment}
-
-\captionsetup[table]{skip=6pt}
-
 \input{config/headers}
 \input{config/colors}
+
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
 
 \usetikzlibrary{external}
 \tikzexternalize[prefix=tikz/]
@@ -29,7 +29,9 @@
                            -halt-on-error 
                            -interaction=nonstopmode
                            -jobname "\image" "\texsource"}} 
-    
+                           
+                           
+                              
 \begin{document}
 
 \title{CM3: Convolutional-Max and Mathematical Morphology to Image Segmentation
@@ -46,12 +48,12 @@ Belo Horizonte, Minas Gerais, Brazil \\
 \maketitle
 
 \begin{abstract}
-
+Image segmentation refers to the partition of an image into a set of regions representing meaningful areas and it is an active topic of research.  In this work it is proposed to explore the learned model in a deep architecture, presenting a strategy to combine side outputs extracted at different layers of the network. It is also proposed to study the impact of the amount of side outputs extracted and the impact of a post-processing strategy using mathematical morphology. Experiments demonstrated that proposed approach is viable and  achieve results comparable or superior to the state-of-the-art for the public available KITTI Road/Lane Dataset for image segmentation.
 \end{abstract}
 
-\begin{IEEEkeywords}
-component, formatting, style, styling, insert
-\end{IEEEkeywords}
+%\begin{IEEEkeywords}
+%component, formatting, style, styling, insert
+%\end{IEEEkeywords}
 
 \input{files/intro}
 \input{files/related}

@@ -1,0 +1,27 @@
+\resizebox{.49\textwidth}{!}{
+	\begin{tikzpicture} 
+		\begin{axis}[
+			xlabel= Epochs,
+			ylabel= Loss,
+			xmin = 0,
+			xmax = 400,
+			ymin = 0,
+			ymax = 2,
+			width= 100mm,
+			height = 70mm,
+			%legend columns=-1,
+			axis x line = bottom,
+			axis y line = left,
+			tickwidth = 0pt,
+			axis line style = { black!30 },
+			legend style = {draw = none, cells={anchor=west}}
+			]
+			\addplot+[mark=none, blau_2b, very thick,smooth] file {figures/valid/aug-max-val-loss-full.dat};
+			\addplot+[mark=none, blau_2b, very thick,smooth,dotted] file {figures/valid/noaug-max-val-loss-full.dat};				
+			\addplot+[mark=none, rot_8b, very thick,smooth] file {figures/valid/aug-max-val-loss.dat};					
+			\addplot+[mark=none, rot_8b, very thick,smooth,dotted] file {figures/valid/noaug-max-val-loss.dat};
+			\legend{full,no-aug full,block, no-aug block}
+		\end{axis} 
+	\end{tikzpicture}
+
+}

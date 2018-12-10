@@ -1,123 +1,56 @@
+\begin{figure*}[!h]
+\begin{center}
+\begin{tabular}{ll}
+(2a) Categorical cross-entropy loss&(2b) Accuracy rate \\
+\input{figures/line-loss-train}&
+\input{figures/line-acc-full}\\
+\end{tabular}%
+\caption{Learning curves for the compared approaches. Left panel displays the the cross-entropy objective function during the learning step for the validation set. Right panel displays accuracy rate obtained on the training and validations sets during the learning step.}
+\end{center}
+\label{fig:learning}
+\end{figure*}
+
 \section{Experiments}
 \label{sec:experiments}
 
+Experiments were conducted in the KITTI Road/Lane Dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It is consisted of 289 training and 290 test images. The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
+
+In this work, it is used only the road ground-truths and the lane annotations are ignored, due the fact that not all the images contains ground-truths for both categories. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
+
+To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Were avoided procedures that would create aberrations, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians. These procedures resulted in 1445 images, divided in 1228 samples for training and 217 samples for validation (about 15\%). 
+
+
 \subsection{Experimental setup}
-\label{sec:experimental_setup}
+   
+Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper} and trained for 400 epochs. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-4, decay of 1e-6 and momentum of 0.95. The default batch size contains 8 images. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU. HED and RCF projects provided custom functions to balance the number of pixels of edges from the non-edges pixels. Once our problem is not as unbalanced as the edge detection, we decided to use the  \textit{{categorical} {cross-entropy}} loss function.
 
-Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-4, decay of 1e-6 and momentum of 0.95. The default batch size contains 8 images. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU.
 
-To increase the number of images in the training set, we made some data augmentation procedures. The techniques we used was pepper noise, horizontal flipping (mirror), changes in contrast and brightness. These procedures resulted in 1445 images, splited in 1228 samples for training and 217 validate samples (about 15\%).
+For simplicity, in the remaining of this work, the network using the side outputs extracted at each stage of the VGG will be called Stage Layer Outputs~(\textbf{SLO}) and it is composed by $n=5$ side outputs. Similarly, for the side outputs extracted at each convolutional layer, it will be called All Layers Outputs~(\textbf{ALO}) and it is composed by $n=13$ side outputs. 
 
-\subsection{The Kitti Road/Lane dataset}
+\subsection{Training results}
 
-KITTI Road/Lane Dataset, part of KITTI Vision Benchmarking Suite, contains  images for road and lane estimation. Consists of 289 training and 290 test images . Ground truth is manually annotated for two different road types: road - road area (the composition of all lanes), and lane (the ego-lane; lane the vehicle is currently driving on) \cite{KITTI}. 
+In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model.
 
-In this paper, we use only the road ground-truths and ignore lane annotations. Some images contains two different ground-truths, one for lane and other for road. Then, we prefer to use road estimation and build only one classifier. Also, it is important to say that ground truth is only available for training set. The test evaluation should be performed using KITTI Server \cite{KITTI}. 
+Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data. 
 
-The results in this paper were performed using KITTI Road Evaluation Benchmark, provided with KITTI Road Dataset. %The results in test set were performed by KITTI Server.
+For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second.
 
-\subsection{Results}
+In summary, for all the metrics in the leaning step, the SLO model presented a slighted superior and more desirable behavior than the ALO model. It is believed that these results are consequence of the considerably larger amount of side outputs in the ALO model, which create more possibilities of interchangeability  between confidant values. 
 
-To compare the results of Stage Layer Outputs and All Layers Outputs, we trained the network with the ground-truths. This section, for comparison purposes, will call Stage Layer Outputs as SLO, and All Layers Outputs, ALO. This section contains data available for training for 400 epochs with parameters describer in Section \ref{sec:experimental_setup}.
+In order to improve the results a new set of tests were performed using 2000 training epochs. The best accuracy rate achieve after the new  training procedures by the SLO models was \textbf{0.980}. As for the ALO model, a more careful design of parameters were tested, particularly, we defined the learning rate as 1e-4, the decay as 1e-6 and used the Nesterov optimization in the process. After 46 epochs the model achieved the best accuracy rate of \textbf{0.982}. But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}.
 
-Figure \ref{fig:val_accuracy} shows the accuracy behaviour in the validation set for both networks. It is possible to see that SLO network has better performance than ALO network. The accuracy for SLO network was  0.97433 while ALO achieved 0.96278 (about 1.2\% worse).
+\subsection{Evaluation results and comparison with the state-of-the-art}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/val_acc.png}
-  \caption{Validation accuracy}
-  \label{fig:val_accuracy}
-\end{figure}
+After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}. This procedure removes small noises created by the foreground~(the road)in the background. We defined a set of kernels with the sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$ and applied in the images to reduce different sizes of noises. Results using this strategy are under the label \textbf{ALO-mm} and \textbf{SLO-mm}.
 
-Figure \ref{fig:val_loss} shows the loss behaviour for both networks. Once SLO had the better accuracy than ALO, the loss of was expected smaller, as shown in Figure \ref{fig:val_loss}.
+Reminding that the test evaluation could only be performed using KITTI Server, the metrics provided are maximum F1-measure~(MaxF), average precision~(AP), precision~(PRE), recall~(REC), false positive rate~(FPR) and false negative rate~(FNR). 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/val_loss.png}
-  \caption{Validation loss}
-  \label{fig:val_loss}
-\end{figure}
+The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. As expected, the SLO model performed better then the ALO model in all almost all of the cases. Particularly when using the post processing procedure with mathematical morphology. It is also possible to notice that although the post-processing slightly improved the overall performance, it also increased the number of false negatives. This could be an indications that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than the desired.   
 
-For performance comparison, we provide Figure \ref{fig:train_time} and \ref{fig:fps}. Figure \ref{fig:train_time} shows that average time to process SLO network is 12.2\% smaller than ALO network. Figure \ref{fig:fps} shows that SLO can process 33.60 images per second in training time, while ALO process 29.48 images per second.
+If compared with the state-of-the-art~(anonymous submission on the KITTI Server platform), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives an negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.       
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/train_time.png}
-  \caption{Average training time}
-  \label{fig:train_time}
-\end{figure}
+\input{tables/kitti-metrics}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/fps.png}
-  \caption{Frames per second}
-  \label{fig:fps}
-\end{figure}
+\input{figures/image}
 
-Once the experiments described above does not reached the best value, we kept training the network for more epochs, in a new test. For SLO network the training, we trained for 2000 epochs using the parameters defined in Section \ref{sec:experimental_setup}. The best accuracy achieve after the training procedures was 0.98080.
-
-ALO network was trained using diferent parameters. Once this network requires less carefully parameters, we defined learning rate as 1e-4, decay as 1e-6 and we used Nesterov optimization. We trained the network util overfitting and get the best value for the validation set. It was necessary 46 epochs to achieve the best accuracy value of 0.98225. Some epochs were close to this values but many ones were smaller, with values closes to 0.86 accuracy.
-
-After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morfology operation of Opening. This procedure removes small noises that could exists in the images, affecting the quality of the results. We defined a set of kernels with the sizes of $5 \times 5$, $7 \times 7$, $9 \times 9$, $11 \times 11$ and $13 \times 13$ applied in the images to reduce different sizes of noises.
-
-The results achieved by both networks, without and with Matematical Morfology post processing were evaluated with KITTI Road Benchmark. The results are available in Table \ref{table:results_math_morf}. It is possible to see that Opening operation resulted in a small gain for both networks in all classes evaluated.
-
-\begin{table}
-  \begin{tabular}{{c}{c}{c}{c}{c}{c}{c}}
-  
-  \multicolumn{7}{l}{Stage Layer Outputs - Without Matematical Morfology} \\
-  \hline 
-    Category & MaxF & AP & PRE & REC & FPR & FNR \\
-  \hline
-    \textit{um\_road} & 96.92\% & 87.36\% & 94.47\% & 99.49\% & 1.13\% & 0.51\% \\
-    \textit{umm\_road} & 97.57\% & 89.44\% & 96.05\% & 99.15\% & 1.24\% & 0.85\% \\
-    \textit{uu\_road} & 95.16\% & 85.73\% & 92.94\% & 97.49\% & 1.16\% & 2.51\% \\
-  \hline
-  \multicolumn{7}{c}{} \\
-  
-  \multicolumn{7}{l}{Stage Layer Outputs - With Matematical Morfology} \\
-  \hline 	
-    Category & MaxF & AP & PRE & REC & FPR & FNR \\
-  \hline
-    \textit{um\_road} & 97.01\% & 87.68\% & 94.83\% & 99.30\% & 1.05\% & 0.70\% \\
-    \textit{umm\_road} & 97.61\% & 89.67\% & 96.30\% & 98.97\% & 1.16\% & 1.03\% \\
-    \textit{uu\_road} & 95.42\% & 86.48\% & 93.77\% & 97.13\% & 1.01\% & 2.87\% \\
-  \hline
-  \multicolumn{7}{c}{} \\
-  
-  \multicolumn{7}{l}{All Layers Outputs - Without Matematical Morfology} \\
-  \hline 	
-    Category & MaxF & AP & PRE & REC & FPR & FNR \\
-  \hline
-    \textit{um\_road} & 96.39\% & 86.81\% & 93.87\% & 99.05\% & 1.25\% & 0.95\% \\
-    \textit{umm\_road} & 97.05\% & 88.83\% & 95.37\% & 98.78\% & 1.46\% & 1.22\% \\
-    \textit{uu\_road} & 94.70\% & 84.87\% & 92.00\% & 97.56\% & 1.33\% & 2.44\% \\
-  \hline
-  \multicolumn{7}{c}{} \\
-  
-  \multicolumn{7}{l}{All Layers Outputs - With Matematical Morfology} \\
-  \hline 	
-    Category & MaxF & AP & PRE & REC & FPR & FNR \\
-  \hline
-    \textit{um\_road} & 96.65\% & 87.51\% & 94.64\% & 98.74\% & 1.08\% & 1.26\% \\
-    \textit{umm\_road} & 97.21\% & 89.31\% & 95.90\% & 98.56\% & 1.29\% & 1.44\% \\
-    \textit{uu\_road} & 95.20\% & 86.15\% & 93.40\% & 97.08\% & 1.08\% & 2.92\% \\
-  \hline
-  
-  \end{tabular}
-  \caption{KITTI benchmark evaluation results for in each category \protect\footnotemark}
-  \label{table:results_math_morf}
-\end{table}
-
-\footnotetext{Table abbreviations: \textit{MaxF}: Maximum F1-measure, \textit{AP}: Average precision, \textit{PRE}: Precision, \textit{REC}: Recall, \textit{FPR}: False Positive Rate, \textit{FNR}: False Negative Rate}
-
-The visual results are available in Table \ref{table:image_segmentation}.
-
-\input{files/image}
-
-\begin{comment}
-\subsection{Qualitative analysis}
-
-In training evaluation, it was noticed that the network was more stable, and we can set bigger learning rates parameters ($1 \times 10^3$). Also, we can use different optimizers and Nesterov Optimization \cite{Nesterov:1983wy}.
-\end{comment}
-
+%\subsection{Post-processing using mathematical morphology}

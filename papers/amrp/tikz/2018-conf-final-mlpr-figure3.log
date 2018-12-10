@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.14)  2 DEC 2018 20:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.14)  10 DEC 2018 03:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -848,6 +848,18 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 \pgf@layerboxsaved@background=\box63
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.text.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.text.code.tex
@@ -855,6 +867,36 @@ decorations.text.code.tex
 )
 \tikz@lib@dec@te@box=\box65
 )) (./config/colors.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen269
+\captionmargin@=\dimen270
+\captionwidth=\dimen271
+\caption@tempdima=\dimen272
+\caption@indent=\dimen273
+\caption@parindent=\dimen274
+\caption@hangindent=\dimen275
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count142
+\sf@farskip=\skip51
+\sf@captopadj=\dimen276
+\sf@capskip=\skip52
+\sf@nearskip=\skip53
+\c@subfigure=\count143
+\c@subfigure@save=\count144
+\c@lofdepth=\count145
+\c@subtable=\count146
+\c@subtable@save=\count147
+\c@lotdepth=\count148
+\sf@top=\skip54
+\sf@bottom=\skip55
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -880,38 +922,38 @@ No auxiliary output files.
 
 \w@pgfexternal@auxout=\write4
 No file tikz/2018-conf-final-mlpr-figure3.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 33.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
-\scratchdimen=\dimen269
+\scratchcounter=\count149
+\scratchdimen=\dimen277
 \scratchbox=\box66
-\nofMPsegments=\count143
-\nofMParguments=\count144
+\nofMPsegments=\count150
+\nofMParguments=\count151
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count145
-\MPscratchDim=\dimen270
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
+\MPscratchCnt=\count152
+\MPscratchDim=\dimen278
+\MPnumerator=\count153
+\makeMPintoPDFobject=\count154
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -949,72 +991,56 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 27.
+ on input line 33.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 40.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 46.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
  (./files/intro.tex)
 (./files/related.tex
-Underfull \hbox (badness 3260) in paragraph at lines 9--10
-[]\OT1/ptm/m/n/10 In ex-plor-ing the hi-er-ar-chies of deep fea-tures, three
+Underfull \hbox (badness 1354) in paragraph at lines 7--8
+\OT1/ptm/m/n/10 main ar-chi-tec-tures stand-out in re-cent years, namely: (i)
  []
 
-) (./files/experiments.tex (./figures/learning-curves.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+) (./files/method.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./figures/aug-line-acc-train.tex
+(./figures/methods.tex (./figures/stage.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-) (./figures/aug-line-loss-train.tex
+) (./figures/full.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-) (./figures/aug-line-acc-val.tex
+))) (./files/experiments.tex (./figures/learning-curves.tex
+(./figures/line-loss-train.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-) (./figures/aug-line-loss-val.tex
+) (./figures/line-acc-full.tex
 \openout4 = `tikz/2018-conf-final-mlpr-figure3.dpth'.
 
-PGFPlots: reading {figures/data/aug-add-val-loss.dat}
+PGFPlots: reading {figures/valid/aug-max-train-acc-full.dat}
 \tikzexternal@dep@file=\write5
 \openout5 = `tikz/2018-conf-final-mlpr-figure3.dep'.
 
-PGFPlots: reading {figures/data/aug-avg-val-loss.dat}
-PGFPlots: reading {figures/data/aug-maj2-val-loss.dat}
-PGFPlots: reading {figures/data/aug-maj3-val-loss.dat}
-PGFPlots: reading {figures/data/aug-max-val-loss.dat}
- [2
+PGFPlots: reading {figures/valid/aug-max-val-acc-full.dat}
+PGFPlots: reading {figures/valid/aug-max-train-acc.dat}
+PGFPlots: reading {figures/valid/aug-max-val-acc.dat}
+ [4
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-Overfull \hbox (13.6872pt too wide) in paragraph at lines 3--11
- [] 
- []
-
-(./figures/noaug-line-acc-train.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-) (./figures/noaug-line-loss-train.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-) (./figures/noaug-line-acc-val.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-) (./figures/noaug-line-loss-val.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-)
-Overfull \hbox (13.68344pt too wide) in paragraph at lines 18--26
+Overfull \hbox (13.6872pt too wide) in paragraph at lines 3--8
  [] 
  []
 
@@ -1033,10 +1059,10 @@ Before submitting the final camera ready copy, remember to:
 
  ) 
 Here is how much of TeX's memory you used:
- 27428 strings out of 493029
- 716276 string characters out of 6136233
- 1225634 words of memory out of 5000000
- 30431 multiletter control sequences out of 15000+600000
+ 28257 strings out of 493029
+ 731938 string characters out of 6136233
+ 1202645 words of memory out of 5000000
+ 31250 multiletter control sequences out of 15000+600000
  28133 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,28n,108p,1298b,2324s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1044,7 +1070,7 @@ Here is how much of TeX's memory you used:
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb>
-Output written on tikz/2018-conf-final-mlpr-figure3.pdf (1 page, 58651 bytes).
+Output written on tikz/2018-conf-final-mlpr-figure3.pdf (1 page, 63470 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream
