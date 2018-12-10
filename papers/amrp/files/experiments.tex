@@ -58,9 +58,9 @@ Once the experiments described above does not reached the best value, we kept tr
 
 ALO network was trained using diferent parameters. Once this network requires less carefully parameters, we defined learning rate as 1e-4, decay as 1e-6 and we used Nesterov optimization. We trained the network util overfitting and get the best value for the validation set. It was necessary 46 epochs to achieve the best accuracy value of 0.98225. Some epochs were close to this values but many ones were smaller, with values closes to 0.86 accuracy.
 
-After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morfology operation of Opening. This procedure removes small noises that could exists in the images, affecting the quality of the results.
+After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morfology operation of Opening. This procedure removes small noises that could exists in the images, affecting the quality of the results. We defined a set of kernels with the sizes of $5 \times 5$, $7 \times 7$, $9 \times 9$, $11 \times 11$ and $13 \times 13$ applied in the images to reduce different sizes of noises.
 
-We defined a set of kernels with the sizes of $5 \times 5$, $7 \times 7$, $9 \times 9$, $11 \times 11$ and $13 \times 1$ applied in the images to reduce different sizes of noises.
+The results achieved by both networks, without and with Matematical Morfology post processing were evaluated with KITTI Road Benchmark. The results are available in Table \ref{table:results_math_morf}. It is possible to see that Opening operation resulted in a small gain for both networks in all classes evaluated.
 
 \begin{table}
   \begin{tabular}{{c}{c}{c}{c}{c}{c}{c}}
@@ -106,19 +106,16 @@ We defined a set of kernels with the sizes of $5 \times 5$, $7 \times 7$, $9 \ti
   
   \end{tabular}
   \caption{KITTI benchmark evaluation results for in each category \protect\footnotemark}
-  \label{table:max_without_morf}
+  \label{table:results_math_morf}
 \end{table}
 
 \footnotetext{Table abbreviations: \textit{MaxF}: Maximum F1-measure, \textit{AP}: Average precision, \textit{PRE}: Precision, \textit{REC}: Recall, \textit{FPR}: False Positive Rate, \textit{FNR}: False Negative Rate}
 
+The visual results are available in Table ...
+
 \begin{comment}
-HED
-Closing for i in range(3, 8, 1):
-
-
-\end{comment}
-
 \subsection{Qualitative analysis}
 
 In training evaluation, it was noticed that the network was more stable, and we can set bigger learning rates parameters ($1 \times 10^3$). Also, we can use different optimizers and Nesterov Optimization \cite{Nesterov:1983wy}.
+\end{comment}
 
