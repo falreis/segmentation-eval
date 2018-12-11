@@ -44,7 +44,7 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
+def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.001, morf=True):
     if(net != None):
         # define parameters
         weights_file = ""
@@ -65,10 +65,10 @@ def test(model, net, merge_name=None, set_name='test', mark=False, morf=True):
         model.load_weights(weights_file)
 
         # Compile model (required to make predictions)
-        sgd = SGD(lr=0.0001, decay=1e-6, momentum=0.95, nesterov=False)
+        sgd = SGD(lr=learn_rate, decay=1e-6, momentum=0.95, nesterov=False)
         model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
 
-        batch_size = 1
+        batch_size = 16
 
         # estimate accuracy on whole dataset using loaded weights
         label_colours = np.array([[255, 0, 0],[255, 0, 255]])

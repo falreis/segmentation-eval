@@ -64,8 +64,8 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=test --net=hed --merge=max --set=train --mark=false --morf=true
-python kitti.py --func=test --net=full --set=train --mark=false --morf=true
+python kitti.py --func=test --net=hed --merge=max --set=train --mark=false --lr=0.001 --morf=true
+python kitti.py --func=test --net=full --set=train --mark=false --lr=0.001 --morf=true
 ```
 
 ### Params
@@ -80,6 +80,9 @@ python kitti.py --func=test --net=full --set=train --mark=false --morf=true
 
 * mark = {false || true}
   * Parâmetro para marcar rodovia sobre a imagem original ou gerar grond-truth.
+
+* lr? = {0-inf} (*OPCIONAL*)
+  * Parâmetro para definição da taxa de aprendizado (*learning rate*)
 
 * morf? = {false || true} (*OPCIONAL*)
   * Parâmetro para aplicação de morfologia matemática a predição da rede neural.

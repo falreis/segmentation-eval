@@ -99,7 +99,8 @@ elif(args.func == 'npy'):
 
 elif(args.func == 'test'):
     import test_kitti as tek
-    tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark, morf=args.morf)
+    tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark
+        , learn_rate=learn_rate, morf=args.morf)
 
 else:
     printWrongUsageAndQuit()
