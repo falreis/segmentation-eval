@@ -44,16 +44,13 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.001, morf=True):
+def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.001, folder=None, morf=True):
     if(net != None):
-        # define parameters
-        weights_file = ""
-        if net == "hed":
-            weights_file = '../weights/5k/hed_kitti_weight_{}.best.hdf5'.format(merge_name)
-
-        elif net == "full":
-            weights_file = '../weights/5k/full_kitti_weight.best.hdf5'
-        #endif
+        # define weights file
+        if(folder != None and folder != ''):
+            weights_file = '../weights/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge_name)
+        else:
+            weights_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(net, merge_name)
 
         #verify mathematical morfology
         if(mark and morf):
@@ -89,7 +86,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         index = 0
         len_data = len(images_paths)
         #for test_image, image_path in zip(data, images_paths):
-        for image_path in images_paths[:]:
+        for image_path in images_paths[:1]:
 
             #read original image
             original_image = cv2.imread(image_path)
