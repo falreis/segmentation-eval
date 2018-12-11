@@ -33,7 +33,7 @@ np.random.seed(7) # for reproducibility
 import hed_constants as hc
 
 #parameters
-batch_size = 1 #16
+batch_size = 16
 
 def ofuse_pixel_error(y_true, y_pred):
     pred = tf.cast(tf.greater(y_pred, 0.5), tf.int32, name='predictions')
