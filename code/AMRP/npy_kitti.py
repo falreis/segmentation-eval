@@ -42,14 +42,12 @@ def load_data(mode, data_path):
 
         index = 0
         if(len(grounds) == len(images)):
-            for image, ground in zip(images, grounds):
+            for image, ground in zip(images[:10], grounds):
                 reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
                 reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
                 data.append(np.rollaxis(normalized(reduced_image), 2))
-                l, m = one_hot_kitti(reduced_ground, height = hc.height, width = hc.width, classes = hc.n_classes)
-                label.append(l)
-                mapa.append(m)
+                label.append(one_hot_kitti(reduced_ground, height = hc.height, width = hc.width, classes = hc.n_classes))
 
                 index += 1
                 print(index, '/', len_data, end='')
@@ -63,26 +61,27 @@ def load_data(mode, data_path):
             reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
             data.append(np.rollaxis(normalized(reduced_image), 2))
 
-    return np.array(data), np.array(label), np.array(mapa)
+    return np.array(data), np.array(label)
 
 def npy(set_name='train', augm=True):
     data_path = '../datasets/Kitti/data_road'
-    output_path = '../data/Kitti/'
+    output_path = '../data/Kitti/{}{}{}'
+    output_augm = ''
 
     if(augm):
         data_path += '_augmented/'
+        output_augm = '_augm'
     else:
         data_path += '/'
+        output_augm = ''
 
-    data, label, mapa = load_data(mode=set_name, data_path=data_path)
+    data, label = load_data(mode=set_name, data_path=data_path)
     len_data = len(data)
 
     if set_name == "train":
         label = np.reshape(label,(len_data, hc.data_shape, hc.n_classes))
-        mapa = np.reshape(mapa,(len_data, hc.data_shape))
-        np.save((output_path + set_name + "_label"), label)
-        np.save((output_path + set_name + "_mapa"), mapa)
+        np.save(output_path.format(set_name,"_label", output_augm), label)
 
-    np.save((output_path + set_name + "_data"), data)
+    np.save(output_path.format(set_name,"_data", output_augm), data)
 
     print('Done')

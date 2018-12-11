@@ -31,7 +31,6 @@ def one_hot_it(labels, height = 360, width = 480, classes = 12):
 
 def one_hot_kitti(labels, height = 375, width = 1242, classes = 3):
     x = np.zeros([height,width,classes])
-    mapa = np.ones([height,width])
 
     for i in range(height):
         for j in range(width):
@@ -45,12 +44,10 @@ def one_hot_kitti(labels, height = 375, width = 1242, classes = 3):
             else:
                 if (labels[i,j,0] == 0 or labels[i,j,2] == 0): #black (00 00 00$
                     x[i,j,0]=1
-                    mapa[i,j]=1.0
                 else: #fushia (ff 00 ff)
                     x[i,j,1]=1
-                    mapa[i,j]=2.3
 
-    return x, mapa
+    return x
 
 def one_hot_bsds(labels, height = 321, width = 481, classes = 2):
     x = np.zeros([height,width,classes])

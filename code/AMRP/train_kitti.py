@@ -48,7 +48,7 @@ def Vote(y_true, y_pred):
 def w_categorical_crossentropy(y_true, y_pred, weights):
     return K.categorical_crossentropy(y_pred, y_true) * K.cast(weights[:,:],K.floatx())
 
-def train(model, net, merge='max', vote=0, check=True, augm=True, load=True, nb_epoch=100, balanced=False):
+def train(model, net, merge='max', vote=0, check=True, augm=True, load=True, nb_epoch=100, learn_rate=0.001): #, balanced=False):
     if(net != None):
         print(datetime.datetime.now())
 
@@ -59,14 +59,13 @@ def train(model, net, merge='max', vote=0, check=True, augm=True, load=True, nb_
 
         train_data = np.load('../data/Kitti/train_data{}.npy'.format(augm_str))
         train_label = np.load('../data/Kitti/train_label{}.npy'.format(augm_str))
-        train_mapa = np.load('../data/Kitti/train_mapa{}.npy'.format(augm_str))
 
         # define files
         if(net == 'full'):
             checkpoint_file = '../weights/full_kitti_weight.best.hdf5'
         else: #hed
             if(vote != None and vote > 0):
-                checkpoint_file = '../weights/hed_kitti_weight_maj_{}.best.hdf5'.format(net, vote)
+                checkpoint_file = '../weights/hed_kitti_weight_maj_{}.best.hdf5'.format(vote)
             else:
                 checkpoint_file = '../weights/hed_kitti_weight_{}.best.hdf5'.format(merge)
         #endif
@@ -75,20 +74,21 @@ def train(model, net, merge='max', vote=0, check=True, augm=True, load=True, nb_
         if(load):
             lw.load_weights_from_hdf5_group_by_name(model, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
 
-        #sgd = SGD(lr=0.0001, decay=1e-6, momentum=0.95, nesterov=False)
-        sgd = SGD(lr=0.001, decay=5e-6, momentum=0.95, nesterov=True)
+        sgd = SGD(lr=learn_rate, decay=1e-6, momentum=0.95, nesterov=False)
 
         if(merge == 'maj'):
             hc.vote_value = vote
             model.compile(loss=Vote, optimizer=sgd, metrics=["accuracy"]) 
             #metrics={'ofuse': ofuse_pixel_error})
         else:
+            '''
             if(balanced):
                 wcc = partial(w_categorical_crossentropy, weights=train_mapa)
                 wcc.__name__ = 'wcc'
                 model.compile(loss=wcc, optimizer=sgd, metrics=["accuracy"]) 
             else:
-                model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"]) 
+            '''
+            model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"]) 
             #metrics={'ofuse': ofuse_pixel_error})
 
         
@@ -97,10 +97,10 @@ def train(model, net, merge='max', vote=0, check=True, augm=True, load=True, nb_
             checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
             callbacks_list = [checkpoint]
             history = model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-                            verbose=2, shuffle=True, validation_split=0.15)
+                            verbose=2, shuffle=True, validation_split=0.20)
         else:
             history = model.fit(train_data, train_label, batch_size=batch_size, epochs=nb_epoch,
-                            verbose=2, shuffle=True, validation_split=0.15)
+                            verbose=2, shuffle=True, validation_split=0.20)
 
         print(datetime.datetime.now())
 

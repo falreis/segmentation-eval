@@ -24,11 +24,11 @@ python kitti.py --func=npy --set=train --augm=true
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=train --net=full --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
-python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
-python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
-python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true --epochs=100 --balanced=false --morf=false
-python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --epochs=100 --vote=3 --balanced=false --morf=false
+python kitti.py --func=train --net=full --check=true --augm=true --load=true --epochs=100 --lr=0.001
+python kitti.py --func=train --net=hed --merge=add --check=true --augm=true --load=true --epochs=100 --lr=0.001
+python kitti.py --func=train --net=hed --merge=avg --check=true --augm=true --load=true --epochs=100 --lr=0.001
+python kitti.py --func=train --net=hed --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001
+python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --load=true --epochs=100 --lr=0.001 --vote=3
 ```
 
 ### Params
@@ -53,14 +53,11 @@ python kitti.py --func=train --net=hed --merge=maj --check=true --augm=true --lo
 * load? = {false || true} (*OPCIONAL*)
   * Parâmetro para uso de pesos da rede vggnet16.
 
-* epochs? = {1-*} (*OPCIONAL*)
+* epochs? = {1-inf} (*OPCIONAL*)
   * Parâmetro para definição do número de épocas para treinamento
 
-* balanced? = {false || true}} (*OPCIONAL*)
-  * Parâmetro para definição de utilização de função *categorical_crossentropy* ou *balanced_categorical_crossentropy* (própria)
-
-* morf? = {false || true} (*UNAVAILABLE*)
-  * Parâmetro para aplicação de morfologia matemática a predição da rede neural.
+* lr? = {0-inf} (*OPCIONAL*)
+  * Parâmetro para definição da taxa de aprendizado (*learning rate*)
 
 
 ## Test Kitti

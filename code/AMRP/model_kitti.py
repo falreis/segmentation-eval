@@ -24,12 +24,13 @@ np.random.seed(7) # for reproducibility
 import hed_constants as hc
 
 def side_branch(classes, x, factor, morf=False):
-    kernel_morf = (11, 11)
+    #kernel_morf = (11, 11)
     kernel_size = (2*factor, 2*factor)
 
     x = Convolution2D(classes, (1, 1), activation=None, padding='same')(x)
     x = Conv2DTranspose(classes, kernel_size, strides=factor, padding='same', use_bias=False, activation=None)(x)
 
+    '''
     if(morf):
         #closing
         x = tf.nn.erosion2d(value=x, kernel=kernel_morf, strides=factor, padding='same', name='erosion_closing')
@@ -38,7 +39,7 @@ def side_branch(classes, x, factor, morf=False):
         #opening
         x = tf.nn.dilation2d(input=x, filter=kernel_morf,strides=factor, padding='same', name='dilat_opening')
         x = tf.nn.erosion2d(value=x, kernel=kernel_morf, strides=factor, padding='same', name='erosion_opening')
-
+    '''
     return x
 
 ###########
