@@ -84,21 +84,19 @@ def model_slo(merge_name):
         print('avg')
         fuse = Average()([b1, b2, b3, b4, b5])
 
-    elif(merge_name == 'add' or merge_name == 'sum'):
+    elif(merge_name == 'add'):
         print('add')
-        merge_name = 'add'
-        fuse = Add()([b1, b2, b3, b4, b5])
+        fuse = Add()([b1, b2, b3, b4, b5])       
 
     elif(merge_name == 'max'):
         print('max')
         fuse = Maximum()([b1, b2, b3, b4, b5])
-
-    elif(merge_name == 'maj'):
-        print('maj')
-        fuse = Add()([b1, b2, b3, b4, b5]) #vote procedure is defined at loss function
-        #fuse = Lambda(Vote, arguments={'vote_value': vote_value})(fuse)
-
-    fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
+        
+    #activation
+    if(merge_name == 'max'):
+        fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
+    else:
+        fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation='softmax')(fuse) # 480 480 1
 
     #reshape
     ofuse = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(fuse)
@@ -160,16 +158,19 @@ def model_alo(merge_name):
         print('avg')
         fuse = Average()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53])
 
-    elif(merge_name == 'add' or merge_name == 'sum'):
+    elif(merge_name == 'add'):
         print('add')
-        merge_name = 'add'
         fuse = Add()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53])
 
     elif(merge_name == 'max'):
         print('max')
         fuse = Maximum()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53])
 
-    fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
+    #activation
+    if(merge_name == 'max'):
+        fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
+    else:
+        fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation='softmax')(fuse) # 480 480 1
 
     #reshape
     ofuse = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(fuse)
