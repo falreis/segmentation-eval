@@ -88,9 +88,9 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         # Fit the model
         if(check):
             checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-            #tensorboard = TensorBoard(log_dir='../tensorboard', histogram_freq=0, write_graph=True, write_images=True)
-            #callbacks_list = [checkpoint, tensorboard]
-            callbacks_list = [checkpoint]
+            tensorboard = TensorBoard(log_dir='../tensorboard', histogram_freq=0, write_graph=True, write_images=True)
+            callbacks_list = [checkpoint, tensorboard]
+            #callbacks_list = [checkpoint]
 
             model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
                             verbose=2, shuffle=True, validation_split=0.20)
