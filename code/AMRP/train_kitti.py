@@ -14,7 +14,7 @@ import keras.models as models
 from keras.layers.core import Layer, Dense, Dropout, Activation, Flatten, Reshape, Permute
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, UpSampling2D, ZeroPadding2D
 from keras.layers.normalization import BatchNormalization
-from keras.callbacks import ModelCheckpoint
+from keras.callbacks import ModelCheckpoint, TensorBoard
 
 from keras import backend as K
 from keras.losses import categorical_crossentropy
@@ -82,10 +82,16 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         '''
         model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])  #metrics={'ofuse': ofuse_pixel_error})
 
+        #tensorboard
+        
+
         # Fit the model
         if(check):
             checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+            #tensorboard = TensorBoard(log_dir='../tensorboard', histogram_freq=0, write_graph=True, write_images=True)
+            #callbacks_list = [checkpoint, tensorboard]
             callbacks_list = [checkpoint]
+
             model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
                             verbose=2, shuffle=True, validation_split=0.20)
         else:
