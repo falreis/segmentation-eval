@@ -80,7 +80,7 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
             model.compile(loss=wcc, optimizer=sgd, metrics=["accuracy"]) 
         else:
         '''
-        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])  #metrics={'ofuse': ofuse_pixel_error})
+        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])  #metrics={'ofuse': ofuse_pixel_error})
 
         #tensorboard
         

@@ -1,9 +1,3 @@
-#usage 
-#python eval-kitti.py --net=segnet
-
-#rename result files with commands below:
-#rename 's/umm_/umm_road_/' 
-
 from __future__ import absolute_import
 from __future__ import print_function
 import os
@@ -44,7 +38,31 @@ sys.path.append("..")
 import visualize as vis
 from helper import *
 
-def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.001, folder=None, morf=True):
+def imFill(color_image):
+    color_image = color_image.astype(np.float32)
+    gray = cv2.cvtColor(color_image, cv2.COLOR_BGR2GRAY)
+    
+    # Copy the thresholded image.
+    im_floodfill = gray.copy() 
+                
+    # Mask used to flood filling.
+    # Notice the size needs to be 2 pixels than the image.
+    h, w = gray.shape[:2]
+    mask = np.zeros((h+2, w+2), np.uint8)
+    
+    # Floodfill from point (0, 0)
+    cv2.floodFill(im_floodfill, mask, (0,0), 255)
+    
+    # Invert floodfilled image
+    im_floodfill_inv = cv2.bitwise_not(im_floodfill)
+    
+    # Combine the two images to get the foreground.
+    im_out = np.bitwise_or(gray.astype(int), im_floodfill_inv.astype(int))
+
+    return im_out
+
+
+def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.001, folder=None, morf=True, gray=False):
     if(net != None):
         # define weights file
         if(folder != None and folder != ''):
@@ -68,7 +86,10 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         batch_size = 16
 
         # estimate accuracy on whole dataset using loaded weights
-        label_colours = np.array([[255, 0, 0],[255, 0, 255]])
+        if(gray):
+            label_colours = np.array([[0, 0, 0],[1, 1, 1]])
+        else:
+            label_colours = np.array([[255, 0, 0],[255, 0, 255]])
 
         #load test data
         DataPath = '../datasets/Kitti/data_road/'
@@ -115,21 +136,24 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
                             original_image[i,j,0] = 0
                             original_image[i,j,2] = 0
                         else:
-                            #expanded_pred[i,j,:] = [1., -1., 1.]
-                            expanded_pred[i,j,:] = [1., 0., 1.]
+                            if(gray):
+                                expanded_pred[i,j,:] = [1, 1, 1]
+                            else:
+                                expanded_pred[i,j,:] = [1., 0., 1.]
             
             #apply mathematical morphology
             if((not mark) and morf):
-                for i in range(3, 8, 1):
+                for i in range(3, 5, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
                     expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)
-                
+
+                if(gray):
+                    expanded_pred = cv2.cvtColor(expanded_pred, cv2.COLOR_BGR2GRAY)
                 '''
                 for i in range(3, 5, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
                     expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_CLOSE, kernel)
-                '''
-                
+                '''                
 
             #save data
             pos = image_path.rfind('/')
