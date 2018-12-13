@@ -71,7 +71,7 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         if(load):
             lw.load_weights_from_hdf5_group_by_name(model, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
 
-        sgd = SGD(lr=learn_rate, decay=1e-6, momentum=0.95, nesterov=False)
+        sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
 
         '''
         if(balanced):
