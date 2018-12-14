@@ -30,6 +30,7 @@ parser.add_argument("--epochs", nargs='?', type=int)
 parser.add_argument("--lr", nargs='?', type=float)
 parser.add_argument("--morf", nargs='?', type=str2bool)
 parser.add_argument("--folder", nargs='?', type=str)
+parser.add_argument("--gray", nargs='?', type=str2bool)
 args = parser.parse_args()
 
 #func and net parameters
@@ -68,6 +69,7 @@ print('Epochs: ', nb_epochs)
 print('Learning rate: ', learn_rate)
 print('Math morfology: ', args.morf)
 print('Folder: ', args.folder)
+print('Grayscale: ', args.gray)
 print('-----END PARAMETERS-----')
 
 #############
@@ -94,7 +96,7 @@ elif(args.func == 'npy'):
 elif(args.func == 'test'):
     import test_kitti as tek
     tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark
-        , learn_rate=learn_rate, folder=args.folder, morf=args.morf)
+        , learn_rate=learn_rate, folder=args.folder, morf=args.morf, gray=args.gray)
 
 else:
     printWrongUsageAndQuit()

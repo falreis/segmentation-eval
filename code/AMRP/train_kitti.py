@@ -64,8 +64,10 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         checkpoint_file = ''
         if(folder != None and folder != ''):
             checkpoint_file = '../weights/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge)
+            checkpoint_file_ope = '../weights/{}/{}_kitti_weight_{}_ope.best.hdf5'.format(folder, net, merge)
         else:
             checkpoint_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(net, merge)
+            checkpoint_file_ope = '../weights/{}_kitti_weight_{}_ope.best.hdf5'.format(net, merge)
             
         #load weights
         if(load):
@@ -80,7 +82,7 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
             model.compile(loss=wcc, optimizer=sgd, metrics=["accuracy"]) 
         else:
         '''
-        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])  #metrics={'ofuse': ofuse_pixel_error})
+        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])  #metrics={'ofuse': ofuse_pixel_error})
 
         #tensorboard
         
@@ -88,8 +90,10 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         # Fit the model
         if(check):
             checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+            checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', verbose=1, save_best_only=True, mode='min')
+
             tensorboard = TensorBoard(log_dir='../tensorboard', histogram_freq=0, write_graph=True, write_images=True)
-            callbacks_list = [checkpoint, tensorboard]
+            callbacks_list = [checkpoint, checkpoint_ope, tensorboard]
             #callbacks_list = [checkpoint]
 
             model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
