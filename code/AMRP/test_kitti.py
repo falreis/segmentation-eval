@@ -95,9 +95,18 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         DataPath = '../datasets/Kitti/data_road/'
 
         #export data
-        save_path = '../export/Kitti/' + net + '/' + set_name + '/'
+        if(folder != None):
+            save_path = '../export/Kitti/{}/{}/{}/{}/'.format(folder, net, merge_name, set_name)
+        else:
+            save_path = '../export/Kitti/{}/{}/{}/'.format(net, merge_name, set_name)
+
+        #create folder, if not exist
+        if not os.path.exists(save_path):
+            print('Create path: ', save_path)
+            os.makedirs(save_path)
+
+        #define images path
         images_path = DataPath + set_name + 'ing/image_2/*.*'
-        
         images_paths = glob.glob(images_path + "jpg") + glob.glob(images_path + "png")
         images_paths.sort()
 
@@ -143,12 +152,13 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
             
             #apply mathematical morphology
             if((not mark) and morf):
-                for i in range(3, 5, 1):
+                if(gray):
+                    expanded_pred = cv2.cvtColor(expanded_pred.astype(np.float32), cv2.COLOR_BGR2GRAY)
+
+                for i in range(3, 8, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
                     expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)
-
-                if(gray):
-                    expanded_pred = cv2.cvtColor(expanded_pred, cv2.COLOR_BGR2GRAY)
+                
                 '''
                 for i in range(3, 5, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)

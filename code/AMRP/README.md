@@ -64,8 +64,8 @@ python kitti.py --func=train --net=slo --merge=max --check=true --augm=true --lo
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=test --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true
-python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true
+python kitti.py --func=test --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true --gray=False
+python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true --gray=False
 ```
 
 ### Params
@@ -89,6 +89,9 @@ python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=
 
 * morf? = {false || true} (*OPCIONAL*)
   * Parâmetro para aplicação de morfologia matemática a predição da rede neural.
+
+* gray? = {false || true} (*OPCIONAL*)
+  * Parâmetro para saída de rede em escala cinza.
 
 ---
 ## Eval Kitti
