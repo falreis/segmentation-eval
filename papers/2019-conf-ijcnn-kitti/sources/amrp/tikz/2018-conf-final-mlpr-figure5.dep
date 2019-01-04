@@ -1,0 +1,5 @@
+tikz/2018-conf-final-mlpr-figure5.pdf: figures/data/noaug-add-train-loss.dat
+tikz/2018-conf-final-mlpr-figure5.pdf: figures/data/noaug-avg-train-loss.dat
+tikz/2018-conf-final-mlpr-figure5.pdf: figures/data/noaug-maj2-train-loss.dat
+tikz/2018-conf-final-mlpr-figure5.pdf: figures/data/noaug-maj3-train-loss.dat
+tikz/2018-conf-final-mlpr-figure5.pdf: figures/data/noaug-max-train-loss.dat

@@ -1,0 +1,14 @@
+\section{Introduction}
+\label{sec:intro}
+
+Image segmentation refers to the partition of an image into a set of regions representing  meaningful areas. It is considered a challenging semantic task aiming to determine and group uniform regions for analysis. According to~\cite{DOMINGUEZ}, to create an adequate segmented image it is necessary that the output presents some fundamental characteristics, such as: (i) region uniformity and homogeneity in  its characteristics, such as gray level, color or texture; (ii) region continuity, without holes; (iii) significant difference to adjacency regions; and (iv) spacial accuracy with smooth boundaries and without raggedness. 
+
+Image segmentation is an active topic of research and in a typical approach could be divided in two stages~\cite{guigues06}: (i) low-level analysis, which evaluate the pixel characteristics, neighboring relations and it is ideally uncommitted in terms of position, orientation,
+size and contrast; and (ii) high-level analysis, which maps the low-level characteristics to fulfill the task.  
+
+Recently, the deep learning approach drastically changed the computational paradigm for visual tasks. The main advantage of deep learning algorithms is that it does not require an engineered model to operate, meaning that they are capable of learning not only the features to represent the data but also the models to describe it~\cite{goodfellow16}. Facing this new paradigm, researches initially replaced  hand-engineered features in the low-level analysis by the features learned in deep models~\cite{farabet2012,farabet2013,simonyan2014,lee2015}, which mostly achieve the desirable characteristics. More recently, many approaches have been proposed to explore the learned model for the high-level analysis, creating maps from the outputs of different layers in a deep learning network~\cite{Xie:2017:HED:3158436.3158453,cheng2016,COB:7917294,RCF:8100105}. 
+
+One challenge on the later strategy is how to combine those maps, considering that they are presented with different sizes and could represent different concepts. In this work it is presented a strategy to combine maps learned in a deep architecture and study the amount of maps necessary to create a viable region proposition for the task of image segmentation.   
+
+The remainder of this work is organized as it follows: Section \ref{sec:related} contains the related works; Section \ref{sec:method} describes the proposed method; Section \ref{sec:experiments} shows the dataset description, the experimental setup and results for the experiments; and, finally, Section \ref{sec:conclusion} concludes this paper.
+

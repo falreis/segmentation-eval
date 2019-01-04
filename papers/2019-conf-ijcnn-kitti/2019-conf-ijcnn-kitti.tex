@@ -1,0 +1,110 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref} %url
+\input{config/headers}
+\input{config/colors}
+
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/]
+\tikzexternalize[prefix=tikz/,shell escape=-enable-write18]
+\tikzset{external/system call= {pdflatex %-save-size=80000 
+%                           -pool-size=10000000 
+ %                          -extra-mem-top=50000000 
+ %                          -extra-mem-bot=10000000 
+  %                         -main-memory=90000000 
+                           \tikzexternalcheckshellescape 
+                           -halt-on-error 
+                           -interaction=nonstopmode
+                           -jobname "\image" "\texsource"}} 
+                           
+                           
+                              
+\begin{document}
+
+\title{To be determined
+\thanks{The authors are grateful to FAPEMIG (PPM 00006-16), CNPq (Universal 421521/2016-3 and PQ 307062/2016-3), CAPES (MAXIMUM STIC-AmSUD 048/14) and PUC Minas for the financial support to this work.}
+}
+
+%\author{
+%\IEEEauthorblockN{Felipe Augusto Lima Reis}
+%\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+%\textit{Pontifical Catholic University of Minas Gerais}\\
+%Belo Horizonte, Minas Gerais, Brazil\\
+%falreis@sga.pucminas.br}
+%\and
+%\IEEEauthorblockN{Raquel Almeida}
+%\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+%\textit{Pontifical Catholic University of Minas Gerais}\\
+%Belo Horizonte, Minas Gerais, Brazil \\
+%raquel.almeida.685026@sga.pucminas.br}
+%\and
+%\IEEEauthorblockN{Silvio Jamil F. Guimar\~aes}
+%\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+%\textit{Pontifical Catholic University of Minas Gerais}\\
+%Belo Horizonte, Minas Gerais, Brazil \\
+%sjamil@pucminas.br}
+%\and
+%\IEEEauthorblockN{Simon Malinowski}
+%\IEEEauthorblockA{\textit{Linkmedia, IRISA} \\
+%\textit{Universit\'e de Rennes 1}\\
+%Rennes, France \\
+%simon.malinowski@irisa.fr}
+%\and
+%\IEEEauthorblockN{Zenilton K. G. do Patroc\'inio Jrs}
+%\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+%\textit{Pontifical Catholic University of Minas Gerais}\\
+%Belo Horizonte, Minas Gerais, Brazil \\
+%zenilton@pucminas.br}
+%}
+
+\author{
+\IEEEauthorblockN{Felipe Augusto L. Reis, Raquel Almeida\\ Silvio Jamil F. Guimar\~aes, Zenilton K. G. do Patroc\'inio Jr}
+\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+\textit{Pontifical Catholic University of Minas Gerais}\\
+Belo Horizonte, Minas Gerais, Brazil \\
+\{falreis, raquel.almeida.685026\}@sga.pucminas.br\\ \{sjamil, zenilton\}@pucminas.br}
+\and
+\IEEEauthorblockN{Simon Malinowski}
+\IEEEauthorblockA{\textit{Linkmedia, IRISA} \\
+\textit{Universit\'e de Rennes 1}\\
+Rennes, France \\
+simon.malinowski@irisa.fr}
+}
+
+
+\maketitle
+
+\begin{abstract}
+\color{white}Image segmentation refers to the partition of an image into a set of regions representing meaningful areas and it is an active topic of research.  In this work it is proposed to explore the learned model in a deep architecture, presenting a strategy to combine side outputs extracted at different layers of the network. It is also proposed to study the impact of the amount of side outputs extracted and the impact of a post-processing strategy using mathematical morphology. Experiments demonstrated that proposed approach is viable and  achieve results comparable or superior to the state-of-the-art for the public available KITTI Road/Lane Dataset for image segmentation.
+\end{abstract}
+
+\begin{IEEEkeywords}
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\input{files/intro}
+%\input{files/deep-hier}
+\input{files/related}
+\input{files/method}
+\input{files/experiments}
+\input{files/conclusion}
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{2019-ijcnn,dl,hier-seg}
+
+\end{document}

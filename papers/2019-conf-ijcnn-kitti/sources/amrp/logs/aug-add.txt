@@ -1,0 +1,801 @@
+	-	47s	-	loss:	1.4136	-	acc:	0.5459	-	val_loss:	0.7925	-	val_acc:	0.4829
+														
+	-	43s	-	loss:	0.7388	-	acc:	0.4586	-	val_loss:	0.6811	-	val_acc:	0.4570
+														
+	-	43s	-	loss:	0.6506	-	acc:	0.4594	-	val_loss:	0.6184	-	val_acc:	0.4541
+														
+	-	42s	-	loss:	0.6158	-	acc:	0.4617	-	val_loss:	0.5832	-	val_acc:	0.4544
+														
+	-	43s	-	loss:	0.5896	-	acc:	0.4616	-	val_loss:	0.5567	-	val_acc:	0.4540
+														
+	-	43s	-	loss:	0.5795	-	acc:	0.4286	-	val_loss:	0.5303	-	val_acc:	0.4091
+														
+	-	43s	-	loss:	0.5513	-	acc:	0.4229	-	val_loss:	0.5077	-	val_acc:	0.4091
+														
+	-	43s	-	loss:	0.5357	-	acc:	0.4228	-	val_loss:	0.4880	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.5226	-	acc:	0.4227	-	val_loss:	0.4709	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.5119	-	acc:	0.4227	-	val_loss:	0.4563	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.5033	-	acc:	0.4227	-	val_loss:	0.4441	-	val_acc:	0.4086
+														
+	-	42s	-	loss:	0.4967	-	acc:	0.4227	-	val_loss:	0.4341	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4918	-	acc:	0.4227	-	val_loss:	0.4259	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4883	-	acc:	0.4227	-	val_loss:	0.4197	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4860	-	acc:	0.4227	-	val_loss:	0.4148	-	val_acc:	0.4085
+														
+	-	42s	-	loss:	0.4845	-	acc:	0.4227	-	val_loss:	0.4112	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4836	-	acc:	0.4227	-	val_loss:	0.4085	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4831	-	acc:	0.4227	-	val_loss:	0.4067	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4828	-	acc:	0.4227	-	val_loss:	0.4053	-	val_acc:	0.4085
+														
+	-	42s	-	loss:	0.4826	-	acc:	0.4227	-	val_loss:	0.4043	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4227	-	val_loss:	0.4036	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4227	-	val_loss:	0.4031	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4227	-	val_loss:	0.4028	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4026	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4024	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4023	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4022	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4021	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4020	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4020	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4020	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4020	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4020	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4018	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4227	-	val_loss:	0.4018	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.4227	-	val_loss:	0.4019	-	val_acc:	0.4085
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.4227	-	val_loss:	0.4018	-	val_acc:	0.4086
+														
+	-	43s	-	loss:	0.4830	-	acc:	0.4249	-	val_loss:	0.4023	-	val_acc:	0.4544
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4631	-	val_loss:	0.4026	-	val_acc:	0.4568
+														
+	-	43s	-	loss:	0.4859	-	acc:	0.4886	-	val_loss:	0.4046	-	val_acc:	0.4538
+														
+	-	42s	-	loss:	0.4839	-	acc:	0.4609	-	val_loss:	0.4033	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4833	-	acc:	0.4609	-	val_loss:	0.4029	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4831	-	acc:	0.4609	-	val_loss:	0.4027	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4829	-	acc:	0.4609	-	val_loss:	0.4026	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4828	-	acc:	0.4609	-	val_loss:	0.4025	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4828	-	acc:	0.4609	-	val_loss:	0.4024	-	val_acc:	0.4538
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4609	-	val_loss:	0.4025	-	val_acc:	0.4538
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4609	-	val_loss:	0.4024	-	val_acc:	0.4539
+														
+	-	42s	-	loss:	0.4827	-	acc:	0.4609	-	val_loss:	0.4023	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4609	-	val_loss:	0.4023	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4609	-	val_loss:	0.4022	-	val_acc:	0.4539
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4612	-	val_loss:	0.4021	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4021	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4021	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4021	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4022	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4021	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4019	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4612	-	val_loss:	0.4020	-	val_acc:	0.4542
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4613	-	val_loss:	0.4019	-	val_acc:	0.4543
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4019	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4019	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4021	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4826	-	acc:	0.4616	-	val_loss:	0.4018	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4616	-	val_loss:	0.4020	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4616	-	val_loss:	0.4021	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4616	-	val_loss:	0.4021	-	val_acc:	0.4546
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4616	-	val_loss:	0.4022	-	val_acc:	0.4545
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.4615	-	val_loss:	0.4022	-	val_acc:	0.4544
+														
+	-	43s	-	loss:	0.4835	-	acc:	0.4370	-	val_loss:	0.4022	-	val_acc:	0.4102
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4022	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4022	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4022	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4019	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4103
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4102
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4102
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4020	-	val_acc:	0.4102
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4240	-	val_loss:	0.4021	-	val_acc:	0.4101
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4020	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4237	-	val_loss:	0.4019	-	val_acc:	0.4099
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4020	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4020	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4019	-	val_acc:	0.4104
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4239	-	val_loss:	0.4022	-	val_acc:	0.4103
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.4226	-	val_loss:	0.4020	-	val_acc:	0.4091
+														
+	-	42s	-	loss:	0.4825	-	acc:	0.4224	-	val_loss:	0.4020	-	val_acc:	0.4088
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4222	-	val_loss:	0.4020	-	val_acc:	0.4088
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.4069	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4018	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.3845	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4018	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4018	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4020	-	val_acc:	0.3644
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4020	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4020	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4018	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4018	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3846	-	val_loss:	0.4019	-	val_acc:	0.3644
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3847	-	val_loss:	0.4023	-	val_acc:	0.3649
+														
+	-	43s	-	loss:	0.4827	-	acc:	0.3861	-	val_loss:	0.4021	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4825	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3861	-	val_loss:	0.4019	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4020	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3660
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4020	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3661
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4020	-	val_acc:	0.3661
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3863	-	val_loss:	0.4019	-	val_acc:	0.3660
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3862	-	val_loss:	0.4019	-	val_acc:	0.3660
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3862	-	val_loss:	0.4020	-	val_acc:	0.3660
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3862	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3655
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3858	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4823	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4020	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	42s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4018	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+	-	43s	-	loss:	0.4824	-	acc:	0.3859	-	val_loss:	0.4019	-	val_acc:	0.3657
+														
+

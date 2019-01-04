@@ -1,0 +1,4 @@
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/valid/aug-max-train-acc-full.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/valid/aug-max-val-acc-full.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/valid/aug-max-train-acc.dat
+tikz/2018-conf-final-mlpr-figure3.pdf: figures/valid/aug-max-val-acc.dat

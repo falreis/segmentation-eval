@@ -1,0 +1,2 @@
+tikz/2019-conf-ijcnn-kitti-figure0.pdf: figures/valid/aug-max-train-loss-full.dat
+tikz/2019-conf-ijcnn-kitti-figure0.pdf: figures/valid/aug-max-train-loss.dat

@@ -1,0 +1,10 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+This work addressed the problem of merging side outputs extracted from the convolutional layer model VGG to create region propositions for the task of image segmentation. It was proposed to use a $max()$ function to enhance confident values during training to be evaluated using a cross-entropy loss function. It was also studied the impact that the number of side outputs have on the proposed strategy and if a simple mathematical morphology operation could enhance the performance on the task. 
+
+Experiments demonstrated that the $max()$ function is viable for merging maps with different sizes and connotations, and could place the proposed strategy among the state-of-the-art approaches for the task on the Kitti dataset. It was also demonstrated that a large amount of side outputs increases the network confusion during the training step, but could also create jumps that could lead to better performance, in terms of accuracy. The post-processing strategy slightly improved the performance, but requires further studies.
+
+This research opens novel opportunities for study such as: (i) exploring different merging functions, less susceptible a values fluctuations;  (ii) explore regularization techniques to sustain larger amounts of side outputs consistent; and (iii) insert the mathematical morphology kernels on the learning process to search for the best kernel size. 
+ 
+The code  and a file containing all dependencies to reproduce the experiments is public available online in \url{https://github.com/falreis/segmentation-eval}. 

@@ -1,0 +1,801 @@
+	-	12s	-	loss:	0.1137	-	acc:	0.8417	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+	-	8s	-	loss:	1.1921e-07	-	acc:	0.8523	-	val_loss:	1.1921e-07	-	val_acc:	0.7644
+														
+

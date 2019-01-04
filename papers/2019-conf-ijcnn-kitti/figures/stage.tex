@@ -1,0 +1,80 @@
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+std/.style={
+  draw,
+  text width=1.5cm,
+  align=center,
+  font=\strut\sffamily
+  },
+rnd/.style={
+  draw=#1,
+  rounded corners=8pt,
+  line width=1pt,
+  align=center,
+  text width=2cm,
+  minimum height=1cm,
+  font=\strut\sffamily
+  },
+vac/.style={
+  text width=2.5cm,
+  align=center,
+  font=\strut\sffamily
+  },
+ar/.style={
+  ->,
+  >=latex
+  },
+node distance=0.5cm and .5cm    
+]
+
+
+
+%The nodes for the left
+\node[rnd] (inp)
+  {Input layer};
+\node[rnd=gruen_4b,right=of inp] (conv1)
+  {Convolution};  
+\node[rnd=gruen_4b,right=of conv1] (conv2)
+  {Convolution};  
+\node[draw,dashed,gruen_4b,inner sep=8pt,fit={(conv1) (conv2)}]
+  (fit) {};
+\node[rnd,right=1cm of conv2] (pool1)
+  {Pooling};
+\node[vac,left=-1cm of pool1, yshift=-1.5cm] (h1)
+  {$\mathcal{H}_1$}; 
+\node[vac,gruen_4b,left=-1cm of conv2, yshift=1cm] (s1)
+  {Stage 1};   
+\node[vac,right=-1cm of pool1] (p)
+  {$\mathbf{\cdots}$}; 
+  
+\node[rnd=gruen_4b,right=-.7cm of p] (conv3)
+  {Convolution};  
+\node[rnd=gruen_4b,right=of conv3] (conv4)
+  {Convolution};  
+\node[rnd=gruen_4b,right=of conv4] (conv5)
+  {Convolution};    
+\node[draw,dashed,gruen_4b,inner sep=8pt,fit={(conv3) (conv5)}]
+  (fit2) {};
+\node[rnd,right=1cm of conv5] (pool2)
+  {Pooling};
+\node[vac,left=-1cm of pool2, yshift=-1.5cm] (h2)
+  {$\mathcal{H}_m$};
+  \node[vac,gruen_4b,left=-3cm of conv4, yshift=1cm] (s2)
+  {Stage $S$};   
+\node[vac,right=-1cm of pool2] (p2)
+  {$\mathbf{\cdots}$};   
+
+%Aux  
+\coordinate (aux1) at ( $ (conv2.east|-conv2.west)!0.6!(pool1.west) $ );
+\coordinate (aux2) at ( $ (conv5.east|-conv5.west)!0.6!(pool2.west) $ );
+
+\draw[ar]  (inp) -- (conv1); 
+\draw[ar]  (conv1) -- (conv2); 
+\draw[ar]  (conv2) -- (pool1); 
+\draw[ar,left=-1cm of pool1, yshift=-1.5cm]  (aux1) -- (h1); 
+\draw[ar]  (conv3) -- (conv4);
+\draw[ar]  (conv4) -- (conv5); 
+\draw[ar]  (conv5) -- (pool2); 
+\draw[ar,left=-1cm of pool2, yshift=-1.5cm]  (aux2) -- (h2); 
+\end{tikzpicture}%
+}

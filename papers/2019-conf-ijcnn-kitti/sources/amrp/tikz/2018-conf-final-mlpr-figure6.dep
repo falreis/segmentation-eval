@@ -1,0 +1,12 @@
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-add-train-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-avg-train-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-maj2-train-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-maj3-train-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-max-train-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/lr-t-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-add-val-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-avg-val-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-maj2-val-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-maj3-val-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/noaug-max-val-acc.dat
+tikz/2018-conf-final-mlpr-figure6.pdf: figures/data/lr-v-acc.dat

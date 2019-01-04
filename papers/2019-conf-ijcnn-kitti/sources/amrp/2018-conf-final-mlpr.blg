@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: 2018-conf-final-mlpr.aux
+A level-1 auxiliary file: figures/methods.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: 2019-ijcnn.bib
+Database file #2: dl.bib
+Warning--I didn't find a database entry for "xie2017"
+Warning--I didn't find a database entry for "liu2017"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in DOMINGUEZ
+Warning--empty title in goodfellow16
+
+Done.
+You've used 22 entries,
+            4087 wiz_defined-function locations,
+            976 strings with 12422 characters,
+and the built_in function-call counts, 18417 in all, are:
+= -- 1362
+> -- 609
+< -- 127
++ -- 320
+- -- 123
+* -- 929
+:= -- 2642
+add.period$ -- 48
+call.type$ -- 22
+change.case$ -- 27
+chr.to.int$ -- 285
+cite$ -- 24
+duplicate$ -- 1325
+empty$ -- 1500
+format.name$ -- 146
+if$ -- 4304
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 276
+newline$ -- 93
+num.names$ -- 28
+pop$ -- 678
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1365
+stack$ -- 0
+substring$ -- 686
+swap$ -- 1081
+text.length$ -- 32
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 22
+warning$ -- 2
+while$ -- 69
+width$ -- 24
+write$ -- 238
+(There were 4 warnings)

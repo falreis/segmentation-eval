@@ -1,0 +1,6 @@
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/noaug-add-val-loss.dat
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/noaug-avg-val-loss.dat
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/noaug-maj2-val-loss.dat
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/noaug-maj3-val-loss.dat
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/noaug-max-val-loss.dat
+tikz/2018-conf-final-mlpr-figure7.pdf: figures/data/lr-v-acc.dat
