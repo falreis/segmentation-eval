@@ -23,7 +23,7 @@ Amongst the many strategies for deep models, convolutional networks are well-kno
 \noindent in which:
 \begin{itemize}
 \item $\mathbf{W}_l$ is the associated weights for the layer $l$;
-\item $\mathbf{H}_l$ is the output of the hidden layer $l$, defined as:
+\item $\mathbf{H}_l$ is the output of the hidden layer $l$, defined as \color{red}{Caso f (2) nao seja uma camada de saida da rede, ela eh chamada de camada intermediaria ou escondida (hidden layer) (BENGIO-GOODFELLOW). No caso, a formula deveria ser L-2.}:
 \end{itemize}
 
 \small
@@ -96,6 +96,8 @@ Formally, consider once again the set of $N$ training images $\mathbf{X}$ and al
 
 \begin{center}
 \textit{Insert evaluation function and network cross-entropy}
+ \color{green}{As funcoes usadas foram categorical cross-entropy e ofuse pixel-error, retirada do artigo HED (eq. 1)}
+
 \end{center}
 
 
