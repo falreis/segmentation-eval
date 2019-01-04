@@ -12,16 +12,16 @@ import glob
 from skimage import io
 
 #import constants
-import hed_constants as hc  
+import constants as const  
 
 sys.path.append("..")
 from helper import *
 
-reduced_image_size = (hc.width, hc.height, 3)
+reduced_image_size = (const.width, const.height, 3)
 
 def load_data(mode, data_path):
-    path = data_path + mode + "ing/image_2/"
-    pathg = data_path + mode + "ing/gt_image_2/"
+    path = data_path + 'images/' + mode + "/"
+    pathg = data_path + 'groundTruth/' + mode + "/"
 
     data = []
     label = []
@@ -33,7 +33,7 @@ def load_data(mode, data_path):
 
     if mode == "train":
         print(pathg)
-        grounds = glob.glob(pathg + "*road*.jpg") + glob.glob(pathg + "*road*.png")
+        grounds = glob.glob(pathg + "*.jpg") + glob.glob(pathg + "*.png")
         grounds.sort()
         len_data = len(images)
 
@@ -44,7 +44,7 @@ def load_data(mode, data_path):
                 reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
                 data.append(np.rollaxis(normalized(reduced_image), 2))
-                label.append(one_hot_kitti(reduced_ground, height = hc.height, width = hc.width, classes = hc.n_classes))
+                label.append(one_hot_kitti(reduced_ground, height = const.height, width = const.width, classes = const.n_classes))
 
                 index += 1
                 print(index, '/', len_data, end='')
@@ -61,8 +61,8 @@ def load_data(mode, data_path):
     return np.array(data), np.array(label)
 
 def npy(set_name='train', augm=True):
-    data_path = '../datasets/Kitti/data_road'
-    output_path = '../data/Kitti/{}{}{}'
+    data_path = '../datasets/BSDS500/data'
+    output_path = '../data/BSDS500/{}{}{}'
     output_augm = ''
 
     if(augm):
@@ -76,7 +76,7 @@ def npy(set_name='train', augm=True):
     len_data = len(data)
 
     if set_name == "train":
-        label = np.reshape(label,(len_data, hc.data_shape, hc.n_classes))
+        label = np.reshape(label,(len_data, const.data_shape, const.n_classes))
         np.save(output_path.format(set_name,"_label", output_augm), label)
 
     np.save(output_path.format(set_name,"_data", output_augm), data)
