@@ -1,3 +1,4 @@
+\begin{comment}
 \begin{figure*}[!h]
 \begin{center}
 \begin{tabular}{ll}
@@ -9,6 +10,7 @@
 \end{center}
 \label{fig:learning}
 \end{figure*}
+\end{comment}
 
 \section{Experiments}
 \label{sec:experiments}
@@ -17,27 +19,44 @@ Experiments were conducted in the KITTI Road/Lane Dataset, part of KITTI Vision 
 
 In this work, it is used only the road ground-truths and the lane annotations were ignored. This dataset contains the same image with different ground-truths for lane and road estimation. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
 
-To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Procedures that would create aberrations, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 1445 images, divided in 1228 samples for training and 217 samples for validation (about 15\%). 
+{\color{green}{Rever lista de procedimentos de data augmentation}}
+
+To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Procedures that would create aberrations, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
    
-Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper} and trained for 100 epochs. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 1e-6 and momentum of 0.95. The default batch size contains 8 images. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU. HED and RCF projects provided custom functions to balance the number of pixels of edges from the non-edges pixels. Once our problem is not as unbalanced as the edge detection, we decided to use the  \textit{{categorical} {cross-entropy}} loss function.
+Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper} and trained for 100 epochs. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU. HED and RCF projects provided custom functions to balance the number of pixels of edges from the non-edges pixels. Once our problem is not as unbalanced as the edge detection, we decided to use the  \textit{{categorical} {cross-entropy}} loss function.
 
+For simplicity, in the remaining of this work, the network using the side outputs extracted at each stage of the VGG will be called Stage Layer Outputs~(\textbf{SLO}) and it is composed by $n=5$ side outputs. Similarly, for the side outputs extracted at each convolutional layer, it will be called All Layers Outputs~(\textbf{ALO}) and it is composed by $n=13$ side outputs. For comparison, it is also defined a network similar to VGG, with only the final output, without any side outputs, called No Side Outputs~(\textbf{NSO}).
 
-For simplicity, in the remaining of this work, the network using the side outputs extracted at each stage of the VGG will be called Stage Layer Outputs~(\textbf{SLO}) and it is composed by $n=5$ side outputs. Similarly, for the side outputs extracted at each convolutional layer, it will be called All Layers Outputs~(\textbf{ALO}) and it is composed by $n=13$ side outputs. 
+The operations to combine side outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods. Once NSO does not contains side outputs, it does not contains merging strategies.
 
-\subsection{Training results}
+\subsection{Training results - Methods Comparison}
 
-In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model.
+{\color{red}{Imagem 2 comentada. Texto mantido em vermelho para comparacao}}
 
-Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data. 
+{\color{red}{OLD - In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model}.
 
-For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second.
+\color{red}{OLD - Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data}. 
 
-In summary, for all the metrics in the leaning step, the SLO model presented a slighted superior and more desirable behavior than the ALO model. It is believed that these results are consequence of the considerably larger amount of side outputs in the ALO model, which create more possibilities of interchangeability  between confidant values. 
+\color{red}{OLD - For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second}.}
 
-In order to improve the results a new set of tests were performed using 2000 training epochs. The best accuracy rate achieve after the new  training procedures by the SLO models was \textbf{0.980}. As for the ALO model, a more careful design of parameters were tested, particularly, we defined the learning rate as 1e-4, the decay as 1e-6 and used the Nesterov optimization in the process. After 46 epochs the model achieved the best accuracy rate of \textbf{0.982}. But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}.
+In Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} are presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure \ref{fig:validation_loss}, the compared approaches presents an expected loss curve and some differences for the tested approaches. ALO procedures mode appears to be more stable with a faster decay than all SLO and NSO approaches. Also, NSO and SLO approaches produces some high peaks in the learning process.
+
+In summary, for all the metrics in the leaning step, the ALO model presented a slighted superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs in the ALO model, which create more possibilities of interchangeability between confidant values.
+
+Evaluating only ALO outputs, its is possible to see that AVG had the better performance, followed by MAX and ADD operations. The results are also more stable, but slightely close of other methods.
+
+Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics the best values. Validation accuracy is related to categorical cross entropy method. The value follows the inverse behavior for categorical cross entropy loss. For other way, Figure \ref{fig:pixel_error} shows the behaviour of the methods using Fuse Pixel Error methods. It is important to see that this image indicates that SLO-MAX neural network seens to overfitting around 40 epochs. This behaviour is ignored by the other graphs. 
+
+\subsection{Best results}
+
+In order to improve the results a new set of tests were performed using 500 training epochs. The test were performed only for the two best CNNs in the first test set. The best accuracy rate achieve after the new training procedures by the ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. As for the ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}. The behaviour of both methods are available in Figure \ref{fig:val_acc_500_epochs}.
+
+{\color{red}{But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}}}.
+
+{\color{green}{Adicionar informacao sobre os resultados do conjunto de testes}}
 
 \subsection{Evaluation results and comparison with the state-of-the-art}
 
@@ -52,5 +71,32 @@ If compared with the state-of-the-art~(anonymous submission on the KITTI Server 
 \input{tables/kitti-metrics}
 
 \input{figures/image}
+
+\begin{figure}
+  \caption{Categorical Cross-Entropy Loss}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}\label{fig:validation_loss}
+\end{figure}
+
+\begin{figure}
+  \caption{Validation Accuracy}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}\label{fig:validation_accuracy}
+\end{figure}
+
+\begin{figure}
+  \caption{Pixel Error}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}\label{fig:pixel_error}
+\end{figure}
+
+\begin{figure}
+  \caption{Accuracy and Pixel Error for 500 epochs test set}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}\label{fig:val_acc_500_epochs}
+\end{figure}
+
+
+
 
 %\subsection{Post-processing using mathematical morphology}

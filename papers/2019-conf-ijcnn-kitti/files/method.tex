@@ -100,10 +100,31 @@ Formally, consider once again the set of $N$ training images $\mathbf{X}$ and al
 
 \end{center}
 
+For loss evaluation, we used two different functions: the well known categorical cross-entropy and fuse-pixel-error, proposed by \cite{xie2015}.
 
+Formally, categorical cross-entropy for classes $p$ and $q$ and a given set, is defined as:
 
+\begin{equation}
+ H(p,q)= {E}_{p}[-\log q]
+ \label{eq:single_cross_entropy}
+\end{equation}
 
+where $H(p)$ is the entropy of $p$. Once images contains a set of pixels, and each one is defined by Equation  \ref{eq:single_cross_entropy}, the value all pixels set for a single image is defined as:
 
+\begin{equation}
+ H(p,q)= -\sum{E}_{p}[\log q]
+ \label{eq:cross_entropy}
+\end{equation}
+
+Formally, fuse-pixel-error, as defined in \cite{xie2015} consists in the distance $Dist(\cdot , \cdot)$ between the ground-truth label map and the neural net predictions. The loss function $\zeta_{fuse}$ is defined as:
+
+{\color{red}{Nao encontrei o simbolo adequado para formula - utilizei a letra zeta $\zeta$ por enquanto}}
+\begin{equation}
+ \zeta_{fuse}(W, w, h) = Dist(Y, \hat{Y}_{fuse} )
+ \label{eq:fuse_pixel_error}
+\end{equation}
+
+, where $\hat{Y}_{fuse} \equiv \sigma(\sum_{m=1}^{M}{h_m \hat{A}^{(m)}_{side}})$ and $\mathbf{h} = (h_1, ..., h_M)$.
 
 \section{Post-processing}
 
