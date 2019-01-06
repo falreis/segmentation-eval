@@ -96,7 +96,7 @@ def model_slo(merge_name):
     ofuse = Permute((2, 1), name='ofuse')(ofuse)
 
     model = Model(inputs=inputs, outputs=ofuse)
-    print(model.summary())
+    #print(model.summary())
 
     return model
 
@@ -170,6 +170,6 @@ def model_alo(merge_name):
     ofuse = Permute((2, 1))(ofuse)
 
     model = Model(inputs=inputs, outputs=ofuse)
-    print(model.summary())
+    #print(model.summary())
 
     return model

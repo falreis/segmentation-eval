@@ -9,23 +9,20 @@ source activate i2dl
 As opções para condensação de imagens em um único arquivo npy (melhora de desempenho ao fazer io a cada execução)
 
 ```
-python bsds.py --func=npy --set=train --augm=true
+python bsds.py --func=npy --set=train
 ```
 
 ### Params
 * set = {train || test}
   * Parâmetro para conjunto de treino ou teste a ser utilizado.
 
-* augm? = {false || true}
-  * Parâmetro para uso de dataset com data augmentation.
-
 
 ## Train BSDS
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python bsds.py --func=train --net=alo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20181211
-python bsds.py --func=train --net=slo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20181211
+python bsds.py --func=train --net=alo --merge=max --check=true --load=true --epochs=100 --lr=0.001 --folder=20181211
+python bsds.py --func=train --net=slo --merge=max --check=true --load=true --epochs=100 --lr=0.001 --folder=20181211
 ```
 
 ### Params
@@ -43,9 +40,6 @@ python bsds.py --func=train --net=slo --merge=max --check=true --augm=true --loa
 
 * vote? = {1-5} (*OPCIONAL: somente para merge==maj*)
   * Parâmetro correspondente ao número de votos necessários para que sejam consideradas as maiorias.
-
-* augm? = {false || true}  (*OPCIONAL*)
-  * Parâmetro para uso de dataset com data augmentation.
 
 * load? = {false || true} (*OPCIONAL*)
   * Parâmetro para uso de pesos da rede vggnet16.

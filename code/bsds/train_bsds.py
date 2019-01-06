@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 import os
+import sys
 import datetime
 
 #os.environ['KERAS_BACKEND'] = 'theano'
@@ -27,13 +28,15 @@ import numpy as np
 import json
 import argparse
 import h5py
-import load_weights as lw
 np.random.seed(7) # for reproducibility
 
-import hed_constants as hc
+import constants as const
+
+sys.path.append("..")
+import load_weights as lw
 
 #parameters
-batch_size = 16
+batch_size = 4
 
 def ofuse_pixel_error(y_true, y_pred):
     pred = tf.cast(tf.greater(y_pred, 0.5), tf.int32, name='predictions')
@@ -41,60 +44,44 @@ def ofuse_pixel_error(y_true, y_pred):
     return tf.reduce_mean(error, name='pixel_error')
 
 def Vote(y_true, y_pred):
-    vote_value = hc.vote_value - 0.5
+    vote_value = const.vote_value - 0.5
     sig_pred = K.hard_sigmoid((y_pred-vote_value)*5)
     return categorical_crossentropy(y_true, sig_pred)
 
 def w_categorical_crossentropy(y_true, y_pred, weights):
     return K.categorical_crossentropy(y_pred, y_true) * K.cast(weights[:,:],K.floatx())
 
-def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=100, learn_rate=0.001, folder=None):
+def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_rate=0.001, folder=None):
     if(net != None):
         print(datetime.datetime.now())
 
-        # load the data
-        augm_str = ''
-        if(augm):
-            augm_str = '_augm'
 
-        train_data = np.load('../data/Kitti/train_data{}.npy'.format(augm_str))
-        train_label = np.load('../data/Kitti/train_label{}.npy'.format(augm_str))
+        train_data = np.load('../data/HED-BSDS/train_data.npy')
+        train_label = np.load('../data/HED-BSDS/train_label.npy')
 
         # define files
         checkpoint_file = ''
         if(folder != None and folder != ''):
-            checkpoint_file = '../weights/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge)
-            checkpoint_file_ope = '../weights/{}/{}_kitti_weight_{}_ope.best.hdf5'.format(folder, net, merge)
+            checkpoint_file = '../weights/{}/{}_bsds_weight_{}.best.hdf5'.format(folder, net, merge)
+            checkpoint_file_ope = '../weights/{}/{}_bsds_weight_{}_ope.best.hdf5'.format(folder, net, merge)
         else:
-            checkpoint_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(net, merge)
-            checkpoint_file_ope = '../weights/{}_kitti_weight_{}_ope.best.hdf5'.format(net, merge)
+            checkpoint_file = '../weights/{}_bsds_weight_{}.best.hdf5'.format(net, merge)
+            checkpoint_file_ope = '../weights/{}_bsds_weight_{}_ope.best.hdf5'.format(net, merge)
             
         #load weights
         if(load):
-            lw.load_weights_from_hdf5_group_by_name(model, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
+            lw.load_weights_from_hdf5_group_by_name(model, '../vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
 
         sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
 
-        '''
-        if(balanced):
-            wcc = partial(w_categorical_crossentropy, weights=train_mapa)
-            wcc.__name__ = 'wcc'
-            model.compile(loss=wcc, optimizer=sgd, metrics=["accuracy"]) 
-        else:
-        '''
         model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])  #metrics={'ofuse': ofuse_pixel_error})
-
-        #tensorboard
-        
 
         # Fit the model
         if(check):
             checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-            checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', verbose=1, save_best_only=True, mode='min')
+            checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', save_best_only=True, mode='min')
 
-            tensorboard = TensorBoard(log_dir='../tensorboard', histogram_freq=0, write_graph=True, write_images=True)
-            callbacks_list = [checkpoint, checkpoint_ope, tensorboard]
-            #callbacks_list = [checkpoint]
+            callbacks_list = [checkpoint, checkpoint_ope]
 
             model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
                             verbose=2, shuffle=True, validation_split=0.20)

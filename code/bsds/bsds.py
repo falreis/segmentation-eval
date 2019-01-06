@@ -86,12 +86,12 @@ if(args.net != None):
 #func = {train, test, npy}
 if(args.func == 'train'):
     import train_bsds as trb
-    trb.train(model=model, net=args.net, merge=args.merge, check=args.check, augm=args.augm
+    trb.train(model=model, net=args.net, merge=args.merge, check=args.check
         , load=args.load, nb_epoch=nb_epochs, learn_rate=learn_rate, folder=args.folder)
 
 elif(args.func == 'npy'):
     import npy_bsds as nb
-    nb.npy(set_name=args.set, augm=args.augm)
+    nb.npy(set_name=args.set)
 
 elif(args.func == 'test'):
     import test_bsds as teb

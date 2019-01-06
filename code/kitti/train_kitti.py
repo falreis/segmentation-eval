@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 import os
+import sys
 import datetime
 
 #os.environ['KERAS_BACKEND'] = 'theano'
@@ -27,10 +28,12 @@ import numpy as np
 import json
 import argparse
 import h5py
-import load_weights as lw
 np.random.seed(7) # for reproducibility
 
 import hed_constants as hc
+
+sys.path.append("..")
+import load_weights as lw
 
 #parameters
 batch_size = 16
@@ -71,7 +74,7 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
             
         #load weights
         if(load):
-            lw.load_weights_from_hdf5_group_by_name(model, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
+            lw.load_weights_from_hdf5_group_by_name(model, '../vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
 
         sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
 
