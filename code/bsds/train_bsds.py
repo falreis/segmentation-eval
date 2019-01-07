@@ -62,11 +62,11 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
         # define files
         checkpoint_file = ''
         if(folder != None and folder != ''):
-            checkpoint_file = '../weights/{}/{}_bsds_weight_{}.best.hdf5'.format(folder, net, merge)
-            checkpoint_file_ope = '../weights/{}/{}_bsds_weight_{}_ope.best.hdf5'.format(folder, net, merge)
+            checkpoint_file = '../weights/bsds/{}/{}_bsds_weight_{}.best.hdf5'.format(folder, net, merge)
+            checkpoint_file_ope = '../weights/bsds/{}/{}_bsds_weight_{}_ope.best.hdf5'.format(folder, net, merge)
         else:
-            checkpoint_file = '../weights/{}_bsds_weight_{}.best.hdf5'.format(net, merge)
-            checkpoint_file_ope = '../weights/{}_bsds_weight_{}_ope.best.hdf5'.format(net, merge)
+            checkpoint_file = '../weights/bsds/{}_bsds_weight_{}.best.hdf5'.format(net, merge)
+            checkpoint_file_ope = '../weights/bsds/{}_bsds_weight_{}_ope.best.hdf5'.format(net, merge)
             
         #load weights
         if(load):
@@ -78,8 +78,8 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
 
         # Fit the model
         if(check):
-            checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-            checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', save_best_only=True, mode='min')
+            checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=0, save_best_only=True, mode='max')
+            checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', verbose=0, save_best_only=True, mode='min')
 
             callbacks_list = [checkpoint, checkpoint_ope]
 

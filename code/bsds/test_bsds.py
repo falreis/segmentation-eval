@@ -28,11 +28,11 @@ import argparse
 np.random.seed(7)
 
 #import contants
-import hed_constants as hc
-height = hc.height
-width = hc.width
-data_shape =  hc.data_shape
-n_classes = hc.n_classes
+import constants as const
+height = const.height
+width = const.width
+data_shape =  const.data_shape
+n_classes = const.n_classes
 
 sys.path.append("..")
 import visualize as vis
@@ -66,9 +66,9 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
     if(net != None):
         # define weights file
         if(folder != None and folder != ''):
-            weights_file = '../weights/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge_name)
+            weights_file = '../weights/bsds/{}/{}_bsds_weight_{}.best.hdf5'.format(folder, net, merge_name)
         else:
-            weights_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(net, merge_name)
+            weights_file = '../weights/bsds/{}_bsds_weight_{}.best.hdf5'.format(net, merge_name)
 
         #verify mathematical morfology
         if(mark and morf):
@@ -89,16 +89,16 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         if(gray):
             label_colours = np.array([[0, 0, 0],[1, 1, 1]])
         else:
-            label_colours = np.array([[255, 0, 0],[255, 0, 255]])
+            label_colours = np.array([[0, 0, 0],[255, 255, 255]])
 
         #load test data
-        DataPath = '../datasets/Kitti/data_road/'
+        DataPath = '../datasets/HED-BSDS/'
 
         #export data
         if(folder != None):
-            save_path = '../export/Kitti/{}/{}/{}/{}/'.format(folder, net, merge_name, set_name)
+            save_path = '../export/HED-BSDS/{}/{}/{}/{}/'.format(folder, net, merge_name, set_name)
         else:
-            save_path = '../export/Kitti/{}/{}/{}/'.format(net, merge_name, set_name)
+            save_path = '../export/HED-BSDS/{}/{}/{}/'.format(net, merge_name, set_name)
 
         #create folder, if not exist
         if not os.path.exists(save_path):
@@ -106,7 +106,11 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
             os.makedirs(save_path)
 
         #define images path
-        images_path = DataPath + set_name + 'ing/image_2/*.*'
+        if(set_name == 'train'):
+            images_path = DataPath + 'train/aug_data/0.0_1_0/*.*'
+        elif(set_name == 'test'):
+            images_path = DataPath + 'test/*.*'
+
         images_paths = glob.glob(images_path + "jpg") + glob.glob(images_path + "png")
         images_paths.sort()
 
@@ -181,4 +185,4 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
 
         print("Done")
     else:
-        print('Usage >> "python eval-kitti_hed.py --net=hed --merge={sum,avg,max}"')
+        print('Read README file to learn how to use!')

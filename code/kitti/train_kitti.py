@@ -66,11 +66,11 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         # define files
         checkpoint_file = ''
         if(folder != None and folder != ''):
-            checkpoint_file = '../weights/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge)
-            checkpoint_file_ope = '../weights/{}/{}_kitti_weight_{}_ope.best.hdf5'.format(folder, net, merge)
+            checkpoint_file = '../weights/kitti/{}/{}_kitti_weight_{}.best.hdf5'.format(folder, net, merge)
+            checkpoint_file_ope = '../weights/kitti/{}/{}_kitti_weight_{}_ope.best.hdf5'.format(folder, net, merge)
         else:
-            checkpoint_file = '../weights/{}_kitti_weight_{}.best.hdf5'.format(net, merge)
-            checkpoint_file_ope = '../weights/{}_kitti_weight_{}_ope.best.hdf5'.format(net, merge)
+            checkpoint_file = '../weights/kitti/{}_kitti_weight_{}.best.hdf5'.format(net, merge)
+            checkpoint_file_ope = '../weights/kitti/{}_kitti_weight_{}_ope.best.hdf5'.format(net, merge)
             
         #load weights
         if(load):
