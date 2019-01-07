@@ -1,0 +1,419 @@
+-----BEGIN PARAMETERS-----
+Functionality:  train
+Neural net:  slo
+Set value:  None
+Merge method:  add
+Use checkpoint:  True
+Use data augm:  True
+Load vgg weights:  True
+Mark road:  None
+Epochs:  100
+Learning rate:  0.001
+Math morfology:  None
+Folder:  20181212
+-----END PARAMETERS-----
+add
+2018-12-12 12:38:36.493246
+0.001
+Train on 2312 samples, validate on 578 samples
+Epoch 1/100
+ - 83s - loss: 0.6466 - acc: 0.7544 - val_loss: 0.4180 - val_acc: 0.8676
+
+Epoch 00001: val_acc improved from -inf to 0.86762, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 2/100
+ - 74s - loss: 0.4900 - acc: 0.8091 - val_loss: 0.4052 - val_acc: 0.8676
+
+Epoch 00002: val_acc improved from 0.86762 to 0.86762, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 3/100
+ - 74s - loss: 0.4876 - acc: 0.8091 - val_loss: 0.4038 - val_acc: 0.8676
+
+Epoch 00003: val_acc improved from 0.86762 to 0.86763, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 4/100
+ - 74s - loss: 0.4863 - acc: 0.8091 - val_loss: 0.4019 - val_acc: 0.8676
+
+Epoch 00004: val_acc improved from 0.86763 to 0.86763, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 5/100
+ - 74s - loss: 0.4853 - acc: 0.8091 - val_loss: 0.4000 - val_acc: 0.8676
+
+Epoch 00005: val_acc did not improve from 0.86763
+Epoch 6/100
+ - 74s - loss: 0.4845 - acc: 0.8091 - val_loss: 0.4001 - val_acc: 0.8676
+
+Epoch 00006: val_acc did not improve from 0.86763
+Epoch 7/100
+ - 74s - loss: 0.4841 - acc: 0.8091 - val_loss: 0.4020 - val_acc: 0.8676
+
+Epoch 00007: val_acc did not improve from 0.86763
+Epoch 8/100
+ - 74s - loss: 0.4841 - acc: 0.8091 - val_loss: 0.3971 - val_acc: 0.8676
+
+Epoch 00008: val_acc improved from 0.86763 to 0.86763, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 9/100
+ - 74s - loss: 0.4817 - acc: 0.8091 - val_loss: 0.3983 - val_acc: 0.8676
+
+Epoch 00009: val_acc did not improve from 0.86763
+Epoch 10/100
+ - 75s - loss: 0.4823 - acc: 0.8091 - val_loss: 0.4002 - val_acc: 0.8676
+
+Epoch 00010: val_acc did not improve from 0.86763
+Epoch 11/100
+ - 74s - loss: 0.4799 - acc: 0.8091 - val_loss: 0.3933 - val_acc: 0.8676
+
+Epoch 00011: val_acc did not improve from 0.86763
+Epoch 12/100
+ - 74s - loss: 0.4797 - acc: 0.8089 - val_loss: 0.4111 - val_acc: 0.8671
+
+Epoch 00012: val_acc did not improve from 0.86763
+Epoch 13/100
+ - 74s - loss: 0.4752 - acc: 0.8090 - val_loss: 0.3896 - val_acc: 0.8676
+
+Epoch 00013: val_acc did not improve from 0.86763
+Epoch 14/100
+ - 74s - loss: 0.4664 - acc: 0.8091 - val_loss: 0.3734 - val_acc: 0.8676
+
+Epoch 00014: val_acc did not improve from 0.86763
+Epoch 15/100
+ - 74s - loss: 0.4498 - acc: 0.8090 - val_loss: 0.4586 - val_acc: 0.8659
+
+Epoch 00015: val_acc did not improve from 0.86763
+Epoch 16/100
+ - 74s - loss: 0.4510 - acc: 0.8089 - val_loss: 0.3428 - val_acc: 0.8676
+
+Epoch 00016: val_acc did not improve from 0.86763
+Epoch 17/100
+ - 74s - loss: 0.3993 - acc: 0.8127 - val_loss: 0.3291 - val_acc: 0.8684
+
+Epoch 00017: val_acc improved from 0.86763 to 0.86835, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 18/100
+ - 74s - loss: 0.3758 - acc: 0.8257 - val_loss: 0.4052 - val_acc: 0.8660
+
+Epoch 00018: val_acc did not improve from 0.86835
+Epoch 19/100
+ - 74s - loss: 0.3869 - acc: 0.8110 - val_loss: 0.2936 - val_acc: 0.8747
+
+Epoch 00019: val_acc improved from 0.86835 to 0.87469, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 20/100
+ - 74s - loss: 0.3220 - acc: 0.8438 - val_loss: 0.2831 - val_acc: 0.8818
+
+Epoch 00020: val_acc improved from 0.87469 to 0.88183, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 21/100
+ - 74s - loss: 0.3441 - acc: 0.8424 - val_loss: 0.3133 - val_acc: 0.8676
+
+Epoch 00021: val_acc did not improve from 0.88183
+Epoch 22/100
+ - 74s - loss: 0.3320 - acc: 0.8352 - val_loss: 0.2761 - val_acc: 0.8876
+
+Epoch 00022: val_acc improved from 0.88183 to 0.88759, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 23/100
+ - 74s - loss: 0.3068 - acc: 0.8598 - val_loss: 0.2845 - val_acc: 0.8873
+
+Epoch 00023: val_acc did not improve from 0.88759
+Epoch 24/100
+ - 74s - loss: 0.2820 - acc: 0.8739 - val_loss: 0.2654 - val_acc: 0.8939
+
+Epoch 00024: val_acc improved from 0.88759 to 0.89394, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 25/100
+ - 74s - loss: 0.2774 - acc: 0.8792 - val_loss: 0.2504 - val_acc: 0.8968
+
+Epoch 00025: val_acc improved from 0.89394 to 0.89681, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 26/100
+ - 74s - loss: 0.2705 - acc: 0.8850 - val_loss: 0.2414 - val_acc: 0.8996
+
+Epoch 00026: val_acc improved from 0.89681 to 0.89963, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 27/100
+ - 74s - loss: 0.2389 - acc: 0.8989 - val_loss: 0.2385 - val_acc: 0.9004
+
+Epoch 00027: val_acc improved from 0.89963 to 0.90040, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 28/100
+ - 74s - loss: 0.3249 - acc: 0.8473 - val_loss: 0.2567 - val_acc: 0.8956
+
+Epoch 00028: val_acc did not improve from 0.90040
+Epoch 29/100
+ - 74s - loss: 0.2533 - acc: 0.8908 - val_loss: 0.2508 - val_acc: 0.8981
+
+Epoch 00029: val_acc did not improve from 0.90040
+Epoch 30/100
+ - 74s - loss: 0.2304 - acc: 0.9028 - val_loss: 0.2298 - val_acc: 0.9007
+
+Epoch 00030: val_acc improved from 0.90040 to 0.90074, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 31/100
+ - 74s - loss: 0.2159 - acc: 0.9091 - val_loss: 0.2243 - val_acc: 0.9027
+
+Epoch 00031: val_acc improved from 0.90074 to 0.90270, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 32/100
+ - 74s - loss: 0.3433 - acc: 0.8455 - val_loss: 0.2767 - val_acc: 0.8907
+
+Epoch 00032: val_acc did not improve from 0.90270
+Epoch 33/100
+ - 74s - loss: 0.2564 - acc: 0.8910 - val_loss: 0.2238 - val_acc: 0.9047
+
+Epoch 00033: val_acc improved from 0.90270 to 0.90467, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 34/100
+ - 74s - loss: 0.2090 - acc: 0.9103 - val_loss: 0.2132 - val_acc: 0.9086
+
+Epoch 00034: val_acc improved from 0.90467 to 0.90859, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 35/100
+ - 74s - loss: 0.2012 - acc: 0.9156 - val_loss: 0.2255 - val_acc: 0.9016
+
+Epoch 00035: val_acc did not improve from 0.90859
+Epoch 36/100
+ - 74s - loss: 0.2153 - acc: 0.9104 - val_loss: 0.2318 - val_acc: 0.9006
+
+Epoch 00036: val_acc did not improve from 0.90859
+Epoch 37/100
+ - 74s - loss: 0.1909 - acc: 0.9202 - val_loss: 0.2018 - val_acc: 0.9106
+
+Epoch 00037: val_acc improved from 0.90859 to 0.91062, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 38/100
+ - 74s - loss: 0.1942 - acc: 0.9180 - val_loss: 0.2265 - val_acc: 0.9015
+
+Epoch 00038: val_acc did not improve from 0.91062
+Epoch 39/100
+ - 74s - loss: 0.2004 - acc: 0.9154 - val_loss: 0.1939 - val_acc: 0.9165
+
+Epoch 00039: val_acc improved from 0.91062 to 0.91651, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 40/100
+ - 74s - loss: 0.2841 - acc: 0.8752 - val_loss: 0.2224 - val_acc: 0.9071
+
+Epoch 00040: val_acc did not improve from 0.91651
+Epoch 41/100
+ - 74s - loss: 0.1958 - acc: 0.9184 - val_loss: 0.1957 - val_acc: 0.9173
+
+Epoch 00041: val_acc improved from 0.91651 to 0.91728, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 42/100
+ - 74s - loss: 0.1771 - acc: 0.9259 - val_loss: 0.1841 - val_acc: 0.9193
+
+Epoch 00042: val_acc improved from 0.91728 to 0.91929, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 43/100
+ - 74s - loss: 0.1732 - acc: 0.9259 - val_loss: 0.1799 - val_acc: 0.9228
+
+Epoch 00043: val_acc improved from 0.91929 to 0.92277, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 44/100
+ - 74s - loss: 0.1602 - acc: 0.9334 - val_loss: 0.1760 - val_acc: 0.9255
+
+Epoch 00044: val_acc improved from 0.92277 to 0.92546, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 45/100
+ - 74s - loss: 0.1553 - acc: 0.9361 - val_loss: 0.1772 - val_acc: 0.9235
+
+Epoch 00045: val_acc did not improve from 0.92546
+Epoch 46/100
+ - 74s - loss: 0.1622 - acc: 0.9327 - val_loss: 0.1719 - val_acc: 0.9271
+
+Epoch 00046: val_acc improved from 0.92546 to 0.92709, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 47/100
+ - 74s - loss: 0.1801 - acc: 0.9258 - val_loss: 0.2064 - val_acc: 0.9145
+
+Epoch 00047: val_acc did not improve from 0.92709
+Epoch 48/100
+ - 74s - loss: 0.1756 - acc: 0.9287 - val_loss: 0.1644 - val_acc: 0.9295
+
+Epoch 00048: val_acc improved from 0.92709 to 0.92954, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 49/100
+ - 74s - loss: 0.1505 - acc: 0.9385 - val_loss: 0.1972 - val_acc: 0.9170
+
+Epoch 00049: val_acc did not improve from 0.92954
+Epoch 50/100
+ - 74s - loss: 0.1427 - acc: 0.9423 - val_loss: 0.1556 - val_acc: 0.9362
+
+Epoch 00050: val_acc improved from 0.92954 to 0.93624, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 51/100
+ - 74s - loss: 0.1384 - acc: 0.9437 - val_loss: 0.1524 - val_acc: 0.9380
+
+Epoch 00051: val_acc improved from 0.93624 to 0.93805, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 52/100
+ - 74s - loss: 0.1344 - acc: 0.9454 - val_loss: 0.1529 - val_acc: 0.9413
+
+Epoch 00052: val_acc improved from 0.93805 to 0.94134, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 53/100
+ - 74s - loss: 0.1318 - acc: 0.9464 - val_loss: 0.1488 - val_acc: 0.9393
+
+Epoch 00053: val_acc did not improve from 0.94134
+Epoch 54/100
+ - 74s - loss: 0.1541 - acc: 0.9355 - val_loss: 0.1685 - val_acc: 0.9281
+
+Epoch 00054: val_acc did not improve from 0.94134
+Epoch 55/100
+ - 74s - loss: 0.1348 - acc: 0.9450 - val_loss: 0.1559 - val_acc: 0.9361
+
+Epoch 00055: val_acc did not improve from 0.94134
+Epoch 56/100
+ - 74s - loss: 0.1257 - acc: 0.9485 - val_loss: 0.1543 - val_acc: 0.9378
+
+Epoch 00056: val_acc did not improve from 0.94134
+Epoch 57/100
+ - 74s - loss: 0.1294 - acc: 0.9473 - val_loss: 0.1430 - val_acc: 0.9435
+
+Epoch 00057: val_acc improved from 0.94134 to 0.94348, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 58/100
+ - 74s - loss: 0.1206 - acc: 0.9509 - val_loss: 0.1383 - val_acc: 0.9451
+
+Epoch 00058: val_acc improved from 0.94348 to 0.94512, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 59/100
+ - 74s - loss: 0.1194 - acc: 0.9512 - val_loss: 0.1365 - val_acc: 0.9483
+
+Epoch 00059: val_acc improved from 0.94512 to 0.94834, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 60/100
+ - 74s - loss: 0.1377 - acc: 0.9428 - val_loss: 0.1598 - val_acc: 0.9309
+
+Epoch 00060: val_acc did not improve from 0.94834
+Epoch 61/100
+ - 74s - loss: 0.1222 - acc: 0.9482 - val_loss: 0.1409 - val_acc: 0.9440
+
+Epoch 00061: val_acc did not improve from 0.94834
+Epoch 62/100
+ - 74s - loss: 0.1224 - acc: 0.9483 - val_loss: 0.1793 - val_acc: 0.9298
+
+Epoch 00062: val_acc did not improve from 0.94834
+Epoch 63/100
+ - 74s - loss: 0.1296 - acc: 0.9444 - val_loss: 0.1467 - val_acc: 0.9390
+
+Epoch 00063: val_acc did not improve from 0.94834
+Epoch 64/100
+ - 74s - loss: 0.1714 - acc: 0.9280 - val_loss: 0.1936 - val_acc: 0.9217
+
+Epoch 00064: val_acc did not improve from 0.94834
+Epoch 65/100
+ - 74s - loss: 0.1405 - acc: 0.9378 - val_loss: 0.1453 - val_acc: 0.9402
+
+Epoch 00065: val_acc did not improve from 0.94834
+Epoch 66/100
+ - 74s - loss: 0.1252 - acc: 0.9442 - val_loss: 0.1869 - val_acc: 0.9237
+
+Epoch 00066: val_acc did not improve from 0.94834
+Epoch 67/100
+ - 74s - loss: 0.1202 - acc: 0.9474 - val_loss: 0.1383 - val_acc: 0.9442
+
+Epoch 00067: val_acc did not improve from 0.94834
+Epoch 68/100
+ - 74s - loss: 0.1158 - acc: 0.9507 - val_loss: 0.1364 - val_acc: 0.9491
+
+Epoch 00068: val_acc improved from 0.94834 to 0.94906, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 69/100
+ - 74s - loss: 0.1133 - acc: 0.9533 - val_loss: 0.1252 - val_acc: 0.9509
+
+Epoch 00069: val_acc improved from 0.94906 to 0.95092, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 70/100
+ - 74s - loss: 0.1104 - acc: 0.9556 - val_loss: 0.1429 - val_acc: 0.9445
+
+Epoch 00070: val_acc did not improve from 0.95092
+Epoch 71/100
+ - 74s - loss: 0.1369 - acc: 0.9464 - val_loss: 0.1395 - val_acc: 0.9458
+
+Epoch 00071: val_acc did not improve from 0.95092
+Epoch 72/100
+ - 74s - loss: 0.1118 - acc: 0.9563 - val_loss: 0.1284 - val_acc: 0.9526
+
+Epoch 00072: val_acc improved from 0.95092 to 0.95264, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 73/100
+ - 74s - loss: 0.1049 - acc: 0.9606 - val_loss: 0.1316 - val_acc: 0.9528
+
+Epoch 00073: val_acc improved from 0.95264 to 0.95280, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 74/100
+ - 74s - loss: 0.1017 - acc: 0.9627 - val_loss: 0.1175 - val_acc: 0.9581
+
+Epoch 00074: val_acc improved from 0.95280 to 0.95807, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 75/100
+ - 74s - loss: 0.0997 - acc: 0.9635 - val_loss: 0.1187 - val_acc: 0.9586
+
+Epoch 00075: val_acc improved from 0.95807 to 0.95856, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 76/100
+ - 74s - loss: 0.1083 - acc: 0.9598 - val_loss: 0.1279 - val_acc: 0.9532
+
+Epoch 00076: val_acc did not improve from 0.95856
+Epoch 77/100
+ - 74s - loss: 0.1105 - acc: 0.9588 - val_loss: 0.1285 - val_acc: 0.9545
+
+Epoch 00077: val_acc did not improve from 0.95856
+Epoch 78/100
+ - 74s - loss: 0.1016 - acc: 0.9626 - val_loss: 0.1153 - val_acc: 0.9595
+
+Epoch 00078: val_acc improved from 0.95856 to 0.95946, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 79/100
+ - 74s - loss: 0.0947 - acc: 0.9653 - val_loss: 0.1159 - val_acc: 0.9587
+
+Epoch 00079: val_acc did not improve from 0.95946
+Epoch 80/100
+ - 74s - loss: 0.1086 - acc: 0.9609 - val_loss: 0.1263 - val_acc: 0.9565
+
+Epoch 00080: val_acc did not improve from 0.95946
+Epoch 81/100
+ - 74s - loss: 0.1066 - acc: 0.9631 - val_loss: 0.1467 - val_acc: 0.9597
+
+Epoch 00081: val_acc improved from 0.95946 to 0.95966, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 82/100
+ - 74s - loss: 0.1004 - acc: 0.9641 - val_loss: 0.1158 - val_acc: 0.9607
+
+Epoch 00082: val_acc improved from 0.95966 to 0.96074, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 83/100
+ - 74s - loss: 0.1024 - acc: 0.9629 - val_loss: 0.1259 - val_acc: 0.9574
+
+Epoch 00083: val_acc did not improve from 0.96074
+Epoch 84/100
+ - 74s - loss: 0.0942 - acc: 0.9657 - val_loss: 0.1175 - val_acc: 0.9599
+
+Epoch 00084: val_acc did not improve from 0.96074
+Epoch 85/100
+ - 74s - loss: 0.0908 - acc: 0.9669 - val_loss: 0.1185 - val_acc: 0.9613
+
+Epoch 00085: val_acc improved from 0.96074 to 0.96126, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 86/100
+ - 74s - loss: 0.1191 - acc: 0.9556 - val_loss: 0.1269 - val_acc: 0.9521
+
+Epoch 00086: val_acc did not improve from 0.96126
+Epoch 87/100
+ - 74s - loss: 0.0941 - acc: 0.9654 - val_loss: 0.1148 - val_acc: 0.9601
+
+Epoch 00087: val_acc did not improve from 0.96126
+Epoch 88/100
+ - 74s - loss: 0.0873 - acc: 0.9680 - val_loss: 0.1142 - val_acc: 0.9611
+
+Epoch 00088: val_acc did not improve from 0.96126
+Epoch 89/100
+ - 74s - loss: 0.0871 - acc: 0.9681 - val_loss: 0.1072 - val_acc: 0.9646
+
+Epoch 00089: val_acc improved from 0.96126 to 0.96462, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 90/100
+ - 74s - loss: 0.0954 - acc: 0.9654 - val_loss: 0.1276 - val_acc: 0.9551
+
+Epoch 00090: val_acc did not improve from 0.96462
+Epoch 91/100
+ - 74s - loss: 0.0901 - acc: 0.9672 - val_loss: 0.1284 - val_acc: 0.9535
+
+Epoch 00091: val_acc did not improve from 0.96462
+Epoch 92/100
+ - 74s - loss: 0.0873 - acc: 0.9681 - val_loss: 0.1350 - val_acc: 0.9538
+
+Epoch 00092: val_acc did not improve from 0.96462
+Epoch 93/100
+ - 74s - loss: 0.0841 - acc: 0.9693 - val_loss: 0.1209 - val_acc: 0.9590
+
+Epoch 00093: val_acc did not improve from 0.96462
+Epoch 94/100
+ - 74s - loss: 0.0859 - acc: 0.9685 - val_loss: 0.1139 - val_acc: 0.9614
+
+Epoch 00094: val_acc did not improve from 0.96462
+Epoch 95/100
+ - 74s - loss: 0.0790 - acc: 0.9704 - val_loss: 0.1095 - val_acc: 0.9646
+
+Epoch 00095: val_acc did not improve from 0.96462
+Epoch 96/100
+ - 74s - loss: 0.0836 - acc: 0.9688 - val_loss: 0.1055 - val_acc: 0.9658
+
+Epoch 00096: val_acc improved from 0.96462 to 0.96578, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 97/100
+ - 74s - loss: 0.0780 - acc: 0.9712 - val_loss: 0.1236 - val_acc: 0.9587
+
+Epoch 00097: val_acc did not improve from 0.96578
+Epoch 98/100
+ - 74s - loss: 0.0775 - acc: 0.9712 - val_loss: 0.1041 - val_acc: 0.9660
+
+Epoch 00098: val_acc improved from 0.96578 to 0.96600, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 99/100
+ - 74s - loss: 0.0768 - acc: 0.9715 - val_loss: 0.1032 - val_acc: 0.9667
+
+Epoch 00099: val_acc improved from 0.96600 to 0.96667, saving model to ../weights/20181212/slo_kitti_weight_add.best.hdf5
+Epoch 100/100
+ - 74s - loss: 0.0725 - acc: 0.9726 - val_loss: 0.1071 - val_acc: 0.9654
+
+Epoch 00100: val_acc did not improve from 0.96667
+2018-12-12 14:43:27.885675

@@ -1,0 +1,619 @@
+-----BEGIN PARAMETERS-----
+Functionality:  train
+Neural net:  slo
+Set value:  None
+Merge method:  avg
+Use checkpoint:  True
+Use data augm:  True
+Load vgg weights:  True
+Mark road:  None
+Epochs:  100
+Learning rate:  0.001
+Math morfology:  None
+Folder:  20181213
+Grayscale:  None
+-----END PARAMETERS-----
+avg
+2018-12-13 18:14:41.234904
+Train on 2080 samples, validate on 521 samples
+Epoch 1/100
+ - 71s - loss: 0.6759 - acc: 0.7451 - ofuse_pixel_error: 0.4999 - val_loss: 0.4464 - val_acc: 0.8673 - val_ofuse_pixel_error: 0.4983
+
+Epoch 00001: val_acc improved from -inf to 0.86730, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00001: val_ofuse_pixel_error improved from inf to 0.49829, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 2/100
+ - 67s - loss: 0.4981 - acc: 0.8090 - ofuse_pixel_error: 0.4993 - val_loss: 0.4127 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4997
+
+Epoch 00002: val_acc improved from 0.86730 to 0.86756, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00002: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 3/100
+ - 68s - loss: 0.4900 - acc: 0.8091 - ofuse_pixel_error: 0.4998 - val_loss: 0.4066 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00003: val_acc improved from 0.86756 to 0.86759, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00003: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 4/100
+ - 68s - loss: 0.4887 - acc: 0.8091 - ofuse_pixel_error: 0.4999 - val_loss: 0.4055 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00004: val_acc improved from 0.86759 to 0.86760, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00004: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 5/100
+ - 68s - loss: 0.4881 - acc: 0.8091 - ofuse_pixel_error: 0.4999 - val_loss: 0.4039 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00005: val_acc improved from 0.86760 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00005: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 6/100
+ - 68s - loss: 0.4878 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4036 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00006: val_acc improved from 0.86761 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00006: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 7/100
+ - 68s - loss: 0.4875 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4030 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00007: val_acc improved from 0.86761 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00007: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 8/100
+ - 68s - loss: 0.4874 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4033 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.5000
+
+Epoch 00008: val_acc improved from 0.86761 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00008: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 9/100
+ - 68s - loss: 0.4872 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4035 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.5000
+
+Epoch 00009: val_acc did not improve from 0.86761
+
+Epoch 00009: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 10/100
+ - 68s - loss: 0.4871 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4032 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.5000
+
+Epoch 00010: val_acc did not improve from 0.86761
+
+Epoch 00010: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 11/100
+ - 68s - loss: 0.4869 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4032 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.5000
+
+Epoch 00011: val_acc did not improve from 0.86761
+
+Epoch 00011: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 12/100
+ - 68s - loss: 0.4867 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4019 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00012: val_acc improved from 0.86761 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00012: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 13/100
+ - 68s - loss: 0.4865 - acc: 0.8091 - ofuse_pixel_error: 0.5000 - val_loss: 0.4013 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00013: val_acc improved from 0.86761 to 0.86761, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00013: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 14/100
+ - 68s - loss: 0.4862 - acc: 0.8091 - ofuse_pixel_error: 0.4999 - val_loss: 0.4024 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00014: val_acc did not improve from 0.86761
+
+Epoch 00014: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 15/100
+ - 68s - loss: 0.4859 - acc: 0.8091 - ofuse_pixel_error: 0.4999 - val_loss: 0.4010 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4999
+
+Epoch 00015: val_acc did not improve from 0.86761
+
+Epoch 00015: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 16/100
+ - 68s - loss: 0.4856 - acc: 0.8091 - ofuse_pixel_error: 0.4998 - val_loss: 0.4015 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4998
+
+Epoch 00016: val_acc did not improve from 0.86761
+
+Epoch 00016: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 17/100
+ - 68s - loss: 0.4852 - acc: 0.8091 - ofuse_pixel_error: 0.4998 - val_loss: 0.3998 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4998
+
+Epoch 00017: val_acc did not improve from 0.86761
+
+Epoch 00017: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 18/100
+ - 68s - loss: 0.4844 - acc: 0.8091 - ofuse_pixel_error: 0.4998 - val_loss: 0.3996 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4997
+
+Epoch 00018: val_acc did not improve from 0.86761
+
+Epoch 00018: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 19/100
+ - 68s - loss: 0.4835 - acc: 0.8091 - ofuse_pixel_error: 0.4996 - val_loss: 0.3988 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4995
+
+Epoch 00019: val_acc did not improve from 0.86761
+
+Epoch 00019: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 20/100
+ - 68s - loss: 0.4823 - acc: 0.8091 - ofuse_pixel_error: 0.4994 - val_loss: 0.3965 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4991
+
+Epoch 00020: val_acc did not improve from 0.86761
+
+Epoch 00020: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 21/100
+ - 68s - loss: 0.4806 - acc: 0.8091 - ofuse_pixel_error: 0.4990 - val_loss: 0.3942 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4985
+
+Epoch 00021: val_acc did not improve from 0.86761
+
+Epoch 00021: val_ofuse_pixel_error did not improve from 0.49829
+Epoch 22/100
+ - 68s - loss: 0.4784 - acc: 0.8091 - ofuse_pixel_error: 0.4982 - val_loss: 0.3933 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4978
+
+Epoch 00022: val_acc did not improve from 0.86761
+
+Epoch 00022: val_ofuse_pixel_error improved from 0.49829 to 0.49781, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 23/100
+ - 68s - loss: 0.4746 - acc: 0.8091 - ofuse_pixel_error: 0.4966 - val_loss: 0.3904 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4968
+
+Epoch 00023: val_acc did not improve from 0.86761
+
+Epoch 00023: val_ofuse_pixel_error improved from 0.49781 to 0.49677, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 24/100
+ - 68s - loss: 0.4682 - acc: 0.8091 - ofuse_pixel_error: 0.4953 - val_loss: 0.3786 - val_acc: 0.8676 - val_ofuse_pixel_error: 0.4901
+
+Epoch 00024: val_acc did not improve from 0.86761
+
+Epoch 00024: val_ofuse_pixel_error improved from 0.49677 to 0.49013, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 25/100
+ - 68s - loss: 0.4547 - acc: 0.8091 - ofuse_pixel_error: 0.4920 - val_loss: 0.3654 - val_acc: 0.8675 - val_ofuse_pixel_error: 0.4861
+
+Epoch 00025: val_acc did not improve from 0.86761
+
+Epoch 00025: val_ofuse_pixel_error improved from 0.49013 to 0.48607, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 26/100
+ - 68s - loss: 0.4260 - acc: 0.8096 - ofuse_pixel_error: 0.4813 - val_loss: 0.3456 - val_acc: 0.8672 - val_ofuse_pixel_error: 0.4739
+
+Epoch 00026: val_acc did not improve from 0.86761
+
+Epoch 00026: val_ofuse_pixel_error improved from 0.48607 to 0.47393, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 27/100
+ - 68s - loss: 0.3953 - acc: 0.8175 - ofuse_pixel_error: 0.4825 - val_loss: 0.3455 - val_acc: 0.8688 - val_ofuse_pixel_error: 0.4745
+
+Epoch 00027: val_acc improved from 0.86761 to 0.86885, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00027: val_ofuse_pixel_error did not improve from 0.47393
+Epoch 28/100
+ - 68s - loss: 0.3712 - acc: 0.8358 - ofuse_pixel_error: 0.4769 - val_loss: 0.3177 - val_acc: 0.8789 - val_ofuse_pixel_error: 0.4742
+
+Epoch 00028: val_acc improved from 0.86885 to 0.87887, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00028: val_ofuse_pixel_error did not improve from 0.47393
+Epoch 29/100
+ - 68s - loss: 0.3456 - acc: 0.8502 - ofuse_pixel_error: 0.4694 - val_loss: 0.3033 - val_acc: 0.8853 - val_ofuse_pixel_error: 0.4834
+
+Epoch 00029: val_acc improved from 0.87887 to 0.88528, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00029: val_ofuse_pixel_error did not improve from 0.47393
+Epoch 30/100
+ - 68s - loss: 0.3262 - acc: 0.8604 - ofuse_pixel_error: 0.4464 - val_loss: 0.2862 - val_acc: 0.8845 - val_ofuse_pixel_error: 0.4019
+
+Epoch 00030: val_acc did not improve from 0.88528
+
+Epoch 00030: val_ofuse_pixel_error improved from 0.47393 to 0.40192, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 31/100
+ - 68s - loss: 0.3287 - acc: 0.8511 - ofuse_pixel_error: 0.4347 - val_loss: 0.3065 - val_acc: 0.8675 - val_ofuse_pixel_error: 0.3787
+
+Epoch 00031: val_acc did not improve from 0.88528
+
+Epoch 00031: val_ofuse_pixel_error improved from 0.40192 to 0.37869, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 32/100
+ - 68s - loss: 0.3113 - acc: 0.8546 - ofuse_pixel_error: 0.3976 - val_loss: 0.2684 - val_acc: 0.8928 - val_ofuse_pixel_error: 0.3829
+
+Epoch 00032: val_acc improved from 0.88528 to 0.89277, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00032: val_ofuse_pixel_error did not improve from 0.37869
+Epoch 33/100
+ - 68s - loss: 0.2792 - acc: 0.8801 - ofuse_pixel_error: 0.3882 - val_loss: 0.2827 - val_acc: 0.8691 - val_ofuse_pixel_error: 0.3533
+
+Epoch 00033: val_acc did not improve from 0.89277
+
+Epoch 00033: val_ofuse_pixel_error improved from 0.37869 to 0.35333, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 34/100
+ - 68s - loss: 0.2641 - acc: 0.8883 - ofuse_pixel_error: 0.3592 - val_loss: 0.2486 - val_acc: 0.9006 - val_ofuse_pixel_error: 0.3002
+
+Epoch 00034: val_acc improved from 0.89277 to 0.90059, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00034: val_ofuse_pixel_error improved from 0.35333 to 0.30018, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 35/100
+ - 68s - loss: 0.2463 - acc: 0.8948 - ofuse_pixel_error: 0.3343 - val_loss: 0.2548 - val_acc: 0.8986 - val_ofuse_pixel_error: 0.2520
+
+Epoch 00035: val_acc did not improve from 0.90059
+
+Epoch 00035: val_ofuse_pixel_error improved from 0.30018 to 0.25201, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 36/100
+ - 68s - loss: 0.2430 - acc: 0.8922 - ofuse_pixel_error: 0.3200 - val_loss: 0.2907 - val_acc: 0.8842 - val_ofuse_pixel_error: 0.4457
+
+Epoch 00036: val_acc did not improve from 0.90059
+
+Epoch 00036: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 37/100
+ - 68s - loss: 0.2841 - acc: 0.8766 - ofuse_pixel_error: 0.3682 - val_loss: 0.3277 - val_acc: 0.8675 - val_ofuse_pixel_error: 0.4963
+
+Epoch 00037: val_acc did not improve from 0.90059
+
+Epoch 00037: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 38/100
+ - 68s - loss: 0.3052 - acc: 0.8593 - ofuse_pixel_error: 0.3737 - val_loss: 0.2463 - val_acc: 0.8980 - val_ofuse_pixel_error: 0.3191
+
+Epoch 00038: val_acc did not improve from 0.90059
+
+Epoch 00038: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 39/100
+ - 68s - loss: 0.2356 - acc: 0.8975 - ofuse_pixel_error: 0.3255 - val_loss: 0.2526 - val_acc: 0.8905 - val_ofuse_pixel_error: 0.3099
+
+Epoch 00039: val_acc did not improve from 0.90059
+
+Epoch 00039: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 40/100
+ - 68s - loss: 0.2126 - acc: 0.9090 - ofuse_pixel_error: 0.2968 - val_loss: 0.2310 - val_acc: 0.8990 - val_ofuse_pixel_error: 0.3135
+
+Epoch 00040: val_acc did not improve from 0.90059
+
+Epoch 00040: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 41/100
+ - 68s - loss: 0.2092 - acc: 0.9118 - ofuse_pixel_error: 0.2940 - val_loss: 0.2146 - val_acc: 0.9065 - val_ofuse_pixel_error: 0.2536
+
+Epoch 00041: val_acc improved from 0.90059 to 0.90653, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00041: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 42/100
+ - 68s - loss: 0.2065 - acc: 0.9133 - ofuse_pixel_error: 0.2903 - val_loss: 0.2434 - val_acc: 0.8951 - val_ofuse_pixel_error: 0.3456
+
+Epoch 00042: val_acc did not improve from 0.90653
+
+Epoch 00042: val_ofuse_pixel_error did not improve from 0.25201
+Epoch 43/100
+ - 68s - loss: 0.2194 - acc: 0.9037 - ofuse_pixel_error: 0.2902 - val_loss: 0.2078 - val_acc: 0.9059 - val_ofuse_pixel_error: 0.2498
+
+Epoch 00043: val_acc did not improve from 0.90653
+
+Epoch 00043: val_ofuse_pixel_error improved from 0.25201 to 0.24980, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 44/100
+ - 68s - loss: 0.2059 - acc: 0.9067 - ofuse_pixel_error: 0.2683 - val_loss: 0.2311 - val_acc: 0.8913 - val_ofuse_pixel_error: 0.2647
+
+Epoch 00044: val_acc did not improve from 0.90653
+
+Epoch 00044: val_ofuse_pixel_error did not improve from 0.24980
+Epoch 45/100
+ - 68s - loss: 0.1936 - acc: 0.9087 - ofuse_pixel_error: 0.2544 - val_loss: 0.2122 - val_acc: 0.9013 - val_ofuse_pixel_error: 0.2448
+
+Epoch 00045: val_acc did not improve from 0.90653
+
+Epoch 00045: val_ofuse_pixel_error improved from 0.24980 to 0.24478, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 46/100
+ - 68s - loss: 0.1921 - acc: 0.9114 - ofuse_pixel_error: 0.2450 - val_loss: 0.2048 - val_acc: 0.9099 - val_ofuse_pixel_error: 0.2102
+
+Epoch 00046: val_acc improved from 0.90653 to 0.90990, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00046: val_ofuse_pixel_error improved from 0.24478 to 0.21025, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 47/100
+ - 68s - loss: 0.1956 - acc: 0.9129 - ofuse_pixel_error: 0.2560 - val_loss: 0.2137 - val_acc: 0.9090 - val_ofuse_pixel_error: 0.2018
+
+Epoch 00047: val_acc did not improve from 0.90990
+
+Epoch 00047: val_ofuse_pixel_error improved from 0.21025 to 0.20175, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 48/100
+ - 68s - loss: 0.1966 - acc: 0.9136 - ofuse_pixel_error: 0.2547 - val_loss: 0.2680 - val_acc: 0.8798 - val_ofuse_pixel_error: 0.2891
+
+Epoch 00048: val_acc did not improve from 0.90990
+
+Epoch 00048: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 49/100
+ - 68s - loss: 0.1913 - acc: 0.9184 - ofuse_pixel_error: 0.2505 - val_loss: 0.1983 - val_acc: 0.9114 - val_ofuse_pixel_error: 0.2454
+
+Epoch 00049: val_acc improved from 0.90990 to 0.91140, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00049: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 50/100
+ - 68s - loss: 0.1725 - acc: 0.9289 - ofuse_pixel_error: 0.2242 - val_loss: 0.2091 - val_acc: 0.9091 - val_ofuse_pixel_error: 0.2028
+
+Epoch 00050: val_acc did not improve from 0.91140
+
+Epoch 00050: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 51/100
+ - 68s - loss: 0.1678 - acc: 0.9315 - ofuse_pixel_error: 0.2161 - val_loss: 0.1968 - val_acc: 0.9115 - val_ofuse_pixel_error: 0.2220
+
+Epoch 00051: val_acc improved from 0.91140 to 0.91154, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00051: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 52/100
+ - 68s - loss: 0.1723 - acc: 0.9298 - ofuse_pixel_error: 0.2253 - val_loss: 0.2639 - val_acc: 0.8907 - val_ofuse_pixel_error: 0.4060
+
+Epoch 00052: val_acc did not improve from 0.91154
+
+Epoch 00052: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 53/100
+ - 68s - loss: 0.1673 - acc: 0.9332 - ofuse_pixel_error: 0.2170 - val_loss: 0.1986 - val_acc: 0.9114 - val_ofuse_pixel_error: 0.2465
+
+Epoch 00053: val_acc did not improve from 0.91154
+
+Epoch 00053: val_ofuse_pixel_error did not improve from 0.20175
+Epoch 54/100
+ - 68s - loss: 0.1540 - acc: 0.9375 - ofuse_pixel_error: 0.1994 - val_loss: 0.1757 - val_acc: 0.9249 - val_ofuse_pixel_error: 0.1896
+
+Epoch 00054: val_acc improved from 0.91154 to 0.92494, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00054: val_ofuse_pixel_error improved from 0.20175 to 0.18957, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 55/100
+ - 68s - loss: 0.1523 - acc: 0.9383 - ofuse_pixel_error: 0.1956 - val_loss: 0.1806 - val_acc: 0.9240 - val_ofuse_pixel_error: 0.1804
+
+Epoch 00055: val_acc did not improve from 0.92494
+
+Epoch 00055: val_ofuse_pixel_error improved from 0.18957 to 0.18040, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 56/100
+ - 68s - loss: 0.1519 - acc: 0.9385 - ofuse_pixel_error: 0.1919 - val_loss: 0.1946 - val_acc: 0.9100 - val_ofuse_pixel_error: 0.2052
+
+Epoch 00056: val_acc did not improve from 0.92494
+
+Epoch 00056: val_ofuse_pixel_error did not improve from 0.18040
+Epoch 57/100
+ - 68s - loss: 0.1507 - acc: 0.9396 - ofuse_pixel_error: 0.2030 - val_loss: 0.1787 - val_acc: 0.9211 - val_ofuse_pixel_error: 0.1842
+
+Epoch 00057: val_acc did not improve from 0.92494
+
+Epoch 00057: val_ofuse_pixel_error did not improve from 0.18040
+Epoch 58/100
+ - 68s - loss: 0.1410 - acc: 0.9433 - ofuse_pixel_error: 0.1797 - val_loss: 0.1657 - val_acc: 0.9291 - val_ofuse_pixel_error: 0.1952
+
+Epoch 00058: val_acc improved from 0.92494 to 0.92915, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00058: val_ofuse_pixel_error did not improve from 0.18040
+Epoch 59/100
+ - 68s - loss: 0.1474 - acc: 0.9404 - ofuse_pixel_error: 0.1874 - val_loss: 0.1806 - val_acc: 0.9232 - val_ofuse_pixel_error: 0.1759
+
+Epoch 00059: val_acc did not improve from 0.92915
+
+Epoch 00059: val_ofuse_pixel_error improved from 0.18040 to 0.17588, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 60/100
+ - 68s - loss: 0.1653 - acc: 0.9322 - ofuse_pixel_error: 0.2039 - val_loss: 0.1688 - val_acc: 0.9259 - val_ofuse_pixel_error: 0.1735
+
+Epoch 00060: val_acc did not improve from 0.92915
+
+Epoch 00060: val_ofuse_pixel_error improved from 0.17588 to 0.17355, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 61/100
+ - 68s - loss: 0.1481 - acc: 0.9397 - ofuse_pixel_error: 0.1869 - val_loss: 0.1637 - val_acc: 0.9294 - val_ofuse_pixel_error: 0.1695
+
+Epoch 00061: val_acc improved from 0.92915 to 0.92937, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00061: val_ofuse_pixel_error improved from 0.17355 to 0.16950, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 62/100
+ - 68s - loss: 0.1350 - acc: 0.9451 - ofuse_pixel_error: 0.1706 - val_loss: 0.1590 - val_acc: 0.9325 - val_ofuse_pixel_error: 0.1696
+
+Epoch 00062: val_acc improved from 0.92937 to 0.93255, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00062: val_ofuse_pixel_error did not improve from 0.16950
+Epoch 63/100
+ - 68s - loss: 0.1407 - acc: 0.9430 - ofuse_pixel_error: 0.1831 - val_loss: 0.1703 - val_acc: 0.9270 - val_ofuse_pixel_error: 0.1684
+
+Epoch 00063: val_acc did not improve from 0.93255
+
+Epoch 00063: val_ofuse_pixel_error improved from 0.16950 to 0.16836, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 64/100
+ - 68s - loss: 0.1586 - acc: 0.9340 - ofuse_pixel_error: 0.2041 - val_loss: 0.2378 - val_acc: 0.8849 - val_ofuse_pixel_error: 0.2554
+
+Epoch 00064: val_acc did not improve from 0.93255
+
+Epoch 00064: val_ofuse_pixel_error did not improve from 0.16836
+Epoch 65/100
+ - 68s - loss: 0.1471 - acc: 0.9404 - ofuse_pixel_error: 0.1833 - val_loss: 0.1889 - val_acc: 0.9173 - val_ofuse_pixel_error: 0.2001
+
+Epoch 00065: val_acc did not improve from 0.93255
+
+Epoch 00065: val_ofuse_pixel_error did not improve from 0.16836
+Epoch 66/100
+ - 68s - loss: 0.1436 - acc: 0.9415 - ofuse_pixel_error: 0.1895 - val_loss: 0.1609 - val_acc: 0.9320 - val_ofuse_pixel_error: 0.1649
+
+Epoch 00066: val_acc did not improve from 0.93255
+
+Epoch 00066: val_ofuse_pixel_error improved from 0.16836 to 0.16488, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 67/100
+ - 68s - loss: 0.1287 - acc: 0.9479 - ofuse_pixel_error: 0.1648 - val_loss: 0.1868 - val_acc: 0.9176 - val_ofuse_pixel_error: 0.1890
+
+Epoch 00067: val_acc did not improve from 0.93255
+
+Epoch 00067: val_ofuse_pixel_error did not improve from 0.16488
+Epoch 68/100
+ - 68s - loss: 0.1290 - acc: 0.9480 - ofuse_pixel_error: 0.1660 - val_loss: 0.1596 - val_acc: 0.9333 - val_ofuse_pixel_error: 0.1577
+
+Epoch 00068: val_acc improved from 0.93255 to 0.93327, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00068: val_ofuse_pixel_error improved from 0.16488 to 0.15769, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 69/100
+ - 68s - loss: 0.1296 - acc: 0.9475 - ofuse_pixel_error: 0.1664 - val_loss: 0.1563 - val_acc: 0.9365 - val_ofuse_pixel_error: 0.1471
+
+Epoch 00069: val_acc improved from 0.93327 to 0.93647, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00069: val_ofuse_pixel_error improved from 0.15769 to 0.14706, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 70/100
+ - 68s - loss: 0.1219 - acc: 0.9509 - ofuse_pixel_error: 0.1608 - val_loss: 0.1628 - val_acc: 0.9334 - val_ofuse_pixel_error: 0.1623
+
+Epoch 00070: val_acc did not improve from 0.93647
+
+Epoch 00070: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 71/100
+ - 68s - loss: 0.1159 - acc: 0.9537 - ofuse_pixel_error: 0.1527 - val_loss: 0.1777 - val_acc: 0.9264 - val_ofuse_pixel_error: 0.1857
+
+Epoch 00071: val_acc did not improve from 0.93647
+
+Epoch 00071: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 72/100
+ - 68s - loss: 0.1167 - acc: 0.9533 - ofuse_pixel_error: 0.1507 - val_loss: 0.1992 - val_acc: 0.9167 - val_ofuse_pixel_error: 0.1978
+
+Epoch 00072: val_acc did not improve from 0.93647
+
+Epoch 00072: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 73/100
+ - 68s - loss: 0.1863 - acc: 0.9273 - ofuse_pixel_error: 0.2172 - val_loss: 0.2063 - val_acc: 0.9165 - val_ofuse_pixel_error: 0.1960
+
+Epoch 00073: val_acc did not improve from 0.93647
+
+Epoch 00073: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 74/100
+ - 68s - loss: 0.1762 - acc: 0.9277 - ofuse_pixel_error: 0.2208 - val_loss: 0.1744 - val_acc: 0.9263 - val_ofuse_pixel_error: 0.1747
+
+Epoch 00074: val_acc did not improve from 0.93647
+
+Epoch 00074: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 75/100
+ - 68s - loss: 0.1401 - acc: 0.9420 - ofuse_pixel_error: 0.1745 - val_loss: 0.1620 - val_acc: 0.9316 - val_ofuse_pixel_error: 0.1619
+
+Epoch 00075: val_acc did not improve from 0.93647
+
+Epoch 00075: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 76/100
+ - 68s - loss: 0.1283 - acc: 0.9479 - ofuse_pixel_error: 0.1634 - val_loss: 0.1527 - val_acc: 0.9368 - val_ofuse_pixel_error: 0.1693
+
+Epoch 00076: val_acc improved from 0.93647 to 0.93679, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00076: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 77/100
+ - 68s - loss: 0.1267 - acc: 0.9498 - ofuse_pixel_error: 0.1606 - val_loss: 0.1448 - val_acc: 0.9419 - val_ofuse_pixel_error: 0.1586
+
+Epoch 00077: val_acc improved from 0.93679 to 0.94193, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00077: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 78/100
+ - 68s - loss: 0.1609 - acc: 0.9352 - ofuse_pixel_error: 0.2054 - val_loss: 0.1846 - val_acc: 0.9290 - val_ofuse_pixel_error: 0.1940
+
+Epoch 00078: val_acc did not improve from 0.94193
+
+Epoch 00078: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 79/100
+ - 68s - loss: 0.1364 - acc: 0.9461 - ofuse_pixel_error: 0.1669 - val_loss: 0.1647 - val_acc: 0.9303 - val_ofuse_pixel_error: 0.1583
+
+Epoch 00079: val_acc did not improve from 0.94193
+
+Epoch 00079: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 80/100
+ - 68s - loss: 0.1209 - acc: 0.9522 - ofuse_pixel_error: 0.1564 - val_loss: 0.1498 - val_acc: 0.9394 - val_ofuse_pixel_error: 0.1504
+
+Epoch 00080: val_acc did not improve from 0.94193
+
+Epoch 00080: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 81/100
+ - 68s - loss: 0.1137 - acc: 0.9555 - ofuse_pixel_error: 0.1406 - val_loss: 0.1558 - val_acc: 0.9380 - val_ofuse_pixel_error: 0.1519
+
+Epoch 00081: val_acc did not improve from 0.94193
+
+Epoch 00081: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 82/100
+ - 68s - loss: 0.1137 - acc: 0.9557 - ofuse_pixel_error: 0.1497 - val_loss: 0.1526 - val_acc: 0.9410 - val_ofuse_pixel_error: 0.1815
+
+Epoch 00082: val_acc did not improve from 0.94193
+
+Epoch 00082: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 83/100
+ - 68s - loss: 0.1226 - acc: 0.9516 - ofuse_pixel_error: 0.1602 - val_loss: 0.1569 - val_acc: 0.9317 - val_ofuse_pixel_error: 0.1829
+
+Epoch 00083: val_acc did not improve from 0.94193
+
+Epoch 00083: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 84/100
+ - 68s - loss: 0.1122 - acc: 0.9562 - ofuse_pixel_error: 0.1390 - val_loss: 0.1474 - val_acc: 0.9409 - val_ofuse_pixel_error: 0.1471
+
+Epoch 00084: val_acc did not improve from 0.94193
+
+Epoch 00084: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 85/100
+ - 68s - loss: 0.1277 - acc: 0.9513 - ofuse_pixel_error: 0.1684 - val_loss: 0.1438 - val_acc: 0.9445 - val_ofuse_pixel_error: 0.1761
+
+Epoch 00085: val_acc improved from 0.94193 to 0.94448, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00085: val_ofuse_pixel_error did not improve from 0.14706
+Epoch 86/100
+ - 68s - loss: 0.1114 - acc: 0.9585 - ofuse_pixel_error: 0.1386 - val_loss: 0.1380 - val_acc: 0.9473 - val_ofuse_pixel_error: 0.1414
+
+Epoch 00086: val_acc improved from 0.94448 to 0.94733, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00086: val_ofuse_pixel_error improved from 0.14706 to 0.14143, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 87/100
+ - 68s - loss: 0.1109 - acc: 0.9576 - ofuse_pixel_error: 0.1364 - val_loss: 0.1331 - val_acc: 0.9483 - val_ofuse_pixel_error: 0.1463
+
+Epoch 00087: val_acc improved from 0.94733 to 0.94833, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00087: val_ofuse_pixel_error did not improve from 0.14143
+Epoch 88/100
+ - 68s - loss: 0.1064 - acc: 0.9592 - ofuse_pixel_error: 0.1325 - val_loss: 0.1306 - val_acc: 0.9515 - val_ofuse_pixel_error: 0.1293
+
+Epoch 00088: val_acc improved from 0.94833 to 0.95148, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00088: val_ofuse_pixel_error improved from 0.14143 to 0.12928, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 89/100
+ - 68s - loss: 0.1098 - acc: 0.9583 - ofuse_pixel_error: 0.1381 - val_loss: 0.1354 - val_acc: 0.9456 - val_ofuse_pixel_error: 0.1532
+
+Epoch 00089: val_acc did not improve from 0.95148
+
+Epoch 00089: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 90/100
+ - 68s - loss: 0.1023 - acc: 0.9613 - ofuse_pixel_error: 0.1281 - val_loss: 0.1598 - val_acc: 0.9386 - val_ofuse_pixel_error: 0.1538
+
+Epoch 00090: val_acc did not improve from 0.95148
+
+Epoch 00090: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 91/100
+ - 68s - loss: 0.1012 - acc: 0.9612 - ofuse_pixel_error: 0.1284 - val_loss: 0.1302 - val_acc: 0.9516 - val_ofuse_pixel_error: 0.1329
+
+Epoch 00091: val_acc improved from 0.95148 to 0.95162, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00091: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 92/100
+ - 68s - loss: 0.0999 - acc: 0.9622 - ofuse_pixel_error: 0.1225 - val_loss: 0.1250 - val_acc: 0.9533 - val_ofuse_pixel_error: 0.1371
+
+Epoch 00092: val_acc improved from 0.95162 to 0.95325, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00092: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 93/100
+ - 68s - loss: 0.1359 - acc: 0.9464 - ofuse_pixel_error: 0.1721 - val_loss: 0.1562 - val_acc: 0.9304 - val_ofuse_pixel_error: 0.1656
+
+Epoch 00093: val_acc did not improve from 0.95325
+
+Epoch 00093: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 94/100
+ - 68s - loss: 0.1070 - acc: 0.9583 - ofuse_pixel_error: 0.1397 - val_loss: 0.1392 - val_acc: 0.9466 - val_ofuse_pixel_error: 0.1319
+
+Epoch 00094: val_acc did not improve from 0.95325
+
+Epoch 00094: val_ofuse_pixel_error did not improve from 0.12928
+Epoch 95/100
+ - 68s - loss: 0.1028 - acc: 0.9610 - ofuse_pixel_error: 0.1332 - val_loss: 0.1214 - val_acc: 0.9549 - val_ofuse_pixel_error: 0.1245
+
+Epoch 00095: val_acc improved from 0.95325 to 0.95489, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00095: val_ofuse_pixel_error improved from 0.12928 to 0.12446, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 96/100
+ - 68s - loss: 0.1007 - acc: 0.9615 - ofuse_pixel_error: 0.1287 - val_loss: 0.1397 - val_acc: 0.9473 - val_ofuse_pixel_error: 0.1501
+
+Epoch 00096: val_acc did not improve from 0.95489
+
+Epoch 00096: val_ofuse_pixel_error did not improve from 0.12446
+Epoch 97/100
+ - 68s - loss: 0.1026 - acc: 0.9603 - ofuse_pixel_error: 0.1349 - val_loss: 0.1342 - val_acc: 0.9472 - val_ofuse_pixel_error: 0.1352
+
+Epoch 00097: val_acc did not improve from 0.95489
+
+Epoch 00097: val_ofuse_pixel_error did not improve from 0.12446
+Epoch 98/100
+ - 68s - loss: 0.1018 - acc: 0.9608 - ofuse_pixel_error: 0.1306 - val_loss: 0.1202 - val_acc: 0.9558 - val_ofuse_pixel_error: 0.1436
+
+Epoch 00098: val_acc improved from 0.95489 to 0.95581, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00098: val_ofuse_pixel_error did not improve from 0.12446
+Epoch 99/100
+ - 68s - loss: 0.0942 - acc: 0.9641 - ofuse_pixel_error: 0.1243 - val_loss: 0.1289 - val_acc: 0.9522 - val_ofuse_pixel_error: 0.1225
+
+Epoch 00099: val_acc did not improve from 0.95581
+
+Epoch 00099: val_ofuse_pixel_error improved from 0.12446 to 0.12247, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+Epoch 100/100
+ - 68s - loss: 0.0884 - acc: 0.9657 - ofuse_pixel_error: 0.1130 - val_loss: 0.1167 - val_acc: 0.9579 - val_ofuse_pixel_error: 0.1186
+
+Epoch 00100: val_acc improved from 0.95581 to 0.95795, saving model to ../weights/20181213/slo_kitti_weight_avg.best.hdf5
+
+Epoch 00100: val_ofuse_pixel_error improved from 0.12247 to 0.11862, saving model to ../weights/20181213/slo_kitti_weight_avg_ope.best.hdf5
+2018-12-13 20:07:54.181711
