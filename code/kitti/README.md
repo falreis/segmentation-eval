@@ -93,6 +93,31 @@ python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=
 * gray? = {false || true} (*OPCIONAL*)
   * Parâmetro para saída de rede em escala cinza.
 
+
+## Side output Kitti
+As opções para execução de saídas laterais (somente para visualização) estão descritas abaixo.
+
+python kitti.py --func=side --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211
+
+### Params
+* net = { slo || alo }
+  * Parâmetro correspondente ao nome da rede neural a ser utilizada.
+
+* merge = { avg || max || add || maj }
+  * Parâmetro correspondente ao nome da operação a ser executada.
+
+* set = {train || test}
+  * Parâmetro para conjunto de treino ou teste a ser utilizado.
+
+* mark = {false || true}
+  * Parâmetro para marcar rodovia sobre a imagem original ou gerar grond-truth.
+
+* lr? = {0-inf} (*OPCIONAL*)
+  * Parâmetro para definição da taxa de aprendizado (*learning rate*)
+
+* folder? = (*OPCIONAL*)
+  * Parâmetro para definição da pasta de onde os pesos serão recuperados para predição (subpasta de weights/)
+
 ---
 ## Eval Kitti
 

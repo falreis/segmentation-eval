@@ -86,10 +86,7 @@ def model_slo(merge_name):
         fuse = b5
         
     #activation
-    if(merge_name == 'max'):
-        fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
-    else:
-        fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation='relu')(fuse) # 480 480 1
+    fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation='relu')(fuse) # 480 480 1
 
     #reshape
     ofuse = Reshape((const.n_classes, const.data_shape), input_shape=(const.n_classes, const.height, const.width))(fuse)
@@ -160,10 +157,7 @@ def model_alo(merge_name):
         fuse = Maximum()([b11, b12, b21, b22, b31, b32, b33, b41, b42, b43, b51, b52, b53])
 
     #activation
-    if(merge_name == 'max'):
-        fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation=None)(fuse) # 480 480 1
-    else:
-        fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation='relu')(fuse) # 480 480 1
+    fuse = Convolution2D(const.n_classes, (1,1), padding='same', use_bias=False, activation='relu')(fuse) # 480 480 1
 
     #reshape
     ofuse = Reshape((const.n_classes, const.data_shape), input_shape=(const.n_classes, const.height, const.width))(fuse)

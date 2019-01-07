@@ -25,18 +25,81 @@ from functools import partial
 #K.set_image_data_format('channels_first')
 
 import numpy as np
+from numpy.random import shuffle
 import json
 import argparse
 import h5py
+
+import random
+import cv2
+import imutils
 np.random.seed(7) # for reproducibility
 
-import constants as const
+#import constants
+import constants as const  
 
+#impor helper
 sys.path.append("..")
 import load_weights as lw
+from helper import *
 
 #parameters
-batch_size = 4
+print(os.environ["CUDA_VISIBLE_DEVICES"])
+
+batch_size = 8
+steps_epochs = 100
+validation_steps = steps_epochs / 10
+val_split = 0.8
+
+def loadListFile():
+    data_path = '../datasets/HED-BSDS/'
+    filepath =  data_path + 'train_pair.lst'
+    datafile = open(filepath, 'r')
+    lines = datafile.readlines() 
+    datafile.close()
+
+    shuffle(lines)
+    images, grounds = [], []
+
+    for line in lines:
+        image_file, ground_file = line.replace('\n','').split(' ')
+        images.append(data_path + image_file)
+        grounds.append(data_path + ground_file)
+
+    return images, grounds
+
+def generator(images, grounds, batch_size, is_train, split):
+    len_data = len(images)
+    split_len = int(len_data * split)
+
+    reduced_image_size = (const.width, const.height, 3)
+    features_size = (1, 3, const.height, const.width)
+    labels_size = (1, const.data_shape, const.n_classes)
+
+    while True:
+        batch_features = np.zeros(features_size)
+        batch_labels = np.zeros(labels_size)
+
+        for i in range(1): #batch_size):
+            if(is_train):
+                index= random.randint(0, split_len)
+            else:
+                index= random.randint(split_len, len_data)
+
+            image = cv2.imread(images[index])
+            ground = cv2.imread(grounds[index])
+
+            if(image.shape[0] > image.shape[1]):
+                image = imutils.rotate_bound(image, 90)
+                ground = imutils.rotate_bound(ground, 90)
+
+            reduced_image = cv2.resize(image, dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+            reduced_ground = cv2.resize(ground, dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
+
+            batch_features[i] = np.rollaxis(normalized(reduced_image), 2)
+            batch_labels[i] = gen_hot_bsds(reduced_ground, height = const.height, width = const.width, classes = const.n_classes)
+
+        yield (batch_features, batch_labels)
 
 def ofuse_pixel_error(y_true, y_pred):
     pred = tf.cast(tf.greater(y_pred, 0.5), tf.int32, name='predictions')
@@ -55,9 +118,8 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
     if(net != None):
         print(datetime.datetime.now())
 
-
-        train_data = np.load('../data/HED-BSDS/train_data.npy')
-        train_label = np.load('../data/HED-BSDS/train_label.npy')
+        #train_data = np.load('../data/HED-BSDS/train_data.npy')
+        #train_label = np.load('../data/HED-BSDS/train_label.npy')
 
         # define files
         checkpoint_file = ''
@@ -74,20 +136,29 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
 
         sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
 
-        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])  #metrics={'ofuse': ofuse_pixel_error})
+        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])
 
         # Fit the model
+        images, grounds = loadListFile()
+
         if(check):
-            checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=0, save_best_only=True, mode='max')
+            checkpoint = ModelCheckpoint(checkpoint_file, monitor='val_acc', verbose=2, save_best_only=True, mode='max')
             checkpoint_ope = ModelCheckpoint(checkpoint_file_ope, monitor='val_ofuse_pixel_error', verbose=0, save_best_only=True, mode='min')
 
             callbacks_list = [checkpoint, checkpoint_ope]
 
-            model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-                            verbose=2, shuffle=True, validation_split=0.20)
+            #model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
+            #                verbose=2, shuffle=True, validation_split=0.20)
+
+            model.fit_generator(generator=generator(images, grounds, batch_size, True, val_split), 
+                                    validation_data=generator(images, grounds, batch_size, False, val_split), 
+                                    callbacks=callbacks_list, steps_per_epoch=steps_epochs, nb_epoch=nb_epoch, verbose=2, 
+                                    shuffle=True, validation_steps=validation_steps)
         else:
-            model.fit(train_data, train_label, batch_size=batch_size, epochs=nb_epoch,
-                            verbose=2, shuffle=True, validation_split=0.20)
+            model.fit_generator(generator=generator(images, grounds, batch_size, True, val_split), 
+                                    validation_data=generator(images, grounds, batch_size, False, val_split), 
+                                    batch_size=batch_size, steps_per_epoch=steps_epochs, nb_epoch=nb_epoch, verbose=2, 
+                                    shuffle=True, validation_steps=validation_steps)
 
         print(datetime.datetime.now())
 

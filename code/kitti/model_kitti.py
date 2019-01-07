@@ -183,3 +183,85 @@ def model_alo(merge_name):
     #print(model.summary())
 
     return model
+
+
+################
+### SIDE OUT ###
+################
+def model_side(merge_name):
+    inputs = Input((3, hc.height, hc.width))
+
+    # Block 1
+    x = Convolution2D(64, (3, 3), activation='relu', padding='same', name='block1_conv1')(inputs)
+    x = Convolution2D(64, (3, 3), activation='relu', padding='same', name='block1_conv2')(x)
+    b1= side_branch(classes=hc.n_classes, x=x, factor=1, morf=False) # 480 480 1
+    x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block1_pool')(x) # 240 240 64
+
+    # Block 2
+    x = Convolution2D(128, (3, 3), activation='relu', padding='same', name='block2_conv1')(x)
+    x = Convolution2D(128, (3, 3), activation='relu', padding='same', name='block2_conv2')(x)
+    b2= side_branch(classes=hc.n_classes, x=x, factor=2, morf=False) # 480 480 1
+    x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block2_pool')(x) # 120 120 128
+
+    # Block 3
+    x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv1')(x)
+    x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv2')(x)
+    x = Convolution2D(256, (3, 3), activation='relu', padding='same', name='block3_conv3')(x)
+    b3= side_branch(classes=hc.n_classes, x=x, factor=4, morf=False) # 480 480 1
+    x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block3_pool')(x) # 60 60 256
+
+    # Block 4
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv1')(x)
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv2')(x)
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block4_conv3')(x)
+    b4= side_branch(classes=hc.n_classes, x=x, factor=8, morf=False) # 480 480 1
+    x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='block4_pool')(x) # 30 30 512
+
+    # Block 5
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv1')(x)
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv2')(x)
+    x = Convolution2D(512, (3, 3), activation='relu', padding='same', name='block5_conv3')(x) # 30 30 512
+    b5= side_branch(classes=hc.n_classes, x=x, factor=16, morf=False) # 480 480 1
+
+    if(merge_name == 'avg'):
+        print('avg')
+        fuse = Average()([b1, b2, b3, b4, b5])
+
+    elif(merge_name == 'add'):
+        print('add')
+        fuse = Add()([b1, b2, b3, b4, b5])       
+
+    elif(merge_name == 'max'):
+        print('max')
+        fuse = Maximum()([b1, b2, b3, b4, b5])
+
+    elif(merge_name == 'out'):
+        fuse = b5
+        
+    #activation
+    fuse = Convolution2D(hc.n_classes, (1,1), padding='same', use_bias=False, activation='relu')(fuse) # 480 480 1
+
+    #reshape
+    ofuse = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(fuse)
+    ofuse = Permute((2, 1), name='ofuse')(ofuse)
+
+    #outputs (b1, b2, b3, b4, b5)
+    o1 = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(b1)
+    o1 = Permute((2, 1), name='o1')(o1)
+
+    o2 = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(b2)
+    o2 = Permute((2, 1), name='o2')(o2)
+
+    o3 = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(b3)
+    o3 = Permute((2, 1), name='o3')(o3)
+
+    o4 = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(b4)
+    o4 = Permute((2, 1), name='o4')(o4)
+
+    o5 = Reshape((hc.n_classes, hc.data_shape), input_shape=(hc.n_classes, hc.height, hc.width))(b5)
+    o5 = Permute((2, 1), name='o5')(o5)
+
+    model = Model(inputs=inputs, outputs=[ofuse, o1, o2, o3, o4, o5])
+    #print(model.summary())
+
+    return model

@@ -83,7 +83,7 @@ if(args.net != None):
     else:
         printWrongUsageAndQuit()
 
-#func = {train, test, npy}
+#func = {train, test, npy, side}
 if(args.func == 'train'):
     import train_kitti as trk
     trk.train(model=model, net=args.net, merge=args.merge, check=args.check, augm=args.augm
@@ -97,6 +97,13 @@ elif(args.func == 'test'):
     import test_kitti as tek
     tek.test(model=model, net=args.net, merge_name=args.merge, set_name=args.set, mark=args.mark
         , learn_rate=learn_rate, folder=args.folder, morf=args.morf, gray=args.gray)
+
+elif(args.func == 'side'):
+    model = mk.model_side(merge_name=args.merge)
+
+    import side_kitti as sek
+    sek.sideout(model=model, net=args.net, merge_name=args.merge, set_name=args.set
+        , mark=args.mark, learn_rate=learn_rate, folder=args.folder)
 
 else:
     printWrongUsageAndQuit()

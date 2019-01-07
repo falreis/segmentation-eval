@@ -33,7 +33,7 @@ def load_data(mode, data_path):
         index = 0
         len_data = len(lines)
 
-        num_lines = 960 #9600 #28800
+        num_lines = 2880 #9600 #28800
 
         if len_data > 0:
             for line in lines[0:num_lines]:
@@ -53,10 +53,10 @@ def load_data(mode, data_path):
                 reduced_ground = cv2.resize(ground, dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
                 data.append(np.rollaxis(normalized(reduced_image), 2))
-                label.append(one_hot_kitti(reduced_ground, height = const.height, width = const.width, classes = const.n_classes))
+                label.append(one_hot_bsds(reduced_ground, height = const.height, width = const.width, classes = const.n_classes))
 
                 index += 1
-                print(index, '/', len_data, end='')
+                print(index, '/', num_lines, end='')
                 print('\r', end='')
         else:
             print('Alguma coisa errada: número de ground-truths não é igual ao de imagens.')

@@ -58,3 +58,16 @@ def one_hot_bsds(labels, height = 321, width = 481, classes = 2):
             else:
                 x[i,j,0]=1
     return x
+
+def gen_hot_bsds(labels, height = 321, width = 481, classes = 2):
+    x = np.zeros([height*width,classes])
+    index = 0
+    for i in range(height):
+        for j in range(width):
+            if(labels[i,j,0] != 0):
+                x[index,1]=1
+            else:
+                x[index,0]=1
+
+            index += 1
+    return x
