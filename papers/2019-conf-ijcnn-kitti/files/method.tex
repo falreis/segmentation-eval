@@ -62,6 +62,8 @@ In the case of \textbf{SLO}, the number of side-outputs amounts to the number of
 
 The main question in dealing with side-outputs in convolutional networks is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, but retain the useful information presented at different layers.
 
+%\subsection{Side output merging strategies}
+
 In this work, the strategy to overcome those challenges is to combine the side-outputs by exploring the knowledge of the learning process. To achieve that, it is proposed to apply simple merging functions that would enhance different desirable behavior, as described in the following: 
 \begin{itemize}
 \item \textit{ADD}: Aims to balance negative and positive weights;
@@ -93,12 +95,7 @@ Formally, consider once again the set of $N$ training images $\mathbf{X}$ and al
 %\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
 %\end{equation}
 
-
-\begin{center}
-\textit{Insert evaluation function and network cross-entropy}
- \color{green}{As funcoes usadas foram categorical cross-entropy e ofuse pixel-error, retirada do artigo HED (eq. 1)}
-
-\end{center}
+\subsection{Loss evaluation}
 
 For loss evaluation, we used two different functions: the well known categorical cross-entropy and fuse-pixel-error, proposed by \cite{xie2015}.
 

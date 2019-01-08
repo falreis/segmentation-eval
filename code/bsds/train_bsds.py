@@ -44,9 +44,8 @@ import load_weights as lw
 from helper import *
 
 #parameters
-print(os.environ["CUDA_VISIBLE_DEVICES"])
 
-batch_size = 8
+batch_size = 4
 steps_epochs = 100
 validation_steps = steps_epochs / 10
 val_split = 0.8
@@ -68,7 +67,7 @@ def loadListFile():
 
     return images, grounds
 
-def generator(images, grounds, batch_size, is_train, split):
+def gen(images, grounds, batch_size, is_train, split):
     len_data = len(images)
     split_len = int(len_data * split)
 
@@ -118,10 +117,7 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
     if(net != None):
         print(datetime.datetime.now())
 
-        #train_data = np.load('../data/HED-BSDS/train_data.npy')
-        #train_label = np.load('../data/HED-BSDS/train_label.npy')
-
-        # define files
+        # define folder and files
         checkpoint_file = ''
         if(folder != None and folder != ''):
             checkpoint_file = '../weights/bsds/{}/{}_bsds_weight_{}.best.hdf5'.format(folder, net, merge)
@@ -129,7 +125,11 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
         else:
             checkpoint_file = '../weights/bsds/{}_bsds_weight_{}.best.hdf5'.format(net, merge)
             checkpoint_file_ope = '../weights/bsds/{}_bsds_weight_{}_ope.best.hdf5'.format(net, merge)
-            
+        
+        checkpoint_folder = '../weights/bsds/{}/'.format(folder)
+        if not os.path.exists(checkpoint_folder):
+            os.makedirs(checkpoint_folder)
+
         #load weights
         if(load):
             lw.load_weights_from_hdf5_group_by_name(model, '../vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
@@ -147,18 +147,13 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
 
             callbacks_list = [checkpoint, checkpoint_ope]
 
-            #model.fit(train_data, train_label, callbacks=callbacks_list, batch_size=batch_size, epochs=nb_epoch,
-            #                verbose=2, shuffle=True, validation_split=0.20)
-
-            model.fit_generator(generator=generator(images, grounds, batch_size, True, val_split), 
-                                    validation_data=generator(images, grounds, batch_size, False, val_split), 
-                                    callbacks=callbacks_list, steps_per_epoch=steps_epochs, nb_epoch=nb_epoch, verbose=2, 
-                                    shuffle=True, validation_steps=validation_steps)
+            model.fit_generator(generator=gen(images, grounds, batch_size, True, val_split), steps_per_epoch=steps_epochs,
+                                validation_data=gen(images, grounds, batch_size, False, val_split), validation_steps=validation_steps,
+                                callbacks=callbacks_list,  nb_epoch=nb_epoch, verbose=2)
         else:
-            model.fit_generator(generator=generator(images, grounds, batch_size, True, val_split), 
-                                    validation_data=generator(images, grounds, batch_size, False, val_split), 
-                                    batch_size=batch_size, steps_per_epoch=steps_epochs, nb_epoch=nb_epoch, verbose=2, 
-                                    shuffle=True, validation_steps=validation_steps)
+            model.fit_generator(generator=gen(images, grounds, batch_size, True, val_split), steps_per_epoch=steps_epochs,
+                                validation_data=gen(images, grounds, batch_size, False, val_split), validation_steps=validation_steps,
+                                batch_size=batch_size, nb_epoch=nb_epoch, verbose=2)
 
         print(datetime.datetime.now())
 

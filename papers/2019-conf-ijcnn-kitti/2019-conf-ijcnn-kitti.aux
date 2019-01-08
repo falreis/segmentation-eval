@@ -40,6 +40,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {III}Convolutional side-outputs for image segmentation}{2}{section.3}}
 \newlabel{sec:method}{{III}{2}{Convolutional side-outputs for image segmentation}{section.3}{}}
 \citation{xie2015}
+\citation{xie2015}
 \newlabel{fig:slo}{{1a}{3}{Subfigure 1a}{subfigure.1.1}{}}
 \newlabel{sub@fig:slo}{{(a)}{a}{Subfigure 1a\relax }{subfigure.1.1}{}}
 \newlabel{fig:alo}{{1b}{3}{Subfigure 1b}{subfigure.1.2}{}}
@@ -49,13 +50,13 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {All Layers Outputs (ALO)}}}{3}{subfigure.1.2}}
 \newlabel{fig:extraction}{{1}{3}{Illustration for the two side-outputs extraction strategies: (a) side-outputs extracted at each stage of the network and (b) side-outputs extracted at each convolutional layer}{figure.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Merging strategies}{3}{section.4}}
-\newlabel{eq:single_cross_entropy}{{11}{3}{Merging strategies}{equation.4.11}{}}
-\citation{xie2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Loss evaluation}{3}{subsection.4.1}}
+\newlabel{eq:single_cross_entropy}{{11}{3}{Loss evaluation}{equation.4.11}{}}
+\newlabel{eq:cross_entropy}{{12}{3}{Loss evaluation}{equation.4.12}{}}
 \citation{KITTI}
 \citation{chollet2015keras}
 \citation{tensorflow2015-whitepaper}
-\newlabel{eq:cross_entropy}{{12}{4}{Merging strategies}{equation.4.12}{}}
-\newlabel{eq:fuse_pixel_error}{{13}{4}{Merging strategies}{equation.4.13}{}}
+\newlabel{eq:fuse_pixel_error}{{13}{4}{Loss evaluation}{equation.4.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Post-processing}{4}{section.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Experiments}{4}{section.6}}
 \newlabel{sec:experiments}{{VI}{4}{Experiments}{section.6}{}}
@@ -66,18 +67,10 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}}Evaluation results and comparison with the state-of-the-art}{5}{subsection.6.4}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces KITTI benchmark evaluation results for each category}}{5}{table.1}}
 \newlabel{tab:metrics}{{I}{5}{KITTI benchmark evaluation results for each category}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Visual illustration of the obtained results}}{6}{table.2}}
-\newlabel{table:image_segmentation}{{II}{6}{Visual illustration of the obtained results}{table.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Categorical Cross-Entropy Loss}}{6}{figure.2}}
-\newlabel{fig:validation_loss}{{2}{6}{Categorical Cross-Entropy Loss}{figure.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Validation Accuracy}}{6}{figure.3}}
-\newlabel{fig:validation_accuracy}{{3}{6}{Validation Accuracy}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pixel Error}}{6}{figure.4}}
-\newlabel{fig:pixel_error}{{4}{6}{Pixel Error}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Accuracy and Pixel Error for 500 epochs test set}}{6}{figure.5}}
-\newlabel{fig:val_acc_500_epochs}{{5}{6}{Accuracy and Pixel Error for 500 epochs test set}{figure.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}{section.7}}
-\newlabel{sec:conclusion}{{VII}{6}{Conclusion}{section.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Visual illustration of the obtained results}}{5}{table.2}}
+\newlabel{table:image_segmentation}{{II}{5}{Visual illustration of the obtained results}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{5}{section.7}}
+\newlabel{sec:conclusion}{{VII}{5}{Conclusion}{section.7}{}}
 \bibstyle{IEEEtran}
 \bibdata{2019-ijcnn,dl,hier-seg}
 \bibcite{DOMINGUEZ}{1}
@@ -91,6 +84,15 @@
 \bibcite{maninis2017}{9}
 \bibcite{liu2017}{10}
 \bibcite{najman13}{11}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Categorical Cross-Entropy Loss}}{6}{figure.2}}
+\newlabel{fig:validation_loss}{{2}{6}{Categorical Cross-Entropy Loss}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Validation Accuracy}}{6}{figure.3}}
+\newlabel{fig:validation_accuracy}{{3}{6}{Validation Accuracy}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pixel Error}}{6}{figure.4}}
+\newlabel{fig:pixel_error}{{4}{6}{Pixel Error}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Accuracy and Pixel Error for 500 epochs test set}}{6}{figure.5}}
+\newlabel{fig:val_acc_500_epochs}{{5}{6}{Accuracy and Pixel Error for 500 epochs test set}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.1}}
 \bibcite{ilin17}{12}
 \bibcite{kuo16}{13}
 \bibcite{eigen14}{14}
@@ -106,4 +108,5 @@
 \bibcite{KITTI}{24}
 \bibcite{chollet2015keras}{25}
 \bibcite{tensorflow2015-whitepaper}{26}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Side outputs results}}{7}{figure.6}}
+\newlabel{fig:side_outputs}{{6}{7}{Side outputs results}{figure.6}{}}

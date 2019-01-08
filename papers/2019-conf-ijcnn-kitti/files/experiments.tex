@@ -21,7 +21,7 @@ In this work, it is used only the road ground-truths and the lane annotations we
 
 {\color{green}{Rever lista de procedimentos de data augmentation}}
 
-To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Procedures that would create aberrations, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
+To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
@@ -34,13 +34,13 @@ The operations to combine side outputs are presented in the name of the methods.
 
 \subsection{Training results - Methods Comparison}
 
-{\color{red}{Imagem 2 comentada. Texto mantido em vermelho para comparacao}}
+\begin{comment}
+{\color{red}{In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model}.
 
-{\color{red}{OLD - In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model}.
+\color{red}{Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data}. 
 
-\color{red}{OLD - Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data}. 
-
-\color{red}{OLD - For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second}.}
+\color{red}{For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second}.}
+\end{comment}
 
 In Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} are presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure \ref{fig:validation_loss}, the compared approaches presents an expected loss curve and some differences for the tested approaches. ALO procedures mode appears to be more stable with a faster decay than all SLO and NSO approaches. Also, NSO and SLO approaches produces some high peaks in the learning process.
 
@@ -48,13 +48,15 @@ In summary, for all the metrics in the leaning step, the ALO model presented a s
 
 Evaluating only ALO outputs, its is possible to see that AVG had the better performance, followed by MAX and ADD operations. The results are also more stable, but slightely close of other methods.
 
-Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics the best values. Validation accuracy is related to categorical cross entropy method. The value follows the inverse behavior for categorical cross entropy loss. For other way, Figure \ref{fig:pixel_error} shows the behaviour of the methods using Fuse Pixel Error methods. It is important to see that this image indicates that SLO-MAX neural network seens to overfitting around 40 epochs. This behaviour is ignored by the other graphs. 
+Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics the best values. Validation accuracy is related to categorical cross entropy method. The value follows the inverse behavior for categorical cross entropy loss. For other way, Figure \ref{fig:pixel_error} shows the behavior of the methods using Fuse Pixel Error methods. It is important to see that this image indicates that SLO-MAX neural network seens to overfitting around 40 epochs. This behavior is ignored by the other graphs. 
 
 \subsection{Best results}
 
-In order to improve the results a new set of tests were performed using 500 training epochs. The test were performed only for the two best CNNs in the first test set. The best accuracy rate achieve after the new training procedures by the ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. As for the ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}. The behaviour of both methods are available in Figure \ref{fig:val_acc_500_epochs}.
+In order to improve the results a new set of tests were performed using 500 training epochs. The test were performed only for the two best CNNs in the first test set. The best accuracy rate achieve after the new training procedures by the ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. As for the ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}. The behavior of both methods are available in Figure \ref{fig:val_acc_500_epochs}.
 
+\begin{comment}
 {\color{red}{But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}}}.
+\end{comment}
 
 {\color{green}{Adicionar informacao sobre os resultados do conjunto de testes}}
 
@@ -95,6 +97,12 @@ If compared with the state-of-the-art~(anonymous submission on the KITTI Server 
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}\label{fig:val_acc_500_epochs}
 \end{figure}
+
+\begin{figure*}
+  \caption{Side outputs results}
+  \centering
+  \includegraphics[width=1.\textwidth]{figures/falreis/side_outputs.png}\label{fig:side_outputs}
+\end{figure*}
 
 
 
