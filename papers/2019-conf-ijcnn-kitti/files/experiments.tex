@@ -109,10 +109,19 @@ For comparison, we developed Figure \ref{fig:post_processing_comp}. In this imag
 
 Reminding that the test evaluation could only be performed using KITTI Server, the metrics provided are maximum F1-measure~(MaxF), average precision~(AP), precision~(PRE), recall~(REC), false positive rate~(FPR) and false negative rate~(FNR). 
 
-Results using this strategy are under the label \textbf{ALO-AVG-MM}.
+The server tests were performed using ALO-AVG method, the best one in the training process. To provide succint labels, we will use the name \textbf{ALO-AVG} for the regular approach and \textbf{ALO-AVG-MM} for the version with mathematical morphology post-processing. 
 
-The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. As expected, the SLO model performed better then the ALO model in all almost all of the cases. Particularly when using the post processing procedure with mathematical morphology. It is also possible to notice that although the post-processing slightly improved the overall performance, it also increased the number of false negatives. This could be an indications that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than the desired.   
+The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. As expected, the ALO-AVG-MM model performed better then the ALO-AVG in all almost all of the cases. {\color{red}It is also possible to notice that although the post-processing slightly improved the overall performance, it also increased the number of false negatives. This could be an indications that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than the desired.}
 
-If compared with the state-of-the-art~(anonymous submission on the KITTI Server platform), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives an negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.       
+If compared with the state-of-the-art~(called \textit{PLARD}, an anonymous submission on the KITTI Server platform), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives an negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.
 
 \input{tables/kitti-metrics}
+
+As a final and visual representation of the results, we presents in Figure \ref{fig:visual_representation}. This image shows the results marked (in green) over the road, to shows the performance of our model.
+
+\begin{figure}
+  \caption{Visual representation of the results}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/visual_representation.png}
+  \label{fig:visual_representation}
+\end{figure}

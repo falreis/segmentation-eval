@@ -124,7 +124,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         index = 0
         len_data = len(images_paths)
         #for test_image, image_path in zip(data, images_paths):
-        for image_path in images_paths[:10]:
+        for image_path in images_paths[:]:
 
             #read original image
             original_image = cv2.imread(image_path)
