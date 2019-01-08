@@ -97,7 +97,7 @@ python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=
 ## Side output Kitti
 As opções para execução de saídas laterais (somente para visualização) estão descritas abaixo.
 
-python kitti.py --func=side --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211
+python kitti.py --func=side --net=alo --merge=max --set=train --mark=false --lr=0.001 --folder=20190102
 
 ### Params
 * net = { slo || alo }

@@ -38,7 +38,7 @@ if(args.func == None):
     printWrongUsageAndQuit()
 
 #net parameter
-if(args.func in ('run', 'eval') and args.net == None):
+if(args.func in ('train', 'test', 'side') and args.net == None):
     printWrongUsageAndQuit()
 
 #merge parameter
@@ -54,6 +54,11 @@ if(args.epochs != None and args.epochs > 0):
 learn_rate = 0.001
 if(args.lr != None and args.lr > 0):
     learn_rate = args.lr
+
+#side output
+side_output = False
+if(args.func == 'side'):
+    side_output = True
 
 #print parameters
 print('-----BEGIN PARAMETERS-----')
@@ -73,13 +78,12 @@ print('Grayscale: ', args.gray)
 print('-----END PARAMETERS-----')
 
 #############
-#net = {alo, slo}
 if(args.net != None):
     import model_kitti as mk
     if(args.net == 'slo'):
-        model = mk.model_slo(merge_name=args.merge)
+        model = mk.model_slo(merge_name=args.merge, side_output=side_output)
     elif(args.net == 'alo'):
-        model = mk.model_alo(merge_name=args.merge)
+        model = mk.model_alo(merge_name=args.merge, side_output=side_output)
     else:
         printWrongUsageAndQuit()
 
@@ -99,8 +103,6 @@ elif(args.func == 'test'):
         , learn_rate=learn_rate, folder=args.folder, morf=args.morf, gray=args.gray)
 
 elif(args.func == 'side'):
-    model = mk.model_side(merge_name=args.merge)
-
     import side_kitti as sek
     sek.sideout(model=model, net=args.net, merge_name=args.merge, set_name=args.set
         , mark=args.mark, learn_rate=learn_rate, folder=args.folder)

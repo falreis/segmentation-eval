@@ -34,25 +34,41 @@ The operations to combine side outputs are presented in the name of the methods.
 
 \subsection{Training results - Methods Comparison}
 
-\begin{comment}
-{\color{red}{In Figure~2 it is presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure 2a, both compared approaches presents an expected loss curve and there is no significant difference between both approaches in terms of losses values, although the SLO model appears to be more stable and presents a faster decay than the ALO model}.
+The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieve the best result. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
 
-\color{red}{Regarding the accuracy rate, illustrated in Figure 2b, it is possible to see that the SLO model presents a better performance than the ALO model. The accuracy rate achieved by SLO was 0.974 while ALO it was 0.963 on the validation set (about 1.2\% worse). It is also possible to notice that the gap between the accuracy achieved in the training set and the accuracy achieved in validations set is smaller for the SLO model, which indicates that the ALO model is more prone to over-fit the data}. 
+Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. 
+Figure \ref{fig:validation_loss}, presents categorical cross-entropy loss curve for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course. In other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
-\color{red}{For the performance regarding time the average to process SLO model is 12.2\% smaller than the ALO network, and could process 33.60 images per second in training time, while the ALO model process 29.48 images per second}.}
-\end{comment}
+\begin{figure}
+  \caption{Categorical Cross-Entropy Loss}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
+  \label{fig:validation_loss}
+\end{figure}
 
-In Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} are presented the relevant curves obtained during the learning step for the proposed approaches. As one could see in Figure \ref{fig:validation_loss}, the compared approaches presents an expected loss curve and some differences for the tested approaches. ALO procedures mode appears to be more stable with a faster decay than all SLO and NSO approaches. Also, NSO and SLO approaches produces some high peaks in the learning process.
+\begin{figure}
+  \caption{Validation Accuracy}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
+  \label{fig:validation_accuracy}
+\end{figure}
 
-In summary, for all the metrics in the leaning step, the ALO model presented a slighted superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs in the ALO model, which create more possibilities of interchangeability between confidant values.
+\begin{figure}
+  \caption{Pixel Error}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
+  \label{fig:pixel_error}
+\end{figure}
 
-Evaluating only ALO outputs, its is possible to see that AVG had the better performance, followed by MAX and ADD operations. The results are also more stable, but slightely close of other methods.
+Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics to identify the best values. Figure \ref{fig:validation_accuracy} contains validation accuracy and is related to categorical cross entropy method while Figure \ref{fig:pixel_error} shows Fuse Pixel Error method. While Figure \ref{fig:validation_accuracy} shows an expected curve, after loss evaluation in the previous image, Figure \ref{fig:pixel_error} indicates a new information: SLO-MAX neural network seens to overfitting around 40 epochs. After some steps with unstable pixel error values, the values persists almost unchange for the rest of training epochs. 
 
-Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics the best values. Validation accuracy is related to categorical cross entropy method. The value follows the inverse behavior for categorical cross entropy loss. For other way, Figure \ref{fig:pixel_error} shows the behavior of the methods using Fuse Pixel Error methods. It is important to see that this image indicates that SLO-MAX neural network seens to overfitting around 40 epochs. This behavior is ignored by the other graphs. 
+From previous graphs, in short we have ALO networks with  superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs, which create more possibilities of interchangeability between confidant values.
 
 \subsection{Best results}
 
 In order to improve the results a new set of tests were performed using 500 training epochs. The test were performed only for the two best CNNs in the first test set. The best accuracy rate achieve after the new training procedures by the ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. As for the ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}. The behavior of both methods are available in Figure \ref{fig:val_acc_500_epochs}.
+
+Each merging strategy contains a different behavior for side outputs. Training procedure also indicates that the learning process is different from 
 
 \begin{comment}
 {\color{red}{But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}}}.
@@ -75,42 +91,17 @@ If compared with the state-of-the-art~(anonymous submission on the KITTI Server 
 \input{figures/image}
 
 \begin{figure}
-  \caption{Categorical Cross-Entropy Loss}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}\label{fig:validation_loss}
-\end{figure}
-
-\begin{figure}
-  \caption{Validation Accuracy}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}\label{fig:validation_accuracy}
-\end{figure}
-
-\begin{figure}
-  \caption{Pixel Error}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}\label{fig:pixel_error}
-\end{figure}
-
-\begin{figure}
   \caption{Accuracy and Pixel Error for 500 epochs test set}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}\label{fig:val_acc_500_epochs}
 \end{figure}
 
-\begin{figure*}
+\begin{figure}
   \caption{Side outputs results}
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/falreis/side_outputs.png}
+  \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs.png}
   \label{fig:side_outputs}
-\end{figure*}
-
-\begin{figure*}
-  \caption{Marked side outputs results}
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/falreis/side_outputs_mark.png}
-  \label{fig:side_outputs_mark}
-\end{figure*}
+\end{figure}
 
 
 

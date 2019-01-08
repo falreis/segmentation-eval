@@ -105,14 +105,6 @@ def ofuse_pixel_error(y_true, y_pred):
     error = tf.cast(tf.not_equal(pred, tf.cast(y_true, tf.int32)), tf.float32)
     return tf.reduce_mean(error, name='pixel_error')
 
-def Vote(y_true, y_pred):
-    vote_value = const.vote_value - 0.5
-    sig_pred = K.hard_sigmoid((y_pred-vote_value)*5)
-    return categorical_crossentropy(y_true, sig_pred)
-
-def w_categorical_crossentropy(y_true, y_pred, weights):
-    return K.categorical_crossentropy(y_pred, y_true) * K.cast(weights[:,:],K.floatx())
-
 def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_rate=0.001, folder=None):
     if(net != None):
         print(datetime.datetime.now())
@@ -149,7 +141,7 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
 
             model.fit_generator(generator=gen(images, grounds, batch_size, True, val_split), steps_per_epoch=steps_epochs,
                                 validation_data=gen(images, grounds, batch_size, False, val_split), validation_steps=validation_steps,
-                                callbacks=callbacks_list,  nb_epoch=nb_epoch, verbose=2)
+                                callbacks=callbacks_list, nb_epoch=nb_epoch, verbose=2)
         else:
             model.fit_generator(generator=gen(images, grounds, batch_size, True, val_split), steps_per_epoch=steps_epochs,
                                 validation_data=gen(images, grounds, batch_size, False, val_split), validation_steps=validation_steps,
