@@ -40,21 +40,21 @@ Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pi
 Figure \ref{fig:validation_loss}, presents categorical cross-entropy loss curve for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course. In other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
 \begin{figure}
-  \caption{Categorical Cross-Entropy Loss}
+  \caption{Categorical Cross-Entropy Validation Loss}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
   \label{fig:validation_loss}
 \end{figure}
 
 \begin{figure}
-  \caption{Validation Accuracy}
+  \caption{Categorical Cross-Entropy Validation Accuracy}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
   \label{fig:validation_accuracy}
 \end{figure}
 
 \begin{figure}
-  \caption{Pixel Error}
+  \caption{Pixel Error Validation Loss}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
   \label{fig:pixel_error}
@@ -66,43 +66,53 @@ From previous graphs, in short we have ALO networks with  superior and more desi
 
 \subsection{Best results}
 
-In order to improve the results a new set of tests were performed using 500 training epochs. The test were performed only for the two best CNNs in the first test set. The best accuracy rate achieve after the new training procedures by the ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. As for the ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}. The behavior of both methods are available in Figure \ref{fig:val_acc_500_epochs}.
+In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance, we evaluated only the two-best nets in the previous test. The categorical cross entropy validation accuracy and pixel error validation loss, for both ALO-AVG and ALO-MAX nets are available in Figure \ref{fig:val_acc_500_epochs}.
 
-Each merging strategy contains a different behavior for side outputs. Training procedure also indicates that the learning process is different from 
+The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. For ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}.
 
-\begin{comment}
-{\color{red}{But the instable behavior persisted, in which in some epochs were close to this top accuracy but in many others the values were close to 0.86 accuracy. Some visual results are presented in Table~\ref{table:image_segmentation}}}.
-\end{comment}
+\begin{figure}
+  \caption{Accuracy and Pixel Error for 500 epochs test set}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
+  \label{fig:val_acc_500_epochs}
+\end{figure}
 
-{\color{green}{Adicionar informacao sobre os resultados do conjunto de testes}}
+Once each merging strategy contains a different behavior for side outputs, its interesting to evaluate how each side output contributes with the final output. For this, Figure \ref{fig:side_outputs} was created. Once \textbf{ALO} network contains 13 side outputs, we decided only to visualize outputs from each stage. In the image provide, white pixels are classified as road, while black pixels are classified as background.
+
+Figure \ref{fig:side_outputs} indicates that the first two side outputs does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG's third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, by other hand, does not clearly separates road from non-road pixels. It is possible to see get information but as not clear as ALO-AVG's.
+
+Figure \ref{fig:side_outputs} also indicates that fourty layer clearly contains the best side output for both networks. A road mark is clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-AVG contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous one. This possible indicates that these layers does not learn correctly from the previous one.
+
+{\color{red}{Talvez adicionar artigo do Bengio, indicando que é difícil treinar as últimas camadas - tem nos slides do Zenilton de Deep Learning}}
+
+\begin{figure}
+  \caption{Side outputs results from ALO-AVG and ALO-MAX networks. \color{red}{Acho q devo treinar a rede ALO-ADD para exibir a saída lateral, melhorando a discussão}}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs.png}
+  \label{fig:side_outputs}
+\end{figure}
+
+\subsection{Post-processing using mathematical morphology}
+
+After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}. This procedure removes small noises created by the foreground~(the road) in the background. We defined a set of kernels with the sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$ and applied in the images to reduce different sizes of noises. 
+
+For comparison, we developed Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. {\color{red}It is possible to see the removal of part of the noise in the right of the image.} This procedure increase the confidence, once small variations in the results can lead a potential problem, if used in a self-driving vehicle.
+
+\begin{figure}
+  \caption{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color{red}Substituir imagem por uma com evidencia mais clara.}}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/post_processing_comparison.png}
+  \label{fig:post_processing_comp}
+\end{figure}
 
 \subsection{Evaluation results and comparison with the state-of-the-art}
 
-After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}. This procedure removes small noises created by the foreground~(the road)in the background. We defined a set of kernels with the sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$ and applied in the images to reduce different sizes of noises. Results using this strategy are under the label \textbf{ALO-mm} and \textbf{SLO-mm}.
-
 Reminding that the test evaluation could only be performed using KITTI Server, the metrics provided are maximum F1-measure~(MaxF), average precision~(AP), precision~(PRE), recall~(REC), false positive rate~(FPR) and false negative rate~(FNR). 
+
+Results using this strategy are under the label \textbf{ALO-AVG-MM}.
 
 The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. As expected, the SLO model performed better then the ALO model in all almost all of the cases. Particularly when using the post processing procedure with mathematical morphology. It is also possible to notice that although the post-processing slightly improved the overall performance, it also increased the number of false negatives. This could be an indications that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than the desired.   
 
 If compared with the state-of-the-art~(anonymous submission on the KITTI Server platform), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives an negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.       
 
 \input{tables/kitti-metrics}
-
-\input{figures/image}
-
-\begin{figure}
-  \caption{Accuracy and Pixel Error for 500 epochs test set}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}\label{fig:val_acc_500_epochs}
-\end{figure}
-
-\begin{figure}
-  \caption{Side outputs results}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs.png}
-  \label{fig:side_outputs}
-\end{figure}
-
-
-
-%\subsection{Post-processing using mathematical morphology}

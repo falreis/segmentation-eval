@@ -95,10 +95,18 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         DataPath = '../datasets/Kitti/data_road/'
 
         #export data
+        morf_folder = ''
+        if(morf):
+            morf_folder = '_morf'
+
+        mark_folder = ''
+        if(mark):
+            mark_folder = '_mark'
+
         if(folder != None):
-            save_path = '../export/Kitti/{}/{}/{}/{}/'.format(folder, net, merge_name, set_name)
+            save_path = '../export/Kitti/{}/{}/{}/{}{}{}/'.format(folder, net, merge_name, set_name, morf_folder, mark_folder)
         else:
-            save_path = '../export/Kitti/{}/{}/{}/'.format(net, merge_name, set_name)
+            save_path = '../export/Kitti/{}/{}/{}{}{}/'.format(net, merge_name, set_name, morf_folder, mark_folder)
 
         #create folder, if not exist
         if not os.path.exists(save_path):
@@ -116,7 +124,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         index = 0
         len_data = len(images_paths)
         #for test_image, image_path in zip(data, images_paths):
-        for image_path in images_paths[:]:
+        for image_path in images_paths[:10]:
 
             #read original image
             original_image = cv2.imread(image_path)

@@ -8,6 +8,7 @@
 \BOOKMARK [2][-]{subsection.6.1}{Experimental setup}{section.6}% 8
 \BOOKMARK [2][-]{subsection.6.2}{Training results - Methods Comparison}{section.6}% 9
 \BOOKMARK [2][-]{subsection.6.3}{Best results}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.4}{Evaluation results and comparison with the state-of-the-art}{section.6}% 11
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 12
-\BOOKMARK [1][-]{section*.1}{References}{}% 13
+\BOOKMARK [2][-]{subsection.6.4}{Post-processing using mathematical morphology}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.5}{Evaluation results and comparison with the state-of-the-art}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 13
+\BOOKMARK [1][-]{section*.1}{References}{}% 14
