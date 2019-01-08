@@ -26,7 +26,7 @@ To increase the number of images in the training set, it is performed some data 
 
 \subsection{Experimental setup}
    
-Our network were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper} and trained for 100 epochs. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. Other experiments with different values will be discussed in next sections. All training experiments were performed in GeForce GTX 1080 8GB GPU. HED and RCF projects provided custom functions to balance the number of pixels of edges from the non-edges pixels. Once our problem is not as unbalanced as the edge detection, we decided to use the  \textit{{categorical} {cross-entropy}} loss function.
+Our networks were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. All training experiments were performed in GeForce GTX 1080 8GB GPU.
 
 For simplicity, in the remaining of this work, the network using the side outputs extracted at each stage of the VGG will be called Stage Layer Outputs~(\textbf{SLO}) and it is composed by $n=5$ side outputs. Similarly, for the side outputs extracted at each convolutional layer, it will be called All Layers Outputs~(\textbf{ALO}) and it is composed by $n=13$ side outputs. For comparison, it is also defined a network similar to VGG, with only the final output, without any side outputs, called No Side Outputs~(\textbf{NSO}).
 
@@ -101,9 +101,16 @@ If compared with the state-of-the-art~(anonymous submission on the KITTI Server 
 \begin{figure*}
   \caption{Side outputs results}
   \centering
-  \includegraphics[width=1.\textwidth]{figures/falreis/side_outputs.png}\label{fig:side_outputs}
+  \includegraphics[width=0.8\textwidth]{figures/falreis/side_outputs.png}
+  \label{fig:side_outputs}
 \end{figure*}
 
+\begin{figure*}
+  \caption{Marked side outputs results}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/falreis/side_outputs_mark.png}
+  \label{fig:side_outputs_mark}
+\end{figure*}
 
 
 
