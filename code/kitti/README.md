@@ -24,8 +24,8 @@ python kitti.py --func=npy --set=train --augm=true
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=train --net=alo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20181211
-python kitti.py --func=train --net=slo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20181211
+python kitti.py --func=train --net=alo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20190102
+python kitti.py --func=train --net=slo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20190102
 ```
 
 ### Params
@@ -64,8 +64,8 @@ python kitti.py --func=train --net=slo --merge=max --check=true --augm=true --lo
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=test --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true --gray=False
-python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=0.001 --folder=20181211 --morf=true --gray=False
+python kitti.py --func=test --net=slo --merge=max --set=train --mark=false --lr=0.001 --folder=20190102 --morf=true --gray=False
+python kitti.py --func=test --net=alo --merge=max --set=train --mark=false --lr=0.001 --folder=20190102 --morf=true --gray=False
 ```
 
 ### Params

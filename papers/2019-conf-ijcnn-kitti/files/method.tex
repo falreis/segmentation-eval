@@ -23,7 +23,7 @@ Amongst the many strategies for deep models, convolutional networks are well-kno
 \noindent in which:
 \begin{itemize}
 \item $\mathbf{W}_l$ is the associated weights for the layer $l$;
-\item $\mathbf{H}_l$ is the output of the hidden layer $l$, defined as \color{red}{Caso f (2) nao seja uma camada de saida da rede, ela eh chamada de camada intermediaria ou escondida (hidden layer) (BENGIO-GOODFELLOW). No caso, a formula deveria ser L-2.}:
+\item $\mathbf{H}_l$ is the output of the previous layer $l$, defined as
 \end{itemize}
 
 \small
@@ -58,43 +58,7 @@ Formally, the set $\mathcal{H}$ of $M$ side outputs maps in each strategy is def
 
 In the case of \textbf{SLO}, the number of side-outputs amounts to the number of pooling layers in the network and for \textbf{ALO}, it is equal to the number of convolutional layers. An illustration for both strategies is presented in Figure~\ref{fig:extraction}.
 
-\section{Merging strategies}
-
-The main question in dealing with side-outputs in convolutional networks is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, but retain the useful information presented at different layers.
-
-%\subsection{Side output merging strategies}
-
-In this work, the strategy to overcome those challenges is to combine the side-outputs by exploring the knowledge of the learning process. To achieve that, it is proposed to apply simple merging functions that would enhance different desirable behavior, as described in the following: 
-\begin{itemize}
-\item \textit{ADD}: Aims to balance negative and positive weights;
-\item \textit{AVG}: Aims to create a proposition representing the whole network learning;  
-\item \textit{MAX}: Aims to represent confident values. 
-\end{itemize}  
-
-Formally, the single proposition $Z$ to be evaluated in the task, under each strategy could be defined as:
-
-\begin{align}
-Z_{ADD} &= \sum_{i=1}^{M}(\mathcal{H}_i)\\
-Z_{AVG} &= \frac{\sum_{i=1}^{M}(\mathcal{H}_i)}{M}\\
-Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
-\end{align} 
-
-The operations are performed element-wise on each side-output after they are re-scaled for the input size, while maintaining the connectivity pattern. 
-
-Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest this minimal formulation could be executed individually and paired later.
-
-
-Formally, consider once again the set of $N$ training images $\mathbf{X}$ and alike $\mathbf{Y}=\{Y_1, Y_2,...,Y_n\}$ the set of ground-truth images in which each pixel is labeled.  The ground-truth images are used to calculate the pixel accuracy measuring the rate that a pixel is correctly predicted to belong to the region of interest or the background.
-
-
-%. Each one of this images   Let $Z$ be the merged map obtained using one of the proposed functions and $|Z| = |I|, \forall I\in \mathbf{X}$.
-%
-%$\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
-%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
-%\begin{equation}
-%\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
-%\end{equation}
-
+\begin{comment}
 \subsection{Loss evaluation}
 
 For loss evaluation, we used two different functions: the well known categorical cross-entropy and fuse-pixel-error, proposed by \cite{xie2015}.
@@ -122,6 +86,68 @@ Formally, fuse-pixel-error, as defined in \cite{xie2015} consists in the distanc
 \end{equation}
 
 , where $\hat{Y}_{fuse} \equiv \sigma(\sum_{m=1}^{M}{h_m \hat{A}^{(m)}_{side}})$ and $\mathbf{h} = (h_1, ..., h_M)$.
+\end{comment}
+
+\subsection{Merging strategies}
+
+The main question in dealing with side-outputs in convolutional networks is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, but retain the useful information presented at different layers.
+
+%\subsection{Side output merging strategies}
+
+In this work, the strategy to overcome those challenges is to combine the side-outputs by exploring the knowledge of the learning process. To achieve that, it is proposed to apply simple merging functions that would enhance different desirable behavior, as described in the following: 
+\begin{itemize}
+\item \textit{ADD}: Aims to balance negative and positive weights;
+\item \textit{AVG}: Aims to create a proposition representing the whole network learning;  
+\item \textit{MAX}: Aims to represent confident values. 
+\end{itemize}  
+
+Formally, the single proposition $Z$ to be evaluated in the task, under each strategy could be defined as:
+
+\begin{align}
+Z_{ADD} &= \sum_{i=1}^{M}(\mathcal{H}_i)\\
+Z_{AVG} &= \frac{\sum_{i=1}^{M}(\mathcal{H}_i)}{M}\\
+Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
+\end{align} 
+
+The operations are performed element-wise on each side-output after they are re-scaled for the input size, while maintaining the connectivity pattern. 
+
+Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest this minimal formulation could be executed individually and paired later.
+
+Formally, consider once again the set of $N$ training images $\mathbf{X}$ and alike $\mathbf{Y}=\{Y_1, Y_2,...,Y_n\}$ the set of ground-truth images in which each pixel is labeled.  The ground-truth images are used to calculate the pixel accuracy measuring the rate that a pixel is correctly predicted to belong to the region of interest or the background.
+
+Formally defined in \cite{xie2015}, fuse-pixel-error consists in the distance $Dist(\cdot , \cdot)$ between the ground-truth label map and the neural net predictions. The loss function $\mathcal{L}_{fuse}$ is defined as:
+
+\begin{equation}
+ \mathcal{L}_{fuse}(W, w, h) = Dist(Y, \hat{Y}_{fuse} )
+ \label{eq:fuse_pixel_error}
+\end{equation}
+
+, where $\hat{Y}_{fuse} \equiv \sigma(\sum_{m=1}^{M}{h_m \hat{A}^{(m)}_{side}})$ and $\mathbf{h} = (h_1, ..., h_M)$.
+
+\vspace{0.3cm}
+
+For each merging strategy, each layer learns different information. The merging method influences in how the network leans. It is possible to see how each side output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network (that contains 13 side outputs). To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
+
+\begin{figure*}
+  \caption{Side outputs for each merging strategy in ALO network.}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/falreis/side_outputs.png}
+  \label{fig:side_outputs}
+\end{figure*}
+
+Figure \ref{fig:side_outputs} indicates that the first two side outputs does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, by other hand, does not clearly separates road from non-road pixels. The results are almost pixelated when compared with the original image.
+
+Figure \ref{fig:side_outputs} also indicates that fourty layer clearly contains the best side output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous layer. This possible indicates that the layer was not able to correctly learn the information from the previous one.
+
+The fuse layer in ALO network with different strategies take all information from side outputs and combine them to produce a single output. Since the network was trained before, merging layers seens to accepted bad results and use them to produce good values.
+
+%. Each one of this images   Let $Z$ be the merged map obtained using one of the proposed functions and $|Z| = |I|, \forall I\in \mathbf{X}$.
+%
+%$\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
+%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
+%\begin{equation}
+%\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
+%\end{equation}
 
 \section{Post-processing}
 

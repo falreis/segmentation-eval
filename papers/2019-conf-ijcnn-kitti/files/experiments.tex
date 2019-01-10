@@ -1,17 +1,3 @@
-\begin{comment}
-\begin{figure*}[!h]
-\begin{center}
-\begin{tabular}{ll}
-(2a) Categorical cross-entropy loss&(2b) Accuracy rate \\
-\input{figures/line-loss-train}&
-\input{figures/line-acc-full}\\
-\end{tabular}%
-\caption{Learning curves for the compared approaches. Left panel displays the the cross-entropy objective function during the learning step for the validation set. Right panel displays accuracy rate obtained on the training and validations sets during the learning step.}
-\end{center}
-\label{fig:learning}
-\end{figure*}
-\end{comment}
-
 \section{Experiments}
 \label{sec:experiments}
 
@@ -19,9 +5,7 @@ Experiments were conducted in the KITTI Road/Lane Dataset, part of KITTI Vision 
 
 In this work, it is used only the road ground-truths and the lane annotations were ignored. This dataset contains the same image with different ground-truths for lane and road estimation. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
 
-{\color{green}{Rever lista de procedimentos de data augmentation}}
-
-To increase the number of images in the training set, it is performed some data augmentation procedures. It was added images with pepper/salt noise, horizontal flipping (mirror) and  changes in contrast and brightness. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
+To increase the number of images in the training set, it is performed some data augmentation procedures. The following techniques were made: pepper/salt noise, horizontal flipping (mirror), contrast change, brightness change, noise shadow and random rain/snow. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
@@ -39,28 +23,10 @@ The first test set was design to identify the best neural network and its best m
 Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. 
 Figure \ref{fig:validation_loss}, presents categorical cross-entropy loss curve for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course. In other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
-\begin{comment}
-\begin{figure*}
-  \caption{Categorical Cross-Entropy Validation Loss}
-  \centering
-  \begin{tabular}{lll}
-  
-    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
-    \label{fig:validation_loss}
-    
-    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
-    \label{fig:validation_accuracy}
-    
-    \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
-    \label{fig:pixel_error}
-  \end{tabular}
-\end{figure*}
-\end{comment}
-
 \begin{figure*}
   \caption{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}
   \centering
-  \begin{tabular}{lll}
+  \begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
     \label{fig:validation_accuracy}
     
@@ -88,21 +54,6 @@ The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse 
     \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error_500_epochs.png}
   \end{tabular}%
   \label{fig:val_acc_500_epochs}
-\end{figure*}
-
-Once each merging strategy contains a different behavior for side outputs, its interesting to evaluate how each side output contributes with the final output. For this, Figure \ref{fig:side_outputs} was created. Once \textbf{ALO} network contains 13 side outputs, we decided only to visualize outputs from each stage. In the image provide, white pixels are classified as road, while black pixels are classified as background.
-
-Figure \ref{fig:side_outputs} indicates that the first two side outputs does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG's third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, by other hand, does not clearly separates road from non-road pixels. It is possible to see get information but as not clear as ALO-AVG's.
-
-Figure \ref{fig:side_outputs} also indicates that fourty layer clearly contains the best side output for both networks. A road mark is clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-AVG contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous one. This possible indicates that these layers does not learn correctly from the previous one.
-
-{\color{red}{Talvez adicionar artigo do Bengio, indicando que é difícil treinar as últimas camadas - tem nos slides do Zenilton de Deep Learning}}
-
-\begin{figure*}
-  \caption{Side outputs results from ALO-AVG and ALO-MAX networks. \color{red}{Acho q devo treinar a rede ALO-ADD para exibir a saída lateral, melhorando a discussão}}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figures/falreis/side_outputs.png}
-  \label{fig:side_outputs}
 \end{figure*}
 
 \subsection{Post-processing using mathematical morphology}

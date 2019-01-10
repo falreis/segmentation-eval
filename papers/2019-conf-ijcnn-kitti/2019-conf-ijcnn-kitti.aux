@@ -40,7 +40,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {III}Convolutional side-outputs for image segmentation}{2}{section.3}}
 \newlabel{sec:method}{{III}{2}{Convolutional side-outputs for image segmentation}{section.3}{}}
 \citation{xie2015}
-\citation{xie2015}
 \newlabel{fig:slo}{{1a}{3}{Subfigure 1a}{subfigure.1.1}{}}
 \newlabel{sub@fig:slo}{{(a)}{a}{Subfigure 1a\relax }{subfigure.1.1}{}}
 \newlabel{fig:alo}{{1b}{3}{Subfigure 1b}{subfigure.1.2}{}}
@@ -49,40 +48,37 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Stage Layer Outputs (SLO)}}}{3}{subfigure.1.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {All Layers Outputs (ALO)}}}{3}{subfigure.1.2}}
 \newlabel{fig:extraction}{{1}{3}{Illustration for the two side-outputs extraction strategies: (a) side-outputs extracted at each stage of the network and (b) side-outputs extracted at each convolutional layer}{figure.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Merging strategies}{3}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Loss evaluation}{3}{subsection.4.1}}
-\newlabel{eq:single_cross_entropy}{{11}{3}{Loss evaluation}{equation.4.11}{}}
-\newlabel{eq:cross_entropy}{{12}{3}{Loss evaluation}{equation.4.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Merging strategies}{3}{subsection.3.1}}
+\newlabel{eq:fuse_pixel_error}{{11}{3}{Merging strategies}{equation.3.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Side outputs for each merging strategy in ALO network.}}{4}{figure.2}}
+\newlabel{fig:side_outputs}{{2}{4}{Side outputs for each merging strategy in ALO network}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Post-processing}{4}{section.4}}
 \citation{KITTI}
 \citation{chollet2015keras}
 \citation{tensorflow2015-whitepaper}
-\newlabel{eq:fuse_pixel_error}{{13}{4}{Loss evaluation}{equation.4.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Post-processing}{4}{section.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Experiments}{4}{section.6}}
-\newlabel{sec:experiments}{{VI}{4}{Experiments}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Experimental setup}{4}{subsection.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Training results - Methods Comparison}{4}{subsection.6.2}}
 \citation{najman13}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}}{5}{figure.2}}
-\newlabel{fig:validation_accuracy}{{2}{5}{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}{figure.2}{}}
-\newlabel{fig:pixel_error}{{2}{5}{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-C}}Best results}{5}{subsection.6.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}}Post-processing using mathematical morphology}{5}{subsection.6.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-E}}Evaluation results and comparison with the state-of-the-art}{5}{subsection.6.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Validation Accuracy and Pixel Error for 500 epochs test set}}{6}{figure.3}}
-\newlabel{fig:val_acc_500_epochs}{{3}{6}{Validation Accuracy and Pixel Error for 500 epochs test set}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Side outputs results from ALO-AVG and ALO-MAX networks. \color  {red}{Acho q devo treinar a rede ALO-ADD para exibir a saída lateral, melhorando a discussão}}}{6}{figure.4}}
-\newlabel{fig:side_outputs}{{4}{6}{Side outputs results from ALO-AVG and ALO-MAX networks. \color {red}{Acho q devo treinar a rede ALO-ADD para exibir a saída lateral, melhorando a discussão}}{figure.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}{section.7}}
-\newlabel{sec:conclusion}{{VII}{6}{Conclusion}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experiments}{5}{section.5}}
+\newlabel{sec:experiments}{{V}{5}{Experiments}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Experimental setup}{5}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Training results - Methods Comparison}{5}{subsection.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}Best results}{5}{subsection.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-D}}Post-processing using mathematical morphology}{5}{subsection.5.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}}{6}{figure.3}}
+\newlabel{fig:validation_accuracy}{{3}{6}{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}{figure.3}{}}
+\newlabel{fig:pixel_error}{{3}{6}{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Validation Accuracy and Pixel Error for 500 epochs test set}}{6}{figure.4}}
+\newlabel{fig:val_acc_500_epochs}{{4}{6}{Validation Accuracy and Pixel Error for 500 epochs test set}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color  {red}Substituir imagem por uma com evidencia mais clara.}}}{6}{figure.5}}
+\newlabel{fig:post_processing_comp}{{5}{6}{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color {red}Substituir imagem por uma com evidencia mais clara.}}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-E}}Evaluation results and comparison with the state-of-the-art}{6}{subsection.5.5}}
 \citation{liu2017}
 \bibstyle{IEEEtran}
 \bibdata{2019-ijcnn,dl,hier-seg}
 \bibcite{DOMINGUEZ}{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color  {red}Substituir imagem por uma com evidencia mais clara.}}}{7}{figure.5}}
-\newlabel{fig:post_processing_comp}{{5}{7}{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color {red}Substituir imagem por uma com evidencia mais clara.}}{figure.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces KITTI benchmark evaluation results for each category}}{7}{table.1}}
 \newlabel{tab:metrics}{{I}{7}{KITTI benchmark evaluation results for each category}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{7}{section.6}}
+\newlabel{sec:conclusion}{{VI}{7}{Conclusion}{section.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Visual representation of the results}}{7}{figure.6}}
 \newlabel{fig:visual_representation}{{6}{7}{Visual representation of the results}{figure.6}{}}
 \bibcite{guigues06}{2}
