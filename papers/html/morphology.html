@@ -11,53 +11,42 @@
       vertical-align: middle;
     }
     img{
-      width: 400px;
+      width: 500px;
+    }
+    table{
+      width: 640px;
     }
   </style>
 </head>
 <body>
   <table>
     <tr>
-      <td>
-      </td>
+      <td width="20%"></td>
       <td>
         <span>ALO-AVG</span>
       </td>
-      <td>
-        <span>ALO-MAX</span>
-      </td>
     </tr>
-    <tr>
-        <td>
-            <span>Ground-truth</span>
-        </td>
-        <td>
-          <img src="../../code/datasets/Kitti/data_road/training/gt_image_2/um_road_000000.png" />
-        </td>
-        <td>
-          <img src="../../code/datasets/Kitti/data_road/training/gt_image_2/um_road_000000.png" />
-        </td>
-      </tr>
-    <tr>
       <td>
         <span>Without Post processing</span>
       </td>
       <td>
-        <img src="../../code/export/Kitti/20190102/alo/avg/train/um_000000.png" />
-      </td>
-      <td>
-        <img src="../../code/export/Kitti/20190102/alo/max/train/um_000000.png" />
+        <img src="../../code/export/Kitti/20190102/alo/avg/test/um_road_000000.png" />
       </td>
     </tr>
     <tr>
       <td>
-        <span>Mathematical Morphology <br />Post Processing</span>
+        <span>Mathematical Morphology Post Processing</span>
       </td>
       <td>
-          <img src="../../code/export/Kitti/20190102/alo/avg/train_morf/um_000000.png" />
+          <img src="../../code/export/Kitti/20190102/alo/avg/test_morf/um_road_000000.png" />
         </td>
-        <td>
-          <img src="../../code/export/Kitti/20190102/alo/max/train_morf/um_000000.png" />
+    </tr>
+    <tr>
+      <td>
+        <span>Difference</span>
+      </td>
+      <td>
+          <img src="../../code/export/Kitti/20190102/alo/avg/diff_morf.png" />
         </td>
     </tr>
   </table>

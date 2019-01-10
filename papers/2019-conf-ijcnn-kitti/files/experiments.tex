@@ -39,26 +39,35 @@ The first test set was design to identify the best neural network and its best m
 Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. 
 Figure \ref{fig:validation_loss}, presents categorical cross-entropy loss curve for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course. In other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
-\begin{figure}
+\begin{comment}
+\begin{figure*}
   \caption{Categorical Cross-Entropy Validation Loss}
   \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
-  \label{fig:validation_loss}
-\end{figure}
+  \begin{tabular}{lll}
+  
+    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
+    \label{fig:validation_loss}
+    
+    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
+    \label{fig:validation_accuracy}
+    
+    \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
+    \label{fig:pixel_error}
+  \end{tabular}
+\end{figure*}
+\end{comment}
 
-\begin{figure}
-  \caption{Categorical Cross-Entropy Validation Accuracy}
+\begin{figure*}
+  \caption{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}
   \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
-  \label{fig:validation_accuracy}
-\end{figure}
-
-\begin{figure}
-  \caption{Pixel Error Validation Loss}
-  \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
-  \label{fig:pixel_error}
-\end{figure}
+  \begin{tabular}{lll}
+    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
+    \label{fig:validation_accuracy}
+    
+    \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
+    \label{fig:pixel_error}
+  \end{tabular}
+\end{figure*}
 
 Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics to identify the best values. Figure \ref{fig:validation_accuracy} contains validation accuracy and is related to categorical cross entropy method while Figure \ref{fig:pixel_error} shows Fuse Pixel Error method. While Figure \ref{fig:validation_accuracy} shows an expected curve, after loss evaluation in the previous image, Figure \ref{fig:pixel_error} indicates a new information: SLO-MAX neural network seens to overfitting around 40 epochs. After some steps with unstable pixel error values, the values persists almost unchange for the rest of training epochs. 
 
@@ -70,12 +79,16 @@ In order to improve the results, a new set of tests were performed using 500 tra
 
 The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. For ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}.
 
-\begin{figure}
-  \caption{Accuracy and Pixel Error for 500 epochs test set}
+\begin{figure*}
+  \caption{Validation Accuracy and Pixel Error for 500 epochs test set}
   \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
+  \begin{tabular}{ll}
+    \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
+  
+    \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error_500_epochs.png}
+  \end{tabular}%
   \label{fig:val_acc_500_epochs}
-\end{figure}
+\end{figure*}
 
 Once each merging strategy contains a different behavior for side outputs, its interesting to evaluate how each side output contributes with the final output. For this, Figure \ref{fig:side_outputs} was created. Once \textbf{ALO} network contains 13 side outputs, we decided only to visualize outputs from each stage. In the image provide, white pixels are classified as road, while black pixels are classified as background.
 
@@ -85,12 +98,12 @@ Figure \ref{fig:side_outputs} also indicates that fourty layer clearly contains 
 
 {\color{red}{Talvez adicionar artigo do Bengio, indicando que é difícil treinar as últimas camadas - tem nos slides do Zenilton de Deep Learning}}
 
-\begin{figure}
+\begin{figure*}
   \caption{Side outputs results from ALO-AVG and ALO-MAX networks. \color{red}{Acho q devo treinar a rede ALO-ADD para exibir a saída lateral, melhorando a discussão}}
   \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs.png}
+  \includegraphics[width=0.9\textwidth]{figures/falreis/side_outputs.png}
   \label{fig:side_outputs}
-\end{figure}
+\end{figure*}
 
 \subsection{Post-processing using mathematical morphology}
 
@@ -101,7 +114,7 @@ For comparison, we developed Figure \ref{fig:post_processing_comp}. In this imag
 \begin{figure}
   \caption{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color{red}Substituir imagem por uma com evidencia mais clara.}}
   \centering
-  \includegraphics[width=1.\columnwidth]{figures/falreis/post_processing_comparison.png}
+  \includegraphics[width=0.9\columnwidth]{figures/falreis/post_processing_comparison.png}
   \label{fig:post_processing_comp}
 \end{figure}
 
