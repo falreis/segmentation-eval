@@ -20,33 +20,31 @@ The operations to combine side outputs are presented in the name of the methods.
 
 The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieve the best result. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
 
-Figures \ref{fig:validation_loss}, \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. 
-Figure \ref{fig:validation_loss}, presents categorical cross-entropy loss curve for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course. In other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
+Figures \ref{fig:validation_accuracy_pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. Figure \ref{fig:validation_accuracy_pixel_error}, presents fuse pixel error loss for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course (SLO-MAX seens to overfitting around 40 epochs). By other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
-\begin{figure*}
+\begin{figure}
   \caption{Categorical Cross-Entropy Validation Accuracy and Pixel Error Validation Loss}
   \centering
-  \begin{tabular}{ll}
-    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
-    \label{fig:validation_accuracy}
-    
+  %\begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
-    \label{fig:pixel_error}
-  \end{tabular}
-\end{figure*}
+  
+    %\includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
+  %\end{tabular}
+  \label{fig:validation_accuracy_pixel_error}
+\end{figure}
 
-Figures \ref{fig:validation_accuracy} and \ref{fig:pixel_error} presents metrics to identify the best values. Figure \ref{fig:validation_accuracy} contains validation accuracy and is related to categorical cross entropy method while Figure \ref{fig:pixel_error} shows Fuse Pixel Error method. While Figure \ref{fig:validation_accuracy} shows an expected curve, after loss evaluation in the previous image, Figure \ref{fig:pixel_error} indicates a new information: SLO-MAX neural network seens to overfitting around 40 epochs. After some steps with unstable pixel error values, the values persists almost unchange for the rest of training epochs. 
-
-From previous graphs, in short we have ALO networks with  superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs, which create more possibilities of interchangeability between confidant values.
+From previous graph, it is possible to conclude that ALO networks had superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs, which create more possibilities of interchangeability between confident values.
 
 \subsection{Best results}
 
-In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance, we evaluated only the two-best nets in the previous test. The categorical cross entropy validation accuracy and pixel error validation loss, for both ALO-AVG and ALO-MAX nets are available in Figure \ref{fig:val_acc_500_epochs}.
+In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluated only ALO network in this new round of tests. The categorical cross entropy validation accuracy and pixel error validation loss for ALO nets are available in Figure \ref{fig:val_acc_500_epochs}.
 
-The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. For ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}.
+The results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side outputs. {\color{red}The best result for cross entropy validation metric is 0.XXX above the worst one. For pixel-error validation loss, the best value is 0.XXX above the worst one.}
+
+%The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. For ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}.
 
 \begin{figure*}
-  \caption{Validation Accuracy and Pixel Error for 500 epochs test set}
+  \caption{Categorical Cross Entropy Validation Accuracy and Pixel Error Validation Loss results for 500 epochs test set}
   \centering
   \begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
