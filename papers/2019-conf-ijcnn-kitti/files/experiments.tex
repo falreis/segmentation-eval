@@ -18,7 +18,7 @@ The operations to combine side outputs are presented in the name of the methods.
 
 \subsection{Training results - Methods Comparison}
 
-The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieve the best result. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
+The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieve the best results. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
 
 Figures \ref{fig:validation_accuracy_pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. Figure \ref{fig:validation_accuracy_pixel_error}, presents fuse pixel error loss for tested approaches. ALO networks appears to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produces high instability in the learning course (SLO-MAX seens to overfitting around 40 epochs). By other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
@@ -39,10 +39,6 @@ From previous graph, it is possible to conclude that ALO networks had superior a
 
 In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluated only ALO network in this new round of tests. The categorical cross entropy validation accuracy and pixel error validation loss for ALO nets are available in Figure \ref{fig:val_acc_500_epochs}.
 
-The results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side outputs. {\color{red}The best result for cross entropy validation metric is 0.XXX above the worst one. For pixel-error validation loss, the best value is 0.XXX above the worst one.}
-
-%The best accuracy value for ALO-AVG model was \textbf{0.9821} and the best fuse pixel error was \textbf{0.0332}. For ALO-MAX model, the best accuracy and fuse pixel error were \textbf{0.9823} and \textbf{0.0372}.
-
 \begin{figure*}
   \caption{Categorical Cross Entropy Validation Accuracy and Pixel Error Validation Loss results for 500 epochs test set}
   \centering
@@ -54,16 +50,22 @@ The results of both metrics are quite similar for all networks. This indicates a
   \label{fig:val_acc_500_epochs}
 \end{figure*}
 
+The best results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX). For pixel-error validation loss, the best value is just \textbf{0.0040} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). {\color{red}Application of standard deviation to evaluate the stability of the methods also does not indicates a far away better method.}
+
+Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error loss metric. For this criteria, ALO-AVG was defined as the best method of our training set.
+
 \subsection{Post-processing using mathematical morphology}
 
 After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}. This procedure removes small noises created by the foreground~(the road) in the background. We defined a set of kernels with the sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$ and applied in the images to reduce different sizes of noises. 
 
-For comparison, we developed Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. {\color{red}It is possible to see the removal of part of the noise in the right of the image.} This procedure increase the confidence, once small variations in the results can lead a potential problem, if used in a self-driving vehicle.
+A simple comparison is presented in Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. It is possible to see the removal of part of the noise in the far right of the image (\textit{white pixels}). This procedure increase the confidence, once small variations in the results can lead a potential problem, if used in a self-driving vehicle. 
+
+A negative interference of this method is the removal of some points that seens to fit correctly. This situation happens frequently in the base of the road proposition. In Figure \ref{fig:post_processing_comp}, it can be seen in the botton left and the bottom right of the road (\textit{red pixels}).
 
 \begin{figure}
-  \caption{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. {\color{red}Substituir imagem por uma com evidencia mais clara.}}
+  \caption{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology.}
   \centering
-  \includegraphics[width=0.9\columnwidth]{figures/falreis/post_processing_comparison.png}
+  \includegraphics[width=1.\columnwidth]{figures/falreis/post_processing_comparison.png}
   \label{fig:post_processing_comp}
 \end{figure}
 

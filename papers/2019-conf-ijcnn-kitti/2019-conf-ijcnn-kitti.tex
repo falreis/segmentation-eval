@@ -9,10 +9,10 @@
 \usepackage{xcolor}
 \usepackage{hyperref} %url
 \usepackage{comment}
-%\usepackage{subfig}
-
+%\usepackage[caption=false]{subfig}
 \input{config/headers}
 \input{config/colors}
+
 
 \ifCLASSOPTIONcompsoc
 \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
@@ -30,28 +30,71 @@
   %                         -main-memory=90000000 
                            \tikzexternalcheckshellescape 
                            -halt-on-error 
-                           -interaction=nonstopmode
+                           -interaction=nonstopmode %-shell-escape
                            -jobname "\image" "\texsource"}} 
                            
-                           
+%\usepackage{todonotes}
+%\newcommand{\remSilvio}[1]{\todo[color=green]{{\tiny [SG]} {\scriptsize #1\par}}}
+%\newcommand{\remSilvioi}[1]{\todo[color=green,inline]{{\tiny [SG]} {\scriptsize #1\par}}}
+
+%\newcommand{\remSimon}[1]{\todo[color=blue]{{\tiny [SM]} {\scriptsize #1\par}}}
+%\newcommand{\remSimoni}[1]{\todo[color=blue,inline]{{\tiny [SM]} {\scriptsize #1\par}}}
+
+%\newcommand{\remEwa}[1]{\todo[color=yellow]{{\tiny [E]} {\scriptsize #1\par}}}
+%\newcommand{\remEwai}[1]{\todo[color=yellow,inline]{{\tiny [E]} {\scriptsize #1\par}}}                        
+\newcommand{\remEwai}[1]{{\color{violet}{\tiny [E]} {\scriptsize #1}}}    
                               
 \begin{document}
 
+%\title{Combining Side Outputs of Convolutional Neural Network for Road Segmentation
 \title{Combining convolutional side-outputs for road image segmentation
 \thanks{The authors are grateful to FAPEMIG (PPM 00006-16), CNPq (Universal 421521/2016-3 and PQ 307062/2016-3), CAPES (MAXIMUM STIC-AmSUD 048/14) and PUC Minas for the financial support to this work.}
 }
 
+\begin{comment}
+\author{
+\IEEEauthorblockN{Felipe Augusto Lima Reis}
+\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+\textit{Pontifical Catholic University of Minas Gerais}\\
+Belo Horizonte, Minas Gerais, Brazil\\
+falreis@sga.pucminas.br}
+\and
+\IEEEauthorblockN{Raquel Almeida}
+\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+\textit{Pontifical Catholic University of Minas Gerais}\\
+Belo Horizonte, Minas Gerais, Brazil \\
+raquel.almeida.685026@sga.pucminas.br}
+\and
+\IEEEauthorblockN{Silvio Jamil F. Guimar\~aes}
+\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+\textit{Pontifical Catholic University of Minas Gerais}\\
+Belo Horizonte, Minas Gerais, Brazil \\
+sjamil@pucminas.br}
+\and
+\IEEEauthorblockN{Simon Malinowski}
+\IEEEauthorblockA{\textit{Linkmedia}-- Univ Rennes, Inria, CNRS, IRISA \\
+Rennes, France \\
+simon.malinowski@irisa.fr}
+\and
+\IEEEauthorblockN{Zenilton K. G. do Patroc\'inio Jrs}
+\IEEEauthorblockA{\textit{Audio-Visual Information Processing Laboratory} \\
+\textit{Pontifical Catholic University of Minas Gerais}\\
+Belo Horizonte, Minas Gerais, Brazil \\
+zenilton@pucminas.br}
+}
+\end{comment}
+
 \author{
 \IEEEauthorblockN{
-Felipe A. L. Reis\textsuperscript{\dag}, Raquel Almeida\textsuperscript{\dag}, Silvio Jamil F. Guimar\~aes\textsuperscript{\dag}, Zenilton K. G. do Patroc\'inio Jr.\textsuperscript{\dag}, \\Simon Malinowski\textsuperscript{*} and Ewa Kijak\textsuperscript{*}
+Felipe A. L. Reis\textsuperscript{\dag}, Raquel Almeida\textsuperscript{\dag}, Simon Malinowski\textsuperscript{*}, Ewa Kijak\textsuperscript{*} \\ Silvio Jamil F. Guimar\~aes\textsuperscript{\dag} and Zenilton K. G. do Patroc\'inio Jr.\textsuperscript{\dag}
 }
 \\
 \IEEEauthorblockA{
-\textsuperscript{\dag}\textit{Audio-Visual Information Processing Laboratory} - \textit{Pontifical Catholic University of Minas Gerais} \\ 
+\textsuperscript{\dag}\textit{Audio-Visual Information Processing Laboratory} -- \textit{Pontifical Catholic University of Minas Gerais} \\ 
 Belo Horizonte, Minas Gerais, Brazil \\
 \{falreis, raquel.almeida.685026\}@sga.pucminas.br, \{sjamil, zenilton\}@pucminas.br
 \\ \\
-\textsuperscript{*}\textit{Linkmedia, IRISA} - \textit{Universit\'e de Rennes 1} \\
+\textsuperscript{*}\textit{Linkmedia} -- Univ Rennes, Inria, CNRS, IRISA\\
 Rennes, France \\
 \{simon.malinowski, ewa.kijak\}@irisa.fr
 }

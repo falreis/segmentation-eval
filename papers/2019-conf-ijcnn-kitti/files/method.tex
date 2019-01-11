@@ -109,7 +109,7 @@ Z_{AVG} &= \frac{\sum_{i=1}^{M}(\mathcal{H}_i)}{M}\\
 Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
 \end{align} 
 
-The operations are performed element-wise on each side-output after they are re-scaled for the input size, while maintaining the connectivity pattern. 
+The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled for the input image size using a transposed convolution layer~\cite{dumoulin2016}. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. 
 
 Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest this minimal formulation could be executed individually and paired later.
 
@@ -137,9 +137,9 @@ For each merging strategy, each layer learns different information. The merging 
 
 Figure \ref{fig:side_outputs} indicates that the first two side outputs does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, by other hand, does not clearly separates road from non-road pixels. The results are almost pixelated when compared with the original image.
 
-Figure \ref{fig:side_outputs} also indicates that fourty layer clearly contains the best side output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous layer. This possible indicates that the layer was not able to correctly learn the information from the previous one.
+Figure \ref{fig:side_outputs} also indicates that fourth layer clearly contains the best side output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous layer. This possible indicates that the layer was not able to correctly learn the information from the previous one.
 
-The fuse layer in ALO network with different strategies take all information from side outputs and combine them to produce a single output. Since the network was trained before, merging layers seens to accepted bad results and use them to produce good values.
+The fuse layer in ALO network with different strategies take all information from side outputs and combine them to produce a single output. Since the network was trained before, merging layers seems to accepted bad results and use them to produce good values.
 
 %. Each one of this images   Let $Z$ be the merged map obtained using one of the proposed functions and $|Z| = |I|, \forall I\in \mathbf{X}$.
 %
@@ -156,18 +156,4 @@ Mathematical morphology is consistent with the non-linear image analysis, presen
 
 In this work, it is proposed to use mathematical morphology as post-processing step, meaning that this step is not inserted in the learning stage. The main goal is to better cope with the fundamental properties of a well-segmented image, particularly, region uniformity and continuity. To achieve that, it is proposed to use a function filter, called area opening, which tend to destroy the small, thin and conspicuous areas.
 
-Formally, let $\hat{Y}\in \mathbb{R}^2$ be the output of a testing image consistent with the representation created by the parameters learned in the network. Consider $B$ a structuring element and $\gamma_B$ the morphological opening produced by it. Consider also $\lambda$ the threshold parameter which will determine how small a certain area must be to be purged. In this case,  $\gamma_B \subseteq \gamma_\lambda$ if and only if $B$ is a finite union of connected components of area greater or equal to $\lambda$. It is expected that this simple additional step could reduce possible noises on the final result, and in this way improve the results.
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
+Formally, let $\hat{Y}\in \mathbb{R}^2$ be the output of a testing image consistent with the representation created by the parameters learned in the network. Consider $B$ a structuring element and $\gamma_B$ the morphological opening produced by it. Consider also $\lambda$ the threshold parameter which will determine how small a certain area must be to be purged. In this case,  $\gamma_B \subseteq \gamma_\lambda$ if and only if $B$ is a finite union of connected components of area greater or equal to $\lambda$. This additional step could reduce possible noises on the final result and improve the accuracy on distinguishing the road from other objects presented on the image.

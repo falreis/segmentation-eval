@@ -144,6 +144,10 @@ J.~Cousty, L.~Najman, Y.~Kenmochi, and S.~Guimar{\~a}es, ``Hierarchical
   saliency maps,'' \emph{Journal of Mathematical Imaging and Vision}, vol.~60,
   no.~4, pp. 479--502, May 2018.
 
+\bibitem{dumoulin2016}
+V.~Dumoulin and F.~Visin, ``A guide to convolution arithmetic for deep
+  learning,'' \emph{CoRR}, 2016.
+
 \bibitem{KITTI}
 J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
   evaluation benchmark for road detection algorithms,'' in \emph{International

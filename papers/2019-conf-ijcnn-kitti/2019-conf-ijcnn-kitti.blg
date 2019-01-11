@@ -18,45 +18,45 @@ Warning--empty title in goodfellow16
 Warning--empty title in najman13
 
 Done.
-You've used 26 entries,
+You've used 27 entries,
             4087 wiz_defined-function locations,
-            984 strings with 12745 characters,
-and the built_in function-call counts, 20888 in all, are:
-= -- 1537
-> -- 660
+            987 strings with 12844 characters,
+and the built_in function-call counts, 21282 in all, are:
+= -- 1569
+> -- 669
 < -- 141
-+ -- 343
-- -- 131
-* -- 1037
-:= -- 2987
-add.period$ -- 57
-call.type$ -- 26
-change.case$ -- 32
++ -- 347
+- -- 133
+* -- 1053
+:= -- 3059
+add.period$ -- 59
+call.type$ -- 27
+change.case$ -- 33
 chr.to.int$ -- 327
-cite$ -- 29
-duplicate$ -- 1520
-empty$ -- 1764
-format.name$ -- 159
-if$ -- 4891
+cite$ -- 30
+duplicate$ -- 1556
+empty$ -- 1801
+format.name$ -- 162
+if$ -- 4979
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 311
-newline$ -- 103
-num.names$ -- 34
-pop$ -- 782
+int.to.str$ -- 27
+missing$ -- 317
+newline$ -- 106
+num.names$ -- 35
+pop$ -- 799
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1557
+skip$ -- 1588
 stack$ -- 0
-substring$ -- 787
-swap$ -- 1203
+substring$ -- 788
+swap$ -- 1222
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 26
+type$ -- 27
 warning$ -- 3
-while$ -- 80
-width$ -- 28
-write$ -- 267
+while$ -- 81
+width$ -- 29
+write$ -- 275
 (There were 3 warnings)
