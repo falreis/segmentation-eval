@@ -140,38 +140,34 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
             pred_image = vis.visualize(np.argmax(output[0],axis=1).reshape((height,width)), label_colours, False)
             
             #expand predict to the size of the original image
-            if(mark):
-                expanded_pred = cv2.resize(pred_image, dsize=(original_width, original_height, 3)[:2], interpolation=cv2.INTER_CUBIC)
-            else:
-                expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
+            expanded_pred = transform.resize(pred_image, (original_height, original_width, 3)).astype(np.float)
 
             #mark lane or create "ground-truth"
             for i in range(1, original_height):
                 for j in range(1, original_width):                
                     if (expanded_pred[i, j, 2] > 0):
-                        if(mark):
-                            original_image[i,j,0] = 0
-                            original_image[i,j,2] = 0
+                        if(gray):
+                            expanded_pred[i,j,:] = [1, 1, 1]
                         else:
-                            if(gray):
-                                expanded_pred[i,j,:] = [1, 1, 1]
-                            else:
-                                expanded_pred[i,j,:] = [1., 0., 1.]
+                            expanded_pred[i,j,:] = [1., 0., 1.]
             
-            #apply mathematical morphology
-            if((not mark) and morf):
-                if(gray):
-                    expanded_pred = cv2.cvtColor(expanded_pred.astype(np.float32), cv2.COLOR_BGR2GRAY)
+            #gray color
+            if(gray):
+                expanded_pred = cv2.cvtColor(expanded_pred.astype(np.float32), cv2.COLOR_BGR2GRAY)
 
+            #apply mathematical morphology
+            if(morf):
                 for i in range(3, 8, 1):
                     kernel = np.ones((2*i-1,2*i-1),np.uint8)
-                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)
-                
-                '''
-                for i in range(3, 5, 1):
-                    kernel = np.ones((2*i-1,2*i-1),np.uint8)
-                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_CLOSE, kernel)
-                '''                
+                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)          
+
+            #mark prediction over image
+            if(mark):
+                for i in range(1, original_height):
+                    for j in range(1, original_width):                
+                        if (expanded_pred[i, j, 2] > 0):
+                            original_image[i,j,0] = 0
+                            original_image[i,j,2] = 0
 
             #save data
             pos = image_path.rfind('/')
