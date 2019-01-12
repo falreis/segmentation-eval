@@ -20,7 +20,7 @@ Amongst the many strategies for deep models, convolutional networks are well-kno
 
 Let's consider $\mathbf{X}$ set of $N$ input images $I$. Formally, let a convolutional network $\mathit{f}$ composed by $L$ layers be defined as:
 
-\remEwai{\textbf{$X$ should be defined}}
+\remEwai{$X$ should be defined} \remFeli{Done}
 \begin{equation}
 \mathit{f}(\mathbf{X})=\mathbf{W}_L\mathbf{H}_{L-1}
 \end{equation}
@@ -38,7 +38,7 @@ Let's consider $\mathbf{X}$ set of $N$ input images $I$. Formally, let a convolu
 \noindent For consistency, consider $\mathbf{H}_0=\mathbf{X}=\{X_1, X_2,...,X_N\}$. %the set of $N$ input images $I$.
 
 The VGG network~\cite{simonyan2014} is one of the first attempts to create deeper models following the convolutional scheme. The core of the layers in VGG is defined by a convolution $C$ immediately followed by a rectified linear unit, as follows:
-\remEwai{\textbf{define $C_l$}}
+\remEwai{define $C_l$} \remFeli{Done}
 \begin{equation}
 C_l=ReLU(\mathbf{W}_{l}\mathbf{H}_{l-1})~\forall l \in \{1,..,L-1\}
 \end{equation}
@@ -64,7 +64,7 @@ Formally, the set $\mathcal{H}$ of $M$ side outputs maps in each strategy is def
 In the case of \textbf{SLO}, the number of side-outputs corresponds to the number of pooling layers in the network and for \textbf{ALO}, it is equal to the number of convolutional layers. An illustration for both strategies is presented in Figure~\ref{fig:extraction}.
 
 \subsection{Merging strategies}
-\remEwai{\textbf{a subsection cannot live alone :)}}
+\remEwai{a subsection cannot live alone :)} \remFeli{Done}
 
 When dealing with side-outputs in convolutional networks, the main question is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, while retaining the useful information contained at different layers.
 
@@ -102,7 +102,7 @@ Once the combined map is created, it is evaluated on the segmentation task which
 %\end{equation}
 
 \subsection{Post-processing}
-%\remEwai{Maybe to short to be a section}
+\remEwai{Maybe to short to be a section} \remFeli{Now subsection}
 
 Mathematical morphology is consistent with the non-linear image analysis, presenting solid theoretical foundation and idempotent functions. The formulations are presented in the complete lattice geometric space, in which the functions are performed considering whole sets operating over another whole set. In mathematical morphology, the operators are known a priori and defined using the sets of structuring elements.
 

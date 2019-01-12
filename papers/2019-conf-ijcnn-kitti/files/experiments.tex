@@ -1,23 +1,24 @@
 \section{Experiments}
 \label{sec:experiments}
 
-Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of 1242 pixels width and 375 pixels height. \remEwai{\textbf{What is the resolution of the images?}} The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. Some images contains also sidewalks, that was not evaluated in this paper - sidewalks were classified as background. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
+Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of 1242 pixels width and 375 pixels height. The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. Some images contains also sidewalks, that was not evaluated in this paper - sidewalks were classified as background. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
 
-In this work, only the road ground-truths is used and the lane annotations are ignored. This dataset contains the same image with different ground-truths for lane and road estimation. \remEwai{Should be good to show examples of images and groundtruths from the dataset} \remFeli{I think we won't have enought space in this paper}  Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
+\remEwai{What is the resolution of the images?} \remFeli{Done}
+
+In this work, only the road ground-truths is used and the lane annotations are ignored. This dataset contains the same image with different ground-truths for lane and road estimation. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
+
+\remEwai{Should be good to show examples of images and groundtruths from the dataset} \remFeli{I think we won't have enought space in this paper} 
 
 To increase the number of images in the training set, a data augmentation procedure is performed. The following transformations were applied: pepper/salt noise, horizontal flipping (mirror), contrast change, brightness change, noise shadow and random rain/snow. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
    
-Our networks were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. All training experiments were performed in GeForce GTX 1080 8GB GPU.
+Our networks were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduce to 624 pixels width and 192 pixels height (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
 
-%For simplicity, in the remaining of this work, the network using the side outputs extracted at each stage of the VGG will be called Stage Layer Outputs~(\textbf{SLO}) and it is composed by $n=5$ side outputs. Similarly, for the side outputs extracted at each convolutional layer, it will be called All Layers Outputs~(\textbf{ALO}) and it is composed by $n=13$ side outputs. For comparison, it is also defined a network similar to VGG, with only the final output, without any side outputs, called No Side Outputs~(\textbf{NSO}).
 The \textbf{SLO} network is composed of $n=5$ side outputs, and the \textbf{ALO} network is composed of $n=13$ side outputs. 
 The operations to combine side outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods.
 As a baseline, we use the VGG16 network without any side output but only the final output, called No Side Outputs~(\textbf{NSO}).
-
-
 
 \subsection{Training results - Methods Comparison}
 
@@ -26,7 +27,7 @@ The first test set was design to identify the best neural network and its best m
 Figures \ref{fig:validation_accuracy_pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. Figure \ref{fig:validation_accuracy_pixel_error}, presents fuse pixel error loss for tested approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability in the learning course (SLO-MAX seems to overfit around 40 epochs). On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
 \begin{figure}
-  \caption{Pixel Error Validation Loss \remEwai{Only Pixel Error according to the text}}
+  \caption{Pixel Error Validation Loss \remEwai{Only Pixel Error according to the text} \remFeli{Fixed}}
   \centering
   %\begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
@@ -41,18 +42,19 @@ From previous graph, it is possible to conclude that ALO networks had superior a
 \subsection{Side outputs contribution in each merging strategy}
 \label{ssec:merging_learn}
 
-For each merging strategy, each layer learns different information. The merging method influences how the network learns. It is possible to see how each side-output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network (that contains 13 side outputs). \remEwai{Not clear relatively to Fig. 2} To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
+Different merging strategies learns differently. Each layer also learns its particular information. The merging strategy influences how the networks learn. It is possible to see how each side-output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network. To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
+\remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
 
 \begin{figure*}
   \caption{Side outputs for each merging strategy in ALO network.}
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/falreis/side_outputs.png}
+  \includegraphics[width=1.0\textwidth]{figures/falreis/side_outputs.png}
   \label{fig:side_outputs}
 \end{figure*}
 
-\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)}
+\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
 
-Figure \ref{fig:side_outputs} indicates that the first two side outputs does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are almost pixelated when compared with the original image.
+Figure \ref{fig:side_outputs} indicates that the first two stage side outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are almost pixelated when compared with the original image.
 
 Figure \ref{fig:side_outputs} also indicates that fourth layer clearly contains the best side output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous one.
 
