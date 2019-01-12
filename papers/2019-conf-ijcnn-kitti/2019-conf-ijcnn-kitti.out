@@ -1,13 +1,15 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related work}{}% 2
-\BOOKMARK [1][-]{section.3}{Convolutional side-outputs for image segmentation}{}% 3
+\BOOKMARK [1][-]{section.3}{Side-outputs merging strategies and mathematical morphology post-processing}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Merging strategies}{section.3}% 4
-\BOOKMARK [1][-]{section.4}{Post-processing}{}% 5
-\BOOKMARK [1][-]{section.5}{Experiments}{}% 6
-\BOOKMARK [2][-]{subsection.5.1}{Experimental setup}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.2}{Training results - Methods Comparison}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.3}{Best results}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.4}{Post-processing using mathematical morphology}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.5}{Evaluation results and comparison with the state-of-the-art}{section.5}% 11
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12
-\BOOKMARK [1][-]{section*.1}{References}{}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Post-processing}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Experiments}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Experimental setup}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Training results - Methods Comparison}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Side outputs contribution in each merging strategy}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.4}{Best results}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.5}{Post-processing using mathematical morphology}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.6}{Evaluation results and comparison with the state-of-the-art}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
+\BOOKMARK [1][-]{section.6}{Acknowledgements}{}% 14
+\BOOKMARK [1][-]{section*.1}{References}{}% 15

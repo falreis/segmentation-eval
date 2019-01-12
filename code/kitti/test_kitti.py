@@ -86,10 +86,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         batch_size = 16
 
         # estimate accuracy on whole dataset using loaded weights
-        if(gray):
-            label_colours = np.array([[0, 0, 0],[1, 1, 1]])
-        else:
-            label_colours = np.array([[255, 0, 0],[255, 0, 255]])
+        label_colours = np.array([[255, 0, 0],[255, 0, 255]])
 
         #load test data
         DataPath = '../datasets/Kitti/data_road/'
@@ -153,7 +150,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
             
             #gray color
             if(gray):
-                expanded_pred = cv2.cvtColor(expanded_pred.astype(np.float32), cv2.COLOR_BGR2GRAY)
+                expanded_pred = cv2.cvtColor(expanded_pred.astype(np.float32), cv2.COLOR_RGB2GRAY)
 
             #apply mathematical morphology
             if(morf):
@@ -172,11 +169,15 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
             #save data
             pos = image_path.rfind('/')
             name_file = image_path[pos+1:]
+            save_filename = (save_path + name_file)
 
             if(mark):
-                io.imsave((save_path + name_file), original_image)
+                io.imsave(save_filename, original_image)
             else:
-                io.imsave((save_path + name_file), expanded_pred)
+                if(gray):
+                    io.imsave(save_filename, expanded_pred, dtype=np.uint8)
+                else:
+                    io.imsave(save_filename, expanded_pred)
             
             #verbose
             index += 1
