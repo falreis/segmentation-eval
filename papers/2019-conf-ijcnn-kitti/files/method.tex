@@ -64,6 +64,7 @@ Formally, the set $\mathcal{H}$ of $M$ side-outputs maps in each strategy is def
 In the case of \textbf{SLO}, the number of side-outputs corresponds to the number of pooling layers in the network and for \textbf{ALO}, it is equal to the number of convolutional layers. An illustration for both strategies is presented in Figure~\ref{fig:extraction}.
 
 \subsection{Merging strategies}
+\label{ssec:mergin_strategies}
 \remEwai{a subsection cannot live alone :)} \remFeli{Done}
 
 When dealing with side-outputs in convolutional networks, the main question is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, while retaining the useful information contained at different layers.

@@ -80,7 +80,7 @@ A side effect of this method is the removal of some points that seems to fit cor
 \subsection{Side-outputs contribution in each merging strategy}
 \label{ssec:merging_learn}
 
-Different merging strategies learns differently. Each layer also learns its particular information. The merging strategy influences how the networks learn. It is possible to see how each side-output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side-outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network. To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
+Each layer of each merging strategies learns in its particular way. The merging strategy influences how the networks learn. It is possible to see how each side-output learns and contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side-outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network, for our trained networks. To make the layers outputs easier to analyse, the images were  converted to black and white, where white pixels were classified as road and black pixels were classified as background.
 
 \remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
 
@@ -93,25 +93,29 @@ Different merging strategies learns differently. Each layer also learns its part
 
 \remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side-output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
 
-Figure \ref{fig:side_outputs} indicates that the first two stage side-outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are almost pixelated when compared with the original image.
+Figure \ref{fig:side_outputs} indicates that the first two stage side-outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are pixelated and blur when compared with the original image.
 
-Figure \ref{fig:side_outputs} also indicates that fourth layer clearly contains the best side-output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side-output contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous one.
+Figure \ref{fig:side_outputs} also indicates that fourth stage side-output layer (output $\mathcal{H}_{10}$) clearly contains the best side-output for all ALO networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final stage side-output ($\mathcal{H}_{13}$) contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous ones.
 
-The fuse layer in ALO network with different strategies take all information from side-outputs and combine them to produce a single output \remEwai{= the proposition $Z$}. Since the network was trained before \remEwai{? Not clear}, merging layers \remEwai{merging layers = fuse layer?} seems to accept bad results and use them to produce good values.
+The fuse layer combine all side-outputs (including the ones not shown in Figure \ref{fig:side_outputs}) in order to predict. Despite poor results on some layers, the learning process adjusts itself so that even very few accurate results can be used by the model, similar to ensemble methods.
+
+\remEwai{= the proposition $Z$} \remEwai{? Not clear} \remEwai{merging layers = fuse layer?} \remFeli{Fixed. Text improved but I don't know if it is good enough. I don't know if I can cite ensemble methods.}
 
 \subsection{Evaluation results and comparison with the state-of-the-art}
 
 Reminding that the test evaluation could only be performed using KITTI Server, the metrics provided are maximum F1-measure~(MaxF), average precision~(AP), precision~(PRE), recall~(REC), false positive rate~(FPR) and false negative rate~(FNR). 
 
-The server tests were performed using ALO-AVG method, the best one in the training process. To provide succint labels, we will use the name \textbf{ALO-AVG} for the regular approach and \textbf{ALO-AVG-MM} for the version with mathematical morphology post-processing. 
+The server tests were performed using ALO-AVG method, the best one in the training process. To provide succint labels, we will use the name \textbf{ALO-AVG} for the regular approach and \textbf{ALO-AVG-MM} for the version with mathematical morphology post-processing. The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. 
 
-The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. As expected, the ALO-AVG-MM model performs better then the ALO-AVG in almost all the cases. {\color{red}It is also possible to notice that although the post-processing slightly improves the overall performance, it also increases the number of false negatives. This could be an indication that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than desired.}
+\begin{comment}
+{\color{As expected, the ALO-AVG-MM model performs better then the ALO-AVG in almost all the cases. red}It is also possible to notice that although the post-processing slightly improves the overall performance, it also increases the number of false negatives. This could be an indication that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than desired.}
+\end{comment}
 
-If compared with the state-of-the-art~(called \textit{PLARD}, an anonymous submission on the KITTI Server platform), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due to the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives and negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.
+If compared with the state-of-the-art~(called \textit{PLARD}, an anonymous submission on the KITTI Server platform \footnote{Results accessed in 2018-01-13}), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due to the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives and negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.
 
 \input{tables/kitti-metrics}
 
-A visual representation of the results is presented in Figure \ref{fig:visual_representation}. This image shows the results marked (in green) over the road, to show the performance of our model.
+A visual representation of ALO-AVG-MM predictions are presented in Figure \ref{fig:visual_representation}. This image shows the predictions marked (in green) over the road, to show the performance of our model.
 
 \begin{figure}
   \caption{Visual representation of the results}
