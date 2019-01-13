@@ -86,7 +86,10 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
         batch_size = 16
 
         # estimate accuracy on whole dataset using loaded weights
-        label_colours = np.array([[255, 0, 0],[255, 0, 255]])
+        if(gray):
+            label_colours = np.array([[0., 0., 0.],[1., 1., 1.]])
+        else:
+            label_colours = np.array([[255, 0, 0],[255, 0, 255]])
 
         #load test data
         DataPath = '../datasets/Kitti/data_road/'
@@ -144,7 +147,7 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
                 for j in range(1, original_width):                
                     if (expanded_pred[i, j, 2] > 0):
                         if(gray):
-                            expanded_pred[i,j,:] = [1, 1, 1]
+                            expanded_pred[i,j,:] = [1., 1., 1.]
                         else:
                             expanded_pred[i,j,:] = [1., 0., 1.]
             
