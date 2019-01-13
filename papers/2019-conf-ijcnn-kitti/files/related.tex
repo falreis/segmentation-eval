@@ -13,14 +13,14 @@ The HED network creates a side-output layer at each stage of the VGG16 network~\
 The authors in~\cite{cheng2016} use the edge maps created by the HED network alongside with other features such as brightness, color, gradient and variance to describe images. The goal of their proposal was to create an efficient framework for real-time segmentation, focused on a fusion strategy to update region features.
 
 
-In the COB network, the authors also create edge maps from side activations, differing mainly from HED by the attribution to candidate contours orientation information and weights representing the contour strength. The contour orientations are estimated by approximation to known polygon segments and the segments weights are computed based on the candidate contour neighboring region used as a confidence measure. To combine the side outputs a non-linear function is used to regress both the segment weights and the orientation maps, creating region hierarchical trees by thresholding the contour strength. The network perform well in multiple tasks such as object proposal, object detection, semantic contour and segmentation.
+In the COB network, the authors also create edge maps from side activations, differing mainly from HED by the attribution to candidate contours orientation information and weights representing the contour strength. The contour orientations are estimated by approximation to known polygon segments and the segments weights are computed based on the candidate contour neighboring region used as a confidence measure. To combine the side-outputs a non-linear function is used to regress both the segment weights and the orientation maps, creating region hierarchical trees by thresholding the contour strength. The network perform well in multiple tasks such as object proposal, object detection, semantic contour and segmentation.
 
 
 Finally, the RCF network, not only creates multiple side-outputs, but also uses multiple scales of the images in the input layer. Differently from the HED network, RCF extract one side-output at each convolutional layer of VGG, arguing that  this could create more detailed representations and improve the network accuracy. The merging process is performed by a series of operations, comprising grouping by convolutions, element-wise sums, up-samplings, local loss functions and concatenations.  
 
 
 
-%Regarding the fusion methods, in the aforementioned related strategies, the HED fusion process is also inserted in the network, in which it is attributed weights for each side output that will be learned individually and determine its contribution on the final evaluation. The RCF instead, adopted a $1\times1$ convolution after each output, followed by a element-wise sum, an up-sampling and a loss function. The values are then concatenated and pass through a $1\times1$ convolution for the final evaluation. Finally, the COB network evaluates the The side outputs and the contour orientation maps are evaluated individually creating multiple proposal that could be thresholded based on the confidence value at later stage.  
+%Regarding the fusion methods, in the aforementioned related strategies, the HED fusion process is also inserted in the network, in which it is attributed weights for each side-output that will be learned individually and determine its contribution on the final evaluation. The RCF instead, adopted a $1\times1$ convolution after each output, followed by a element-wise sum, an up-sampling and a loss function. The values are then concatenated and pass through a $1\times1$ convolution for the final evaluation. Finally, the COB network evaluates the The side-outputs and the contour orientation maps are evaluated individually creating multiple proposal that could be thresholded based on the confidence value at later stage.  
 
 
 
@@ -32,7 +32,7 @@ Finally, the RCF network, not only creates multiple side-outputs, but also uses 
 %(1b) Side outputs extracted at each convolutional layer\\
 %\input{figures/full}\\
 %\end{tabular}%
-%\caption{Illustration for  the proposed side outputs extraction one following the HED model~(a) at each stage of the VGG network and the other following RCF model~(b) at each convolutional layer}
+%\caption{Illustration for  the proposed side-outputs extraction one following the HED model~(a) at each stage of the VGG network and the other following RCF model~(b) at each convolutional layer}
 %\end{center}
 %\label{fig:methods}
 %\end{figure*}

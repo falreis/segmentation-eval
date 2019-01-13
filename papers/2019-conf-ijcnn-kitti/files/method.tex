@@ -53,7 +53,7 @@ C_l=ReLU(\mathbf{W}_{l}\mathbf{H}_{l-1})~\forall l \in \{1,..,L-1\}
 
 Questions on which and how many side-outputs would be adequate for the image segmentation task, are assessed using two different extraction strategies, both applied in the VGG network. Namely: (i) Stage Layer Outputs~(\textbf{SLO}), inspired by the HED model, creating one side-output for each VGG stage; and (ii) All Layers Outputs~(\textbf{ALO}), inspired by the RCF model, creating one side-output for each convolutional layer. 
 
-Formally, the set $\mathcal{H}$ of $M$ side outputs maps in each strategy is defined as:
+Formally, the set $\mathcal{H}$ of $M$ side-outputs maps in each strategy is defined as:
 \small
 \begin{align}
 \mathcal{H}_{SLO}=\{\mathcal{H}_1,...,\mathcal{H}_m|& m\in[1,S]~\text{and}~\mathcal{H}_m \in\{S^{(1)},S^{(2)}\}\}\\
@@ -96,16 +96,19 @@ Once the combined map is created, it is evaluated on the segmentation task which
 %. Each one of this images   Let $Z$ be the merged map obtained using one of the proposed functions and $|Z| = |I|, \forall I\in \mathbf{X}$.
 %
 %$\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
-%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
+%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side-output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
 %\begin{equation}
 %\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
 %\end{equation}
 
 \subsection{Post-processing}
+\label{ssec:post_processing}
 \remEwai{Maybe to short to be a section} \remFeli{Now subsection}
 
-Mathematical morphology is consistent with the non-linear image analysis, presenting solid theoretical foundation and idempotent functions. The formulations are presented in the complete lattice geometric space, in which the functions are performed considering whole sets operating over another whole set. In mathematical morphology, the operators are known a priori and defined using the sets of structuring elements.
+Mathematical morphology is consistent with the non-linear image analysis, presenting solid theoretical foundation and idempotent functions. The formulations are presented in the complete lattice geometric space, in which the functions are performed considering whole sets operating over another whole set. In mathematical morphology, the operators are known a priori and defined using the sets of structuring elements (also know as kernel).
 
 In this work, it is proposed to use mathematical morphology as post-processing step, meaning that this step is not inserted in the learning stage. The main goal is to better cope with the fundamental properties of a well-segmented image, particularly, region uniformity and continuity. To achieve that, it is proposed to use a function filter, called area opening, which tend to destroy the small, thin and conspicuous areas.
 
 Formally, let $\hat{Y}\in \mathbb{R}^2$ be the output of a testing image consistent with the representation created by the parameters learned in the network. Consider $B$ a structuring element and $\gamma_B$ the morphological opening produced by it. Consider also $\lambda$ the threshold parameter which will determine how small a certain area must be to be purged. In this case,  $\gamma_B \subseteq \gamma_\lambda$ if and only if $B$ is a finite union of connected components of area greater or equal to $\lambda$. This additional step could reduce possible noises on the final result and improve the accuracy on distinguishing the road from other objects presented on the image.
+
+~\cite{najman13}

@@ -16,56 +16,33 @@ To increase the number of images in the training set, a data augmentation proced
    
 Our networks were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduce to 624 pixels width and 192 pixels height (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
 
-The \textbf{SLO} network is composed of $n=5$ side outputs, and the \textbf{ALO} network is composed of $n=13$ side outputs. 
-The operations to combine side outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods.
-As a baseline, we use the VGG16 network without any side output but only the final output, called No Side Outputs~(\textbf{NSO}).
+The \textbf{SLO} network is composed of $n=5$ side-outputs, and the \textbf{ALO} network is composed of $n=13$ side-outputs. 
+The operations to combine side-outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods.
+As a baseline, we use the VGG16 network without any side-output but only the final output, called No Side Outputs~(\textbf{NSO}).
 
 \subsection{Training results - Methods Comparison}
 
 The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieves the best results. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
 
-Figures \ref{fig:validation_accuracy_pixel_error} presents the relevant curves obtained during the training phase for the proposed approaches. Figure \ref{fig:validation_accuracy_pixel_error}, presents fuse pixel error loss for tested approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability in the learning course (SLO-MAX seems to overfit around 40 epochs). On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
+Figure \ref{fig:validation_loss} presents the categorical cross-entropy loss curves obtained during the training phase for the proposed approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability in the learning course. On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
 \begin{figure}
-  \caption{Pixel Error Validation Loss \remEwai{Only Pixel Error according to the text} \remFeli{Fixed}}
+  \caption{Categorical Cross Entropy Validation Loss \remEwai{Only Pixel Error according to the text} \remFeli{Changed}}
   \centering
-  %\begin{tabular}{ll}
-    \includegraphics[width=1.\columnwidth]{figures/falreis/pixel_error.png}
-  
-    %\includegraphics[width=1.\columnwidth]{figures/falreis/validation_accuracy.png}
-  %\end{tabular}
-  \label{fig:validation_accuracy_pixel_error}
+    \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
+  \label{fig:validation_loss}
 \end{figure}
 
-From previous graph, it is possible to conclude that ALO networks had superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side outputs, which create more possibilities of interchangeability between confident values.
-
-\subsection{Side outputs contribution in each merging strategy}
-\label{ssec:merging_learn}
-
-Different merging strategies learns differently. Each layer also learns its particular information. The merging strategy influences how the networks learn. It is possible to see how each side-output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network. To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
-\remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
-
-\begin{figure*}
-  \caption{Side outputs for each merging strategy in ALO network.}
-  \centering
-  \includegraphics[width=1.0\textwidth]{figures/falreis/side_outputs.png}
-  \label{fig:side_outputs}
-\end{figure*}
-
-\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
-
-Figure \ref{fig:side_outputs} indicates that the first two stage side outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are almost pixelated when compared with the original image.
-
-Figure \ref{fig:side_outputs} also indicates that fourth layer clearly contains the best side output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side output contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous one.
-
-The fuse layer in ALO network with different strategies take all information from side outputs and combine them to produce a single output \remEwai{= the proposition $Z$}. Since the network was trained before \remEwai{? Not clear}, merging layers \remEwai{merging layers = fuse layer?} seems to accept bad results and use them to produce good values.
+From previous graph, it is possible to conclude that ALO networks had superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side-outputs, which create more possibilities of interchangeability between confident values.
 
 \subsection{Best results}
 
-In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluate only ALO network in this new round of tests. The categorical cross entropy validation accuracy and pixel error validation loss for ALO nets are available in Figure \ref{fig:val_acc_500_epochs}.
+In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluate only ALO network in this new round of tests. 
+
+To measure the performance in our tests we use two different metrics. The first one is the well known categorical cross entropy accuracy. Also, we use an metric called pixel-error. This measure evaluates the number of pixels incorrectly classified over the total number of the pixels (number of wrong pixels). These two metrics are available in Figure \ref{fig:val_acc_500_epochs}.
 
 \begin{figure*}
-  \caption{Categorical Cross Entropy Validation Accuracy and Pixel Error Validation Loss results for 500 epochs test set}
+  \caption{Categorical Cross Entropy Validation Accuracy and Pixel-Error results for 500 epochs test set}
   \centering
   \begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
@@ -75,19 +52,21 @@ In order to improve the results, a new set of tests were performed using 500 tra
   \label{fig:val_acc_500_epochs}
 \end{figure*}
 
-The best results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX). For pixel-error validation loss, the best value is just \textbf{0.0040} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG).
+The best results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side-outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). For pixel-error, the best value is just \textbf{0.0040} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX).
 
-Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error loss metric. For this criteria, ALO-AVG was defined as the best method of our training set.
+Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error metric. Also, AVG fusion method was also previous used in \cite{xie2015} and \cite{liu2017} to combine the results. For this criteria, ALO-AVG was defined as the best method of our training set.
 
 \subsection{Post-processing using mathematical morphology}
 
-\remEwai{Insert reference to section IV that describes that post-processing. \cite{najman13} should go in section IV.}
-After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}. This procedure removes small noises created by the foreground~(the road) in the background. We defined a set of kernels with the sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$ and applied them in the images to reduce different sizes of noises. 
-\remEwai{I don't understand here. All the structuring elements are applied sequentially? which makes no sense since the opening by the largest structuring element is included in the opening by the smallest structuring element if I'm right. Or are they all tested independently? In this latter case, which size is finally retained?}
+\remEwai{Insert reference to section IV that describes that post-processing. \cite{najman13} should go in section IV.} \remFeli{Partial Done}
 
-A simple comparison is presented in Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. It is possible to see the removal of part of the noise in the far right of the image (\textit{white pixels}). This procedure increases the confidence, as small variations in the results can lead to a potential problem, if used in a self-driving vehicle. 
+After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}, as defined in Section \ref{ssec:post_processing}. This procedure removes small noises created by the foreground~(the road) in the background. 
 
-A side effect of this method is the removal of some points that seems to fit correctly. This situation happens frequently in the base of the road proposition. In Figure \ref{fig:post_processing_comp}, it can be seen in the bottom left and the bottom right of the road (\textit{red pixels}).
+The opening operation was applied using square structuring elements full of ones. We decided to use a set of kernels with sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$, sequentially applied into the image. This type of operation, although unusual, achieved the best results. It allowed that sections incorrectly classified by the network could be eliminated by the sequential thinning of noises in different shapes. The results also become more smooth with this procedure.
+
+\remEwai{I don't understand here. All the structuring elements are applied sequentially? which makes no sense since the opening by the largest structuring element is included in the opening by the smallest structuring element if I'm right. Or are they all tested independently? In this latter case, which size is finally retained?} \remFeli{Yes, sequencially. Although unusual, it removed incorrect classification better than small kernels alones. (Text changed for better explanation)}
+
+A simple comparison of our procedure with the original network prediction is presented in Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. It is possible to see the removal of part of the noise in the far right of the image (\textit{white pixels}). The noise removal increases the confidence, as small variations in the results can lead to a potential problem, if used in a self-driving vehicle. 
 
 \begin{figure}
   \caption{Comparison between ALO-AVG without post processing and ALO-AVG with post-processing with mathematical morphology. In the last picture, \textit{white} pixels represents desirable differences while \textit{red} pixels represents undesirable ones.}
@@ -95,6 +74,30 @@ A side effect of this method is the removal of some points that seems to fit cor
   \includegraphics[width=1.\columnwidth]{figures/falreis/post_processing_comparison.png}
   \label{fig:post_processing_comp}
 \end{figure}
+
+A side effect of this method is the removal of some points that seems to fit correctly. This situation happens frequently in the base of the road proposition. In Figure \ref{fig:post_processing_comp}, it can be seen in the bottom left and the bottom right of the road (\textit{red pixels}).
+
+\subsection{Side-outputs contribution in each merging strategy}
+\label{ssec:merging_learn}
+
+Different merging strategies learns differently. Each layer also learns its particular information. The merging strategy influences how the networks learn. It is possible to see how each side-output contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side-outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network. To make the results more clear, images were also converted to black and white, where white pixels were classified as road and black pixels were classified as background.
+
+\remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
+
+\begin{figure*}
+  \caption{Side outputs for each merging strategy in ALO network.}
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/falreis/side_outputs.png}
+  \label{fig:side_outputs}
+\end{figure*}
+
+\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side-output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
+
+Figure \ref{fig:side_outputs} indicates that the first two stage side-outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are almost pixelated when compared with the original image.
+
+Figure \ref{fig:side_outputs} also indicates that fourth layer clearly contains the best side-output for the evaluated networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final side-output contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous one.
+
+The fuse layer in ALO network with different strategies take all information from side-outputs and combine them to produce a single output \remEwai{= the proposition $Z$}. Since the network was trained before \remEwai{? Not clear}, merging layers \remEwai{merging layers = fuse layer?} seems to accept bad results and use them to produce good values.
 
 \subsection{Evaluation results and comparison with the state-of-the-art}
 

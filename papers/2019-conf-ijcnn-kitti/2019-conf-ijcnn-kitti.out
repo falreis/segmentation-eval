@@ -6,9 +6,9 @@
 \BOOKMARK [1][-]{section.4}{Experiments}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Experimental setup}{section.4}% 7
 \BOOKMARK [2][-]{subsection.4.2}{Training results - Methods Comparison}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.3}{Side outputs contribution in each merging strategy}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.4}{Best results}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.5}{Post-processing using mathematical morphology}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Best results}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.4}{Post-processing using mathematical morphology}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.5}{Side-outputs contribution in each merging strategy}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.6}{Evaluation results and comparison with the state-of-the-art}{section.4}% 12
 \BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
 \BOOKMARK [1][-]{section.6}{Acknowledgements}{}% 14
