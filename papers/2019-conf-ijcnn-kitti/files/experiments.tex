@@ -38,9 +38,9 @@ From previous graph, it is possible to conclude that ALO networks had superior a
 
 \subsection{Best results}
 
-In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluate only ALO network in this new round of tests. 
+In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluate all ALO networks in this new round of tests. For comparison, we also trained NSO network.
 
-To measure the performance in our tests we use two different metrics. The first one is the well known categorical cross entropy accuracy. Also, we use an metric called pixel-error. This measure evaluates the number of pixels incorrectly classified over the total number of the pixels (number of wrong pixels). These two metrics are available in Figure \ref{fig:val_acc_500_epochs}.
+To measure the performance in our tests we use two different metrics. The first one is the well known categorical cross entropy accuracy. Also, we use an metric called pixel-error. This measure evaluates the number of pixels incorrectly classified over the total number of the pixels (number of wrong pixels). The metric was adopted when we observed high values of accuracy in results in which there were visibly many errors, mainly in the existence of numerous false positives. These two metrics are available in Figure \ref{fig:val_acc_500_epochs}.
 
 \begin{figure*}
   \caption{Categorical Cross Entropy Validation Accuracy and Pixel-Error results for 500 epochs test set}
@@ -53,7 +53,9 @@ To measure the performance in our tests we use two different metrics. The first 
   \label{fig:val_acc_500_epochs}
 \end{figure*}
 
-The best results of both metrics are quite similar for all networks. This indicates absence of a far better method to combine side-outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). For pixel-error, the best value is just \textbf{0.0040} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX).
+Is clearly visible in Figure \ref{fig:val_acc_500_epochs} that side-outputs influences the performance of the networks. All ALO networks had overall performance better than NSO network. Also, the learning curve of ALO networks shows that the network learns faster when use multiple side outputs. At last, it is possible to use bigger learning rate parameters, increasing the learn in early times.
+
+The best results of both metrics are quite similar for all networks. This indicates absence of a far better ALO method to combine side-outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). For pixel-error, the best value is just \textbf{0.0040} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX).
 
 Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error metric. Also, AVG fusion method was also previous used in \cite{xie2015} and \cite{liu2017} to combine the results. For this criteria, ALO-AVG was defined as the best method of our training set.
 
@@ -106,17 +108,17 @@ The fuse layer combine all side-outputs (including the ones not shown in Figure 
 
 Reminding that the test evaluation could only be performed using KITTI Server, the metrics provided are maximum F1-measure~(MaxF), average precision~(AP), precision~(PRE), recall~(REC), false positive rate~(FPR) and false negative rate~(FNR). 
 
-The server tests were performed using ALO-AVG method, the best one in the training process. To provide succint labels, we will use the name \textbf{ALO-AVG} for the regular approach and \textbf{ALO-AVG-MM} for the version with mathematical morphology post-processing. The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. 
+The server tests were performed using ALO-AVG method, the best one in the training process. To provide succint labels, we will use the name \textbf{ALO-AVG-MM} for our version with mathematical morphology post-processing. The results achieved  on the test set according to each category in the road scenes are presented in Table~\ref{tab:metrics}. 
 
 \begin{comment}
 {\color{As expected, the ALO-AVG-MM model performs better then the ALO-AVG in almost all the cases. red}It is also possible to notice that although the post-processing slightly improves the overall performance, it also increases the number of false negatives. This could be an indication that perhaps the applied kernel sizes are not adequate and are removing more of the foreground than desired.}
 \end{comment}
 
-If compared with the state-of-the-art~(called \textit{PLARD}, an anonymous submission on the KITTI Server platform \footnote{Results accessed in 2018-01-13}), the proposed method is comparable and sometimes superior, regarding the maximum F1-measure and the recall metrics. This is due to the fact that although the reported state-of-the-art on the dataset presents a superior average precision, it also almost always presents a higher rate of false positives and negatives. This indicates that the proposed methods are more precise in delineating the regions to be segmented.
+If compared with the best result in KITTI Server platform~(called \textit{PLARD}, an anonymous submission\footnote{Results accessed in 2018-01-14. The method used was not described and no paper publishing information was provided.}), the results had overall performance 5.0\% below. Compared with the best paper submission \cite{Caltagirone2018}, the results were 4.0\% below. Once our model was trained only for 500 epochs with high learning rate, it is expected to achieve better results with fine tunning of our model, which is not the main focus of this paper. Also, it is important to notice that we didn't used methods to increase precision like bird-eye-view transformations and space color changes, that can improve the precision of the model.
 
 \input{tables/kitti-metrics}
 
-A visual representation of ALO-AVG-MM predictions are presented in Figure \ref{fig:visual_representation}. This image shows the predictions marked (in green) over the road, to show the performance of our model. The generated subimages were provided by Kitti Evaluation Server, based in the generated binary map sent to the server.
+To show the performance of our model, a visual representation of ALO-AVG-MM predictions are presented in Figure \ref{fig:visual_representation}. This image shows the true positives predictions marked in green, false negatives marked in  red and false positives marked in blue. The image contains results provided by Kitti Evaluation Server, based in the generated binary map sent to the server.
 
 \begin{figure}
   \caption{Visual representation of the results. The generated image was provided by Kitti Evaluation Server. Green pixels represents true positives, red pixels are false negatives and blue pixels are false positives.}

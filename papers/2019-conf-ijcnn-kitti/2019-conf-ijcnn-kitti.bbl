@@ -169,4 +169,9 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   \url{https://www.tensorflow.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Caltagirone2018}
+L.~Caltagirone, M.~Bellone, L.~Svensson, and M.~Wahde, ``Lidar-camera fusion
+  for road detection using fully convolutional neural networks,''
+  \emph{Robotics and Autonomous Systems}, 2018.
+
 \end{thebibliography}
