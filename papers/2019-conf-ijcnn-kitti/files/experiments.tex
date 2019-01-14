@@ -1,20 +1,20 @@
 \section{Experiments}
 \label{sec:experiments}
 
-Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of 1242 pixels width and 375 pixels height. The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. Some images contains also sidewalks, that was not evaluated in this paper - sidewalks were classified as background. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
+Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of 1242 pixels width and 375 pixels height. The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
 
-\remEwai{What is the resolution of the images?} \remFeli{Done}
+%\remEwai{What is the resolution of the images?} \remFeli{Done}
 
 In this work, only the road ground-truths is used and the lane annotations are ignored. This dataset contains the same image with different ground-truths for lane and road estimation. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
 
-\remEwai{Should be good to show examples of images and groundtruths from the dataset} \remFeli{I think we won't have enought space in this paper} 
+%\remEwai{Should be good to show examples of images and groundtruths from the dataset} \remFeli{I think we won't have enought space in this paper} 
 
 To increase the number of images in the training set, a data augmentation procedure is performed. The following transformations were applied: pepper/salt noise, horizontal flipping (mirror), contrast change, brightness change, noise shadow and random rain/snow. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
    
-Our networks were build using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduce to 624 pixels width and 192 pixels height (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
+Our networks were built using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduce to 624 pixels width and 192 pixels height (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
 
 The \textbf{SLO} network is composed of $n=5$ side-outputs, and the \textbf{ALO} network is composed of $n=13$ side-outputs. 
 The operations to combine side-outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods.
@@ -22,12 +22,13 @@ As a baseline, we use the VGG16 network without any side-output but only the fin
 
 \subsection{Training results - Methods Comparison}
 
-The first test set was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieves the best results. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
+The first test was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieves the best results. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
 
 Figure \ref{fig:validation_loss} presents the categorical cross-entropy loss curves obtained during the training phase for the proposed approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability in the learning course. On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
 \begin{figure}
-  \caption{Categorical Cross Entropy Validation Loss \remEwai{Only Pixel Error according to the text} \remFeli{Changed}}
+  \caption{Categorical Cross Entropy Validation Loss}
+  %\remEwai{Only Pixel Error according to the text} \remFeli{Changed}
   \centering
     \includegraphics[width=1.\columnwidth]{figures/falreis/validation_loss.png}
   \label{fig:validation_loss}
@@ -58,13 +59,13 @@ Due to the similarity of the results, we will indicate the best method using the
 
 \subsection{Post-processing using mathematical morphology}
 
-\remEwai{Insert reference to section IV that describes that post-processing. \cite{najman13} should go in section IV.} \remFeli{Partial Done}
+%\remEwai{Insert reference to section IV that describes that post-processing. \cite{najman13} should go in section IV.} \remFeli{Partial Done}
 
-After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening~\cite{najman13}, as defined in Section \ref{ssec:post_processing}. This procedure removes small noises created by the foreground~(the road) in the background. 
+After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening, as defined in Section \ref{ssec:post_processing}. This procedure removes small noises created by the foreground~(the road) in the background. 
 
 The opening operation was applied using square structuring elements full of ones. We decided to use a set of kernels with sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$, sequentially applied into the image. This type of operation, although unusual, achieved the best results. It allowed that sections incorrectly classified by the network could be eliminated by the sequential thinning of noises in different shapes. The results also become more smooth with this procedure.
 
-\remEwai{I don't understand here. All the structuring elements are applied sequentially? which makes no sense since the opening by the largest structuring element is included in the opening by the smallest structuring element if I'm right. Or are they all tested independently? In this latter case, which size is finally retained?} \remFeli{Yes, sequencially. Although unusual, it removed incorrect classification better than small kernels alones. (Text changed for better explanation)}
+%\remEwai{I don't understand here. All the structuring elements are applied sequentially? which makes no sense since the opening by the largest structuring element is included in the opening by the smallest structuring element if I'm right. Or are they all tested independently? In this latter case, which size is finally retained?} \remFeli{Yes, sequencially. Although unusual, it removed incorrect classification better than small kernels alones. (Text changed for better explanation)}
 
 A simple comparison of our procedure with the original network prediction is presented in Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. It is possible to see the removal of part of the noise in the far right of the image (\textit{white pixels}). The noise removal increases the confidence, as small variations in the results can lead to a potential problem, if used in a self-driving vehicle. 
 
@@ -82,7 +83,7 @@ A side effect of this method is the removal of some points that seems to fit cor
 
 Each layer of each merging strategies learns in its particular way. The merging strategy influences how the networks learn. It is possible to see how each side-output learns and contributes to the final output in Figure \ref{fig:side_outputs}. To simplify the study of side-outputs, we decided to visualize only the last  output from each stage in \textbf{ALO} network, for our trained networks. To make the layers outputs easier to analyse, the images were  converted to black and white, where white pixels were classified as road and black pixels were classified as background.
 
-\remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
+%\remEwai{Not clear relatively to Fig. 2} \remFeli{Changed section. Removed Fig. 2 information.}
 
 \begin{figure*}
   \caption{Side outputs for each merging strategy in ALO network.}
@@ -91,7 +92,7 @@ Each layer of each merging strategies learns in its particular way. The merging 
   \label{fig:side_outputs}
 \end{figure*}
 
-\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side-output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
+%\remEwai{Fig. \ref{fig:side_outputs} is not so clear. Notation from the text should be reused: the side-output i what is denoted $\mathcal{H}_i$ (if I'm correctly understanding)} \remFeli{Changed. I don't know if it was clear enough. I'll think in how to improve it}
 
 Figure \ref{fig:side_outputs} indicates that the first two stage side-outputs (outputs $\mathcal{H}_2$ and $\mathcal{H}_4$) does not produce significant information. Images are almost white, indicating that all pixels were classified as road. ALO-AVG and ALO-ADD third layer contains a clear separation between road pixel than non-road pixels. ALO-MAX's third layer, on the other hand, does not clearly separate road from non-road pixels. The results are pixelated and blur when compared with the original image.
 
@@ -99,7 +100,7 @@ Figure \ref{fig:side_outputs} also indicates that fourth stage side-output layer
 
 The fuse layer combine all side-outputs (including the ones not shown in Figure \ref{fig:side_outputs}) in order to predict. Despite poor results on some layers, the learning process adjusts itself so that even very few accurate results can be used by the model, similar to ensemble methods.
 
-\remEwai{= the proposition $Z$} \remEwai{? Not clear} \remEwai{merging layers = fuse layer?} \remFeli{Fixed. Text improved but I don't know if it is good enough. I don't know if I can cite ensemble methods.}
+%\remEwai{= the proposition $Z$} \remEwai{? Not clear} \remEwai{merging layers = fuse layer?} \remFeli{Fixed. Text improved but I don't know if it is good enough. I don't know if I can cite ensemble methods.}
 
 \subsection{Evaluation results and comparison with the state-of-the-art}
 
@@ -115,10 +116,10 @@ If compared with the state-of-the-art~(called \textit{PLARD}, an anonymous submi
 
 \input{tables/kitti-metrics}
 
-A visual representation of ALO-AVG-MM predictions are presented in Figure \ref{fig:visual_representation}. This image shows the predictions marked (in green) over the road, to show the performance of our model.
+A visual representation of ALO-AVG-MM predictions are presented in Figure \ref{fig:visual_representation}. This image shows the predictions marked (in green) over the road, to show the performance of our model. The generated subimages were provided by Kitti Evaluation Server, based in the generated binary map sent to the server.
 
 \begin{figure}
-  \caption{Visual representation of the results}
+  \caption{Visual representation of the results. The generated image was provided by Kitti Evaluation Server. Green pixels represents true positives, red pixels are false negatives and blue pixels are false positives.}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/visual_representation.png}
   \label{fig:visual_representation}

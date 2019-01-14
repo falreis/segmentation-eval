@@ -1,9 +1,6 @@
 \section{Related work}
 \label{sec:related}
 
-
-
-
 Deep learning approaches were initially described as black-box methods, meaning that not much were known about the reasoning and decisions of the created models. Much exertion have been applied to investigate the networks operation, whether by methodical experimentation~\cite{ilin17,kuo16,eigen14,zhang17} or visualization methods~\cite{simonyan13,zeiler14}. Those efforts provided more clarity of the deep models and characterized the learned features as complex concepts build from simpler ones. Also it demonstrates the learning progression from detailed to coarser representations as the scale and resolution reduce through the network.  When applied to object recognition task for instance, the raw pixel on the input layer is learned as segments and parts until the composition of an object concept on posterior layers, while the input scale reduces to a single feature vector on the output.  
 
 The knowledge of the concept abstraction and learning progression allowed new research endeavors to explore  them in high-level tasks. For instance, three main architectures standout in recent years, namely: (i) Holistically-nested Edge Detection~(HED)~\cite{xie2015}; (ii) Convolutional Oriented Boundaries~(COB)~\cite{maninis2017}; and (iii) Rich Convolutional Features~(RCF)~\cite{liu2017}. These architectures explicitly explore the models of a traditional deep network to perform a certain high-level task, in which all extract side-outputs of the network and each present a different strategy to combine them . 

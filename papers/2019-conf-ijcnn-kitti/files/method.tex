@@ -14,13 +14,14 @@
 Hierarchies are long associated with the image segmentation task~\cite{jones97,cardelino06,najman12,xu16,cousty18}, to a degree that it improves a coherent organization of nested regions. The main motivation for using well-defined hierarchies is that different hierarchical level contains different detail level. In this work, instead of using a well-defined hand-engineered hierarchical structure, it is proposed to explore the concept abstraction resultant of the deep network dynamics, extracting side-outputs at different layers that ideally would contain different level of details. 
 
 
-The idea is to combine the side-output maps into a single proposition to be evaluated in the image segmentation task, driving the learning flow towards creating adequate regions for the task. In an optimal scenario, the side-outputs would contain enough details to cope with the task, whilst creating coherent region proposals. \remEwai{what mean whilst here? task=image segmentation = creation of coherent regions ?}
+The idea is to combine the side-output maps into a single proposition to be evaluated in the image segmentation task, driving the learning flow towards creating adequate regions for the task. In an optimal scenario, the side-outputs would contain enough details to cope with the task and create coherent region proposals. 
+%\remEwai{what mean whilst here? task=image segmentation = creation of coherent regions ?}
 
 Amongst the many strategies for deep models, convolutional networks are well-known for the concept abstraction resulting from the multiple stages of convolution and have been successfully used for the object recognition task. They are usually composed of multiple layers, each layer being characterized by three nested functions, namely: (i) convolution; (ii) spatial pooling; and (iii) non-linear activation. 
 
-Let's consider $\mathbf{X}$ set of $N$ input images $I$. Formally, let a convolutional network $\mathit{f}$ composed by $L$ layers be defined as:
+Let $\mathbf{X}$ be a set of $N$ input images $I$. Formally, let a convolutional network $\mathit{f}$ composed by $L$ layers be defined as:
 
-\remEwai{$X$ should be defined} \remFeli{Done}
+%\remEwai{$X$ should be defined} \remFeli{Done}
 \begin{equation}
 \mathit{f}(\mathbf{X})=\mathbf{W}_L\mathbf{H}_{L-1}
 \end{equation}
@@ -38,7 +39,9 @@ Let's consider $\mathbf{X}$ set of $N$ input images $I$. Formally, let a convolu
 \noindent For consistency, consider $\mathbf{H}_0=\mathbf{X}=\{X_1, X_2,...,X_N\}$. %the set of $N$ input images $I$.
 
 The VGG network~\cite{simonyan2014} is one of the first attempts to create deeper models following the convolutional scheme. The core of the layers in VGG is defined by a convolution $C$ immediately followed by a rectified linear unit, as follows:
-\remEwai{define $C_l$} \remFeli{Done}
+
+%\remEwai{define $C_l$} \remFeli{Done}
+
 \begin{equation}
 C_l=ReLU(\mathbf{W}_{l}\mathbf{H}_{l-1})~\forall l \in \{1,..,L-1\}
 \end{equation}
@@ -51,7 +54,7 @@ C_l=ReLU(\mathbf{W}_{l}\mathbf{H}_{l-1})~\forall l \in \{1,..,L-1\}
 \normalsize
 \noindent The output of a hidden layer is computed as $maxpool(\mathit{S}^{(1)})$ or $maxpool(\mathit{S}^{(2)})$ for all $S$ stages in the network.
 
-Questions on which and how many side-outputs would be adequate for the image segmentation task, are assessed using two different extraction strategies, both applied in the VGG network. Namely: (i) Stage Layer Outputs~(\textbf{SLO}), inspired by the HED model, creating one side-output for each VGG stage; and (ii) All Layers Outputs~(\textbf{ALO}), inspired by the RCF model, creating one side-output for each convolutional layer. 
+Questions on which and how many side-outputs would be adequate for the image segmentation task are assessed using two different extraction strategies, both applied in the VGG network. Namely: (i) Stage Layer Outputs~(\textbf{SLO}), inspired by the HED model, creating one side-output for each VGG stage; and (ii) All Layers Outputs~(\textbf{ALO}), inspired by the RCF model, creating one side-output for each convolutional layer. 
 
 Formally, the set $\mathcal{H}$ of $M$ side-outputs maps in each strategy is defined as:
 \small
@@ -65,7 +68,7 @@ In the case of \textbf{SLO}, the number of side-outputs corresponds to the numbe
 
 \subsection{Merging strategies}
 \label{ssec:mergin_strategies}
-\remEwai{a subsection cannot live alone :)} \remFeli{Done}
+%\remEwai{a subsection cannot live alone :)} \remFeli{Done}
 
 When dealing with side-outputs in convolutional networks, the main question is how to combine them, considering that they are presented in different scales and could represent different concepts. The goal is to produce a single proposition to be evaluated in the task, while retaining the useful information contained at different layers.
 
@@ -84,30 +87,27 @@ Z_{AVG} &= \frac{\sum_{i=1}^{M}(\mathcal{H}_i)}{M}\\
 Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
 \end{align} 
 
-The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled to the input image size using a transposed convolution layer~\cite{dumoulin2016}, also called as ``deconvolutional layer''. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. 
+The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled to the input image size using a transposed convolution layer~\cite{dumoulin2016}, also called as ``deconvolutional layer''. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. After element-wise combination, a convolutional $1x1$ operation is performed with Relu activation.
 
-Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest this minimal formulation could be executed individually and paired later.
+Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest this minimal formulation could be executed individually and paired later. After pixel-wise evaluation for a single image, the following step is evaluate the accuracy for set of $N$ images.
 
-\remFeli{Maybe we should put formulation for every pixel evaluation here}
-
-{\color{red}After pixel-wise evaluation for a single image, it is necessary to evaluate a set of images. Formally, consider once again the set of $N$ training images $\mathbf{X}$ and alike $\mathbf{Y}=\{Y_1, Y_2,...,Y_N\}$ the set of ground-truth images in which each pixel is labeled.  The ground-truth images are used to calculate the pixel accuracy measuring the rate that a pixel is correctly predicted to belong to the region of interest or the background.}
-
-\remFeli{A formulation should be here or we should remove formulations}
+%Considering once again the set of $N$ training images $\mathbf{X}$ and alike $\mathbf{Y}=\{Y_1, Y_2,...,Y_N\}$ the set of ground-truth images in which each pixel is labeled. The ground-truth images are used to calculate the pixel accuracy measuring the number of true positive pixels over the sum of true positive and negative pixels. The averg
+%Accuracy = True Positive / (True Positive+True Negative)*100.
 
 %. Each one of this images   Let $Z$ be the merged map obtained using one of the proposed functions and $|Z| = |I|, \forall I\in \mathbf{X}$.
 %
 %$\mathit{S}=\{(\mathit{X_n,Y_n}), \mathit{n}=1,...,\mathit{N}\}$ be the training input set for the network, in which $\mathit{X_n}$ is a set of $\mathit{N}$ images with three color channels and $\mathit{Y_n}$ the set of $\mathit{N}$ labels associated with each image with values belonging to $\{0,1\}$. Consider also $\mathbf{W}$ the layer set of parameters in which
-%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side-output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
+%$\mathbf{w}=\{\mathbf{w}_1,...,\mathbf{w}_M\}$ is the associated weights for each one of the $\mathit{M}$ side output maps. The objective function for training the weights for the $\ell_{side}$ image map could be defined as:
 %\begin{equation}
 %\mathcal{L}(\mathbf{W},\mathbf{w})=\sum_{m=1}^M\alpha_m\ell_{side}^{(m)}(\mathbf{W},\mathbf{w}_m)
 %\end{equation}
 
 \subsection{Post-processing}
 \label{ssec:post_processing}
-\remEwai{Maybe to short to be a section} \remFeli{Now subsection}
+%\remEwai{Maybe to short to be a section} \remFeli{Now subsection}
 
-Mathematical morphology is consistent with the non-linear image analysis, presenting solid theoretical foundation and idempotent functions. The formulations are presented in the complete lattice geometric space, in which the functions are performed considering whole sets operating over another whole set. In mathematical morphology, the operators are known a priori and defined using the sets of structuring elements (also know as kernel).
+Mathematical morphology is consistent with the non-linear image analysis, presenting solid theoretical foundation and idempotent functions. The formulations are presented in the complete lattice geometric space, in which the functions are performed considering whole sets operating over another whole set. In mathematical morphology, the operators are known a priori and defined using the sets of structuring elements, also know as kernels, used to perform non-linear operations and induce sub-spaces bounded by order filters~\cite{najman13}.
 
-In this work, it is proposed to use mathematical morphology as post-processing step, meaning that this step is not inserted in the learning stage. The main goal is to better cope with the fundamental properties of a well-segmented image, particularly, region uniformity and continuity. To achieve that, it is proposed to use a function filter, called area opening, which tend to destroy the small, thin and conspicuous areas.
+In this work, it is proposed to use mathematical morphology as post-processing step, meaning that this step is not inserted in the learning stage. The main goal is to better cope with the fundamental properties of a well-segmented image, particularly, region uniformity and continuity. To achieve that, it is proposed to use a function filter, called area opening, which tend to destroy the small, thin and conspicuous areas. In the opening operation, the size of the structuring element determines the analyses by opening holes near boundaries and removing objects that are relatively smaller than a threshold parameter.
 
 Formally, let $\hat{Y}\in \mathbb{R}^2$ be the output of a testing image consistent with the representation created by the parameters learned in the network. Consider $B$ a structuring element and $\gamma_B$ the morphological opening produced by it. Consider also $\lambda$ the threshold parameter which will determine how small a certain area must be to be purged. In this case,  $\gamma_B \subseteq \gamma_\lambda$ if and only if $B$ is a finite union of connected components of area greater or equal to $\lambda$. This additional step could reduce possible noises on the final result and improve the accuracy on distinguishing the road from other objects presented on the image.
