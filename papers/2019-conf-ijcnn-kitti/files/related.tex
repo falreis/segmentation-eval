@@ -1,35 +1,18 @@
 \section{Related work}
 \label{sec:related}
 
-Deep learning approaches were initially described as black-box methods, meaning that not much were known about the reasoning and decisions of the created models. Much exertion have been applied to investigate the networks operation, whether by methodical experimentation~\cite{ilin17,kuo16,eigen14,zhang17} or visualization methods~\cite{simonyan13,zeiler14}. Those efforts provided more clarity of the deep models and characterized the learned features as complex concepts build from simpler ones. Also it demonstrates the learning progression from detailed to coarser representations as the scale and resolution reduce through the network.  When applied to object recognition task for instance, the raw pixel on the input layer is learned as segments and parts until the composition of an object concept on posterior layers, while the input scale reduces to a single feature vector on the output.  
+Deep learning approaches were initially described as black-box methods, meaning that not much were known about the reasoning and decisions of the created models. Much effort has been made to investigate the networks operation, whether through methodical experimentation~\cite{ilin17,kuo16,eigen14,zhang17} or visualization methods~\cite{simonyan13,zeiler14}. Those efforts provided more clarity on the deep models and characterized the learned features as complex concepts build from simpler ones. Also they demonstrate the learning progression from detailed to coarser representations as the scale and resolution reduce through the network.  When applied to object recognition task for instance, the raw pixel on the input layer is learned as segments and parts, until the composition of an object concept on posterior layers, while the scale reduces to a single feature vector on the output.  
 
 The knowledge of the concept abstraction and learning progression allowed new research endeavors to explore  them in high-level tasks. For instance, three main architectures standout in recent years, namely: (i) Holistically-nested Edge Detection~(HED)~\cite{xie2015}; (ii) Convolutional Oriented Boundaries~(COB)~\cite{maninis2017}; and (iii) Rich Convolutional Features~(RCF)~\cite{liu2017}. These architectures explicitly explore the models of a traditional deep network to perform a certain high-level task, in which all extract side-outputs of the network and each present a different strategy to combine them . 
 
-The HED network creates a side-output layer at each stage of the VGG16 network~\cite{simonyan2014} as boundary maps. In HED, each side-output is associated with a classifier in a deeply supervised scheme~\cite{lee2015} for the task of edge detection. This association inserts the fusion process in the network, attributing weights for each side-output that will be learned individually and determine its contribution on the final evaluation. The evaluation is performed by a cost-sensitive function to balance the bias towards non-edge pixels. The HED network significantly improved the performance in multiple datasets and the extended version~\cite{xie2017} also applies the network for the segmentation task. 
+The HED network creates a side-output layer at each stage of the VGG16 network~\cite{simonyan2014} as boundary maps. In HED, each side-output is associated with a classifier in a deeply supervised scheme~\cite{lee2015} for the task of edge detection. This association inserts the fusion process in the network, attributing weights for each side-output that will be learned individually and determine its contribution on the final evaluation. The evaluation is performed by a cost-sensitive function to balance the bias towards non-edge pixels. The HED network significantly improved the performance in multiple datasets.
 
 The authors in~\cite{cheng2016} use the edge maps created by the HED network alongside with other features such as brightness, color, gradient and variance to describe images. The goal of their proposal was to create an efficient framework for real-time segmentation, focused on a fusion strategy to update region features.
 
 
-In the COB network, the authors also create edge maps from side activations, differing mainly from HED by the attribution to candidate contours orientation information and weights representing the contour strength. The contour orientations are estimated by approximation to known polygon segments and the segments weights are computed based on the candidate contour neighboring region used as a confidence measure. To combine the side-outputs a non-linear function is used to regress both the segment weights and the orientation maps, creating region hierarchical trees by thresholding the contour strength. The network perform well in multiple tasks such as object proposal, object detection, semantic contour and segmentation.
+In the COB network, the authors also create edge maps from the side activations, but the method mainly differs from HED in that the candidate contours are assigned an orientation information. It also generates region hierarchies by efficiently combining multiscale oriented contour detections. The network performs well in multiple tasks such as object proposal, object detection, semantic contour and segmentation.
 
 
-Finally, the RCF network, not only creates multiple side-outputs, but also uses multiple scales of the images in the input layer. Differently from the HED network, RCF extract one side-output at each convolutional layer of VGG, arguing that  this could create more detailed representations and improve the network accuracy. The merging process is performed by a series of operations, comprising grouping by convolutions, element-wise sums, up-samplings, local loss functions and concatenations.  
+Finally, in contrast to the HED network, RCF uses the CNN features of all the convolutional layers, arguing that this could create more detailed representations and improve the network accuracy. The side outputs are combined using a series of operations such as $1x1$ convolutions, element-wise sums, up-sampling, and concatenations. The RCF network, not only creates multiple side-outputs, but also uses image pyramids during testing, presenting multiple scales of an image to the detector and  averaging all the resulting edge probability maps to get a final prediction map. 
 
 
-
-%Regarding the fusion methods, in the aforementioned related strategies, the HED fusion process is also inserted in the network, in which it is attributed weights for each side-output that will be learned individually and determine its contribution on the final evaluation. The RCF instead, adopted a $1\times1$ convolution after each output, followed by a element-wise sum, an up-sampling and a loss function. The values are then concatenated and pass through a $1\times1$ convolution for the final evaluation. Finally, the COB network evaluates the The side-outputs and the contour orientation maps are evaluated individually creating multiple proposal that could be thresholded based on the confidence value at later stage.  
-
-
-
-%\begin{figure*}[!ht]
-%\begin{center}
-%\begin{tabular}{l}
-%(1a) Side outputs extracted at each stage\\
-%\input{figures/stage}\\
-%(1b) Side outputs extracted at each convolutional layer\\
-%\input{figures/full}\\
-%\end{tabular}%
-%\caption{Illustration for  the proposed side-outputs extraction one following the HED model~(a) at each stage of the VGG network and the other following RCF model~(b) at each convolutional layer}
-%\end{center}
-%\label{fig:methods}
-%\end{figure*}

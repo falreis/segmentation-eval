@@ -1,30 +1,30 @@
 \section{Experiments}
 \label{sec:experiments}
 
-Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of 1242 pixels width and 375 pixels height. The ground-truth is manually annotated for two different road types: (i) road, road area composing all lanes; and (ii) lane, lane the vehicle is currently driving on. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using KITTI Server.
+Experiments were conducted in the KITTI Road/Lane dataset, part of KITTI Vision Benchmarking Suite~\cite{KITTI}. The dataset  contains  images for road and lane estimation for the task of image segmentation. It consists of 289 training and 290 test RGB images, with the size of $1242 \times 375$ pixels. The ground-truth is manually annotated for two different road types: (i) \textbf{road} is the road area composing all lanes; and (ii) \textbf{lane} is the lane the vehicle is currently driving on. It is important to notice that the ground-truth is only available for training set and the test evaluation should be performed using the KITTI Server.
 
-%\remEwai{What is the resolution of the images?} \remFeli{Done}
 
-In this work, only the road ground-truths is used and the lane annotations are ignored. This dataset contains the same image with different ground-truths for lane and road estimation. Then, we prefer to use the road estimation and build the classifier on a binary problem~(road and background). The road type is divided in three different categories of road scenes, namely: (i) uu\_road, urban unmarked; (ii) um\_road, urban marked; and (ii) umm\_road, urban multiple marked lanes.  
+This dataset contains the same image with different ground-truths for lane and road estimation. In this work, only the road ground-truths are used and the lane annotations are ignored. The road type is divided in three different categories of road scenes, namely: (i) urban unmarked (\textbf{uu\_road}), (ii) urban marked (\textbf{um\_road}), and (ii) urban multiple marked lanes (\textbf{umm\_road}).  
 
 %\remEwai{Should be good to show examples of images and groundtruths from the dataset} \remFeli{I think we won't have enought space in this paper} 
 
-To increase the number of images in the training set, a data augmentation procedure is performed. The following transformations were applied: pepper/salt noise, horizontal flipping (mirror), contrast change, brightness change, noise shadow and random rain/snow. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures resulted in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
+To increase the number of images in the training set, a data augmentation procedure is performed. The following transformations were applied: pepper/salt noise, horizontal flipping (mirror), contrast change, brightness change, noise shadow and random rain/snow. Procedures that would create undesired behavior, such as the road in the sky and distortions that would change the nature of the objects in the scene, such as cars and pedestrians were avoided. Augmentation procedures result in 2601 images, divided in 2080 samples for training and 521 samples for validation (about 20\%). 
 
 
 \subsection{Experimental setup}
    
-Our networks were built using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduce to 624 pixels width and 192 pixels height (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
+Our networks were built using using Keras \cite{chollet2015keras} with Tensorflow \cite{tensorflow2015-whitepaper}. We used a pre-trained VGG16 model to initialize the weights. Also, we use SGD optimization with learning rate set to 1e-3, decay of 5e-6 and momentum of 0.95. The default batch size contains 16 images. To fit the network and speed up the process, all images were reduced to $624 \times 192$ pixels (about 50\%). Training experiments were performed in GeForce GTX 1080 8GB GPU.
 
 The \textbf{SLO} network is composed of $n=5$ side-outputs, and the \textbf{ALO} network is composed of $n=13$ side-outputs. 
-The operations to combine side-outputs are presented in the name of the methods. The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods.
+%The operations to combine side-outputs are presented in the name of the methods. 
+The merging operations \textbf{ADD}, \textbf{AVG} and \textbf{MAX} are available for both ALO and SLO methods, giving 6 approaches.
 As a baseline, we use the VGG16 network without any side-output but only the final output, called No Side Outputs~(\textbf{NSO}).
 
 \subsection{Training results - Methods Comparison}
 
-The first test was design to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieves the best results. This conduct lead us to understand how layers can be easily combined to produce outputs with good precision.
+The first test was designed to identify the best neural network and its best merging methods. We train all nets with all merging methods for 100 epochs to determine which one learns faster and achieves the best results. This experiment leads us to understand how layers can be easily combined to produce outputs with good precision.
 
-Figure \ref{fig:validation_loss} presents the categorical cross-entropy loss curves obtained during the training phase for the proposed approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability in the learning course. On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
+Figure \ref{fig:validation_loss} presents the categorical cross-entropy loss curves obtained during the training phase for the proposed approaches. ALO networks appear to be more stable with a faster decay than NSO and all SLO approaches. Also, it is important to notice that NSO and SLO-MAX produce high instability during the learning. On the other hand, ALO-AVG presents the best result for the test, followed by ALO-MAX and ALO-ADD merging strategies.
 
 \begin{figure}
   \caption{Categorical Cross Entropy Validation Loss}
@@ -34,16 +34,17 @@ Figure \ref{fig:validation_loss} presents the categorical cross-entropy loss cur
   \label{fig:validation_loss}
 \end{figure}
 
-From previous graph, it is possible to conclude that ALO networks had superior and more desirable behavior than the SLO and NSO models. It is believed that these results are consequence of the considerably larger amount of side-outputs, which create more possibilities of interchangeability between confident values.
+From the previous graph, it is possible to conclude that ALO networks have superior and more desirable behavior than the SLO and NSO models. These results are the consequence of a considerably larger amount of side-outputs, which create more possibilities of interchangeability between confident values.
 
 \subsection{Best results}
 
-In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks had a poor performance in the previous test and other tests with different parameters, we decided to evaluate all ALO networks in this new round of tests. For comparison, we also trained NSO network.
+In order to improve the results, a new set of tests were performed using 500 training epochs. As some networks have a poor performance in the previous test and other tests with different parameters, we decided to evaluate all ALO networks in this new round of tests. For comparison, we also trained NSO network.
 
-To measure the performance in our tests we use two different metrics. The first one is the well known categorical cross entropy accuracy. Also, we use an metric called pixel-error. This measure evaluates the number of pixels incorrectly classified over the total number of the pixels (number of wrong pixels). The metric was adopted when we observed high values of accuracy in results in which there were visibly many errors, mainly in the existence of numerous false positives. These two metrics are available in Figure \ref{fig:val_acc_500_epochs}.
+To measure the performance in our tests we use two different metrics. The first one is the well known categorical cross entropy accuracy.
+We also use a metric called pixel-error. This measure evaluates the number of pixels incorrectly classified over the total number of the pixels. The metric was adopted when we observed high values of accuracy in results in which there were visibly many errors, mainly in the existence of numerous false positives. Performances according these two metrics are shown in Figure \ref{fig:val_acc_500_epochs}.
 
 \begin{figure*}
-  \caption{Categorical Cross Entropy Validation Accuracy and Pixel-Error results for 500 epochs test set}
+  \caption{Categorical Cross Entropy Validation Accuracy and Pixel-Error results for 500 epochs validation set}
   \centering
   \begin{tabular}{ll}
     \includegraphics[width=1.\columnwidth]{figures/falreis/val_acc_500_epochs.png}
@@ -53,21 +54,19 @@ To measure the performance in our tests we use two different metrics. The first 
   \label{fig:val_acc_500_epochs}
 \end{figure*}
 
-Is clearly visible in Figure \ref{fig:val_acc_500_epochs} that side-outputs influences the performance of the networks. All ALO networks had overall performance better than NSO network. Also, the learning curve of ALO networks shows that the network learns faster when use multiple side outputs. At last, it is possible to use bigger learning rate parameters, increasing the learn in early times.
+Is clearly visible in Figure \ref{fig:val_acc_500_epochs} that side-outputs influence the performance of the networks. All ALO networks have overall performance better than NSO network. Also, the learning curve of ALO networks show that the network learns faster when using multiple side outputs. At last, it is possible to use bigger learning rate parameters, increasing the learn in early times.
 
-The best results of both metrics are quite similar for all networks. This indicates absence of a far better ALO method to combine side-outputs. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). For pixel-error, the best value is just \textbf{0.0040} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX).
+The best results of both metrics are quite similar for all networks. This indicates the absence of a far better method to combine side-outputs in ALO network. The best result for cross entropy validation metric is just \textbf{0.0009} above the worst one (0.983 for ALO-ADD and 0.9821 for ALO-AVG). For pixel-error, the best value is just \textbf{0.0040} above the worst one (0.0332 for ALO-AVG and 0.0372 for ALO-MAX). According to the pixel-error metric, ALO-AVG is the best approach on the validation set.
 
-Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error metric. Also, AVG fusion method was also previous used in \cite{xie2015} and \cite{liu2017} to combine the results. For this criteria, ALO-AVG was defined as the best method of our training set.
+%Due to the similarity of the results, we will indicate the best method using the value of validation pixel-error metric. Also, AVG fusion method was also previously used in \cite{xie2015} and \cite{liu2017} to combine the results. For this criteria, ALO-AVG was defined as the best method of our training set.
 
 \subsection{Post-processing using mathematical morphology}
 
-%\remEwai{Insert reference to section IV that describes that post-processing. \cite{najman13} should go in section IV.} \remFeli{Partial Done}
-
 After the training procedure, we create a post processing step to reduce possible noises in results proposition. For this, we used the mathematical morphology operation of Opening, as defined in Section \ref{ssec:post_processing}. This procedure removes small noises created by the foreground~(the road) in the background. 
 
-The opening operation was applied using square structuring elements full of ones. We decided to use a set of kernels with sizes of $5\times5$, $7\times7$, $9\times9$, $11\times11$ and $13\times13$, sequentially applied into the image. This type of operation, although unusual, achieved the best results. It allowed that sections incorrectly classified by the network could be eliminated by the sequential thinning of noises in different shapes. The results also become more smooth with this procedure.
+The opening operation was applied using square structuring elements full of ones. We used a kernels with the size of $13\times13$. It allowed that sections incorrectly classified by the network could be eliminated by the sequential thinning of noises in different shapes. The results also become more smooth with this procedure.
 
-%\remEwai{I don't understand here. All the structuring elements are applied sequentially? which makes no sense since the opening by the largest structuring element is included in the opening by the smallest structuring element if I'm right. Or are they all tested independently? In this latter case, which size is finally retained?} \remFeli{Yes, sequencially. Although unusual, it removed incorrect classification better than small kernels alones. (Text changed for better explanation)}
+%\remEwai{I'm still missing something here. Is something done between 2 successive applications of the opening with SE of increasing sizes? Otherwise how can the final result of the sequence of openings be different from the single application of the opening with a SE of size 13?} \remFeli{My mistake. I misunderstood your previous comments and I retested only with 5x5 kernel and I saw many differences. Then, now I retested with 13x13 kernel and the result is the same as using a seq of kernels (I compared the files automatically using the software Meld).}
 
 A simple comparison of our procedure with the original network prediction is presented in Figure \ref{fig:post_processing_comp}. In this image, we selected an output result that clearly shows the benefits of mathematical morphology post processing. It is possible to see the removal of part of the noise in the far right of the image (\textit{white pixels}). The noise removal increases the confidence, as small variations in the results can lead to a potential problem, if used in a self-driving vehicle. 
 
@@ -100,8 +99,9 @@ Figure \ref{fig:side_outputs} indicates that the first two stage side-outputs (o
 
 Figure \ref{fig:side_outputs} also indicates that fourth stage side-output layer (output $\mathcal{H}_{10}$) clearly contains the best side-output for all ALO networks. The road marks are clearly visible, but with some noise. ALO-MAX contains a lot of noise, while ALO-ADD contains a few ones. The final stage side-output ($\mathcal{H}_{13}$) contains a lot of noise, with results far away worse than the previous layer. This possibly indicates that the layer was not able to correctly learn the information from the previous ones.
 
-The fuse layer combine all side-outputs (including the ones not shown in Figure \ref{fig:side_outputs}) in order to predict. Despite poor results on some layers, the learning process adjusts itself so that even very few accurate results can be used by the model, similar to ensemble methods.
+The merging layer combine all side-outputs (including the ones not shown in Figure \ref{fig:side_outputs}) in order to predict. Despite poor results on some layers, the learning process adjusts itself so that even very few accurate results can be used by the model, similar to ensemble methods.
 
+%\remEwai{Still not clear. The fuse layer was never introduced before. Is that the merging operation that generates $Z$? If fuse and merge are the same thing, keep the same word and notations (also in Fig. 5)} \remFeli{Done}
 %\remEwai{= the proposition $Z$} \remEwai{? Not clear} \remEwai{merging layers = fuse layer?} \remFeli{Fixed. Text improved but I don't know if it is good enough. I don't know if I can cite ensemble methods.}
 
 \subsection{Evaluation results and comparison with the state-of-the-art}

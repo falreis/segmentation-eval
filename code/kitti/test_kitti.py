@@ -157,9 +157,13 @@ def test(model, net, merge_name=None, set_name='test', mark=False, learn_rate=0.
 
             #apply mathematical morphology
             if(morf):
-                for i in range(3, 8, 1):
-                    kernel = np.ones((2*i-1,2*i-1),np.uint8)
-                    expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)          
+                #for i in range(3, 8, 1):
+                    #kernel = np.ones((2*i-1,2*i-1),np.uint8)
+                    #expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)          
+
+                kernel_size = 13
+                kernel = np.ones((kernel_size, kernel_size),np.uint8)
+                expanded_pred = cv2.morphologyEx(expanded_pred, cv2.MORPH_OPEN, kernel)          
 
             #mark prediction over image
             if(mark):
