@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  15 JAN 2019 11:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  15 JAN 2019 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,10 +1123,7 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
  (./files/intro.tex)
-(./files/related.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(./files/related.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -1149,29 +1146,29 @@ Overfull \hbox (6.99602pt too wide) in paragraph at lines 8--11
  []
 
 [2]
-Underfull \vbox (badness 2142) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `fig:side_outputs_method' on page 3 undefined on input
- line 97.
-
-[3 <./tikz/2019-conf-ijcnn-kitti-figure0.pdf> <./tikz/2019-conf-ijcnn-kitti-fig
-ure1.pdf>]) (./files/experiments.tex
-<figures/falreis/validation_loss.png, id=212, 739.76375pt x 411.5375pt>
+<figures/falreis/side_outputs_method.png, id=149, 536.2434pt x 223.3143pt>
+File: figures/falreis/side_outputs_method.png Graphic file (type png)
+<use figures/falreis/side_outputs_method.png>
+Package pdftex.def Info: figures/falreis/side_outputs_method.png  used on input
+ line 102.
+(pdftex.def)             Requested size: 252.0pt x 104.94409pt.
+ [3 <./tikz/2019-conf-ijcnn-kitti-figure0.pdf> <./tikz/2019-conf-ijcnn-kitti-fi
+gure1.pdf> <./figures/falreis/side_outputs_method.png>])
+(./files/experiments.tex
+<figures/falreis/validation_loss.png, id=217, 739.76375pt x 411.5375pt>
 File: figures/falreis/validation_loss.png Graphic file (type png)
 <use figures/falreis/validation_loss.png>
 Package pdftex.def Info: figures/falreis/validation_loss.png  used on input lin
 e 33.
 (pdftex.def)             Requested size: 252.0pt x 140.19092pt.
  [4 <./figures/falreis/validation_loss.png>]
-<figures/falreis/val_acc_500_epochs.png, id=225, 609.27625pt x 376.40625pt>
+<figures/falreis/val_acc_500_epochs.png, id=229, 609.27625pt x 376.40625pt>
 File: figures/falreis/val_acc_500_epochs.png Graphic file (type png)
 <use figures/falreis/val_acc_500_epochs.png>
 Package pdftex.def Info: figures/falreis/val_acc_500_epochs.png  used on input 
 line 50.
 (pdftex.def)             Requested size: 252.0pt x 155.68301pt.
-<figures/falreis/pixel_error_500_epochs.png, id=226, 609.27625pt x 376.40625pt>
+<figures/falreis/pixel_error_500_epochs.png, id=230, 609.27625pt x 376.40625pt>
 
 File: figures/falreis/pixel_error_500_epochs.png Graphic file (type png)
 <use figures/falreis/pixel_error_500_epochs.png>
@@ -1183,44 +1180,35 @@ Overfull \hbox (3.50008pt too wide) in paragraph at lines 49--55
  [][][] 
  []
 
-<figures/falreis/post_processing_comparison.png, id=230, 522.94247pt x 449.4031
+<figures/falreis/post_processing_comparison.png, id=234, 522.94247pt x 449.4031
 pt>
 File: figures/falreis/post_processing_comparison.png Graphic file (type png)
 <use figures/falreis/post_processing_comparison.png>
 Package pdftex.def Info: figures/falreis/post_processing_comparison.png  used o
 n input line 76.
 (pdftex.def)             Requested size: 252.0pt x 216.56134pt.
-<figures/falreis/side_outputs.png, id=233, 836.38315pt x 747.6207pt>
+<figures/falreis/side_outputs.png, id=237, 836.38315pt x 747.6207pt>
 File: figures/falreis/side_outputs.png Graphic file (type png)
 <use figures/falreis/side_outputs.png>
 Package pdftex.def Info: figures/falreis/side_outputs.png  used on input line 9
 2.
 (pdftex.def)             Requested size: 516.0pt x 461.23848pt.
-Excluding 'comment' comment. (./tables/kitti-metrics.tex
+Excluding 'comment' comment. [5] (./tables/kitti-metrics.tex
 Overfull \hbox (1.54652pt too wide) in paragraph at lines 5--21
 [][]
  []
 
 )
-<figures/falreis/visual_representation.png, id=241, 430.37192pt x 747.6207pt>
+<figures/falreis/visual_representation.png, id=254, 430.37192pt x 747.6207pt>
 File: figures/falreis/visual_representation.png Graphic file (type png)
 <use figures/falreis/visual_representation.png>
 Package pdftex.def Info: figures/falreis/visual_representation.png  used on inp
 ut line 126.
 (pdftex.def)             Requested size: 252.0pt x 437.77272pt.
-) (./files/conclusion.tex [5]) (./2019-conf-ijcnn-kitti.bbl
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ­ in font ptmr7t!
- [6 <./figures/falreis/val_acc_500_epochs.png (PNG copy)> <./figures/falreis/pi
-xel_error_500_epochs.png (PNG copy)> <./figures/falreis/post_processing_compari
-son.png>]
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-
+) (./files/conclusion.tex [6 <./figures/falreis/val_acc_500_epochs.png (PNG cop
+y)> <./figures/falreis/pixel_error_500_epochs.png (PNG copy)> <./figures/falrei
+s/post_processing_comparison.png>]) (./2019-conf-ijcnn-kitti.bbl
 Underfull \vbox (badness 1478) has occurred while \output is active []
-
-
-Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [7 <./figures/falreis/side_outputs.png>]
 Missing character: There is no Ã in font ptmr7t!
@@ -1248,19 +1236,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `2019-conf-ijcnn-kitti.out' has not changed.
 (rerunfilecheck)             Checksum: 5D87C1F4F33BDFB492E6F6497FEA2260;1044.
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 31981 strings out of 492982
- 791365 string characters out of 6134895
- 988100 words of memory out of 5000000
- 34865 multiletter control sequences out of 15000+600000
+ 31985 strings out of 492982
+ 791555 string characters out of 6134895
+ 986226 words of memory out of 5000000
+ 34867 multiletter control sequences out of 15000+600000
  57160 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,12n,96p,1052b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,12n,96p,1148b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/
@@ -1283,10 +1268,10 @@ hvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on 2019-conf-ijcnn-kitti.pdf (8 pages, 1387919 bytes).
+Output written on 2019-conf-ijcnn-kitti.pdf (8 pages, 1421989 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 

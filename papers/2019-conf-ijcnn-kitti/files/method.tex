@@ -58,8 +58,8 @@ Questions on which and how many side-outputs would be adequate for the image seg
 Formally, the set $\mathcal{H}$ of $M$ side-outputs maps in each strategy is defined as:
 \small
 \begin{align}
-\mathcal{H}_{SLO}=\{\mathcal{H}_1,...,\mathcal{H}_m|& m\in[1,S]~\text{and}~\textcolor{red}{\mathcal{H}_m \in\{S^{(1)},S^{(2)}\}}\}\\
-\mathcal{H}_{ALO}=\{\mathcal{H}_1,...,\mathcal{H}_m|& m\in[1,L-1]~\text{and}~\nonumber\\&\textcolor{red}{\mathcal{H}_m=C_l}~\forall l \in \{1,..,L-1\}\}
+\mathcal{H}_{SLO}=\{\mathcal{H}_1,...,\mathcal{H}_m|& m\in[1,S]~\text{and}~\mathcal{H}_m \in\{S^{(1)},S^{(2)}\}\}\\
+\mathcal{H}_{ALO}=\{\mathcal{H}_1,...,\mathcal{H}_m|& m\in[1,L-1]~\text{and}~\nonumber\\&\mathcal{H}_m=C_l~\forall l \in \{1,..,L-1\}\}
 \end{align}
 \normalsize
 
@@ -94,17 +94,17 @@ Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
 %\remEwai{$M$ is not defined}
 %\remRaqi{it is defined right above eq.6}
 
-The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled to the input image size using a transposed convolution layer~\cite{dumoulin2016}, also called as ``deconvolutional layer''. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. After element-wise combination, a convolutional $1\times1$ operation is performed with Relu activation, as Figure \ref{fig:side_outputs_method}.
+The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled to the input image size using a transposed convolution layer~\cite{dumoulin2016}, also called as ``deconvolutional layer''. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. After element-wise combination, a convolutional $1\times1$ operation is performed with Relu activation. The overview of the method is illustrated in Figure \ref{fig:side_outputs_method}.
+
+\begin{figure}[ht]
+  \caption{Method overview.}
+  \centering
+  \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs_method.png}
+  \label{fig:side_outputs_method}
+\end{figure}
 
 %\remEwai{After the Z element-wise operation, the Z map is of depth 1? Why use a $1\times1$ convolution in this case?}
 %\remFeli{We added because avg and add methods needed an activation (we tested sigmoid, relu and other that I don't remember). Max operation worked without additional layers. Thinking now, we should put only an activation layer without a convolution. I think it will be an improvement.}
-
-%\begin{figure}
- % \caption{\color{red}Side ouputs. Image must be improved!}
-  %\centering
- % \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs_method.pn%g}
-%  \label{fig:side_outputs_method}
-%\end{figure}
 
 Once the combined map is created, it is evaluated on the segmentation task which aims to provide partition of an image into a set of regions representing meaningful areas. This could be reduced to a binary problem aiming to distinguish each pixel of the image as belonging to a region of interest or the background. If confronted with multiple regions of interest, this minimal formulation could be executed individually and paired later. %After pixel-wise evaluation for a single image, the following step is evaluate the accuracy for set of $N$ images.
 

@@ -22,8 +22,9 @@
 \BIBdecl
 
 \bibitem{DOMINGUEZ}
-D.~Domínguez and R.~R. Morales, \emph{Image Segmentation: Advances}, 2016,
-  vol.~1, no.~1.
+D.~Dom\'inguez and R.~R. Morales, \emph{Image Segmentation: Advances}.\hskip
+  1em plus 0.5em minus 0.4em\relax {Magnum Publishing LLC}, 2016, vol.~1,
+  no.~1.
 
 \bibitem{guigues06}
 L.~Guigues, J.~P. Cocquerez, and H.~Le~Men, ``Scale-sets image analysis,''
@@ -31,8 +32,8 @@ L.~Guigues, J.~P. Cocquerez, and H.~Le~Men, ``Scale-sets image analysis,''
   289--317, 2006.
 
 \bibitem{goodfellow16}
-I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}, vol.~1,
-  2016.
+I.~Goodfellow, Y.~Bengio, and A.~Courville, \emph{{Deep Learning}}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Cambridge, MA: MIT Press, 2016, vol.~1.
 
 \bibitem{farabet2013}
 C.~Farabet, C.~Couprie, L.~Najman, and Y.~LeCun, ``{Learning Hierarchical
@@ -46,10 +47,8 @@ K.~Simonyan and A.~Zisserman, ``Very deep convolutional networks for
 \bibitem{lee2015}
 C.-Y. Lee, S.~Xie, P.~Gallagher, Z.~Zhang, and Z.~Tu, ``{Deeply-Supervised
   Nets},'' in \emph{Proceedings of the Eighteenth International Conference on
-  Artificial Intelligence and Statistics}, ser. Proceedings of Machine Learning
-  Research, G.~Lebanon and S.~V.~N. Vishwanathan, Eds., vol.~38.\hskip 1em plus
-  0.5em minus 0.4em\relax San Diego, California, USA: PMLR, 09--12 May 2015,
-  pp. 562--570.
+  Artificial Intelligence and Statistics}, vol.~38.\hskip 1em plus 0.5em minus
+  0.4em\relax San Diego, California, USA: PMLR, 09--12 May 2015, pp. 562--570.
 
 \bibitem{xie2017}
 S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{International
@@ -57,25 +56,25 @@ S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' \emph{International
 
 \bibitem{cheng2016}
 M.-M. Cheng, Y.~Liu, Q.~Hou, J.~Bian, P.~Torr, S.-M. Hu, and Z.~Tu, ``{HFS:
-  Hierarchical Feature Selection for Efficient Image Segmentation},'' in
-  \emph{Computer Vision -- ECCV 2016}, B.~Leibe, J.~Matas, N.~Sebe, and
-  M.~Welling, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Cham: Springer
-  International Publishing, 2016, pp. 867--882.
+  Hierarchical Feature Selection for Efficient Image Segmentation},'' in
+  \emph{Computer Vision -- ECCV 2016}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Cham: Springer International Publishing, 2016, pp. 867--882.
 
 \bibitem{maninis2017}
 K.-K. Maninis, J.~Pont-Tuset, P.~Arbel{\'a}ez, and L.~Van~Gool, ``Convolutional
-  oriented boundaries,'' in \emph{Computer Vision -- ECCV 2016}, B.~Leibe,
-  J.~Matas, N.~Sebe, and M.~Welling, Eds.\hskip 1em plus 0.5em minus
-  0.4em\relax Cham: Springer International Publishing, 2016, pp. 580--596.
+  oriented boundaries,'' in \emph{Computer Vision -- ECCV 2016}.\hskip 1em plus
+  0.5em minus 0.4em\relax Cham: Springer International Publishing, 2016, pp.
+  580--596.
 
 \bibitem{liu2017}
 Y.~Liu, M.-M. Cheng, X.~Hu, K.~Wang, and X.~Bai, ``Richer convolutional
   features for edge detection,'' in \emph{2017 IEEE Conference on Computer
-  Vision and Pattern Recognition (CVPR)}, vol.~00, Jul 2017, pp. 5872--5881.
+  Vision and Pattern Recognition (CVPR)}, Jul 2017, pp. 5872--5881.
 
 \bibitem{najman13}
 L.~Najman and H.~Talbot, \emph{{Mathematical morphology: from theory to
-  applications}}, 2013.
+  applications}}.\hskip 1em plus 0.5em minus 0.4em\relax Hoboken, USA: John
+  Wiley \& Sons, 2013.
 
 \bibitem{ilin17}
 R.~Ilin, T.~Watson, and R.~Kozma, ``Abstraction hierarchy in deep learning
@@ -118,8 +117,7 @@ S.~Xie and Z.~Tu, ``Holistically-nested edge detection,'' in \emph{The IEEE
 
 \bibitem{jones97}
 R.~Jones, ``Component trees for image filtering and segmentation,'' in
-  \emph{IEEE Workshop on Nonlinear Signal and Image Processing, E. Coyle, Ed.,
-  Mackinac Island}, vol.~9, 1997.
+  \emph{IEEE Workshop on Nonlinear Signal and Image Processing}, vol.~9, 1997.
 
 \bibitem{cardelino06}
 J.~Cardelino, G.~Randall, M.~Bertalmio, and V.~Caselles, ``Region based
@@ -129,9 +127,8 @@ J.~Cardelino, G.~Randall, M.~Bertalmio, and V.~Caselles, ``Region based
 \bibitem{najman12}
 P.~Soille and L.~Najman, ``On morphological hierarchical representations for
   image processing and spatial data clustering,'' in \emph{Applications of
-  Discrete Geometry and Mathematical Morphology}, U.~K{\"o}the, A.~Montanvert,
-  and P.~Soille, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
-  Heidelberg: Springer Berlin Heidelberg, 2012, pp. 43--67.
+  Discrete Geometry and Mathematical Morphology}.\hskip 1em plus 0.5em minus
+  0.4em\relax Berlin, Heidelberg: Springer Berlin Heidelberg, 2012, pp. 43--67.
 
 \bibitem{xu16}
 Y.~Xu, T.~Géraud, and L.~Najman, ``Hierarchical image simplification and
@@ -154,19 +151,16 @@ J.~Fritsch, T.~Kuehnl, and A.~Geiger, ``A new performance measure and
   Conference on Intelligent Transportation Systems (ITSC)}, 2013.
 
 \bibitem{chollet2015keras}
-F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
+\BIBentryALTinterwordspacing
+F.~Chollet \emph{et~al.}, ``Keras,'' 2015. [Online]. Available:
+  \url{https://keras.io}
+\BIBentrySTDinterwordspacing
 
 \bibitem{tensorflow2015-whitepaper}
 \BIBentryALTinterwordspacing
-M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
-  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
-  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
-  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
-  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
-  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
-  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
-  systems,'' 2015, software available from tensorflow.org. [Online]. Available:
-  \url{https://www.tensorflow.org/}
+M.~Abadi \emph{et~al.}, ``{TensorFlow}: Large-scale machine learning on
+  heterogeneous systems,'' 2015, software available from tensorflow.org.
+  [Online]. Available: \url{https://www.tensorflow.org/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{Caltagirone2018}
