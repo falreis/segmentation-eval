@@ -97,7 +97,7 @@ Z_{MAX} &= \max_{1 \leq i \leq M} (\mathcal{H}_i)
 The operations are performed element-wise on each side-output. To cope with the different sizes presented at different layers, the side-output maps are first re-scaled to the input image size using a transposed convolution layer~\cite{dumoulin2016}, also called as ``deconvolutional layer''. In this process, the transposed weighted map is used to convolve the side-output maps with an appropriate kernel to up-sample each position while maintaining the connectivity pattern. After element-wise combination, a convolutional $1\times1$ operation is performed with Relu activation. The overview of the method is illustrated in Figure \ref{fig:side_outputs_method}.
 
 \begin{figure}[ht]
-  \caption{Method overview.}
+  \caption{Method overview}
   \centering
   \includegraphics[width=1.\columnwidth]{figures/falreis/side_outputs_method.png}
   \label{fig:side_outputs_method}
