@@ -49,7 +49,7 @@
 
 \author{
 \IEEEauthorblockN{
-Felipe A. L. Reis\textsuperscript{\dag}, Raquel Almeida\textsuperscript{\dag}, Simon Malinowski\textsuperscript{*}, Ewa Kijak\textsuperscript{*} \\ Silvio Jamil F. Guimar\~aes\textsuperscript{\dag} and Zenilton K. G. do Patroc\'inio Jr.\textsuperscript{\dag}
+Felipe A. L. Reis\textsuperscript{\dag}, Raquel Almeida\textsuperscript{\dag}, Ewa Kijak\textsuperscript{*}, Simon Malinowski\textsuperscript{*},\\ Silvio Jamil F. Guimar\~aes\textsuperscript{\dag} and Zenilton K. G. do Patroc\'inio Jr.\textsuperscript{\dag}
 }
 \\
 \IEEEauthorblockA{
@@ -59,19 +59,19 @@ Belo Horizonte, Minas Gerais, Brazil \\
 \\ \\
 \textsuperscript{*}\textit{Linkmedia} -- Univ Rennes, Inria, CNRS, IRISA\\
 Rennes, France \\
-\{simon.malinowski, ewa.kijak\}@irisa.fr
+\{ewa.kijak, simon.malinowski\}@irisa.fr
 }
 }
 
 \maketitle
 
 \begin{abstract}
-Image segmentation consists in creating partitions within an image into meaningful areas and objects. It can be use in scene understanding and recognition, in fields like biology, medicine, robotics, satellite imaging, amongst others. In this work it is proposed to explore the learned model in a deep architecture, extracting side-outputs at different layers of the network  for the task of image segmentation. It is proposed to study the impact of the amount of side-outputs and evaluate strategies to combine them. It is also proposed the use of a post-processing filtering based on mathematical morphology idempotent functions in order to remove some undesirable noises. Experiments were performed in the public available KITTI Road Dataset for image segmentation. Our comparison shows that the use of multiples side outputs can increase the overall performance of the network, make it easy to train and more stable when compared with a single output in the end of the network. Also, for a small number of training epochs (500) we achieved performance just 5\% below to the best algorithm in Kitti Evaluation Server.
+Image segmentation consists in creating partitions within an image into meaningful areas and objects. It can be used in scene understanding and recognition, in fields like biology, medicine, robotics, satellite imaging, amongst others. In this work we take advantage of the learned model in a deep architecture, by extracting side-outputs at different layers of the network  for the task of image segmentation. We study the impact of the amount of side-outputs and evaluate strategies to combine them. A post-processing filtering based on mathematical morphology idempotent functions is also used in order to remove some undesirable noises. Experiments were performed on the publicly available KITTI Road Dataset for image segmentation. Our comparison shows that the use of multiples side outputs can increase the overall performance of the network, making it easier to train and more stable when compared with a single output in the end of the network. Also, for a small number of training epochs (500), we achieved a competitive performance when compared to the best algorithm in Kitti Evaluation Server.
 \end{abstract}
 
 
 \begin{IEEEkeywords}
-convolutional neural network, image segmentation, mathematical morphology, CNN, region detection, side-outputs, side output, merging strategies
+convolutional neural network, CNN, image segmentation, mathematical morphology, region detection, side-outputs, merging strategies
 \end{IEEEkeywords}
 
 \input{files/intro}
@@ -80,6 +80,8 @@ convolutional neural network, image segmentation, mathematical morphology, CNN, 
 \input{files/method}
 \input{files/experiments}
 \input{files/conclusion}
+
+%\newpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{2019-ijcnn,dl,hier-seg}
