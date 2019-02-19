@@ -60,8 +60,26 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         if(augm):
             augm_str = '_augm'
 
-        train_data = np.load('../data/Kitti/train_data{}.npy'.format(augm_str))
-        train_label = np.load('../data/Kitti/train_label{}.npy'.format(augm_str))
+        data_glob = glob.glob('../data/Kitti/train_data*.npy') 
+        label_glob = glob.glob('../data/Kitti/train_label*.npy')
+
+        is_first = True
+        if(len(data_glob) == len(label_glob)):
+            for data, label in zip(data_glob, label_glob):
+                td = np.load(data)
+                tl = np.load(label)
+
+                if(is_first):
+                    is_first = False
+                    train_data = td
+                    train_label = tl
+                else:
+                    train_data = np.append(train_data, td, axis=0)
+                    train_label = np.append(train_label, tl, axis=0)
+        else:
+            print('Something wrong. Data size different from label size.')
+            quit()
+
 
         # define files
         checkpoint_file = ''

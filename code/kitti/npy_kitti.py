@@ -19,7 +19,7 @@ from helper import *
 
 reduced_image_size = (hc.width, hc.height, 3)
 
-def load_data(mode, data_path):
+def load_and_save(mode, data_path, output_path, output_augm, flush_num):
     path = data_path + mode + "ing/image_2/"
     pathg = data_path + mode + "ing/gt_image_2/"
 
@@ -39,7 +39,7 @@ def load_data(mode, data_path):
 
         index = 0
         if(len(grounds) == len(images)):
-            for image, ground in zip(images, grounds):
+            for image, ground in zip(images[:200], grounds):
                 reduced_image = cv2.resize(cv2.imread(image), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
                 reduced_ground = cv2.resize(cv2.imread(ground), dsize=reduced_image_size[:2], interpolation=cv2.INTER_CUBIC)
 
@@ -49,6 +49,21 @@ def load_data(mode, data_path):
                 index += 1
                 print(index, '/', len_data, end='')
                 print('\r', end='')
+
+                #save
+                rest = (index % flush_num)
+                if(rest == 0 or index == len_data):
+                    if mode == "train":
+                        #print(flush_num if rest == 0 else index%flush_num)
+
+                        label = np.reshape(np.array(label),((flush_num if rest == 0 else index%flush_num), hc.data_shape, hc.n_classes))
+                        np.save(output_path.format(mode,"_label_", index, output_augm), label)
+                    
+                    np.save(output_path.format(mode,"_data_", index, output_augm), np.array(data))
+
+                    label = []
+                    data = []
+                #endif
         else:
             print('Alguma coisa errada: número de ground-truths não é igual ao de imagens.')
             quit()
@@ -62,8 +77,9 @@ def load_data(mode, data_path):
 
 def npy(set_name='train', augm=True):
     data_path = '../datasets/Kitti/data_road'
-    output_path = '../data/Kitti/{}{}{}'
+    output_path = '../data/Kitti/{}{}{}{}'
     output_augm = ''
+    flush_num = 25
 
     if(augm):
         data_path += '_augmented/'
@@ -72,13 +88,6 @@ def npy(set_name='train', augm=True):
         data_path += '/'
         output_augm = ''
 
-    data, label = load_data(mode=set_name, data_path=data_path)
-    len_data = len(data)
-
-    if set_name == "train":
-        label = np.reshape(label,(len_data, hc.data_shape, hc.n_classes))
-        np.save(output_path.format(set_name,"_label", output_augm), label)
-
-    np.save(output_path.format(set_name,"_data", output_augm), data)
+    data, label = load_and_save(set_name, data_path, output_path, output_augm, flush_num)
 
     print('Done')
