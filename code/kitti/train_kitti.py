@@ -3,6 +3,7 @@ from __future__ import print_function
 import os
 import sys
 import datetime
+import glob
 
 #os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['THEANO_FLAGS']='mode=FAST_RUN,device=cuda,floatX=float32,optimizer=None'
@@ -31,12 +32,13 @@ import h5py
 np.random.seed(7) # for reproducibility
 
 import hed_constants as hc
+import npy_kitti as npy
 
 sys.path.append("..")
 import load_weights as lw
 
 #parameters
-batch_size = 16
+batch_size = 8
 
 def ofuse_pixel_error(y_true, y_pred):
     pred = tf.cast(tf.greater(y_pred, 0.5), tf.int32, name='predictions')
@@ -51,11 +53,18 @@ def Vote(y_true, y_pred):
 def w_categorical_crossentropy(y_true, y_pred, weights):
     return K.categorical_crossentropy(y_pred, y_true) * K.cast(weights[:,:],K.floatx())
 
-def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=100, learn_rate=0.001, folder=None):
+def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=100, learn_rate=0.001, decay=5e-7, folder=None):
     if(net != None):
         print(datetime.datetime.now())
 
         # load the data
+        augm_str = '/'
+        if(augm):
+            augm_str = '_augmented/'
+
+        data_path = '../datasets/Kitti/data_road' + augm_str
+        train_data, train_label = npy.load_train(data_path)
+        '''
         augm_str = ''
         if(augm):
             augm_str = '_augm'
@@ -79,6 +88,7 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         else:
             print('Something wrong. Data size different from label size.')
             quit()
+        '''
 
 
         # define files
@@ -93,8 +103,9 @@ def train(model, net, merge='max', check=True, augm=True, load=True, nb_epoch=10
         #load weights
         if(load):
             lw.load_weights_from_hdf5_group_by_name(model, '../vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
+            #model.load_weights('../alo_kitti_weight_avg_ope.best.hdf5')
 
-        sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
+        sgd = SGD(lr=learn_rate, decay=decay, momentum=0.95, nesterov=False)
 
         '''
         if(balanced):

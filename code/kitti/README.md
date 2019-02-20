@@ -24,8 +24,8 @@ python kitti.py --func=npy --set=train --augm=true
 As opções para execução das redes neurais estão descritas abaixo.
 
 ```
-python kitti.py --func=train --net=alo --merge=avg --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20190102
-python kitti.py --func=train --net=alo --merge=avg --check=true --augm=true --load=true --epochs=100 --lr=0.001 --folder=20190102
+python kitti.py --func=train --net=alo --merge=avg --check=true --augm=true --load=true --epochs=100 --lr=0.001 --decay=5e-7 --folder=20190102
+python kitti.py --func=train --net=alo --merge=max --check=true --augm=true --load=true --epochs=100 --lr=0.001 --decay=5e-7 --folder=20190102
 ```
 
 ### Params
@@ -55,6 +55,9 @@ python kitti.py --func=train --net=alo --merge=avg --check=true --augm=true --lo
 
 * lr? = {0-inf} (*OPCIONAL*)
   * Parâmetro para definição da taxa de aprendizado (*learning rate*)
+
+* decay? = {0-inf} (*OPCIONAL*)
+  * Parâmetro para definição do decaimento da taxa de aprendizado (*learning rate decay*)
 
 * folder? = (*OPCIONAL*)
   * Parâmetro para definição da pasta de onde os pesos serão recuperados para predição (subpasta de weights/)

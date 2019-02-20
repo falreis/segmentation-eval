@@ -28,6 +28,7 @@ parser.add_argument("--load", nargs='?', type=str2bool)
 parser.add_argument("--mark", nargs='?', type=str2bool)
 parser.add_argument("--epochs", nargs='?', type=int)
 parser.add_argument("--lr", nargs='?', type=float)
+parser.add_argument("--decay", nargs='?', type=float)
 parser.add_argument("--morf", nargs='?', type=str2bool)
 parser.add_argument("--folder", nargs='?', type=str)
 parser.add_argument("--gray", nargs='?', type=str2bool)
@@ -55,6 +56,11 @@ learn_rate = 0.001
 if(args.lr != None and args.lr > 0):
     learn_rate = args.lr
 
+#decay parameter
+decay = 5e-7
+if(args.decay != None and args.decay > 0):
+    decay = args.decay
+
 #side output
 side_output = False
 if(args.func == 'side'):
@@ -72,6 +78,7 @@ print('Load vgg weights: ', args.load)
 print('Mark road: ', args.mark)
 print('Epochs: ', nb_epochs)
 print('Learning rate: ', learn_rate)
+print('Decay (lr): ', decay)
 print('Math morfology: ', args.morf)
 print('Folder: ', args.folder)
 print('Grayscale: ', args.gray)
@@ -91,7 +98,7 @@ if(args.net != None):
 if(args.func == 'train'):
     import train_kitti as trk
     trk.train(model=model, net=args.net, merge=args.merge, check=args.check, augm=args.augm
-        , load=args.load, nb_epoch=nb_epochs, learn_rate=learn_rate, folder=args.folder)
+        , load=args.load, nb_epoch=nb_epochs, learn_rate=learn_rate, decay=decay, folder=args.folder)
 
 elif(args.func == 'npy'):
     import npy_kitti as nk
