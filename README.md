@@ -1,4 +1,4 @@
-# Image segmentation for Lane Line Segmentation and Border Detection
+# Combining convolutional side-outputs for image segmentation and border detection
 
 ## Source Code
 
@@ -20,6 +20,5 @@ conda env create -f kitty.yml
 
 ## Papers
 
-Available in the papers folder.
-This [paper](papers/2019-conf-ijcnn-kitti/2019-conf-ijcnn-kitti.pdf) was presented in IJCNN 2019 with KITTI Road Segmentation.
+It will available soon.
 
