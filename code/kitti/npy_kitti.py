@@ -117,7 +117,7 @@ def npy(set_name='train', augm=True):
     data_path = '../datasets/Kitti/data_road'
     output_path = '../data/Kitti/{}{}{}{}'
     output_augm = ''
-    flush_num = 25
+    flush_num = 500
 
     if(augm):
         data_path += '_augmented/'

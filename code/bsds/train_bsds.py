@@ -105,6 +105,12 @@ def ofuse_pixel_error(y_true, y_pred):
     error = tf.cast(tf.not_equal(pred, tf.cast(y_true, tf.int32)), tf.float32)
     return tf.reduce_mean(error, name='pixel_error')
 
+def focal_loss(y_true, y_pred):
+    gamma = 2.0, alpha = 0.25
+    pt_1 = tf.where(tf.equal(y_true, 1), y_pred, tf.ones_like(y_pred))
+    pt_0 = tf.where(tf.equal(y_true, 0), y_pred, tf.zeros_like(y_pred))
+    return -K.sum(alpha * K.pow(1. - pt_1, gamma) * K.log(pt_1))-K.sum((1-alpha) * K.pow( pt_0, gamma) * K.log(1. - pt_0))
+
 def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_rate=0.001, folder=None):
     if(net != None):
         print(datetime.datetime.now())
@@ -128,7 +134,8 @@ def train(model, net, merge='max', check=True, load=True, nb_epoch=100, learn_ra
 
         sgd = SGD(lr=learn_rate, decay=5e-6, momentum=0.95, nesterov=False)
 
-        model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])
+        #model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])
+        model.compile(loss=[focal_loss], optimizer=sgd, metrics=["accuracy", ofuse_pixel_error])
 
         # Fit the model
         images, grounds = loadListFile()
