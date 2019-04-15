@@ -7,15 +7,18 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
-\usepackage{hyperref} %url
+%\usepackage{hyperref} %url
+\usepackage[bookmarks=false]{hyperref} %option to remove bookmarks (to pass ieee validation)
 \usepackage{comment}
 %\usepackage[caption=false]{subfig}
 \input{config/headers}
 \input{config/colors}
 
+\usepackage{balance}
+
 
 \ifCLASSOPTIONcompsoc
-\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{https://www.overleaf.com/project/5c36049001347979500bc77csubfig}
 \else
 \usepackage[caption=false,font=footnotesize]{subfig}
 \fi
@@ -44,7 +47,8 @@
 \begin{document}
 
 \title{Combining convolutional side-outputs for road image segmentation
-\thanks{The authors are grateful to FAPEMIG (PPM 00006-16), CNPq (Universal 421521/2016-3 and PQ 307062/2016-3), CAPES (MAXIMUM STIC-AmSUD 048/14) and PUC Minas for the financial support to this work.}
+\thanks{The authors are grateful to FAPEMIG (PPM 00006-16), CNPq (Universal 421521/2016-3 and PQ 307062/2016-3), CAPES (MAXIMUM STIC-AmSUD 048/14 and STIC-AmSUD TRANSFORM 88881.143258/2017-01) and PUC Minas for the financial support to this work.}
+%This work received funding from CAPES (STIC-AmSUD TRANSFORM 88881.143258/2017-01), FAPEMIG (PPM 00006-16), and CNPq (Universal 421521/2016-3 and PQ 307062/2016-3).
 }
 
 \author{
@@ -66,7 +70,7 @@ Rennes, France \\
 \maketitle
 
 \begin{abstract}
-Image segmentation consists in creating partitions within an image into meaningful areas and objects. It can be used in scene understanding and recognition, in fields like biology, medicine, robotics, satellite imaging, amongst others. In this work we take advantage of the learned model in a deep architecture, by extracting side-outputs at different layers of the network  for the task of image segmentation. We study the impact of the amount of side-outputs and evaluate strategies to combine them. A post-processing filtering based on mathematical morphology idempotent functions is also used in order to remove some undesirable noises. Experiments were performed on the publicly available KITTI Road Dataset for image segmentation. Our comparison shows that the use of multiples side outputs can increase the overall performance of the network, making it easier to train and more stable when compared with a single output in the end of the network. Also, for a small number of training epochs (500), we achieved a competitive performance when compared to the best algorithm in Kitti Evaluation Server.
+Image segmentation consists in creating partitions within an image into meaningful areas and objects. It can be used in scene understanding and recognition, in fields like biology, medicine, robotics, satellite imaging, amongst others. In this work we take advantage of the learned model in a deep architecture, by extracting side-outputs at different layers of the network  for the task of image segmentation. We study the impact of the amount of side-outputs and evaluate strategies to combine them. A post-processing filtering based on mathematical morphology idempotent functions is also used in order to remove some undesirable noises. Experiments were performed on the publicly available KITTI Road Dataset for image segmentation. Our comparison shows that the use of multiples side outputs can increase the overall performance of the network, making it easier to train and more stable when compared with a single output in the end of the network. Also, for a small number of training epochs (500), we achieved a competitive performance when compared to the best algorithm in KITTI Evaluation Server.
 \end{abstract}
 
 
@@ -80,10 +84,15 @@ convolutional neural network, CNN, image segmentation, mathematical morphology, 
 \input{files/method}
 \input{files/experiments}
 \input{files/conclusion}
+%\input{files/futurework}
+\input{files/acknowledgements}
 
 %\newpage
 
 \bibliographystyle{IEEEtran}
+
+\balance
+
 \bibliography{2019-ijcnn,dl,hier-seg}
 
 \end{document}
